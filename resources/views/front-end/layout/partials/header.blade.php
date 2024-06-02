@@ -16,13 +16,13 @@
 
                 <!-- HEADER BLACK LOGO -->
                 <div class="desktoplogo">
-                    <a href="#hero-2" class="logo-black"><img src="{{ asset('front-end/images/logo-pink.png') }}" alt="logo"></a>
+                    <a href="{{ route('home') }}" class="logo-black"><img src="{{ asset('front-end/images/logo-pink.png') }}" alt="logo"></a>
                 </div>
 
 
                 <!-- HEADER WHITE LOGO -->
                 <div class="desktoplogo">
-                    <a href="#hero-2" class="logo-white"><img src="{{ asset('front-end/images/logo-pink-white.png') }}" alt="logo"></a>
+                    <a href="{{ route('home') }}" class="logo-white"><img src="{{ asset('front-end/images/logo-pink-white.png') }}" alt="logo"></a>
                 </div>
 
 
@@ -30,19 +30,24 @@
                   <nav class="wsmenu clearfix">
                     <ul class="wsmenu-list nav-theme">
                         <!-- SIMPLE NAVIGATION LINK -->
-                        <li class="nl-simple" aria-haspopup="true"><a href="" class="h-link active">Home</a></li>
+                        <li class="nl-simple" aria-haspopup="true"><a href="{{ route('home') }}" class="h-link active">Home</a></li>
                           <!-- DROPDOWN SUB MENU -->
-                          <li aria-haspopup="true"><a href="#" class="h-link">Paket <span class="wsarrow"></span></a>
+                          <li aria-haspopup="true"><a href="#" class="h-link">Paket & Harga<span class="wsarrow"></span></a>
                             <ul class="sub-menu">
-                                <li aria-haspopup="true"><a href="#lnk-1">Broadband</a></li>
+                                <li aria-haspopup="true"><a href="{{ route('packet.ritel') }}">Broadband</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-2">Dedicated</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Internet + TV</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Promo</a></li>
                                </ul>
                         </li>
-                        <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">Blog</a></li>
+                        <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}" class="h-link">Blog</a></li>
 
-
+                        <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span class="wsarrow"></span></a>
+                            <ul class="sub-menu">
+                                <li aria-haspopup="true"><a href="#lnk-1">Tips & Tutorial</a></li>
+                                <li aria-haspopup="true"><a href="#lnk-2">FAQ</a></li>
+                               </ul>
+                        </li>
                         {{-- <!-- MEGAMENU -->
                           <li aria-haspopup="true" class="mg_link"><a href="#" class="h-link">Pages <span class="wsarrow"></span></a>
                             <div class="wsmegamenu w-75 clearfix">
@@ -92,21 +97,15 @@
 
 
                         <!-- SIMPLE NAVIGATION LINK -->
-                        <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">Pricing</a></li>
-
-
+                        <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">Hubungi Kami</a></li>
                           <!-- SIMPLE NAVIGATION LINK -->
-                        <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li>
-
-
-                        {{-- <!-- SIGN IN LINK -->
+                        {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
+                        <!-- SIGN IN LINK -->
                         <li class="nl-simple reg-fst-link mobile-last-link" aria-haspopup="true">
-                            <a href="login-2.html" class="h-link">Sign in</a>
+                            <a href="https://client.idnet.id/" class="btn r-04 btn--theme hover--theme last-link">Billing</a>
                         </li>
-
-
                         <!-- SIGN UP BUTTON -->
-                        <li class="nl-simple" aria-haspopup="true">
+                        {{-- <li class="nl-simple" aria-haspopup="true">
                             <a href="signup-2.html" class="btn r-04 btn--theme hover--tra-black last-link">Sign up</a>
                         </li>  --}}
 
