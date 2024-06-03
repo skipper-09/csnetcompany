@@ -141,7 +141,7 @@
                 <!-- FOOTER COPYRIGHT -->
                 <div class="col">
                     <div class="footer-copyright">
-                        <p class="p-sm">&copy; <span id="year"></span>IDNET All Rights Reserved</p>
+                        <p class="p-sm">&copy; <span id="year"></span> IDNET All Rights Reserved</p>
                     </div>
                 </div>
 

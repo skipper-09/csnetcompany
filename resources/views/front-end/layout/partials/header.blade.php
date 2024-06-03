@@ -4,7 +4,7 @@
 
         <!-- MOBILE HEADER -->
         <div class="wsmobileheader clearfix">	  	
-            <span class="smllogo"><img src="{{ asset('front-end/images/logo-pink.png') }}" alt="mobile-logo"></span>
+            <span class="smllogo"><img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="mobile-logo"></span>
             <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
          </div>
 
@@ -16,13 +16,13 @@
 
                 <!-- HEADER BLACK LOGO -->
                 <div class="desktoplogo">
-                    <a href="{{ route('home') }}" class="logo-black"><img src="{{ asset('front-end/images/logo-pink.png') }}" alt="logo"></a>
+                    <a href="{{ route('home') }}" class="logo-black"><img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="logo"></a>
                 </div>
 
 
                 <!-- HEADER WHITE LOGO -->
                 <div class="desktoplogo">
-                    <a href="{{ route('home') }}" class="logo-white"><img src="{{ asset('front-end/images/logo-pink-white.png') }}" alt="logo"></a>
+                    <a href="{{ route('home') }}" class="logo-white"><img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="logo"></a>
                 </div>
 
 
