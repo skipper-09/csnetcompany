@@ -3,6 +3,10 @@
 
 @push('css')
 <style>
+	.img-hero {
+		height: 500px
+	}
+
 	.bg--heading {
 		background-position: center !important;
 		background-repeat: no-repeat;
@@ -13,6 +17,25 @@
 		height: 150px !important;
 		align-content: center !important;
 		align-items: center !important;
+	}
+
+	.nav-tabs .nav-link {
+		background-color: #f8f9fa;
+		border: 1px solid #dee2e6;
+		color: #495057;
+		margin-right: 5px;
+		border-radius: 0.25rem 0.25rem 0 0;
+	}
+
+	.nav-tabs .nav-link.active {
+		background-color: #fff;
+		border-color: #dee2e6 #dee2e6 #fff;
+		color: #495057;
+	}
+
+	.nav-tabs .nav-link:hover {
+		border-color: #e9ecef #e9ecef #dee2e6;
+		color: #0056b3;
 	}
 </style>
 @endpush
@@ -28,7 +51,7 @@
 			<!-- HERO IMAGE -->
 			<div class="col-md-6 order-last order-md-2">
 				<div class="hero-2-img wow fadeInRight">
-					<img class="img-fluid" src="{{ asset('front-end/images/hero-2-img.png') }}" alt="hero-image">
+					<img class="img-hero" src="{{ asset('front-end/images/a1.png') }}" alt="hero-image">
 				</div>
 			</div>
 
@@ -38,7 +61,7 @@
 				<div class="hero-2-txt wow fadeInLeft">
 
 					<!-- Title -->
-					<h2 class="s-56 w-700 color--black">Internet Broadband Tercepat Dengan Harga Murah</h2>
+					<h2 class="s-56 w-700 color--black">Broadband Tercepat Dengan Harga Murah</h2>
 
 					<!-- Text -->
 					<p class="p-lg">Transformasikan cara Anda berinternet dengan kecepatan broadband kami yang tak
@@ -104,8 +127,8 @@
 		<!-- PRICING TABLES -->
 		<div class="pricing-1-wrapper">
 			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="card shadow-sm w-60 ">
+				<div class="col-md-4  gy-4 gap-4">
+					<div class="card shadow-sm w-60 r-16 border-none">
 						<div class="">
 							<div class="bg--heading division">
 								<div class="pricing-title ">
@@ -122,7 +145,7 @@
 										aria-controls="twelve-months" aria-selected="false">12 Bulan</a>
 								</ul>
 							</div>
-							<div class="tab-content px-2" id="myTabContent">
+							<div class="tab-content px-4" id="myTabContent">
 								<div class="tab-pane fade show active" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
 									<div class="row">
 										<div class="col-12">
@@ -134,16 +157,15 @@
 													Wi-Fi</li>
 												<li><img src="{{ asset('front-end/images/maintenance.png') }}" alt="" height="20"> Gratis
 													Instalasi</li>
-												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 5
-													- 7 Devices</li>
-												<li> Ideal untuk individu atau 2 orang dengan pemakaian standar</li>
+												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 1
+													- 3 Devices</li>
 											</ul>
 										</div>
-										<div class="col-12 text-center">
+										<div class="col-12 text-center mb-4">
 											<h4>Rp 100.000/Bulan*</h4>
 										</div>
-										<div class=" text-center my-2">
-											<button type="button" class="btn btn--theme">Dapatkan sekarang</button>
+										<div class=" text-center mb-4">
+											<button type="button" class="btn btn--theme">Daftar</button>
 										</div>
 									</div>
 								</div>
@@ -199,91 +221,6 @@
 </section> <!-- END PRICING-1 -->
 
 
-<!-- BRANDS-1
-       ============================================= -->
-<div id="brands-1" class="pb-100 brands-section">
-	<div class="container">
-
-
-		<!-- BRANDS TITLE -->
-		<div class="row justify-content-center">
-			<div class="col-md-10 col-lg-9">
-				<div class="brands-title mb-50">
-					<h5 class="s-17">Trusted and used by over 3,400 companies</h5>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- BRANDS CAROUSEL -->
-		<div class="row">
-			<div class="col text-center">
-				<div class="owl-carousel brands-carousel-6">
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-1.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-3.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-4.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-5.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-6.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-7.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-8.png" alt="brand-logo"></a>
-					</div>
-
-
-					<!-- BRAND LOGO IMAGE -->
-					<div class="brand-logo">
-						<a href="#"><img class="img-fluid" src="images/brand-9.png" alt="brand-logo"></a>
-					</div>
-
-
-				</div>
-			</div>
-		</div> <!-- END BRANDS CAROUSEL -->
-
-
-	</div> <!-- End container -->
-</div> <!-- END BRANDS-1 -->
-
-
 
 
 <!-- DIVIDER LINE -->
@@ -302,13 +239,8 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 col-lg-9">
 				<div class="section-title mb-70">
-
 					<!-- Title -->
-					<h2 class="s-52 w-700">Compare Our Plans</h2>
-
-					<!-- Text -->
-					<p class="p-xl">Complete list of features available in our pricing plans</p>
-
+					<h2 class="s-34 w-700">Rekomendasi Perangkat Untuk Kecepatan Internet Maksimal</h2>
 				</div>
 			</div>
 		</div>
@@ -322,14 +254,12 @@
 
 					<!-- Table -->
 					<div class="table-responsive mb-50">
-						<table class="table text-center">
+						<table class="table table-borderless text-center">
 
 							<thead>
 								<tr>
-									<th style="width: 34%;"></th>
-									<th style="width: 22%;">Starter</th>
-									<th style="width: 22%;">Basic</th>
-									<th style="width: 22%;">Premium</th>
+									<th style="width: 50%;">Kecepatan Internet</th>
+									<th style="width: 50%;">Rekomendasi Jumlah Perangkat</th>
 								</tr>
 							</thead>
 
@@ -338,85 +268,66 @@
 								<tr>
 									<th scope="row" class="text-start">Available Projects</th>
 									<td class="color--black">Up to 2</td>
-									<td class="color--black">Up to 250</td>
-									<td class="color--black">Unlimited</td>
+
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Available Storage</th>
 									<td class="color--black">2Gb</td>
-									<td class="color--black">50Gb</td>
-									<td class="color--black">350Gb</td>
+
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Private Cloud Hosting</th>
 									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
+
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">User Permissions</th>
 									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
+
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Direct Integrations</th>
 									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
+
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Reusable Components</th>
 									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Data Backup</th>
 									<td class="color--black">Weekly</td>
-									<td class="color--black">Daily</td>
-									<td class="color--black">Daily</td>
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">No Ads. No Trackers</th>
 									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Advanced Security</th>
 									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Shared Team Workspace</th>
 									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 								</tr>
 
 								<tr>
 									<th scope="row" class="text-start">Team Management</th>
 									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 								</tr>
 
 								<tr class="table-last-tr">
 									<th scope="row" class="text-start">Customer Support</th>
 									<td class="color--black">Limited</td>
-									<td class="color--black">Basic</td>
-									<td class="color--black">Priority</td>
 								</tr>
 
 							</tbody>
