@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Home\HomeController;
+use App\Http\Controllers\Front_End\Packet\DedicatedController;
 use App\Http\Controllers\Front_End\Packet\RitelController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,6 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::prefix('packet')->group(function () {
     Route::get('/broadband', [RitelController::class, 'index'])->name('packet.ritel');
+    Route::get('/dedicated', [DedicatedController::class, 'index'])->name('packet.dedicated');
     
 });

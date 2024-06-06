@@ -35,7 +35,7 @@
                           <li aria-haspopup="true"><a href="#" class="h-link">Paket & Harga<span class="wsarrow"></span></a>
                             <ul class="sub-menu">
                                 <li aria-haspopup="true"><a href="{{ route('packet.ritel') }}">Broadband</a></li>
-                                <li aria-haspopup="true"><a href="#lnk-2">Dedicated</a></li>
+                                <li aria-haspopup="true"><a href="{{ route('packet.dedicated') }}">Dedicated</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Internet + TV</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Promo</a></li>
                                </ul>

@@ -76,7 +76,7 @@
                 <div class="section-title mb-70">
 
                     <!-- Title -->
-                    <h2 class="s-50 w-700">Kenapa Harus Idnet</h2>
+                    <h2 class="s-45 w-700">Kenapa Harus Idnet</h2>
 
                     <!-- Text -->
                     <p class="s-21 color--grey">Idnet internet murah dengan kualitas terbaik</p>
@@ -89,15 +89,12 @@
         <!-- FEATURES-2 WRAPPER -->
         <div class="fbox-wrapper text-center">
             <div class="row row-cols-1 row-cols-md-3">
-
-
                 <!-- FEATURE BOX #1 -->
                 <div class="col">
                     <div class="fbox-2 fb-1 wow fadeInUp">
-
                         <!-- Image -->
                         <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid" src="{{ asset('front-end/images/f_01.png') }}" alt="feature-image">
+                            <img class="img-fluid" src="{{ asset('front-end/images/fiber.png') }}" alt="fiber-optic">
                         </div>
 
                         <!-- Text -->
@@ -117,7 +114,7 @@
 
                         <!-- Image -->
                         <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid" src="{{ asset('front-end/images/f_05.png') }}" alt="feature-image">
+                            <img class="img-fluid" src="{{ asset('front-end/images/cs.png') }}" alt="customer-service">
                         </div>
 
                         <!-- Text -->
@@ -134,12 +131,10 @@
                 <!-- FEATURE BOX #3 -->
                 <div class="col">
                     <div class="fbox-2 fb-3 wow fadeInUp">
-
                         <!-- Image -->
                         <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid" src="{{ asset('front-end/images/f_02.png') }}" alt="feature-image">
+                            <img class="img-fluid" src="{{ asset('front-end/images/saving.svg') }}" alt="feature-image">
                         </div>
-
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">Harga Terjangkau</h6>
