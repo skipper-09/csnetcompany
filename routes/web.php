@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Home\HomeController;
 use App\Http\Controllers\Front_End\Packet\DedicatedController;
@@ -18,5 +19,11 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::prefix('packet')->group(function () {
     Route::get('/broadband', [RitelController::class, 'index'])->name('packet.ritel');
     Route::get('/dedicated', [DedicatedController::class, 'index'])->name('packet.dedicated');
-    
+});
+
+
+//backend routes
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
