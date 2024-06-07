@@ -61,13 +61,11 @@
 				<div class="hero-2-txt wow fadeInLeft">
 
 					<!-- Title -->
-					<h2 class="s-56 w-700 color--black">Broadband Tercepat Dengan Harga Murah</h2>
+					<h2 class="s-56 w-700 color--black">Dedicated Business Internet Wifi</h2>
 
 					<!-- Text -->
-					<p class="p-lg">Transformasikan cara Anda berinternet dengan kecepatan broadband kami yang tak
-						tertandingi. Baik untuk hiburan, pendidikan, atau pekerjaan, layanan kami dirancang untuk
-						memenuhi semua kebutuhan digital Anda. Dengan teknologi canggih dan jaringan yang luas, kami
-						menjamin koneksi yang stabil dan andal setiap saat.
+					<p class="p-lg">
+						Kami memahami bahwa kecepatan dan keandalan internet adalah jantung dari setiap bisnis modern. Dengan Dedicated Business Internet Wifi, Anda mendapatkan akses internet yang eksklusif dan cepat tanpa kompromi, yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.
 					</p>
 
 					<!-- HERO DIGITS -->

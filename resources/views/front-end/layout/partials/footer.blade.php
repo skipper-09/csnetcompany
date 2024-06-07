@@ -9,9 +9,11 @@
             <!-- FOOTER LOGO -->
             <div class="col-xl-3">
                 <div class="footer-info">
-                    <img class="footer-logo" src="{{ asset('front-end/images/logo-pink.png') }}" alt="footer-logo">
+                    <img class="footer-logo" src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="footer-logo">
                 </div>
                  <!-- Social Links -->
+                 <!-- Title -->
+                 <h6 class="s-17 w-700">Sosial Media</h6>
                  <ul class="footer-socials ico-25 text-center clearfix">
                     <li><a href="#"><span class="flaticon-facebook"></span></a></li>
                     <li><a href="#"><span class="flaticon-twitter"></span></a></li>

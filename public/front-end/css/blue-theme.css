@@ -1051,7 +1051,9 @@ section,
 .bg--heading {
     background-image: url(../images/pricing.png);
 }
-
+.bg--business{
+    background-image: url(../images/business.jpg);
+}
 /*------------------------------------------*/
 /*  SECTION DIVIDER
 /*------------------------------------------*/
@@ -4613,6 +4615,16 @@ span.sm-info {
     text-align: center;
     padding-right: 25px;
 }
+
+
+/* hero-dedicated */
+
+#hero-dedicated {
+    background-image: url(../images/business.jpg);
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
 
 /*------------------------------------------*/
 /*  HERO-3
