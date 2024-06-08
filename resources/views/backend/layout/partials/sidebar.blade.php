@@ -13,9 +13,9 @@
     </a>
   </div>
 
-  <div class="menu-inner-shadow"></div>
+  {{-- <div class="menu-inner-shadow"></div> --}}
 
-  <ul class="menu-inner py-2">
+  <ul class="menu-inner pt-5">
     <!-- Dashboards -->
     <li class="menu-item active">
       <a href="{{ route('dashboard') }}" class="menu-link">
@@ -36,7 +36,7 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="pages-account-settings-account.html" class="menu-link">
+          <a href="{{ route('backend.users') }}" class="menu-link">
             <div data-i18n="Account">User</div>
           </a>
         </li>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Help\FaqController;
 use App\Http\Controllers\Front_End\Home\HomeController;
@@ -31,4 +32,10 @@ Route::prefix('bantuan')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::prefix('setting')->group(function () {
+        Route::prefix('users')->group(function () {
+            Route::get('', [UserController::class, 'index'])->name('backend.users');
+        });
+    });
 });
