@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
+use App\Http\Controllers\Front_End\Help\FaqController;
 use App\Http\Controllers\Front_End\Home\HomeController;
 use App\Http\Controllers\Front_End\Packet\DedicatedController;
 use App\Http\Controllers\Front_End\Packet\RitelController;
@@ -19,6 +20,10 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::prefix('packet')->group(function () {
     Route::get('/broadband', [RitelController::class, 'index'])->name('packet.ritel');
     Route::get('/dedicated', [DedicatedController::class, 'index'])->name('packet.dedicated');
+});
+Route::prefix('bantuan')->group(function () {
+    Route::get('/tutorial', [RitelController::class, 'index'])->name('help.tips');
+    Route::get('/faq', [FaqController::class, 'index'])->name('help.faq');
 });
 
 

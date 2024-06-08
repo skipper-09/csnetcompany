@@ -18,7 +18,7 @@
     <meta name="keywords"
         content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- SITE TITLE -->
     <title>Martex - Software, App, SaaS & Startup Landing Pages Pack</title>
 
@@ -67,7 +67,8 @@
         @yield('content')
 
 
-        {{-- <!-- MODAL WINDOW (NEWSLETTER FORM)
+        {{--
+        <!-- MODAL WINDOW (NEWSLETTER FORM)
    ============================================= -->
         <div id="modal-2" class="modal fade" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -185,8 +186,8 @@
 
                                             <!-- Form Button -->
                                             <div class="col-md-12 form-btn">
-                                                <button type="submit"
-                                                    class="btn btn--theme hover--tra-black submit">Get Started
+                                                <button type="submit" class="btn btn--theme hover--tra-black submit">Get
+                                                    Started
                                                     Now</button>
                                             </div>
 
