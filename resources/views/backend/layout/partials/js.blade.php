@@ -4,6 +4,9 @@
 <script src="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 <script src="{{ asset('backend/vendor/js/menu.js') }}"></script>
 
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+
 <!-- endbuild -->
 
 <!-- Vendors JS -->

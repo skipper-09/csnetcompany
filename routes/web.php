@@ -36,6 +36,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('setting')->group(function () {
         Route::prefix('users')->group(function () {
             Route::get('', [UserController::class, 'index'])->name('backend.users');
+            Route::get('/getData', [UserController::class, 'getData'])->name('backend.users.getData');
         });
     });
 });
