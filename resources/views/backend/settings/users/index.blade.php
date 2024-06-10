@@ -1,8 +1,8 @@
 @extends('backend.layout.app')
 
-@push('css')
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+@section('title', $page_name)
 
+@push('css')
 @endpush
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -20,14 +20,16 @@
   </div>
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
+    <div class="mb-4">
+      <button class="btn btn-sm btn-primary">Tambah User</button>
+    </div>
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">
         <thead>
           <tr>
+            <th>No</th>
             <th>Nama</th>
-            <th>Client</th>
-            <th>Users</th>
-            <th>Status</th>
+            <th>Email</th>
             <th>Actions</th>
           </tr>
         </thead>

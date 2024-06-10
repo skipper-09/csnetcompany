@@ -9,6 +9,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('backend.dashboard.index');
+        $data=[
+            'sidebar'=> 'dashboard',
+            'page_name'=> 'Dashboard',
+        ];
+        return view('backend.dashboard.index',$data);
     }
 }

@@ -177,10 +177,13 @@ a.bg-primary:focus {
     color: #fff;
     box-shadow: 0 0.125rem 0.25rem rgba(105, 108, 255, 0.4);
 }
-#dataTable_paginate {
+ #dataTable_paginate {
     display: flex;
     justify-content: flex-end;
 }
+
+
+
 .progress-bar {
     background-color: #696cff;
     color: #fff;

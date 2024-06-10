@@ -17,7 +17,7 @@
 
   <ul class="menu-inner pt-5">
     <!-- Dashboards -->
-    <li class="menu-item active">
+    <li class="{{Request::is('admin/dashboard') ? 'menu-item active' : 'menu-item'}}">
       <a href="{{ route('dashboard') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home"></i>
         <div data-i18n="Dashboards">Dashboard</div>
@@ -27,15 +27,64 @@
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Master</span>
     </li>
-
-    <!-- Setting -->
+<!-- Packet -->
+<li class="menu-item ">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-basket"></i>
+    <div data-i18n="Paket">Paket</div>
+  </a>
+  <ul class="menu-sub">
     <li class="menu-item">
+      <a href="{{ route('backend.users') }}" class="menu-link">
+        <div data-i18n="Category">Kategori</div>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="" class="menu-link">
+        <div data-i18n="Pricing Packet">Harga Paket</div>
+      </a>
+    </li>
+  </ul>
+</li>
+<!-- Management Blog -->
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-blanket"></i>
+    <div data-i18n="Paket">Blog</div>
+  </a>
+  <ul class="menu-sub">
+    <li class="menu-item">
+      <a href="{{ route('backend.users') }}" class="menu-link">
+        <div data-i18n="Category">Kategori Blog</div>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="{{ route('backend.users') }}" class="menu-link">
+        <div data-i18n="Category">Tag Blog</div>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="" class="menu-link">
+        <div data-i18n="Pricing Packet">List Blog</div>
+      </a>
+    </li>
+  </ul>
+</li>
+<!-- Cards -->
+<li class="menu-item">
+  <a href="cards-basic.html" class="menu-link">
+    <i class="menu-icon tf-icons bx bx-data"></i>
+    <div data-i18n="Basic">Pendaftar</div>
+  </a>
+</li>
+    <!-- Setting -->
+    <li class="{{$sidebar == 'setting' ? 'menu-item active open' : 'menu-item'}}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-cog"></i>
         <div data-i18n="Account Settings">Pengaturan</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item">
+        <li class="{{$page_name == 'User' ? 'menu-item active' : 'menu-item'}}">
           <a href="{{ route('backend.users') }}" class="menu-link">
             <div data-i18n="Account">User</div>
           </a>

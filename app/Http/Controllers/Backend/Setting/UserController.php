@@ -11,7 +11,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('backend.settings.users.index');
+        $data = [
+            'sidebar'=> 'setting',
+            'page_name' => 'User',
+        ];
+        return view('backend.settings.users.index',$data);
     }
 
     public function getData()
@@ -19,9 +23,12 @@ class UserController extends Controller
         $query = User::all();
         return DataTables::of($query)->addIndexColumn()->addColumn('action', function ($query) {
             $button = '';
-            $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action mr-1" data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
-                                                        class="fa-solid fa-pencil"></i></a>';
-            return '<div class="d-flex">' . $button . '</div>';
+            $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
+                                                        class="fas fa-pen"></i></a>';
+
+            $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('dashboard') . '"><i
+                                                            class="fas fa-trash"></i></button>';
+            return '<div class="d-flex gap-1">' . $button . '</div>';
         })->make(true);
     }
 }
