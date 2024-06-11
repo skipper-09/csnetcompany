@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
@@ -29,7 +30,10 @@ Route::prefix('bantuan')->group(function () {
 
 
 //backend routes
-
+Route::prefix('auth')->group(function () {
+    Route::get('/login', [AuthController::class, 'index'])->name('auth.login')->middleware('guest');
+    Route::post('/store', [AuthController::class, 'signin'])->name('auth.signin')->middleware('guest');
+});
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

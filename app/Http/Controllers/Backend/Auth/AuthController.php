@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Http\Controllers\Backend\Auth;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+
+class AuthController extends Controller
+{
+    public function index()
+    {
+        return view('backend.auth.login.index');
+    }
+    public function signin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $user = User::where(['email' => $request->email]);
+        if ($user->count() > 0) {
+            $user = $user->first();
+
+            if ($user->is_block == 1) {
+                return response()->json([
+                    'message' => 'Akun ini telah di kunci, silahkan hubungi admin untuk membuka akun.'
+                ], 500);
+            } else {
+                if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                    $request->session()->regenerate();
+                    if ($request->rememberme == 'Y') {
+                        $time = 60 * 60 * 24 * 365;
+                        Cookie::queue('email', $request->email, $time);
+                        Cookie::queue('password', $request->password, $time);
+                    }
+                    return redirect()->route('dashboard');
+                } else {
+                    return
+                        redirect()->back()->withErrors([
+                            'message' => 'Wrong username or password'
+                        ]);
+                }
+            }
+        } else {
+            return redirect()->back()->withErrors([
+                'message' => 'Email dan password tidak terdaftar'
+            ]);
+        }
+    }
+
+
+
+    public function signout()
+    {
+        Auth::logout();
+
+        return redirect()->route('home');
+    }
+}
