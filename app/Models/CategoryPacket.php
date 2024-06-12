@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryPacket extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+    ];
+    protected $primaryKey = 'id';
 }

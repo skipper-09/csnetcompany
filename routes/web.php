@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Help\FaqController;
@@ -37,6 +38,17 @@ Route::prefix('auth')->group(function () {
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+
+    // page packet
+    Route::prefix('packet')->group(function () {
+        Route::prefix('categori')->group(function () {
+            Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket');
+            Route::get('/getData', [CategoriController::class, 'getData'])->name('backend.categoripacket.getData');
+        });
+    });
+
+
+    // page setting
     Route::prefix('setting')->group(function () {
         Route::prefix('users')->group(function () {
             Route::get('', [UserController::class, 'index'])->name('backend.users');
