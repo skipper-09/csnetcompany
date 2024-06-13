@@ -1,5 +1,7 @@
 @extends('front-end.layout.base')
 
+@section('title',$page_name)
+
 @section('content')
 <!-- HERO-2
            ============================================= -->
@@ -64,9 +66,9 @@
 
 
 
-<!-- FEATURES-2
-        ============================================= -->
-<section id="features-2" class="py-100 features-section division">
+<!-- FEATURES-11
+			============================================= -->
+<section id="features-11" class="pt-100 features-section division">
     <div class="container">
 
 
@@ -76,32 +78,50 @@
                 <div class="section-title mb-70">
 
                     <!-- Title -->
-                    <h2 class="s-45 w-700">Kenapa Harus Idnet</h2>
+                    <h2 class="s-50 w-700">We make your business gain more revenue at a glance</h2>
 
                     <!-- Text -->
-                    <p class="s-21 color--grey">Idnet internet murah dengan kualitas terbaik</p>
+                    <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p>
 
                 </div>
             </div>
         </div>
 
 
-        <!-- FEATURES-2 WRAPPER -->
-        <div class="fbox-wrapper text-center">
-            <div class="row row-cols-1 row-cols-md-3">
+        <!-- FEATURES-11 WRAPPER -->
+        <div class="fbox-wrapper">
+            <div class="row row-cols-1 row-cols-md-2 rows-3">
+
+
                 <!-- FEATURE BOX #1 -->
                 <div class="col">
-                    <div class="fbox-2 fb-1 wow fadeInUp">
-                        <!-- Image -->
-                        <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid" src="{{ asset('front-end/images/fiber.png') }}" alt="fiber-optic">
-                        </div>
+                    <div class="fbox-11 fb-1 wow fadeInUp">
+
+                        <!-- Icon -->
+                        <div class="fbox-ico-wrap">
+                            <div class="fbox-ico ico-50">
+                                <div class="shape-ico color--theme">
+
+                                    <!-- Vector Icon -->
+                                    <span class="flaticon-graphics"></span>
+
+                                    <!-- Shape -->
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                            transform="translate(100 100)" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div> <!-- End Icon -->
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">100% Fiber Optic</h6>
-                            <p>Nikmati Koneksi Super Cepat dan Stabil dengan Teknologi Kabel Serat Optik Kami. Jelajahi
-                                Internet Tanpa Batas dengan Kecepatan dan Kualitas Terbaik!</p>
+                            <h6 class="s-22 w-700">Market Research</h6>
+                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
+                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            </p>
                         </div>
 
                     </div>
@@ -110,17 +130,32 @@
 
                 <!-- FEATURE BOX #2 -->
                 <div class="col">
-                    <div class="fbox-2 fb-2 wow fadeInUp">
+                    <div class="fbox-11 fb-2 wow fadeInUp">
 
-                        <!-- Image -->
-                        <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid" src="{{ asset('front-end/images/cs.png') }}" alt="customer-service">
-                        </div>
+                        <!-- Icon -->
+                        <div class="fbox-ico-wrap">
+                            <div class="fbox-ico ico-50">
+                                <div class="shape-ico color--theme">
+
+                                    <!-- Vector Icon -->
+                                    <span class="flaticon-idea"></span>
+
+                                    <!-- Shape -->
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                            transform="translate(100 100)" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div> <!-- End Icon -->
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Customer Service 24/7</h6>
-                            <p>Kami Siap Membantu Anda Setiap Saat! Dapatkan Dukungan Pelanggan 24/7 dari Tim Ahli Kami.
+                            <h6 class="s-22 w-700">User Experience</h6>
+                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
+                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
                             </p>
                         </div>
 
@@ -130,30 +165,150 @@
 
                 <!-- FEATURE BOX #3 -->
                 <div class="col">
-                    <div class="fbox-2 fb-3 wow fadeInUp">
-                        <!-- Image -->
-                        <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid" src="{{ asset('front-end/images/saving.svg') }}" alt="feature-image">
-                        </div>
+                    <div class="fbox-11 fb-3 wow fadeInUp">
+
+                        <!-- Icon -->
+                        <div class="fbox-ico-wrap">
+                            <div class="fbox-ico ico-50">
+                                <div class="shape-ico color--theme">
+
+                                    <!-- Vector Icon -->
+                                    <span class="flaticon-graphic"></span>
+
+                                    <!-- Shape -->
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                            transform="translate(100 100)" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div> <!-- End Icon -->
+
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Harga Terjangkau</h6>
-                            <p>Nikmati kecepatan internet tinggi tanpa menguras kantong. Paket kami dirancang untuk
-                                memberikan Anda nilai terbaik dengan harga yang sangat terjangkau.</p>
+                            <h6 class="s-22 w-700">Digital Marketing</h6>
+                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
+                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            </p>
                         </div>
 
                     </div>
                 </div> <!-- END FEATURE BOX #3 -->
 
 
+                <!-- FEATURE BOX #4 -->
+                <div class="col">
+                    <div class="fbox-11 fb-4 wow fadeInUp">
+
+                        <!-- Icon -->
+                        <div class="fbox-ico-wrap">
+                            <div class="fbox-ico ico-50">
+                                <div class="shape-ico color--theme">
+
+                                    <!-- Vector Icon -->
+                                    <span class="flaticon-wireframe"></span>
+
+                                    <!-- Shape -->
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                            transform="translate(100 100)" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div> <!-- End Icon -->
+
+                        <!-- Text -->
+                        <div class="fbox-txt">
+                            <h6 class="s-22 w-700">Web Development</h6>
+                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
+                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            </p>
+                        </div>
+
+                    </div>
+                </div> <!-- END FEATURE BOX #4 -->
+
+
+                <!-- FEATURE BOX #5 -->
+                <div class="col">
+                    <div class="fbox-11 fb-5 wow fadeInUp">
+
+                        <!-- Icon -->
+                        <div class="fbox-ico-wrap">
+                            <div class="fbox-ico ico-50">
+                                <div class="shape-ico color--theme">
+
+                                    <!-- Vector Icon -->
+                                    <span class="flaticon-trophy"></span>
+
+                                    <!-- Shape -->
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                            transform="translate(100 100)" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div> <!-- End Icon -->
+
+                        <!-- Text -->
+                        <div class="fbox-txt">
+                            <h6 class="s-22 w-700">Brand Design Identity</h6>
+                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
+                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            </p>
+                        </div>
+
+                    </div>
+                </div> <!-- END FEATURE BOX #5 -->
+
+
+                <!-- FEATURE BOX #6 -->
+                <div class="col">
+                    <div class="fbox-11 fb-6 wow fadeInUp">
+
+                        <!-- Icon -->
+                        <div class="fbox-ico-wrap">
+                            <div class="fbox-ico ico-50">
+                                <div class="shape-ico color--theme">
+
+                                    <!-- Vector Icon -->
+                                    <span class="flaticon-search-engine-1"></span>
+
+                                    <!-- Shape -->
+                                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                            transform="translate(100 100)" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div> <!-- End Icon -->
+
+                        <!-- Text -->
+                        <div class="fbox-txt">
+                            <h6 class="s-22 w-700">SEO & SMM Services</h6>
+                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
+                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            </p>
+                        </div>
+
+                    </div>
+                </div> <!-- END FEATURE BOX #6 -->
+
+
             </div> <!-- End row -->
-        </div> <!-- END FEATURES-2 WRAPPER -->
+        </div> <!-- END FEATURES-11 WRAPPER -->
 
 
     </div> <!-- End container -->
-</section> <!-- END FEATURES-2 -->
-
-
+</section> <!-- END FEATURES-11 -->
 
 
 <!-- DIVIDER LINE -->
@@ -172,7 +327,7 @@
             <!-- IMAGE BLOCK -->
             <div class="col-md-6">
                 <div class="img-block left-column wow fadeInRight">
-                    <img class="img-fluid" src="{{ asset('front-end/images/img-06.png') }}" alt="content-image">
+                    <img class="img-fluid" src="{{ asset('front-end/images/broadband.png') }}" alt="content-image">
                 </div>
             </div>
 
@@ -247,11 +402,55 @@
 
 
 
+
+
+
+<!-- TEXT CONTENT
+        ============================================= -->
+<section id="lnk-1" class="pt-100 ct-04 content-section division">
+    <div class="container">
+
+
+        <!-- SECTION CONTENT (ROW) -->
+        <div class="row d-flex align-items-center">
+
+            <!-- TEXT BLOCK -->
+            <div class="col-md-6">
+                <div class="txt-block right-column wow fadeInLeft">
+
+                    <!-- Section ID -->
+                    <span class="section-id">INTERNET PLUS TV</span>
+
+                    <!-- Title -->
+                    <h2 class="s-46 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
+
+                    <!-- Text -->
+                    <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
+                        momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
+                        Anda terpenuhi.
+                    </p>
+                </div>
+            </div> <!-- END TEXT BLOCK -->
+            <!-- IMAGE BLOCK -->
+            <div class="col-md-6">
+                <div class="img-block left-column wow fadeInRight">
+                    <img class="img-fluid r-04 " src="{{ asset('front-end/images/img-iptv.png') }}" alt="content-image">
+                </div>
+            </div>
+
+        </div> <!-- END SECTION CONTENT (ROW) -->
+
+
+    </div> <!-- End container -->
+</section> <!-- END TEXT CONTENT -->
+
+<!-- DIVIDER LINE -->
+
 <!-- BOX CONTENT
            ============================================= -->
 <section class="pt-100 ws-wrapper content-section">
     <div class="container">
-        <div class="bc-1-wrapper bg--02 bg--fixed r-16">
+        <div class="bc-1-wrapper ">
             <div class="section-overlay">
                 <div class="row d-flex align-items-center">
                     <!-- TEXT BLOCK -->
@@ -277,7 +476,8 @@
                     <!-- IMAGE BLOCK -->
                     <div class="col-md-6">
                         <div class="img-block left-column wow fadeInRight">
-                            <img class="img-fluid" src="{{ asset('front-end/images/img-09.png') }}" alt="content-image">
+                            <img class="img-fluid r-04" src="{{ asset('front-end/images/hero6.png') }}"
+                                alt="content-image">
                         </div>
                     </div>
 
@@ -288,52 +488,6 @@
 </section> <!-- END BOX CONTENT -->
 
 
-
-<!-- TEXT CONTENT
-        ============================================= -->
-<section id="lnk-1" class="pt-100 ct-02 content-section division">
-    <div class="container">
-
-
-        <!-- SECTION CONTENT (ROW) -->
-        <div class="row d-flex align-items-center">
-
-
-            <!-- IMAGE BLOCK -->
-            <div class="col-md-6">
-                <div class="img-block left-column wow fadeInRight">
-                    <img class="img-fluid" src="{{ asset('front-end/images/img-06.png') }}" alt="content-image">
-                </div>
-            </div>
-
-
-            <!-- TEXT BLOCK -->
-            <div class="col-md-6">
-                <div class="txt-block right-column wow fadeInLeft">
-
-                    <!-- Section ID -->
-                    <span class="section-id">INTERNET PLUS TV</span>
-
-                    <!-- Title -->
-                    <h2 class="s-46 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
-
-                    <!-- Text -->
-                    <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
-                        momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
-                        Anda terpenuhi.
-                    </p>
-                </div>
-            </div> <!-- END TEXT BLOCK -->
-
-
-        </div> <!-- END SECTION CONTENT (ROW) -->
-
-
-    </div> <!-- End container -->
-</section> <!-- END TEXT CONTENT -->
-
-<!-- DIVIDER LINE -->
-<hr class="divider">
 <!-- TESTIMONIALS-1
         ============================================= -->
 <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">

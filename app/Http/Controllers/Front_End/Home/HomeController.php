@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('front-end.page.home.index');
+    public function index()
+    {
+        $data = [
+            'page_name' => 'Home',
+        ];
+        return view('front-end.page.home.index', $data);
     }
 }

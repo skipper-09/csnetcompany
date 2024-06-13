@@ -99,26 +99,7 @@
 				<div class="section-title mb-70">
 
 					<!-- Title -->
-					<h2 class="s-52 w-700">Simple, Flexible Pricing</h2>
-
-					<!-- TOGGLE BUTTON -->
-					<div class="toggle-btn ext-toggle-btn toggle-btn-md mt-30">
-						<span class="toggler-txt">Billed monthly</span>
-						<label class="switch-wrap">
-							<input type="checkbox" id="checbox" onclick="check()">
-							<span class="switcher bg--grey switcher--theme">
-								<span class="show-annual"></span>
-								<span class="show-monthly"></span>
-							</span>
-						</label>
-						<span class="toggler-txt">Billed yearly</span>
-
-						<!-- Text -->
-						<p class="color--theme">Save up to 35% with yearly billing</p>
-
-					</div>
-
-
+					<h2 class="s-40 w-700">Daftar Harga Paket Broadband</h2>
 				</div>
 			</div>
 		</div> <!-- END SECTION TITLE -->
@@ -135,16 +116,7 @@
 									<h5 class="text-center s-36 w-700">10 Mbps</h5>
 								</div>
 							</div>
-							<div class="px-2">
-								<ul class="nav nav-tabs  mb-3 " id="myTab" role="tablist">
-									<a class="nav-link active " id="one-month-tab" data-toggle="tab" href="#one-month" role="tab"
-										aria-controls="one-month" aria-selected="true">1 Bulan</a>
-									<a class="nav-link" id="six-months-tab" data-toggle="tab" href="#six-months" role="tab"
-										aria-controls="six-months" aria-selected="false">6 Bulan</a>
-									<a class="nav-link" id="twelve-months-tab" data-toggle="tab" href="#twelve-months" role="tab"
-										aria-controls="twelve-months" aria-selected="false">12 Bulan</a>
-								</ul>
-							</div>
+
 							<div class="tab-content px-4" id="myTabContent">
 								<div class="tab-pane fade show active" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
 									<div class="row">
@@ -169,43 +141,77 @@
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="six-months" role="tabpanel" aria-labelledby="six-months-tab">
-									<!-- Similar content for 6 months plan -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4  gy-4 gap-4">
+					<div class="card shadow-sm w-60 r-16 border-none">
+						<div class="">
+							<div class="bg--heading division">
+								<div class="pricing-title ">
+									<h5 class="text-center s-36 w-700">10 Mbps</h5>
+								</div>
+							</div>
+
+							<div class="tab-content px-4" id="myTabContent">
+								<div class="tab-pane fade show active" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
 									<div class="row">
 										<div class="col-12">
 											<ul class="list-unstyled mb-4">
-												<li><i class="fas fa-wifi"></i> Internet tanpa batas 30 Mbps</li>
-												<li><i class="fas fa-router"></i> Gratis router Wi-Fi</li>
-												<li><i class="fas fa-tools"></i> Gratis Instalasi</li>
-												<li><i class="fas fa-mobile-alt"></i> Ideal untuk 5 - 7 Devices</li>
-												<li><i class="fas fa-user"></i> Ideal untuk individu atau 2 orang dengan pemakaian standar</li>
+												<li><img src="{{ asset('front-end/images/wifi.png') }}" alt="" height="20"> Internet tanpa batas
+													30 Mbps
+												</li>
+												<li><img src="{{ asset('front-end/images/wifi-router.png') }}" alt="" height="20"> Gratis router
+													Wi-Fi</li>
+												<li><img src="{{ asset('front-end/images/maintenance.png') }}" alt="" height="20"> Gratis
+													Instalasi</li>
+												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 1
+													- 3 Devices</li>
 											</ul>
 										</div>
-										<div class="col-12 text-center">
-											<h4>Rp 1.350.000/6 Bulan*</h4>
+										<div class="col-12 text-center mb-4">
+											<h4>Rp 100.000/Bulan*</h4>
 										</div>
-										<div class="col-12 text-center">
-											<button type="button" class="btn btn-primary">Dapatkan sekarang</button>
+										<div class=" text-center mb-4">
+											<button type="button" class="btn btn--theme">Daftar</button>
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="twelve-months" role="tabpanel" aria-labelledby="twelve-months-tab">
-									<!-- Similar content for 12 months plan -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4  gy-4 gap-4">
+					<div class="card shadow-sm w-60 r-16 border-none">
+						<div class="">
+							<div class="bg--heading division">
+								<div class="pricing-title ">
+									<h5 class="text-center s-36 w-700">10 Mbps</h5>
+								</div>
+							</div>
+
+							<div class="tab-content px-4" id="myTabContent">
+								<div class="tab-pane fade show active" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
 									<div class="row">
 										<div class="col-12">
 											<ul class="list-unstyled mb-4">
-												<li><i class="fas fa-wifi"></i> Internet tanpa batas 30 Mbps</li>
-												<li><i class="fas fa-router"></i> Gratis router Wi-Fi</li>
-												<li><i class="fas fa-tools"></i> Gratis Instalasi</li>
-												<li><i class="fas fa-mobile-alt"></i> Ideal untuk 5 - 7 Devices</li>
-												<li><i class="fas fa-user"></i> Ideal untuk individu atau 2 orang dengan pemakaian standar</li>
+												<li><img src="{{ asset('front-end/images/wifi.png') }}" alt="" height="20"> Internet tanpa batas
+													30 Mbps
+												</li>
+												<li><img src="{{ asset('front-end/images/wifi-router.png') }}" alt="" height="20"> Gratis router
+													Wi-Fi</li>
+												<li><img src="{{ asset('front-end/images/maintenance.png') }}" alt="" height="20"> Gratis
+													Instalasi</li>
+												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 1
+													- 3 Devices</li>
 											</ul>
 										</div>
-										<div class="col-12 text-center">
-											<h4>Rp 2.400.000/12 Bulan*</h4>
+										<div class="col-12 text-center mb-4">
+											<h4>Rp 100.000/Bulan*</h4>
 										</div>
-										<div class="col-12 text-center">
-											<button type="button" class="btn btn-primary">Dapatkan sekarang</button>
+										<div class=" text-center mb-4">
+											<button type="button" class="btn btn--theme">Daftar</button>
 										</div>
 									</div>
 								</div>
@@ -248,95 +254,92 @@
 
 		<!-- PRICING COMPARE -->
 		<div class="comp-table wow fadeInUp">
-			<div class="row">
-				<div class="col">
 
+			<div class="">
+				<!-- Table -->
+				<div class="table-responsive mb-50">
+					<table class="table text-center">
+						<thead>
+							<tr>
+								<th style="width: 50%;">Kecepatan Internet</th>
+								<th style="width: 50%;">Rekomendasi Jumlah Perangkat</th>
+							</tr>
+						</thead>
 
-					<!-- Table -->
-					<div class="table-responsive mb-50">
-						<table class="table table-borderless text-center">
+						<tbody>
 
-							<thead>
-								<tr>
-									<th style="width: 50%;">Kecepatan Internet</th>
-									<th style="width: 50%;">Rekomendasi Jumlah Perangkat</th>
-								</tr>
-							</thead>
+							<tr>
+								<th scope="row" class="text-start">Available Projects</th>
+								<td class="color--black">Up to 2</td>
 
-							<tbody>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Available Projects</th>
-									<td class="color--black">Up to 2</td>
+							<tr>
+								<th scope="row" class="text-start">Available Storage</th>
+								<td class="color--black">2Gb</td>
 
-								</tr>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Available Storage</th>
-									<td class="color--black">2Gb</td>
+							<tr>
+								<th scope="row" class="text-start">Private Cloud Hosting</th>
+								<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
 
-								</tr>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Private Cloud Hosting</th>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
+							<tr>
+								<th scope="row" class="text-start">User Permissions</th>
+								<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 
-								</tr>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">User Permissions</th>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
+							<tr>
+								<th scope="row" class="text-start">Direct Integrations</th>
+								<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
 
-								</tr>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Direct Integrations</th>
-									<td class="ico-20 color--theme"><span class="flaticon-check"></span></td>
+							<tr>
+								<th scope="row" class="text-start">Reusable Components</th>
+								<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
+							</tr>
 
-								</tr>
+							<tr>
+								<th scope="row" class="text-start">Data Backup</th>
+								<td class="color--black">Weekly</td>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Reusable Components</th>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-								</tr>
+							<tr>
+								<th scope="row" class="text-start">No Ads. No Trackers</th>
+								<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Data Backup</th>
-									<td class="color--black">Weekly</td>
-								</tr>
+							<tr>
+								<th scope="row" class="text-start">Advanced Security</th>
+								<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">No Ads. No Trackers</th>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-								</tr>
+							<tr>
+								<th scope="row" class="text-start">Shared Team Workspace</th>
+								<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Advanced Security</th>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-								</tr>
+							<tr>
+								<th scope="row" class="text-start">Team Management</th>
+								<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Shared Team Workspace</th>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-								</tr>
+							<tr class="table-last-tr">
+								<th scope="row" class="text-start">Customer Support</th>
+								<td class="color--black">Limited</td>
+							</tr>
 
-								<tr>
-									<th scope="row" class="text-start">Team Management</th>
-									<td class="ico-15 disabled-option"><span class="flaticon-cancel"></span></td>
-								</tr>
+						</tbody>
 
-								<tr class="table-last-tr">
-									<th scope="row" class="text-start">Customer Support</th>
-									<td class="color--black">Limited</td>
-								</tr>
+					</table>
+				</div> <!-- End Table -->
 
-							</tbody>
-
-						</table>
-					</div> <!-- End Table -->
-
-				</div>
 			</div>
+
 		</div> <!-- END PRICING COMPARE -->
 
 

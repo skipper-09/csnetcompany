@@ -13,14 +13,13 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="DSAThemes">
-    <meta name="description" content="Martex - Software, App, SaaS & Startup Landing Pages Pack">
-    <meta name="keywords"
-        content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">
+    <meta name="author" content="idnet">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- SITE TITLE -->
-    <title>Martex - Software, App, SaaS & Startup Landing Pages Pack</title>
+    <title>@yield('title') || IDNET</title>
 
     <!-- FAVICON AND TOUCH ICONS -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">

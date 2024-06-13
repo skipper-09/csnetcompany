@@ -1051,7 +1051,7 @@ section,
 .bg--heading {
     background-image: url(../images/pricing.png);
 }
-.bg--business{
+.bg--business {
     background-image: url(../images/business.jpg);
 }
 /*------------------------------------------*/
@@ -4616,7 +4616,6 @@ span.sm-info {
     padding-right: 25px;
 }
 
-
 /* hero-dedicated */
 
 #hero-dedicated {
@@ -4624,7 +4623,6 @@ span.sm-info {
     padding-top: 150px;
     padding-bottom: 100px;
 }
-
 
 /*------------------------------------------*/
 /*  HERO-3
@@ -10284,6 +10282,8 @@ span.release-date span {
 
 .footer {
     padding-bottom: 50px;
+    background-color: #25316d;
+    color: white;
 }
 
 .footer-info,
@@ -10460,8 +10460,8 @@ img.footer-logo-dark {
     font-size: 0.75rem;
 }
 
-.bg--black.footer .foo-links li p a {
-    color: #a0a7b1;
+.foo-links li p a {
+    color: white;
 }
 
 .bg--black.footer .foo-links li p a:hover {
