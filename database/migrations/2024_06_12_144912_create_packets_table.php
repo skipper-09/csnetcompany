@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('price');
             $table->boolean('is_active')->default(true);
             $table->boolean('best_seller')->default(false);
+            $table->enum('duration',['Bulan','Tahun'])->default('Bulan');
             $table->longText('description');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('category_packets')->onDelete('restrict')->onUpdate('cascade');

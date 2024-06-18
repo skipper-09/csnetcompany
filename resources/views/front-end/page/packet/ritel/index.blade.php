@@ -1,6 +1,6 @@
 @extends('front-end.layout.base')
 
-
+@section('title',$page_name)
 @push('css')
 <style>
 	.img-hero {
@@ -108,12 +108,13 @@
 		<!-- PRICING TABLES -->
 		<div class="pricing-1-wrapper">
 			<div class="row justify-content-center">
+				@foreach ($packet as $item)
 				<div class="col-md-4  gy-4 gap-4">
 					<div class="card shadow-sm w-60 r-16 border-none">
 						<div class="">
 							<div class="bg--heading division">
 								<div class="pricing-title ">
-									<h5 class="text-center s-36 w-700">10 Mbps</h5>
+									<h5 class="text-center s-36 w-700">{{$item->name}}</h5>
 								</div>
 							</div>
 
@@ -145,80 +146,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4  gy-4 gap-4">
-					<div class="card shadow-sm w-60 r-16 border-none">
-						<div class="">
-							<div class="bg--heading division">
-								<div class="pricing-title ">
-									<h5 class="text-center s-36 w-700">10 Mbps</h5>
-								</div>
-							</div>
-
-							<div class="tab-content px-4" id="myTabContent">
-								<div class="tab-pane fade show active" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
-									<div class="row">
-										<div class="col-12">
-											<ul class="list-unstyled mb-4">
-												<li><img src="{{ asset('front-end/images/wifi.png') }}" alt="" height="20"> Internet tanpa batas
-													30 Mbps
-												</li>
-												<li><img src="{{ asset('front-end/images/wifi-router.png') }}" alt="" height="20"> Gratis router
-													Wi-Fi</li>
-												<li><img src="{{ asset('front-end/images/maintenance.png') }}" alt="" height="20"> Gratis
-													Instalasi</li>
-												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 1
-													- 3 Devices</li>
-											</ul>
-										</div>
-										<div class="col-12 text-center mb-4">
-											<h4>Rp 100.000/Bulan*</h4>
-										</div>
-										<div class=" text-center mb-4">
-											<button type="button" class="btn btn--theme">Daftar</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4  gy-4 gap-4">
-					<div class="card shadow-sm w-60 r-16 border-none">
-						<div class="">
-							<div class="bg--heading division">
-								<div class="pricing-title ">
-									<h5 class="text-center s-36 w-700">10 Mbps</h5>
-								</div>
-							</div>
-
-							<div class="tab-content px-4" id="myTabContent">
-								<div class="tab-pane fade show active" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
-									<div class="row">
-										<div class="col-12">
-											<ul class="list-unstyled mb-4">
-												<li><img src="{{ asset('front-end/images/wifi.png') }}" alt="" height="20"> Internet tanpa batas
-													30 Mbps
-												</li>
-												<li><img src="{{ asset('front-end/images/wifi-router.png') }}" alt="" height="20"> Gratis router
-													Wi-Fi</li>
-												<li><img src="{{ asset('front-end/images/maintenance.png') }}" alt="" height="20"> Gratis
-													Instalasi</li>
-												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 1
-													- 3 Devices</li>
-											</ul>
-										</div>
-										<div class="col-12 text-center mb-4">
-											<h4>Rp 100.000/Bulan*</h4>
-										</div>
-										<div class=" text-center mb-4">
-											<button type="button" class="btn btn--theme">Daftar</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				@endforeach
+				
 			</div>
 		</div> <!-- PRICING TABLES -->
 
