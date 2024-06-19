@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- SITE TITLE -->
-    <title>@yield('title') || IDNET</title>
+    <title>@yield('title')</title>
 
     <!-- FAVICON AND TOUCH ICONS -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
