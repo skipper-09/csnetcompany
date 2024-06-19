@@ -78,10 +78,10 @@
                 <div class="section-title mb-70">
 
                     <!-- Title -->
-                    <h2 class="s-50 w-700">We make your business gain more revenue at a glance</h2>
+                    <h2 class="s-50 w-700">Kenapa Harus Memmilih IDNET?</h2>
 
                     <!-- Text -->
-                    <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p>
+                    {{-- <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p> --}}
 
                 </div>
             </div>
@@ -118,9 +118,8 @@
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Market Research</h6>
-                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
-                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            <h6 class="s-22 w-700">100% Fiber Oftic</h6>
+                            <p>Kami menggunakan 100% fiber optic untuk memastikan Anda mendapatkan kecepatan internet yang tak tertandingi. Dengan teknologi ini, Anda dapat menikmati streaming, gaming, dan browsing tanpa hambatan.
                             </p>
                         </div>
 
@@ -153,9 +152,8 @@
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">User Experience</h6>
-                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
-                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            <h6 class="s-22 w-700">24/7 Customer Service</h6>
+                            <p>Kami berkomitmen untuk memberikan layanan pelanggan terbaik. Tim kami siap membantu Anda 24/7 untuk memastikan pengalaman internet Anda selalu optimal.
                             </p>
                         </div>
 
@@ -188,9 +186,8 @@
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Digital Marketing</h6>
-                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
-                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            <h6 class="s-22 w-700">Harga Kompetitif</h6>
+                            <p>Kami menawarkan paket internet dengan harga yang kompetitif tanpa mengorbankan kualitas. Dengan 100% fiber optic, Anda mendapatkan nilai terbaik untuk investasi Anda.
                             </p>
                         </div>
 
@@ -223,9 +220,8 @@
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Web Development</h6>
-                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
-                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            <h6 class="s-22 w-700">Komitmen Terhadap Kepuasan Pelanggan</h6>
+                            <p>Kepuasan Anda adalah prioritas kami. Dengan jaringan 100% fiber optic dan kestabilan jaringan, kami memastikan setiap pelanggan mendapatkan layanan yang memenuhi dan melebihi harapan.
                             </p>
                         </div>
 
@@ -258,9 +254,8 @@
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Brand Design Identity</h6>
-                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
-                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            <h6 class="s-22 w-700">Stabil dan Handal</h6>
+                            <p>Dengan 100% fiber optic, kami menjamin koneksi internet yang stabil dan andal. Tidak ada lagi masalah buffering atau gangguan koneksi di saat-saat penting.
                             </p>
                         </div>
 
@@ -293,9 +288,8 @@
 
                         <!-- Text -->
                         <div class="fbox-txt">
-                            <h6 class="s-22 w-700">SEO & SMM Services</h6>
-                            <p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and
-                                tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum
+                            <h6 class="s-22 w-700">Tim Teknisi Handal</h6>
+                            <p>Kami memiliki tim teknisi yang terlatih dan berpengalaman dalam menangani berbagai masalah teknis. Setiap teknisi kami adalah profesional yang berdedikasi untuk memberikan layanan terbaik.
                             </p>
                         </div>
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
+use App\Http\Controllers\Front_End\COntact\ContactController;
 use App\Http\Controllers\Front_End\Help\FaqController;
 use App\Http\Controllers\Front_End\Home\HomeController;
 use App\Http\Controllers\Front_End\Packet\DedicatedController;
@@ -28,6 +29,9 @@ Route::prefix('bantuan')->group(function () {
     Route::get('/tutorial', [RitelController::class, 'index'])->name('help.tips');
     Route::get('/faq', [FaqController::class, 'index'])->name('help.faq');
 });
+
+
+Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
 
 
 //backend routes
