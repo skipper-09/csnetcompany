@@ -41,7 +41,11 @@ class CategoriController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'sidebar' => 'packet',
+            'page_name' => 'Tambah Categori',
+        ];
+        return view('backend.packet.categori.add', $data);
     }
 
     /**

@@ -11,8 +11,8 @@
       <h4 class="fw-bold">{{$page_name}}</h4>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Dashboard</li>
-        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item">{{$page_name}}</li>
       </ol>
 
 
@@ -21,7 +21,7 @@
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
     <div class="mb-4">
-      <a href="#" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
+      <a href="{{ route('backend.add.categoripacket') }}" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
     </div>
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">

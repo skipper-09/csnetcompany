@@ -44,6 +44,7 @@ Route::prefix('admin')->group(function () {
         Route::prefix('categori')->group(function () {
             Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket');
             Route::get('/getData', [CategoriController::class, 'getData'])->name('backend.categoripacket.getData');
+            Route::get('tambah', [CategoriController::class, 'create'])->name('backend.add.categoripacket');
         });
     });
 
