@@ -35,13 +35,12 @@
                         <li class="nl-simple" aria-haspopup="true"><a href="{{ route('home') }}"
                                 class="h-link active">Home</a></li>
                         <!-- DROPDOWN SUB MENU -->
-                        <li aria-haspopup="true"><a href="#" class="h-link">Produk<span
-                                    class="wsarrow"></span></a>
+                        <li aria-haspopup="true"><a href="#" class="h-link">Produk<span class="wsarrow"></span></a>
                             <ul class="sub-menu">
                                 <li aria-haspopup="true"><a href="{{ route('packet.ritel') }}">Broadband</a></li>
                                 <li aria-haspopup="true"><a href="{{ route('packet.dedicated') }}">Dedicated</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Internet + TV</a></li>
-                                <li aria-haspopup="true"><a href="#lnk-3">Hosting</a></li>
+                                <li aria-haspopup="true"><a href="https://cloudpedia.id">Hosting</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Promo</a></li>
                             </ul>
                         </li>
@@ -105,7 +104,8 @@
 
 
                         <!-- SIMPLE NAVIGATION LINK -->
-                        <li class="nl-simple" aria-haspopup="true"><a href="{{ route('contact') }}" class="h-link">Hubungi Kami</a></li>
+                        <li class="nl-simple" aria-haspopup="true"><a href="{{ route('contact') }}"
+                                class="h-link">Hubungi Kami</a></li>
                         <!-- SIMPLE NAVIGATION LINK -->
                         {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                         <!-- SIGN IN LINK -->

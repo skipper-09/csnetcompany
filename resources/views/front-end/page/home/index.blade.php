@@ -119,7 +119,9 @@
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">100% Fiber Oftic</h6>
-                            <p>Kami menggunakan 100% fiber optic untuk memastikan Anda mendapatkan kecepatan internet yang tak tertandingi. Dengan teknologi ini, Anda dapat menikmati streaming, gaming, dan browsing tanpa hambatan.
+                            <p>Kami menggunakan 100% fiber optic untuk memastikan Anda mendapatkan kecepatan internet
+                                yang tak tertandingi. Dengan teknologi ini, Anda dapat menikmati streaming, gaming, dan
+                                browsing tanpa hambatan.
                             </p>
                         </div>
 
@@ -137,7 +139,7 @@
                                 <div class="shape-ico color--theme">
 
                                     <!-- Vector Icon -->
-                                    <span class="flaticon-idea"></span>
+                                    <span class="flaticon-24-hours"></span>
 
                                     <!-- Shape -->
                                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -153,7 +155,8 @@
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">24/7 Customer Service</h6>
-                            <p>Kami berkomitmen untuk memberikan layanan pelanggan terbaik. Tim kami siap membantu Anda 24/7 untuk memastikan pengalaman internet Anda selalu optimal.
+                            <p>Kami berkomitmen untuk memberikan layanan pelanggan terbaik. Tim kami siap membantu Anda
+                                24/7 untuk memastikan pengalaman internet Anda selalu optimal.
                             </p>
                         </div>
 
@@ -171,7 +174,7 @@
                                 <div class="shape-ico color--theme">
 
                                     <!-- Vector Icon -->
-                                    <span class="flaticon-graphic"></span>
+                                    <span class="flaticon-price-label"></span>
 
                                     <!-- Shape -->
                                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -187,7 +190,8 @@
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">Harga Kompetitif</h6>
-                            <p>Kami menawarkan paket internet dengan harga yang kompetitif tanpa mengorbankan kualitas. Dengan 100% fiber optic, Anda mendapatkan nilai terbaik untuk investasi Anda.
+                            <p>Kami menawarkan paket internet dengan harga yang kompetitif tanpa mengorbankan kualitas.
+                                Dengan 100% fiber optic, Anda mendapatkan nilai terbaik untuk investasi Anda.
                             </p>
                         </div>
 
@@ -205,7 +209,7 @@
                                 <div class="shape-ico color--theme">
 
                                     <!-- Vector Icon -->
-                                    <span class="flaticon-wireframe"></span>
+                                    <span class="flaticon-iteration"></span>
 
                                     <!-- Shape -->
                                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +225,9 @@
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">Komitmen Terhadap Kepuasan Pelanggan</h6>
-                            <p>Kepuasan Anda adalah prioritas kami. Dengan jaringan 100% fiber optic dan kestabilan jaringan, kami memastikan setiap pelanggan mendapatkan layanan yang memenuhi dan melebihi harapan.
+                            <p>Kepuasan Anda adalah prioritas kami. Dengan jaringan 100% fiber optic dan kestabilan
+                                jaringan, kami memastikan setiap pelanggan mendapatkan layanan yang memenuhi dan
+                                melebihi harapan.
                             </p>
                         </div>
 
@@ -255,7 +261,8 @@
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">Stabil dan Handal</h6>
-                            <p>Dengan 100% fiber optic, kami menjamin koneksi internet yang stabil dan andal. Tidak ada lagi masalah buffering atau gangguan koneksi di saat-saat penting.
+                            <p>Dengan 100% fiber optic, kami menjamin koneksi internet yang stabil dan andal. Tidak ada
+                                lagi masalah buffering atau gangguan koneksi di saat-saat penting.
                             </p>
                         </div>
 
@@ -289,7 +296,9 @@
                         <!-- Text -->
                         <div class="fbox-txt">
                             <h6 class="s-22 w-700">Tim Teknisi Handal</h6>
-                            <p>Kami memiliki tim teknisi yang terlatih dan berpengalaman dalam menangani berbagai masalah teknis. Setiap teknisi kami adalah profesional yang berdedikasi untuk memberikan layanan terbaik.
+                            <p>Kami memiliki tim teknisi yang terlatih dan berpengalaman dalam menangani berbagai
+                                masalah teknis. Setiap teknisi kami adalah profesional yang berdedikasi untuk memberikan
+                                layanan terbaik.
                             </p>
                         </div>
 
