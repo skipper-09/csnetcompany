@@ -9,6 +9,9 @@ class FaqController extends Controller
 {
     public function index()
     {
-        return view('front-end.page.help.faq.index');
+        $data=[
+            'page_name'=> 'FAQ',
+        ];
+        return view('front-end.page.help.faq.index',$data);
     }
 }

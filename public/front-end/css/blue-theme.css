@@ -588,7 +588,7 @@ section,
     background-color: #185abd;
 }
 .bg--blue-400 {
-    background-color: #1680fb;
+    background-color: #25316D;
 }
 .bg--blue-300 {
     background-color: #3eb1ff;
@@ -870,7 +870,7 @@ section,
     background-color: #185abd;
 }
 .shape--blue-400:after {
-    background-color: #1680fb;
+    background-color: #25316D;
 }
 .shape--blue-300:after {
     background-color: #3eb1ff;
@@ -1661,8 +1661,8 @@ p.btns-group-txt span.txt-data a:hover {
 .white-scroll .scroll .hover--blue-400:hover,
 .black-scroll .scroll .hover--blue-400:hover {
     color: #fff !important;
-    border-color: #1680fb !important;
-    background-color: #1680fb !important;
+    border-color: #25316D !important;
+    background-color: #25316D !important;
 }
 
 .btn--blue-300,
@@ -1678,7 +1678,7 @@ p.btns-group-txt span.txt-data a:hover {
 .hover--blue-200:hover,
 .white-scroll .scroll .hover--blue-200:hover,
 .black-scroll .scroll .hover--blue-200:hover {
-    color: #1680fb !important;
+    color: #25316D !important;
     border-color: #e3ebfe !important;
     background-color: #e3ebfe !important;
 }
@@ -1687,8 +1687,8 @@ p.btns-group-txt span.txt-data a:hover {
 .hover--blue-100:hover,
 .white-scroll .scroll .hover--blue-100:hover,
 .black-scroll .scroll .hover--blue-100:hover {
-    color: #1680fb !important;
-    border-color: #1680fb !important;
+    color: #25316D !important;
+    border-color: #25316D !important;
     background-color: transparent !important;
 }
 
@@ -2773,7 +2773,7 @@ p.video-txt-sm {
 }
 
 .section-id.border-id.border--blue {
-    border-color: #1680fb;
+    border-color: #25316D;
 }
 
 .font--jakarta .section-id {
@@ -2939,7 +2939,7 @@ p.video-txt-sm {
 .color--blue-400 i,
 .color--blue-400 span,
 .color--white .color--blue-400 {
-    color: #1680fb !important;
+    color: #25316D !important;
 }
 
 .color--blue-300,
@@ -3289,7 +3289,7 @@ p.video-txt-sm {
 }
 
 .loading--blue .loader {
-    border-color: transparent #1680fb;
+    border-color: transparent #25316D;
 }
 
 .loading--green .loader {
@@ -3534,7 +3534,7 @@ span.sm-info {
     background-color: #185abd;
 }
 .nav-blue-400 .sm-info {
-    background-color: #1680fb;
+    background-color: #25316D;
 }
 .nav-blue-300 .sm-info {
     background-color: #3eb1ff;
@@ -4007,7 +4007,7 @@ span.sm-info {
     ul.link-list
     > li
     > a:hover {
-    color: #1680fb !important;
+    color: #25316D !important;
 }
 
 .wsmenu > .wsmenu-list.nav-blue-300 > li > ul.sub-menu > li > a:hover,
@@ -5402,7 +5402,7 @@ span.sm-info {
 
 .hero-section .quick-form .form-control:focus {
     background-color: #fff;
-    border-color: #1680fb;
+    border-color: #25316D;
     outline: 0;
     box-shadow: none;
 }
@@ -5489,7 +5489,7 @@ span.sm-info {
 
 .request-form .form-control:focus {
     background-color: #fff;
-    border-color: #1680fb;
+    border-color: #25316D;
     outline: 0;
     box-shadow: none;
 }
@@ -6336,8 +6336,8 @@ h5.h5-title {
     border-color: #185abd;
 }
 .cbox-2:hover .cbox-2-ico.bg--blue-400 {
-    color: #1680fb;
-    border-color: #1680fb;
+    color: #25316D;
+    border-color: #25316D;
 }
 .cbox-2:hover .cbox-2-ico.bg--blue-300 {
     color: #3eb1ff;
@@ -6787,8 +6787,8 @@ h5.h5-title {
 }
 .tabs-1.tabs--blue-400,
 .tabs-1.tabs--blue-500 li.current:hover {
-    color: #1680fb;
-    border-color: #1680fb;
+    color: #25316D;
+    border-color: #25316D;
 }
 .tabs-1.tabs--blue-300,
 .tabs-1.tabs--blue-500 li.current:hover {
@@ -8143,15 +8143,20 @@ p.rbox-2-txt span {
 }
 
 .comp-table .table thead th {
-    border-color: #ccc;
-}
+    background-color: #25316D;
+    border-radius: 2px;
+    color: white;
+} 
 
-.comp-table tbody th {
-    border-bottom: 1px solid #ccc !important;
+.comp-table tbody{
+    background-color: #F6F6FA;
+}
+ .comp-table tbody th {
+    border-bottom: 0px solid #ccc !important;
 }
 
 .comp-table .table tr td {
-    border-bottom: 2px solid #ccc;
+    border-bottom: 0px solid #ccc;
 }
 
 /*------------------------------------------*/
@@ -8518,8 +8523,8 @@ p.rbox-2-txt span {
     border-color: #185abd;
 }
 .switch-wrap input:checked + .switcher.switcher--blue-400 {
-    background-color: #1680fb;
-    border-color: #1680fb;
+    background-color: #25316D;
+    border-color: #25316D;
 }
 .switch-wrap input:checked + .switcher.switcher--blue-300 {
     background-color: #3eb1ff;
@@ -9314,7 +9319,7 @@ span.release-date span {
 
 .question p.color--grey a.color--blue,
 .accordion-panel.color--grey a.color--blue {
-    color: #1680fb !important;
+    color: #25316D !important;
 }
 
 /*------------------------------------------*/
@@ -9382,8 +9387,8 @@ span.release-date span {
 
 .faqs-section .tabs--blue .tabs-1 li.current,
 .faqs-section .tabs--blue .tabs-1 li.current:hover {
-    background-color: #1680fb;
-    border-color: #1680fb !important;
+    background-color: #25316D;
+    border-color: #25316D !important;
 }
 
 .faqs-section .tabs--purple .tabs-1 li.current,
@@ -9553,7 +9558,7 @@ span.release-date span {
     background-color: #fff;
     outline: 0;
     box-shadow: none;
-    border-color: #1680fb;
+    border-color: #25316D;
 }
 
 .newsletter-section .purple-focus .form-control:focus {
@@ -10097,7 +10102,7 @@ span.release-date span {
     outline: 0px none;
     box-shadow: none;
     background-color: #fcfdfd;
-    border-color: #1680fb;
+    border-color: #25316D;
 }
 
 /*------------------------------------------*/
@@ -10245,7 +10250,7 @@ span.release-date span {
     outline: 0px none;
     box-shadow: none;
     background-color: #fcfdfd;
-    border-color: #1680fb;
+    border-color: #25316D;
 }
 
 /*------------------------------------------*/
@@ -10592,7 +10597,7 @@ img.footer-logo-dark {
 /*------------------------------------------*/
 
 .footer-form .form-notification {
-    color: #1680fb;
+    color: #25316D;
     font-size: 0.85rem;
     line-height: 1.25;
     font-weight: 400;
@@ -10827,8 +10832,8 @@ img.footer-logo-dark {
 
 .blue-pagination .page-item.active .page-link {
     color: #fff !important;
-    background-color: #1680fb;
-    border: 2px solid #1680fb;
+    background-color: #25316D;
+    border: 2px solid #25316D;
 }
 
 .green-pagination .page-item.active .page-link {
@@ -11227,7 +11232,7 @@ img.footer-logo-dark {
     outline: 0px none;
     box-shadow: none;
     background-color: #fcfdfd;
-    border-color: #1680fb;
+    border-color: #25316D;
 }
 
 /*------------------------------------------*/
@@ -11510,7 +11515,7 @@ button.btn-close:focus {
 
 .modal .form-notification {
     text-align: center;
-    color: #1680fb;
+    color: #25316D;
     font-size: 0.85rem;
     font-weight: 400;
     line-height: 1;
@@ -11567,7 +11572,7 @@ button.btn-close:focus {
 }
 
 #modal-3 .request-form .loading {
-    color: #1680fb;
+    color: #25316D;
     font-size: 1.0625rem;
     line-height: 1;
     font-weight: 400;
@@ -11771,8 +11776,8 @@ body.theme--dark {
 .theme--dark .white-scroll .scroll .hover--blue-400:hover,
 .theme--dark .black-scroll .scroll .hover--blue-400:hover {
     color: #fff !important;
-    border-color: #1680fb !important;
-    background-color: #1680fb !important;
+    border-color: #25316D !important;
+    background-color: #25316D !important;
 }
 
 .theme--dark .btn--blue-300,
@@ -12763,13 +12768,13 @@ body.theme--dark {
 
 .bg--theme,
 .shape--blue-400:after {
-    background-color: #1680fb;
+    background-color: #25316D;
 }
 
 .btn--theme {
     color: #fff !important;
-    border-color: #1680fb !important;
-    background-color: #1680fb !important;
+    border-color: #25316D !important;
+    background-color: #25316D !important;
 }
 
 .hover--theme:hover,
@@ -12805,11 +12810,11 @@ body.theme--dark {
 .color--theme i,
 .color--theme span,
 .color--white .color--theme {
-    color: #1680fb !important;
+    color: #25316D !important;
 }
 
 .loading--theme .loader {
-    border-color: transparent #1680fb;
+    border-color: transparent #25316D;
 }
 
 .loading--theme .loader::after {
@@ -12817,7 +12822,7 @@ body.theme--dark {
 }
 
 .nav-theme .sm-info {
-    background-color: #1680fb;
+    background-color: #25316D;
 }
 
 .wsmenu > .wsmenu-list.nav-theme > li > ul.sub-menu > li > a:hover,
@@ -12835,35 +12840,35 @@ body.theme--dark {
     ul.link-list
     > li
     > a:hover {
-    color: #1680fb !important;
+    color: #25316D !important;
 }
 
 .hero-section .quick-form .form-control:focus {
-    border-color: #1680fb;
+    border-color: #25316D;
 }
 
 .cbox-2:hover .cbox-2-ico.bg--theme {
-    color: #1680fb;
-    border-color: #1680fb;
+    color: #25316D;
+    border-color: #25316D;
 }
 
 .tabs-1.tabs--theme,
 .tabs-1.tabs--theme li.current:hover,
 .faqs-section .tabs--theme .tabs-1 li.current,
 .faqs-section .tabs--theme .tabs-1 li.current:hover {
-    color: #1680fb;
-    border-color: #1680fb;
+    color: #25316D;
+    border-color: #25316D;
 }
 
 .faqs-section .tabs--theme .tabs-1 li.current,
 .faqs-section .tabs--theme .tabs-1 li.current:hover {
-    background-color: #1680fb;
-    border-color: #1680fb !important;
+    background-color: #25316D;
+    border-color: #25316D !important;
 }
 
 .switch-wrap input:checked + .switcher.switcher--theme {
-    background-color: #1680fb;
-    border-color: #1680fb;
+    background-color: #25316D;
+    border-color: #25316D;
 }
 
 .shape-ico.color--theme path,
@@ -12879,6 +12884,6 @@ body.theme--dark {
 
 .theme-pagination .page-item.active .page-link {
     color: #fff !important;
-    background-color: #1680fb;
-    border: 2px solid #1680fb;
+    background-color: #25316D;
+    border: 2px solid #25316D;
 }
