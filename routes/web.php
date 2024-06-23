@@ -9,6 +9,7 @@ use App\Http\Controllers\Front_End\COntact\ContactController;
 use App\Http\Controllers\Front_End\Help\FaqController;
 use App\Http\Controllers\Front_End\Home\HomeController;
 use App\Http\Controllers\Front_End\Packet\DedicatedController;
+use App\Http\Controllers\Front_End\Packet\InternettvController;
 use App\Http\Controllers\Front_End\Packet\RitelController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::prefix('packet')->group(function () {
     Route::get('/broadband', [RitelController::class, 'index'])->name('packet.ritel');
     Route::get('/dedicated', [DedicatedController::class, 'index'])->name('packet.dedicated');
+    Route::get('/internet-tv', [InternettvController::class, 'index'])->name('packet.internettv');
 });
 Route::prefix('bantuan')->group(function () {
     Route::get('/tutorial', [RitelController::class, 'index'])->name('help.tips');
@@ -49,6 +51,10 @@ Route::prefix('admin')->group(function () {
             Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket');
             Route::get('/getData', [CategoriController::class, 'getData'])->name('backend.categoripacket.getData');
             Route::get('tambah', [CategoriController::class, 'create'])->name('backend.add.categoripacket');
+            Route::post('store', [CategoriController::class, 'store'])->name('backend.categoripacket.store');
+            Route::get('/edit/{id}', [CategoriController::class, 'show'])->name('backend.categoripacket.edit');
+            Route::put('/update/{id}', [CategoriController::class, 'update'])->name('backend.categoripacket.update');
+            Route::delete('/delete/{id}', [CategoriController::class, 'destroy'])->name('backend.categoripacket.delete');
         });
     });
 

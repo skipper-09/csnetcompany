@@ -78,7 +78,7 @@
                 <div class="section-title mb-70">
 
                     <!-- Title -->
-                    <h2 class="s-40 w-700">Kenapa Harus Memmilih IDNET?</h2>
+                    <h2 class="s-40 w-700">Kenapa Harus Memilih IDNET?</h2>
 
                     <!-- Text -->
                     {{-- <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p> --}}
@@ -821,7 +821,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
                 <div class="brands-title mb-50">
-                    <h5 class="s-20 w-700">Partner Kami</h5>
+                    <h5 class="s-46 w-700">Partner Kami</h5>
                 </div>
             </div>
         </div>
@@ -904,12 +904,12 @@
 </div> <!-- END BRANDS-1 -->
 
 
-<section id="banner-13" class="pt-30 banner-section">
+<section id="banner-10" class="pt-30 banner-section">
     <div class="container-fluid">
 
 
         <!-- BANNER-13 WRAPPER -->
-        <div class="banner-13-wrapper bg--04 block-shadow">
+        <div class="banner-13-wrapper bg--black-200">
             <div class="banner-overlay">
                 <div class="row d-flex align-items-center">
 
@@ -918,35 +918,36 @@
                     <div class="col-md-7">
                         <div class="banner-13-txt">
 
-                            <!-- Title -->	
+                            <!-- Title -->
                             <h2 class="s-46 w-700">Mulai Berlangganan Dengan Layanan Idnet</h2>
 
                             <!-- Text -->
-                            <p class="p-lg">Congue laoreet turpis neque auctor turpis vitae dolor a luctus 
+                            <p class="p-lg">Congue laoreet turpis neque auctor turpis vitae dolor a luctus
                                 placerat and magna ligula cursus
                             </p>
 
                             <!-- Button -->
-                            <a href="#hero-22" class="btn r-04 btn--theme hover--theme">Get srarted - it's free</a>
+                            <a href="#hero-22" class="btn r-04 btn--theme hover--theme">Telepon Sekarang</a>
 
                         </div>
-                    </div>	<!-- END BANNER-13 TEXT -->
+                    </div> <!-- END BANNER-13 TEXT -->
 
 
                     <!-- BANNER-13 IMAGE -->
                     <div class="col-md-5">
                         <div class="banner-13-img text-center">
-                            <img class="img-fluid" src="{{ asset('front-end/images/img-bottom.png') }}" alt="banner-image">
-                        </div>	
+                            <img class="img-fluid" src="{{ asset('front-end/images/imgbottom.png') }}"
+                                alt="banner-image">
+                        </div>
                     </div>
 
 
-                </div>   <!-- End row -->	
-            </div>   <!-- End banner overlay -->	
-        </div>    <!-- END BANNER-13 WRAPPER -->
+                </div> <!-- End row -->
+            </div> <!-- End banner overlay -->
+        </div> <!-- END BANNER-13 WRAPPER -->
 
 
-    </div>     <!-- End container -->	
-</section>	<!-- END BANNER-13 -->
+    </div> <!-- End container -->
+</section> <!-- END BANNER-13 -->
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Packet;
 
 use App\Http\Controllers\Controller;
 use App\Models\CategoryPacket;
+use Exception;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -53,7 +54,9 @@ class CategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validated();
+        CategoryPacket::create($data);
+        return redirect()->route('backend.categoripacket')->with(['status' => 'Success!', 'message' => 'Berhasil Membuat Kategori!']);
     }
 
     /**
@@ -85,6 +88,19 @@ class CategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            CategoryPacket::where('id', $id)->delete();
+            //return response
+            return response()->json([
+                'status' => 'success',
+                'success' => true,
+                'message' => 'Data Kategori Berhasil Dihapus!.',
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'Data Kategori Tidak Bisa Dihapus Karena Masih digunakan oleh Chanel!',
+                'trace' => $e->getTrace()
+            ]);
+        }
     }
 }

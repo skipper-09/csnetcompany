@@ -1,5 +1,3 @@
-
-
 <footer id="footer-3" class="pt-100 footer">
     <div class="container">
 
@@ -11,7 +9,8 @@
             <!-- FOOTER LOGO -->
             <div class="col-xl-3">
                 <div class="footer-info">
-                    <img class="footer-logo" src="{{ asset('front-end/images/logo-white-idnet.png') }}" alt="footer-logo">
+                    <img class="footer-logo" src="{{ asset('front-end/images/logo-white-idnet.png') }}"
+                        alt="footer-logo">
                 </div>
                 <!-- Social Links -->
                 <!-- Title -->
@@ -181,7 +180,7 @@
 
 
 @push('js')
-    <script>
-        document.getElementById("year").innerHTML = new Date().getFullYear();
-    </script>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
 @endpush
