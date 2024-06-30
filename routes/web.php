@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
+use App\Http\Controllers\Backend\Packet\PacketController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
@@ -47,6 +48,14 @@ Route::prefix('admin')->group(function () {
 
     // page packet
     Route::prefix('packet')->group(function () {
+        Route::get('', [PacketController::class, 'index'])->name('backend.packet');
+        Route::get('/getData', [PacketController::class, 'getData'])->name('backend.packet.getData');
+        Route::get('tambah', [PacketController::class, 'create'])->name('backend.add.packet');
+        Route::post('store', [PacketController::class, 'store'])->name('backend.packet.store');
+        Route::get('/edit/{id}', [PacketController::class, 'show'])->name('backend.packet.edit');
+        Route::put('/update/{id}', [PacketController::class, 'update'])->name('backend.packet.update');
+        Route::delete('/delete/{id}', [PacketController::class, 'destroy'])->name('backend.packet.delete');
+        
         Route::prefix('categori')->group(function () {
             Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket');
             Route::get('/getData', [CategoriController::class, 'getData'])->name('backend.categoripacket.getData');

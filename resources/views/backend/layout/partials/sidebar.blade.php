@@ -39,8 +39,8 @@
             <div data-i18n="Category">Kategori</div>
           </a>
         </li>
-        <li class="menu-item">
-          <a href="" class="menu-link">
+        <li class="{{$page_name == 'Daftar Paket' ? 'menu-item active' : 'menu-item'}}">
+          <a href="{{ route('backend.packet') }}" class="menu-link">
             <div data-i18n="Pricing Packet">Harga Paket</div>
           </a>
         </li>
