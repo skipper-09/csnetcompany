@@ -18,7 +18,7 @@
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
     <div class="mb-4">
-      <a href="{{ route('backend.add.categoripacket') }}" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
+      <a href="{{ route('backend.add.packet') }}" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
     </div>
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">
@@ -26,10 +26,10 @@
           <tr>
             <th>No</th>
             <th>Nama Paket</th>
+            <th>Harga Paket</th>
             <th>Actions</th>
           </tr>
         </thead>
-
       </table>
     </div>
   </div>
@@ -41,7 +41,6 @@
 @push('js')
 <script>
   $(document).ready(function() {
-    
                 $('#dataTable').DataTable({
                     processing: true,
                     serverSide: true,
@@ -55,6 +54,10 @@
                         {
                             data: 'name',
                             name: 'name'
+                        },
+                        {
+                            data: 'price',
+                            name: 'price'
                         },
                         {
                             data: 'action',

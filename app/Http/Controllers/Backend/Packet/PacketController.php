@@ -40,7 +40,11 @@ class PacketController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'sidebar' => 'packet',
+            'page_name' => 'Tambah Daftar Paket',
+        ];
+        return view('backend.packet.addpacket', $data);
     }
 
     /**
@@ -48,7 +52,7 @@ class PacketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

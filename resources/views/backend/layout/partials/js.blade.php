@@ -26,4 +26,6 @@
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+{{-- toat js --}}
+<script src="{{ asset('backend/js/ui-toasts.js') }}"></script>
 @stack('js')
