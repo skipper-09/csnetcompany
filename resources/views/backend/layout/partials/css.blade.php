@@ -20,10 +20,11 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
 <link rel="stylesheet" href="{{ asset('backend/vendor/libs/fontawesome/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('backend/vendor/libs/fontawesome/css/solid.min.css') }}">
-  
+
 
 
 <!-- Page CSS -->
 
-
+{{-- ckeditor --}}
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
 @stack('css')

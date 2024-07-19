@@ -22,20 +22,70 @@
     <div class="col-xl">
       <div class="card mb-4">
         <div class="card-body">
-          <form>
+          <form action="{{ route('backend.packet.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="basic-default-fullname">NAMA PAKET</label>
-                      <input type="text" class="form-control" id="basic-default-fullname" placeholder="Nama Paket" />
-                    </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">NAMA PAKET</label>
+                  <input type="text" name="name" class="form-control" id="basic-default-fullname"
+                    placeholder="Nama Paket" />
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="basic-default-fullname">HARGA PAKET</label>
-                      <input type="text"  class="form-control" id="basic-default-fullname" placeholder="Harga Paket" />
-                    </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">HARGA PAKET</label>
+                  <input type="number" name="price" class="form-control" id="basic-default-fullname"
+                    placeholder="Harga Paket" />
                 </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">KATEGORI PAKET</label>
+                  <select name="category_id" id="" class="form-control">
+                    <option value="">Pilih Kategori</option>
+                    @foreach ($packet as $s)
+                    <option value="{{ $s->id }}">{{ $s->name }}</option>
+                    @endforeach
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">KATEGORI PAKET</label>
+                  <select name="is_active" id="" class="form-control">
+                    <option value="">Pilih Status</option>
+                    <option value="1">Aktif</option>
+                    <option value="0">TIdak Aktif</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">Durasi PAKET</label>
+                  <select name="duration" id="" class="form-control">
+                    <option value="">Pilih Durasi</option>
+                    <option value="Bulan">Bulan</option>
+                    <option value="Tahun">Tahun</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">Best Seller</label>
+                  <select name="best_seller" id="" class="form-control">
+                    <option value="">Best Seller</option>
+                    <option value="1">Ya</option>
+                    <option value="0">Tidak</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-default-fullname">Deskripsi</label>
+                  <textarea id="editor" name="description" class="form-control" cols="4" rows="50"></textarea>
+                </div>
+              </div>
             </div>
             <button type="submit" class="btn btn-primary">Tambah Daftar Paket</button>
           </form>

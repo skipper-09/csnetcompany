@@ -29,8 +29,9 @@
       <div class="col-md-6">
         <div class="hero-11-img wow fadeInLeft">
           {{-- <img class="img-fluid" src="{{ asset('front-end/images/dashboard-04.png') }}" alt="hero-image"> --}}
-          <iframe width="900" height="600" src="https://www.youtube.com/embed/TlGkoH3JSUo?autoplay=1&mute=1"
-            title="YouTube video player" frameborder="0"
+          <iframe class="rounded-3" width="600" height="400"
+            src="https://www.youtube.com/embed/TlGkoH3JSUo?autoplay=1&mute=1" title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend\Packet;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PaketRequest;
+use App\Models\CategoryPacket;
 use App\Models\packet;
+use Exception;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -29,10 +32,18 @@ class PacketController extends Controller
             $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
 
-            $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('dashboard') . '"><i
+            $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.packet.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
             return '<div class="d-flex gap-1">' . $button . '</div>';
-        })->make(true);
+        })->addColumn('is_active', function ($query) {
+            $active = '';
+            $query->is_active == 1 ? $active = '<span class="badge bg-label-primary">Aktif</span>' : $active = '<span class="badge badge-secondary">Tidak Aktif</span>';
+            return $active;
+        })->addColumn('best_seller', function ($query) {
+            $best = '';
+            $query->best_seller == 1 ? $best = '<span class="badge bg-label-primary">Ya</span>' : $best = '<span class="badge badge-secondary">Tidak</span>';
+            return $best;
+        })->rawColumns(['action', 'is_active', 'best_seller'])->make(true);
     }
 
     /**
@@ -43,6 +54,7 @@ class PacketController extends Controller
         $data = [
             'sidebar' => 'packet',
             'page_name' => 'Tambah Daftar Paket',
+            'packet' => CategoryPacket::all()
         ];
         return view('backend.packet.addpacket', $data);
     }
@@ -50,9 +62,20 @@ class PacketController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PaketRequest $request)
     {
-        
+        $request->validated();
+        packet::create([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'is_active' => $request->is_active,
+            'best_seller' => $request->best_seller,
+            'duration' => $request->duration,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('backend.packet')->with(['status' => 'Success!', 'message' => 'Berhasil Menambahkan Paket!']);
     }
 
     /**
@@ -84,6 +107,19 @@ class PacketController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            packet::where('id', $id)->delete();
+            //return response
+            return response()->json([
+                'status' => 'success',
+                'success' => true,
+                'message' => 'Data Paket Berhasil Dihapus!.',
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'Data Paket Tidak Bisa Dihapus Karena Masih digunakan!',
+                'trace' => $e->getTrace()
+            ]);
+        }
     }
 }

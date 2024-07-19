@@ -41,7 +41,7 @@
                                 <li aria-haspopup="true"><a href="{{ route('packet.dedicated') }}">Dedicated</a></li>
                                 <li aria-haspopup="true"><a href="{{ route('packet.internettv') }}">Internet + TV</a>
                                 </li>
-                                <li aria-haspopup="true"><a href="https://portal.cloudpedia.id/">Hosting</a></li>
+                                <li aria-haspopup="true"><a href="https://cloudpedia.id/">Hosting</a></li>
                                 <li aria-haspopup="true"><a href="#lnk-3">Promo</a></li>
                             </ul>
                         </li>

@@ -31,7 +31,7 @@ class CategoriController extends Controller
             $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
 
-            $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('dashboard') . '"><i
+            $button .= '<button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.categoripacket.delete', ['id' => $query->id]) . '" data-toggle="tooltip" data-placement="bottom" title="Delete Data"><i
                                                             class="fas fa-trash"></i></button>';
             return '<div class="d-flex gap-1">' . $button . '</div>';
         })->make(true);
@@ -89,7 +89,7 @@ class CategoriController extends Controller
     public function destroy(string $id)
     {
         try {
-            CategoryPacket::where('id', $id)->delete();
+            $categori = CategoryPacket::where('id', $id)->delete();
             //return response
             return response()->json([
                 'status' => 'success',
@@ -98,7 +98,7 @@ class CategoriController extends Controller
             ]);
         } catch (Exception $e) {
             return response()->json([
-                'message' => 'Data Kategori Tidak Bisa Dihapus Karena Masih digunakan oleh Chanel!',
+                'message' => 'Data Kategori Tidak Bisa Dihapus Karena Masih digunakan oleh Harga Paket!',
                 'trace' => $e->getTrace()
             ]);
         }
