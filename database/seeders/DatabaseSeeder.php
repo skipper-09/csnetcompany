@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             CategoriPacketSeeder::class,
-            PacketSeeder::class
+            PacketSeeder::class,
+            DescriptionSeeder::class
         ]);
         // User::factory()->create([
         //     'name' => 'Test User',

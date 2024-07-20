@@ -24,14 +24,11 @@
       <table class=" table table-striped " id="dataTable" style="width:100%">
         <thead>
           <tr>
-
             <th>Nama Paket</th>
             <th>Harga Paket</th>
             <th>Durasi Paket</th>
             <th>Best Seller</th>
-            <th>Deskripsi</th>
             <th>Status</th>
-
             <th>Actions</th>
           </tr>
         </thead>
@@ -73,11 +70,7 @@
                             data: 'best_seller',
                             name: 'best_seller'
                         },
-                        {
-                            data: 'description',
-                            name: 'description',
-                            width: '10px'
-                        },
+                        
                         {
                             data: 'is_active',
                             name: 'is_active'

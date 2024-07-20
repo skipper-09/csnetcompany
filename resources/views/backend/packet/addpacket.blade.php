@@ -80,12 +80,6 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-12 col-sm-12">
-                <div class="mb-3">
-                  <label class="form-label" for="basic-default-fullname">Deskripsi</label>
-                  <textarea id="editor" name="description" class="form-control" cols="4" rows="50"></textarea>
-                </div>
-              </div>
             </div>
             <button type="submit" class="btn btn-primary">Tambah Daftar Paket</button>
           </form>

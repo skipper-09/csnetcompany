@@ -18,7 +18,6 @@ class PacketSeeder extends Seeder
             'category_id'=>1,
             'price' => 100000,
             'duration' => 'Bulan',
-            'description'=>'test'
         ]);
     }
 }

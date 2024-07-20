@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
+use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
@@ -48,14 +49,17 @@ Route::prefix('admin')->group(function () {
 
     // page packet
     Route::prefix('packet')->group(function () {
-        Route::get('', [PacketController::class, 'index'])->name('backend.packet');
-        Route::get('/getData', [PacketController::class, 'getData'])->name('backend.packet.getData');
-        Route::get('tambah', [PacketController::class, 'create'])->name('backend.add.packet');
-        Route::post('store', [PacketController::class, 'store'])->name('backend.packet.store');
-        Route::get('/edit/{id}', [PacketController::class, 'show'])->name('backend.packet.edit');
-        Route::put('/update/{id}', [PacketController::class, 'update'])->name('backend.packet.update');
-        Route::delete('/delete/{id}', [PacketController::class, 'destroy'])->name('backend.packet.delete');
-        
+
+        Route::prefix('')->group(function () {
+            Route::get('', [PacketController::class, 'index'])->name('backend.packet');
+            Route::get('/getData', [PacketController::class, 'getData'])->name('backend.packet.getData');
+            Route::get('tambah', [PacketController::class, 'create'])->name('backend.add.packet');
+            Route::post('store', [PacketController::class, 'store'])->name('backend.packet.store');
+            Route::get('/edit/{id}', [PacketController::class, 'show'])->name('backend.packet.edit');
+            Route::put('/update/{id}', [PacketController::class, 'update'])->name('backend.packet.update');
+            Route::delete('/delete/{id}', [PacketController::class, 'destroy'])->name('backend.packet.delete');
+        });
+
         Route::prefix('categori')->group(function () {
             Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket');
             Route::get('/getData', [CategoriController::class, 'getData'])->name('backend.categoripacket.getData');
@@ -64,6 +68,16 @@ Route::prefix('admin')->group(function () {
             Route::get('/edit/{id}', [CategoriController::class, 'show'])->name('backend.categoripacket.edit');
             Route::put('/update/{id}', [CategoriController::class, 'update'])->name('backend.categoripacket.update');
             Route::delete('/delete/{id}', [CategoriController::class, 'destroy'])->name('backend.categoripacket.delete');
+        });
+        //deskripsi paket
+        Route::prefix('deskripsi')->group(function () {
+            Route::get('', [Description_packet::class, 'index'])->name('backend.deskription');
+            Route::get('getData', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
+            Route::get('{id}/tambah', [Description_packet::class, 'create'])->name('backend.add.deskription');
+            Route::post('{id}/store', [Description_packet::class, 'store'])->name('backend.deskription.store');
+            Route::get('{id}/edit/{id}', [Description_packet::class, 'show'])->name('backend.deskription.edit');
+            Route::put('{id}/update/{id}', [Description_packet::class, 'update'])->name('backend.deskription.update');
+            Route::delete('{id}/delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete');
         });
     });
 
