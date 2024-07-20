@@ -26,7 +26,6 @@ class PaketRequest extends FormRequest
             'category_id' => 'required',
             'price' => 'required',
             'is_active' => 'required',
-            'description' => 'required',
         ];
     }
 }

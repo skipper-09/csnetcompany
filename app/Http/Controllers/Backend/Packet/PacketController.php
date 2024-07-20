@@ -32,7 +32,7 @@ class PacketController extends Controller
             $button = '';
             $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
-            $button .= ' <a href="' . route('backend.deskription',['id'=>$query->id]) . '" class="btn btn-sm btn-primary action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Lihat Data"><i
+            $button .= ' <a href="' . route('backend.deskription', ['id' => $query->id]) . '" class="btn btn-sm btn-primary action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Lihat Data"><i
                                                         class="fas fa-eye"></i></a>';
             $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.packet.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
@@ -46,8 +46,8 @@ class PacketController extends Controller
             $query->best_seller == 1 ? $best = '<span class="badge bg-label-primary">Ya</span>' : $best = '<span class="badge badge-secondary">Tidak</span>';
             return $best;
         })->addColumn('price', function ($query) {
-$price = 'Rp. ';
-            return $price. ' '. Number::format($query->price);
+            $price = 'Rp. ';
+            return $price . ' ' . Number::format($query->price);
         })->rawColumns(['action', 'is_active', 'best_seller'])->make(true);
     }
 
@@ -77,7 +77,6 @@ $price = 'Rp. ';
             'is_active' => $request->is_active,
             'best_seller' => $request->best_seller,
             'duration' => $request->duration,
-            'description' => $request->description,
         ]);
 
         return redirect()->route('backend.packet')->with(['status' => 'Success!', 'message' => 'Berhasil Menambahkan Paket!']);

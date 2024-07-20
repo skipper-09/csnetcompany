@@ -13,28 +13,31 @@ class Description_packet extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $id = $request->query('id');
+
+        $des = packet::FindOrFail($id);
 
         $data = [
             'sidebar' => 'packet',
-            'page_name' => 'Deskripsi Paket ',
+            'page_name' => 'Deskripsi Paket' . ' ' . $des->name,
+            'id' => $id,
         ];
         return view('backend.packet.deskripsi.index', $data);
     }
 
 
-    public function getData(Request $request)
+    public function getData($id)
     {
-        $id = $request->query('id');
-        
+
         $query = Description::where('packet_id', $id)->get();
-       
+
         return DataTables::of($query)->addIndexColumn()->addColumn('action', function ($query) {
             $button = '';
             $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
-            $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.packet.delete', ['id' => $query->id]) . '"><i
+            $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.deskription.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
             return '<div class="d-flex gap-1">' . $button . '</div>';
         })->rawColumns(['action'])->make(true);
@@ -44,9 +47,16 @@ class Description_packet extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $id = $request->query('id');
+        $des = packet::FindOrFail($id);
+        $data = [
+            'sidebar' => 'packet',
+            'page_name' => 'Tambah Deskripsi Paket' . ' ' . $des->name,
+            'paket' => packet::all()
+        ];
+        return view('backend.packet.deskripsi.add', $data);
     }
 
     /**

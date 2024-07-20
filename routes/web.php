@@ -72,12 +72,12 @@ Route::prefix('admin')->group(function () {
         //deskripsi paket
         Route::prefix('deskripsi')->group(function () {
             Route::get('', [Description_packet::class, 'index'])->name('backend.deskription');
-            Route::get('getData', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
-            Route::get('{id}/tambah', [Description_packet::class, 'create'])->name('backend.add.deskription');
-            Route::post('{id}/store', [Description_packet::class, 'store'])->name('backend.deskription.store');
-            Route::get('{id}/edit/{id}', [Description_packet::class, 'show'])->name('backend.deskription.edit');
-            Route::put('{id}/update/{id}', [Description_packet::class, 'update'])->name('backend.deskription.update');
-            Route::delete('{id}/delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete');
+            Route::get('getData/{id}', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
+            Route::get('tambah', [Description_packet::class, 'create'])->name('backend.add.deskription');
+            Route::post('store', [Description_packet::class, 'store'])->name('backend.deskription.store');
+            Route::get('edit/{id}', [Description_packet::class, 'show'])->name('backend.deskription.edit');
+            Route::put('update/{id}', [Description_packet::class, 'update'])->name('backend.deskription.update');
+            Route::delete('delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete');
         });
     });
 
