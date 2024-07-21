@@ -28,6 +28,10 @@
 </head>
 
 <body>
+  <!-- Toast Container -->
+  <div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 5000">
+    <div id="toast-container" style="position: absolute; top:10px; right: 5px; bottom: 0px;"></div>
+  </div>
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">

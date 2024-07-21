@@ -34,7 +34,7 @@
 
 {{-- ckeditor --}}
 <script type="importmap">
-  {
+    {
         "imports": {
             "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.js",
             "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.1/"
@@ -43,7 +43,7 @@
 </script>
 
 <script type="module">
-  import {
+    import {
         ClassicEditor,
         Essentials,
         Bold,
@@ -65,5 +65,27 @@
         } )
         .then( /* ... */ )
         .catch( /* ... */ );
+</script>
+
+
+
+{{-- //toast --}}
+<script>
+    @if (session('success'))
+            setTimeout(function() {
+                var toastHTML = `
+<div class="bs-toast toast fade show bg-primary" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
+  <div class="toast-header">
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+   {{ session('success') }}
+  </div>
+</div>
+`;
+                $('#toast-container').append(toastHTML);
+                $('.toast').toast('show');
+            }, 500); // 500 milidetik delay
+        @endif
 </script>
 @stack('js')

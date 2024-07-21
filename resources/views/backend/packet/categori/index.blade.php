@@ -20,16 +20,16 @@
   </div>
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
-    <div class="mb-4">
+    {{-- <div class="mb-4">
       <a href="{{ route('backend.add.categoripacket') }}" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
-    </div>
+    </div> --}}
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">
         <thead>
           <tr>
             <th>No</th>
             <th>Kategori</th>
-            <th>Actions</th>
+            {{-- <th>Actions</th> --}}
           </tr>
         </thead>
 
@@ -54,16 +54,17 @@
                             data: 'DT_RowIndex',
                             orderable: false,
                             searchable: false,
-                            class:'text-center'
+                            class:'text-center',
+                            width:'40px'
                         },
                         {
                             data: 'name',
                             name: 'name'
                         },
-                        {
-                            data: 'action',
-                            name: 'action'
-                        }
+                        // {
+                        //     data: 'action',
+                        //     name: 'action'
+                        // }
                       
                     ]
                 });

@@ -30,7 +30,7 @@ class PacketController extends Controller
         $query = packet::all();
         return DataTables::of($query)->addIndexColumn()->addColumn('action', function ($query) {
             $button = '';
-            $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
+            $button .= ' <a href="' . route('backend.packet.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
             $button .= ' <a href="' . route('backend.deskription', ['id' => $query->id]) . '" class="btn btn-sm btn-primary action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Lihat Data"><i
                                                         class="fas fa-eye"></i></a>';
@@ -50,7 +50,7 @@ class PacketController extends Controller
             return $price . ' ' . Number::format($query->price);
         })->editColumn('category_id', function ($query) {
             return $query->categori->name;
-        })->rawColumns(['action', 'is_active', 'best_seller','category_id'])->make(true);
+        })->rawColumns(['action', 'is_active', 'best_seller', 'category_id'])->make(true);
     }
 
     /**
@@ -87,25 +87,34 @@ class PacketController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(packet $packet, string $id)
     {
-        //
+        $data = [
+            'sidebar' => 'packet',
+            'page_name' => 'Edit Daftar Paket',
+            'categorypacket' => CategoryPacket::all(),
+            'paket' => $packet->find($id)
+        ];
+        return view('backend.packet.editpacket', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function update(PaketRequest $request, string $id)
     {
-        //
-    }
+        $request->validated();
+        $paket = packet::findOrFail($id);
+        $paket->update([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'best_seller' => $request->best_seller,
+            'is_active' => $request->is_active,
+            'duration' => $request->duration,
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return redirect()->route('backend.packet')->with('success', 'Berhasil Update Paket');
     }
 
     /**
