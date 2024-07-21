@@ -42,7 +42,7 @@
                                 <li aria-haspopup="true"><a href="{{ route('packet.internettv') }}">Internet + TV</a>
                                 </li>
                                 <li aria-haspopup="true"><a href="https://cloudpedia.id/">Hosting</a></li>
-                                <li aria-haspopup="true"><a href="#lnk-3">Promo</a></li>
+                                <li aria-haspopup="true"><a href="{{ route('packet.promo') }}">Promo</a></li>
                             </ul>
                         </li>
                         <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}" class="h-link">Blog</a>

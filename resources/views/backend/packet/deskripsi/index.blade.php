@@ -27,7 +27,7 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        {{-- <th>Logo</th> --}}
+                        <th>Logo</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -60,6 +60,10 @@
                     {
                         data: 'name',
                         name: 'name'
+                    },
+                    {
+                        data: 'logo',
+                        name: 'logo'
                     },
 
                     {

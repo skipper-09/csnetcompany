@@ -27,6 +27,7 @@
             <th>Nama Paket</th>
             <th>Harga Paket</th>
             <th>Durasi Paket</th>
+            <th>Kategori Paket</th>
             <th>Best Seller</th>
             <th>Status</th>
             <th>Actions</th>
@@ -65,6 +66,10 @@
                         {
                             data: 'duration',
                             name: 'duration'
+                        },
+                        {
+                            data: 'category_id',
+                            name: 'category_id'
                         },
                         {
                             data: 'best_seller',

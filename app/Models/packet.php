@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class packet extends Model
 {
@@ -14,8 +15,13 @@ class packet extends Model
     protected $primaryKey = 'id';
 
 
-    public function Categori()
+    public function categori()
     {
-        return $this->hasOne(CategoryPacket::class, 'category_id', 'id');
-    }
+        return $this->belongsTo(CategoryPacket::class,'category_id','id');
+    }    
+
+    public function packetDescription()
+    {
+        return $this->hasMany(Description::class);
+    }   
 }

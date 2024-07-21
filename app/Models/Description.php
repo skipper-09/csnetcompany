@@ -15,8 +15,8 @@ class Description extends Model
     protected $primaryKey = 'id';
 
     
-    public function Paket()
+    public function paket()
     {
-        return $this->hasOne(packet::class, 'packet_id', 'id');
+        return $this->belongsTo(packet::class, 'packet_id', 'id');
     }
 }

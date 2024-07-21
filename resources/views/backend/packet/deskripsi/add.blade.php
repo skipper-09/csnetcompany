@@ -22,7 +22,7 @@
     <div class="col-xl">
       <div class="card mb-4">
         <div class="card-body">
-          <form action="{{ route('backend.packet.store') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('backend.deskription.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
               <div class="col-md-6 col-sm-12">
@@ -34,23 +34,18 @@
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
-                  <label class="form-label" for="basic-default-fullname">Paket</label>
-                  <select name="best_seller" id="" class="form-control">
-                    <option value="">Paket</option>
-                    @foreach ($paket as $s)
-                    <option value="{{ $s->id }}">{{ $s->name }}</option>
-                    @endforeach
-                  </select>
+                  <label class="form-label" for="basic-default-fullname">Logo</label>
+                  <input type="file" name="logo" class="form-control" id="basic-default-fullname" />
                 </div>
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
-                  <label class="form-label" for="basic-default-fullname">Logo</label>
-                  <input type="file" name="price" class="form-control" id="basic-default-fullname" />
+                  <input type="number" name="packet_id" class="form-control" id="basic-default-fullname" hidden
+                    value="{{$idpaket}}"/>
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Tambah Daftar Paket</button>
+            <button type="submit" class="btn btn-primary">{{$page_name}}</button>
           </form>
         </div>
       </div>

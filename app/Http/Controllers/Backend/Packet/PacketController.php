@@ -39,16 +39,18 @@ class PacketController extends Controller
             return '<div class="d-flex gap-1">' . $button . '</div>';
         })->addColumn('is_active', function ($query) {
             $active = '';
-            $query->is_active == 1 ? $active = '<span class="badge bg-label-primary">Aktif</span>' : $active = '<span class="badge badge-secondary">Tidak Aktif</span>';
+            $query->is_active == 1 ? $active = '<span class="badge bg-label-primary">Aktif</span>' : $active = '<span class="badge bg-label-warning">Tidak</span>';
             return $active;
         })->addColumn('best_seller', function ($query) {
             $best = '';
-            $query->best_seller == 1 ? $best = '<span class="badge bg-label-primary">Ya</span>' : $best = '<span class="badge badge-secondary">Tidak</span>';
+            $query->best_seller == 1 ? $best = '<span class="badge bg-label-primary">Ya</span>' : $best = '<span class="badge bg-label-warning">Tidak</span>';
             return $best;
         })->addColumn('price', function ($query) {
             $price = 'Rp. ';
             return $price . ' ' . Number::format($query->price);
-        })->rawColumns(['action', 'is_active', 'best_seller'])->make(true);
+        })->editColumn('category_id', function ($query) {
+            return $query->categori->name;
+        })->rawColumns(['action', 'is_active', 'best_seller','category_id'])->make(true);
     }
 
     /**

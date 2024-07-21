@@ -114,7 +114,7 @@
 						<div class="">
 							<div class="bg--heading division">
 								<div class="pricing-title ">
-									<h5 class="text-center s-36 w-700">{{$item->name}}</h5>
+									<h5 class="text-center s-28 w-700 text-uppercase">{{$item->name}}</h5>
 								</div>
 							</div>
 
@@ -123,19 +123,15 @@
 									<div class="row">
 										<div class="col-12">
 											<ul class="list-unstyled mb-4">
-												<li><img src="{{ asset('front-end/images/wifi.png') }}" alt="" height="20"> Internet tanpa batas
-													30 Mbps
-												</li>
-												<li><img src="{{ asset('front-end/images/wifi-router.png') }}" alt="" height="20"> Gratis router
-													Wi-Fi</li>
-												<li><img src="{{ asset('front-end/images/maintenance.png') }}" alt="" height="20"> Gratis
-													Instalasi</li>
-												<li><img src="{{ asset('front-end/images/smartphone.png') }}" alt="" height="20"> Ideal untuk 1
-													- 3 Devices</li>
+												@foreach ($item->packetDescription as $des)
+												<li class="d-flex align-items-center justify-content-start gap-2"><img src="{{ url('storage/images/descrip/'.$des->logo) }}" alt="" height="20"> {{ $des->name }}</li>
+											@endforeach
+												
+												
 											</ul>
 										</div>
 										<div class="col-12 text-center mb-4">
-											<h4>Rp 100.000/Bulan*</h4>
+											<h4>@currency($item->price)/{{$item->duration}}</h4>
 										</div>
 										<div class=" text-center mb-4">
 											<button type="button" class="btn btn--theme">Daftar</button>

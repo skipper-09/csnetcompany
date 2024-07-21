@@ -12,4 +12,6 @@ class CategoryPacket extends Model
         'name',
     ];
     protected $primaryKey = 'id';
+
+    
 }
