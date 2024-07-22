@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
+use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
@@ -51,7 +52,6 @@ Route::prefix('admin')->group(function () {
 
     // page packet
     Route::prefix('packet')->group(function () {
-
         Route::prefix('')->group(function () {
             Route::get('', [PacketController::class, 'index'])->name('backend.packet');
             Route::get('/getData', [PacketController::class, 'getData'])->name('backend.packet.getData');
@@ -74,13 +74,25 @@ Route::prefix('admin')->group(function () {
         //deskripsi paket
         Route::prefix('deskripsi')->group(function () {
             Route::get('', [Description_packet::class, 'index'])->name('backend.deskription');
-            Route::get('getData/{id}', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
+            Route::get('getData', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
             Route::get('tambah', [Description_packet::class, 'create'])->name('backend.add.deskription');
             Route::post('store', [Description_packet::class, 'store'])->name('backend.deskription.store');
-            Route::get('edit/{id}', [Description_packet::class, 'show'])->name('backend.deskription.edit');
+            Route::get('edit/{id}', [Description_packet::class, 'edit'])->name('backend.deskription.edit');
             Route::put('update/{id}', [Description_packet::class, 'update'])->name('backend.deskription.update');
             Route::delete('delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete');
         });
+    });
+
+    //page promo
+
+    Route::prefix('promo')->group(function () {
+        Route::get('', [PromoControllerBackend::class, 'index'])->name('backend.promo');
+        Route::get('/getData', [PromoControllerBackend::class, 'getData'])->name('backend.promo.getData');
+        Route::get('tambah', [PromoControllerBackend::class, 'create'])->name('backend.add.promo');
+        Route::post('store', [PromoControllerBackend::class, 'store'])->name('backend.promo.store');
+        Route::get('/edit/{id}', [PromoControllerBackend::class, 'show'])->name('backend.promo.edit');
+        Route::put('/update/{id}', [PromoControllerBackend::class, 'update'])->name('backend.promo.update');
+        Route::delete('/delete/{id}', [PromoControllerBackend::class, 'destroy'])->name('backend.promo.delete');
     });
 
 

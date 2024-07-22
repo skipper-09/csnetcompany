@@ -44,8 +44,27 @@
             <div data-i18n="Pricing Packet">Harga Paket</div>
           </a>
         </li>
+        <li class="{{$page_name == 'Deskripsi Paket' ? 'menu-item active' : 'menu-item'}}">
+          <a href="{{ route('backend.deskription') }}" class="menu-link">
+            <div data-i18n="Pricing Deskripsi">Deskripsi Paket</div>
+          </a>
+        </li>
       </ul>
     </li>
+    {{-- management promo --}}
+    <li class="{{$sidebar == 'Promo' ? 'menu-item active open' : 'menu-item'}}" ">
+      <a href=" javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+          <div data-i18n="promo">Promo</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="{{$page_name == 'Promo' ? 'menu-item active' : 'menu-item'}}">
+              <a href=" {{ route('backend.promo') }}" class="menu-link">
+                <div data-i18n="Promo">Promo Banner</div>
+              </a>
+            </li>
+          </ul>
+        </li>
     <!-- Management Blog -->
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
