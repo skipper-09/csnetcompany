@@ -81,7 +81,7 @@ class PacketController extends Controller
             'duration' => $request->duration,
         ]);
 
-        return redirect()->route('backend.packet')->with(['status' => 'Success!', 'message' => 'Berhasil Menambahkan Paket!']);
+        return redirect()->route('backend.packet')->with(['success' => 'Berhasil Menambahkan Paket!']);
     }
 
     /**

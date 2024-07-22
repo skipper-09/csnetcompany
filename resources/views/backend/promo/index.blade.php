@@ -21,7 +21,7 @@
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
     <div class="mb-4">
-      <a href="{{ route('backend.add.packet') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
+      <a href="{{ route('backend.add.promo') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
     </div>
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">

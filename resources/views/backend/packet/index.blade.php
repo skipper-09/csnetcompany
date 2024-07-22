@@ -5,9 +5,6 @@
 @push('css')
 @endpush
 @section('content')
-
-
-
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card mb-4 ">
     <div class="d-flex align-items-center align-content-center justify-content-between px-4 pt-3 pb-1">
@@ -45,7 +42,6 @@
 
 
 @push('js')
-<script src="{{ asset('backend/js/ui-toasts.js') }}"></script>
 
 <script>
   $(document).ready(function() {

@@ -54,19 +54,45 @@
     {{-- management promo --}}
     <li class="{{$sidebar == 'Promo' ? 'menu-item active open' : 'menu-item'}}" ">
       <a href=" javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
-          <div data-i18n="promo">Promo</div>
+      <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+      <div data-i18n="promo">Promo</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="{{$page_name == 'Promo' ? 'menu-item active' : 'menu-item'}}">
+          <a href=" {{ route('backend.promo') }}" class="menu-link">
+            <div data-i18n="Promo">Promo Banner</div>
           </a>
-          <ul class="menu-sub">
-            <li class="{{$page_name == 'Promo' ? 'menu-item active' : 'menu-item'}}">
-              <a href=" {{ route('backend.promo') }}" class="menu-link">
-                <div data-i18n="Promo">Promo Banner</div>
-              </a>
-            </li>
-          </ul>
         </li>
+      </ul>
+    </li>
+
+    {{-- management ODP --}}
+
+    <li class="{{$sidebar == 'Odp' ? 'menu-item active open' : 'menu-item'}}" ">
+          <a href=" javascript:void(0);" class="menu-link menu-toggle">
+      <i class="menu-icon tf-icons bx bx-collection"></i>
+      <div data-i18n="odp">ODP</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
+          <a href=" {{ route('backend.promo') }}" class="menu-link">
+            <div data-i18n="Promo">Area</div>
+          </a>
+        </li>
+        <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
+          <a href=" {{ route('backend.promo') }}" class="menu-link">
+            <div data-i18n="Promo">Data Odp</div>
+          </a>
+        </li>
+        <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
+          <a href=" {{ route('backend.promo') }}" class="menu-link">
+            <div data-i18n="Promo">Peta</div>
+          </a>
+        </li>
+      </ul>
+    </li>
     <!-- Management Blog -->
-    <li class="menu-item">
+    {{-- <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-blanket"></i>
         <div data-i18n="Paket">Blog</div>
@@ -95,7 +121,7 @@
         <i class="menu-icon tf-icons bx bx-data"></i>
         <div data-i18n="Basic">Pendaftar</div>
       </a>
-    </li>
+    </li> --}}
     <!-- Setting -->
     <li class="{{$sidebar == 'setting' ? 'menu-item active open' : 'menu-item'}}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">

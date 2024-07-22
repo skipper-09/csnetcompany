@@ -21,20 +21,30 @@ class PacketDescriptionRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name'=> 'required',
-            'logo'=> 'required|image|max:512|file|mimes:jpeg,jpg,png,svg'
-        ];
+        if ($this->isMethod('PUT')) {
+            return [
+                'name' => 'required',
+                'packet_id' => 'required',
+                'logo' => 'image|max:512|file|mimes:jpeg,jpg,png,svg'
+            ];
+        } else {
+            return [
+                'name' => 'required',
+                'packet_id' => 'required',
+                'logo' => 'required|image|max:512|file|mimes:jpeg,jpg,png,svg'
+            ];
+        }
     }
 
     public function messages()
     {
         return [
             'name.required' => 'Nama Deskripsi Wajib Diisi',
-            'logo.required'=> 'Gambar Deskripsi Wajib Diisi',
-            'logo.max'=> 'Max ukuran gambar 512kb',
-            'logo.image'=> 'File yang dimasukkan bukan gambar',
-            'logo.mimes'=> 'Inputkan file gambar saja',
+            'packet_id.required' => 'Paket Wajib Dipilih',
+            'logo.required' => 'Gambar Deskripsi Wajib Diisi',
+            'logo.max' => 'Max ukuran gambar 512kb',
+            'logo.image' => 'File yang dimasukkan bukan gambar',
+            'logo.mimes' => 'Inputkan file gambar saja',
         ];
     }
 }

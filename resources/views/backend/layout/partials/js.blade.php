@@ -74,17 +74,16 @@
     @if (session('success'))
             setTimeout(function() {
                 var toastHTML = `
-<div class="bs-toast toast fade show bg-primary" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
-  <div class="toast-header">
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
-  <div class="toast-body">
-   {{ session('success') }}
-  </div>
-</div>
-`;
+                        <div class="bs-toast toast fade show bg-primary" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
+                        <div class="toast-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">{{ session('success') }}</div></div>`;
                 $('#toast-container').append(toastHTML);
-                $('.toast').toast('show');
+                var toastElement = $('.toast').last().toast({ autohide: true, delay: 500 });
+                toastElement.toast('show');
+                
+                
             }, 500); // 500 milidetik delay
         @endif
 </script>

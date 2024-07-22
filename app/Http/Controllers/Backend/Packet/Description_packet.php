@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Packet;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PacketDescriptionRequest;
 use App\Models\Description;
 use App\Models\packet;
 use App\Models\PacketHasDescription;
@@ -33,7 +34,7 @@ class Description_packet extends Controller
 
         return DataTables::of($query)->addIndexColumn()->addColumn('action', function ($query) {
             $button = '';
-            $button .= ' <a href="' . route('backend.deskription.edit',['id'=>$query->id]) . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
+            $button .= ' <a href="' . route('backend.deskription.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
             $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.deskription.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
@@ -49,14 +50,12 @@ class Description_packet extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request,$paketid)
+    public function create()
     {
-        // $id = $request->query('id');
-        $des = packet::FindOrFail($paketid);
         $data = [
             'sidebar' => 'packet',
-            'page_name' => 'Tambah Deskripsi Paket' . ' ' . $des->name,
-            'idpaket' => $des->id
+            'page_name' => 'Tambah Deskripsi Paket',
+            'paket' => packet::all()
         ];
         return view('backend.packet.deskripsi.add', $data);
     }
@@ -64,9 +63,9 @@ class Description_packet extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PacketDescriptionRequest $request)
     {
-
+        $request->validated();
         $filename = '';
         if ($request->hasFile('logo')) {
             $file  = $request->file('logo');
@@ -79,10 +78,10 @@ class Description_packet extends Controller
             'logo' => $filename
         ]);
 
-        return redirect()->route('backend.deskription', ['id' => $request->packet_id])->with(['status' => 'Success!', 'message' => 'Berhasil Menambahkan Paket!']);
+        return redirect()->route('backend.deskription')->with(['success' => 'Berhasil Menambahkan Deskripsi Paket!']);
     }
 
-   
+
 
     /**
      * Show the form for editing the specified resource.
@@ -92,7 +91,8 @@ class Description_packet extends Controller
         $data = [
             'sidebar' => 'packet',
             'page_name' => 'Edit Deskripsi Paket',
-            'deskripsi'=> Description::findOrFail($id)
+            'paket' => packet::all(),
+            'deskripsi' => Description::findOrFail($id)
         ];
         return view('backend.packet.deskripsi.edit', $data);
     }
@@ -100,9 +100,38 @@ class Description_packet extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Description $descrip, PacketDescriptionRequest $request, string $id)
     {
-        //
+        try {
+            $data = Description::find($id);
+            $request->validated();
+            $filename = '';
+            if ($request->hasFile('logo')) {
+                $file  = $request->file('logo');
+                $filename = 'descrip_' . rand(0, 999999999) . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('storage/images/descrip/'), $filename);
+                if (file_exists(public_path('storage/images/descrip/' . $descrip->logo))) {
+                    File::delete(public_path('storage/images/descrip/' . $descrip->logo));
+                }
+            } else {
+                $filename = $data->logo;
+            }
+
+            $data->update([
+                'name' => $request->name,
+                'packet_id' => $request->packet_id,
+                'logo' => $filename === null ? $data->logo : $filename
+            ]);
+
+
+
+            return redirect()->route('backend.deskription')->with(['success' => 'Berhasil Edit Deskripsi Paket!']);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => $e->getMessage(),
+                'trace' => $e->getTrace()
+            ]);
+        }
     }
 
     /**
