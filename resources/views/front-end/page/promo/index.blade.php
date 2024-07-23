@@ -1115,13 +1115,12 @@
                 $(".owl-carousel").owlCarousel({
                     items: 1,
                     margin: 10,
-                    autoHeight: true,
+                    autoHeight: false,
                     loop: true,
                     autoplay: true,
                     autoplayTimeout: 2000,
                     autoplayHoverPause: false,
-                    animateOut: 'slideOutLeft',
-
+                    // animateOut: 'slideOutLeft',
                 });
             });
 </script>

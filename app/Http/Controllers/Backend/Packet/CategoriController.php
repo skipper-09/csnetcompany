@@ -56,7 +56,7 @@ class CategoriController extends Controller
     {
         $data = $request->validated();
         CategoryPacket::create($data);
-        return redirect()->route('backend.categoripacket')->with(['status' => 'Success!', 'message' => 'Berhasil Membuat Kategori!']);
+        return redirect()->route('backend.categoripacket')->with(['success' => 'Berhasil Membuat Kategori!']);
     }
 
     /**

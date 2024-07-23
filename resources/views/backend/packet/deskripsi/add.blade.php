@@ -4,14 +4,6 @@
 
 @push('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css">
-<style>
-  .dropzone {
-    border: 2px dashed #0087F7;
-    border-radius: 5px;
-    background: white;
-    padding: 20px;
-  }
-</style>
 @endpush
 
 @section('content')

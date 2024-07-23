@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\Auth\AuthController;
+use App\Http\Controllers\Backend\Coverage\AreaController;
+use App\Http\Controllers\Backend\Coverage\MapsController;
+use App\Http\Controllers\Backend\Coverage\OdpController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Packet\Description_packet;
@@ -93,6 +96,32 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [PromoControllerBackend::class, 'show'])->name('backend.promo.edit');
         Route::put('/update/{id}', [PromoControllerBackend::class, 'update'])->name('backend.promo.update');
         Route::delete('/delete/{id}', [PromoControllerBackend::class, 'destroy'])->name('backend.promo.delete');
+    });
+
+
+    Route::prefix('coverage')->group(function () {
+        Route::prefix('area')->group(function () {
+            Route::get('', [AreaController::class, 'index'])->name('backend.area');
+            Route::get('/getData', [AreaController::class, 'getData'])->name('backend.area.getData');
+            Route::get('tambah', [AreaController::class, 'create'])->name('backend.add.area');
+            Route::post('store', [AreaController::class, 'store'])->name('backend.area.store');
+            Route::get('/edit/{id}', [AreaController::class, 'show'])->name('backend.area.edit');
+            Route::put('/update/{id}', [AreaController::class, 'update'])->name('backend.area.update');
+            Route::delete('/delete/{id}', [AreaController::class, 'destroy'])->name('backend.area.delete');
+        });
+
+        Route::prefix('odp')->group(function () {
+            Route::get('', [OdpController::class, 'index'])->name('backend.odp');
+            Route::get('/getData', [OdpController::class, 'getData'])->name('backend.odp.getData');
+            Route::get('tambah', [OdpController::class, 'create'])->name('backend.add.odp');
+            Route::post('store', [OdpController::class, 'store'])->name('backend.odp.store');
+            Route::get('/edit/{id}', [OdpController::class, 'show'])->name('backend.odp.edit');
+            Route::put('/update/{id}', [OdpController::class, 'update'])->name('backend.odp.update');
+            Route::delete('/delete/{id}', [OdpController::class, 'destroy'])->name('backend.odp.delete');
+        });
+        Route::prefix('maps')->group(function () {
+            Route::get('', [MapsController::class, 'index'])->name('backend.maps');
+        });
     });
 
 

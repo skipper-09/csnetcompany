@@ -84,7 +84,7 @@
                 toastElement.toast('show');
                 
                 
-            }, 500); // 500 milidetik delay
+            }, 1000); // 500 milidetik delay
         @endif
 </script>
 @stack('js')

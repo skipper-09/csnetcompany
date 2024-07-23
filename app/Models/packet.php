@@ -10,7 +10,7 @@ class packet extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'category_id', 'price', 'is_active', 'best_seller', 'duration', 'description'
+        'name', 'category_id', 'price', 'is_active', 'best_seller', 'duration'
     ];
     protected $primaryKey = 'id';
 

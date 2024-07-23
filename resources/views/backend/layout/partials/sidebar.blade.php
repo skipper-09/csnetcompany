@@ -74,19 +74,19 @@
       <div data-i18n="odp">ODP</div>
       </a>
       <ul class="menu-sub">
-        <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.promo') }}" class="menu-link">
-            <div data-i18n="Promo">Area</div>
+        <li class="{{$page_name == 'Area' ? 'menu-item active' : 'menu-item'}}">
+          <a href=" {{ route('backend.area') }}" class="menu-link">
+            <div data-i18n="area">Area</div>
           </a>
         </li>
         <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.promo') }}" class="menu-link">
+          <a href=" {{ route('backend.odp') }}" class="menu-link">
             <div data-i18n="Promo">Data Odp</div>
           </a>
         </li>
-        <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.promo') }}" class="menu-link">
-            <div data-i18n="Promo">Peta</div>
+        <li class="{{$page_name == 'Maps Odp' ? 'menu-item active' : 'menu-item'}}">
+          <a href=" {{ route('backend.maps') }}" class="menu-link">
+            <div data-i18n="Maps">Maps</div>
           </a>
         </li>
       </ul>

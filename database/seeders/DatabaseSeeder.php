@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategoriPacketSeeder::class,
             PacketSeeder::class,
-            DescriptionSeeder::class
+            DescriptionSeeder::class,
+            AreaSeeder::class,
+            OdpSeeder::class
         ]);
         // User::factory()->create([
         //     'name' => 'Test User',
