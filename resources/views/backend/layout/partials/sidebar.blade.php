@@ -13,7 +13,7 @@
     </a>
   </div>
 
-  {{-- <div class="menu-inner-shadow"></div> --}}
+  <div class="menu-inner-shadow"></div>
 
   <ul class="menu-inner pt-5">
     <!-- Dashboards -->
@@ -28,10 +28,10 @@
       <span class="menu-header-text">Master</span>
     </li>
     <!-- Packet -->
-    <li class="{{$sidebar == 'packet' ? 'menu-item active open' : 'menu-item'}}" ">
-  <a href=" javascript:void(0);" class="menu-link menu-toggle">
-      <i class="menu-icon tf-icons bx bx-basket"></i>
-      <div data-i18n="Paket">Paket</div>
+    <li class="{{$sidebar == 'packet' ? 'menu-item active open' : 'menu-item'}}">
+      <a href=" javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-basket"></i>
+        <div data-i18n="Paket">Paket</div>
       </a>
       <ul class="menu-sub">
         <li class="{{$page_name == 'Categori' ? 'menu-item active' : 'menu-item'}}">
@@ -52,10 +52,10 @@
       </ul>
     </li>
     {{-- management promo --}}
-    <li class="{{$sidebar == 'Promo' ? 'menu-item active open' : 'menu-item'}}" ">
+    <li class="{{$sidebar == 'Promo' ? 'menu-item active open' : 'menu-item'}}">
       <a href=" javascript:void(0);" class="menu-link menu-toggle">
-      <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
-      <div data-i18n="promo">Promo</div>
+        <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+        <div data-i18n="promo">Promo</div>
       </a>
       <ul class="menu-sub">
         <li class="{{$page_name == 'Promo' ? 'menu-item active' : 'menu-item'}}">
@@ -68,10 +68,10 @@
 
     {{-- management ODP --}}
 
-    <li class="{{$sidebar == 'Odp' ? 'menu-item active open' : 'menu-item'}}" ">
-          <a href=" javascript:void(0);" class="menu-link menu-toggle">
-      <i class="menu-icon tf-icons bx bx-collection"></i>
-      <div data-i18n="odp">ODP</div>
+    <li class="{{$sidebar == 'Odp' ? 'menu-item active open' : 'menu-item'}}">
+      <a href=" javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div data-i18n="odp">ODP</div>
       </a>
       <ul class="menu-sub">
         <li class="{{$page_name == 'Area' ? 'menu-item active' : 'menu-item'}}">

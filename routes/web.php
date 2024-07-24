@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\Auth\AuthController;
+use App\Http\Controllers\Backend\Auth\ProfileController;
 use App\Http\Controllers\Backend\Coverage\AreaController;
 use App\Http\Controllers\Backend\Coverage\MapsController;
 use App\Http\Controllers\Backend\Coverage\OdpController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
+use App\Http\Controllers\Front_End\Coverage\CoverageController;
 use App\Http\Controllers\Front_End\Help\FaqController;
 use App\Http\Controllers\Front_End\Home\HomeController;
 use App\Http\Controllers\Front_End\Packet\DedicatedController;
@@ -41,17 +43,28 @@ Route::prefix('bantuan')->group(function () {
 });
 
 
+Route::get('/coverage', [CoverageController::class, 'index'])->name('coverage');
+
+
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
 
 
 //backend routes
 Route::prefix('auth')->group(function () {
     Route::get('/login', [AuthController::class, 'index'])->name('auth.login')->middleware('guest');
-    Route::post('/store', [AuthController::class, 'signin'])->name('auth.signin')->middleware('guest');
+    Route::post('/store', [AuthController::class, 'signin'])->name('auth.signin');
+    Route::get('/logout', [AuthController::class, 'signout'])->name('auth.logout');
 });
-Route::prefix('admin')->group(function () {
+
+
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    //route profile
+    Route::prefix('profile')->group(function () {
+        Route::get('/edit/{id}', [ProfileController::class, 'index'])->name('backend.profile.edit');
+        Route::put('/update/{id}', [ProfileController::class, 'update'])->name('backend.profile.update');
+    });
 
     // page packet
     Route::prefix('packet')->group(function () {
@@ -115,7 +128,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/getData', [OdpController::class, 'getData'])->name('backend.odp.getData');
             Route::get('tambah', [OdpController::class, 'create'])->name('backend.add.odp');
             Route::post('store', [OdpController::class, 'store'])->name('backend.odp.store');
-            Route::get('/edit/{id}', [OdpController::class, 'show'])->name('backend.odp.edit');
+            Route::get('/edit/{id}', [OdpController::class, 'edit'])->name('backend.odp.edit');
             Route::put('/update/{id}', [OdpController::class, 'update'])->name('backend.odp.update');
             Route::delete('/delete/{id}', [OdpController::class, 'destroy'])->name('backend.odp.delete');
         });

@@ -52,8 +52,11 @@
                     <h2 class="s-30 w-700 ">Temukan Idnet di Area Kamu</h2>
                 </div>
                 <div class="d-flex gap-2 justify-content-center">
-                    <input type="text" class="form-control w-50 rounded-5" placeholder="Kode Pos">
-                    <button class="btn btn-sm btn--black hover--theme rounded-5">Cek Area</button>
+                    <form action="{{ route('coverage') }}" method="get">
+                        <input type="text" value="{{ request('query') }}" name="query"
+                            class="form-control w-50 rounded-5" placeholder="Kode Pos">
+                        <button class="btn btn-sm btn--black hover--theme rounded-5" type="submit">Cek Area</button>
+                    </form>
                 </div>
             </div>
         </div>

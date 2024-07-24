@@ -42,8 +42,8 @@
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <span class="fw-medium d-block">Developer</span>
-                  <small class="text-muted">Admin</small>
+                  <span class="fw-medium d-block">{{Auth::user()->name}}</span>
+                  <small class="text-muted">{{Auth::user()->email}}</small>
                 </div>
               </div>
             </a>
@@ -52,12 +52,12 @@
             <div class="dropdown-divider"></div>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="{{ route('backend.profile.edit',['id'=>Auth::user()->id]) }}">
               <i class="bx bx-user me-2"></i>
               <span class="align-middle">My Profile</span>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a class="dropdown-item" href="#">
               <i class="bx bx-cog me-2"></i>
               <span class="align-middle">Settings</span>
@@ -71,15 +71,17 @@
                 <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
               </span>
             </a>
-          </li>
+          </li> --}}
           <li>
             <div class="dropdown-divider"></div>
           </li>
           <li>
-            <a class="dropdown-item" href="javascript:void(0);">
+
+            <a class="dropdown-item" href="{{ route('auth.logout') }}">
               <i class="bx bx-power-off me-2"></i>
               <span class="align-middle">Log Out</span>
             </a>
+
           </li>
         </ul>
       </li>

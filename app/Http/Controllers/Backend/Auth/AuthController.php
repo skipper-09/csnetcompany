@@ -36,7 +36,7 @@ class AuthController extends Controller
                         Cookie::queue('email', $request->email, $time);
                         Cookie::queue('password', $request->password, $time);
                     }
-                    return redirect()->route('dashboard');
+                    return redirect()->route('dashboard')->with(['success' => "Berhasil Login"]);
                 } else {
                     return
                         redirect()->back()->withErrors([
@@ -56,7 +56,6 @@ class AuthController extends Controller
     public function signout()
     {
         Auth::logout();
-
-        return redirect()->route('home');
+        return redirect('/');
     }
 }

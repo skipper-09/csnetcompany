@@ -15,14 +15,21 @@
           </div>
           <!-- /Logo -->
           <h4 class="mb-2">Login</h4>
-          <p class="mb-4"></p>
+          {{-- <p class="mb-4"></p> --}}
 
+          @if ($errors->any())
+          @foreach ($errors->all() as $error)
+          <p class="text-danger">{{ $error }}</p>
+          @endforeach
+          @endif
           <form id="formAuthentication" class="mb-3" action="{{ route('auth.signin') }}" method="POST">
             @csrf
             <div class="mb-3">
               <label for="email" class="form-label">Email or Username</label>
               <input type="text" name="email" class="form-control" id="email" name="email-username"
                 placeholder="Enter your email or username" autofocus />
+
+
             </div>
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">

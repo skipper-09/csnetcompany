@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('kode_pos');
+            $table->string('kode_pos');
             $table->timestamps();
         });
     }
