@@ -68,7 +68,6 @@
             provider: new GeoSearch.OpenStreetMapProvider(),
             style: 'bar',
         });
-
         map.addControl(search);
         // Adjust map view to fit all markers
         // if (locations.length > 0) {
