@@ -33,10 +33,10 @@
 <script>
   // Initialize the map
         function initMap() {
+          // Data from the controller
           var locations = @json($area);
           var centerLat = @json($centerlat);
           var centerLon = @json($centerlon);
-            // Data from the controller
             // Define the center of the map
             var center = { lat: centerLat, lng: centerLon }; // Default to Jakarta
 
