@@ -2,6 +2,10 @@
 
 @section('title',$page_name)
 
+@push('css')
+    
+@endpush
+
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card mb-4 ">
@@ -76,7 +80,7 @@
               <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
                   <label class="form-label" for="basic-default-fullname">Area Odp</label>
-                  <select name="area_id" id="" class="form-control @error('area_id') is-invalid @enderror">
+                  <select name="area_id" id="" class="form-control js-example-basic-single @error('area_id') is-invalid @enderror">
                     <option value="">Pilih Area</option>
                     @foreach ($area as $s)
                     <option value="{{ $s->id }}">{{ $s->name }}</option>

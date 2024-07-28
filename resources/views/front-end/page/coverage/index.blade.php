@@ -18,12 +18,17 @@
 
 @section('title', $page_name)
 
-@section('content')
+@section('content') 
+@if (count($area) > 0 )
 <div class="view">
   <div id="map"></div>
 </div>
-@endsection
+@else
+    <h1 class="mt-100 text-center">Belum tercover</h1>
+    <p class="text-center">Ingin di daerah ini terjangkau layanan idnet hubungi kami!!</p>
+@endif
 
+@endsection
 
 @push('js')
 <script async
@@ -42,7 +47,7 @@
 
             // Create a map centered on the defined center
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
+                zoom: 16,
                 center: center
             });
 
@@ -55,7 +60,7 @@
                     var marker = new google.maps.Marker({
                         position: position,
                         map: map,
-                        title: odp.name
+                        title: odp.name,
                     });
 
                     var infowindow = new google.maps.InfoWindow({
@@ -70,7 +75,7 @@
                 // Draw polyline connecting ODPs
                 var odpLine = new google.maps.Polyline({
                 path: odpCoords,
-                geodesic: true,
+                geodesic: false,
                 strokeColor: '#FF0000',
                 strokeOpacity: 1.0,
                 strokeWeight: 2

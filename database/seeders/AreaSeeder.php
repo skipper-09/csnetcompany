@@ -14,7 +14,7 @@ class AreaSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create('id_ID');
-        for ($i=0; $i <=50 ; $i++) { 
+        for ($i=0; $i <=5 ; $i++) { 
             Area::insert([
                 'name'=>$faker->address,
                 'kode_pos'=>$faker->numberBetween(1000,6000),

@@ -15,10 +15,10 @@ class OdpSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create('id_ID');
-        for ($i=0; $i <=10 ; $i++) { 
+        for ($i=0; $i <=5 ; $i++) { 
             Odp::insert([
                 'name'=>$faker->company,
-                'area_id'=>$faker->numberBetween(1,20),
+                'area_id'=>$faker->numberBetween(1,5),
                 'splitter'=>'16',
                 'port'=>16,
                 'latitude'=>$faker->latitude,
