@@ -128,7 +128,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                            ============================================= -->
+                                                                                                                                                ============================================= -->
     <section id="features-2" class="py-20 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -153,6 +153,139 @@
     {{-- <hr class="divider"> --}}
 
 
+    <!-- TEXT CONTENT
+                                                                                                                                                ============================================= -->
+    <section id="lnk-1" class="pt-100 ct-02 content-section division">
+        <div class="container">
+
+
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+
+
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6">
+                    <div class="img-block left-column wow fadeInRight">
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-07.png') }}" alt="content-image">
+                    </div>
+                </div>
+
+
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6">
+                    <div class="txt-block right-column wow fadeInLeft">
+
+                        <!-- Section ID -->
+                        <span class="section-id">BROADBAND</span>
+
+                        <!-- Title -->
+                        <h2 class="s-46 w-700">Internet Rumahan Yang Ramah di Kantong</h2>
+
+                        <!-- Text -->
+                        <p>Nikmati Akses Internet Cepat dan Terjangkau dengan Layanan Broadband Kami. Temukan Paket yang
+                            Sesuai dengan Kebutuhan Anda dan Nikmati Koneksi Tak Terbatas!
+                        </p>
+
+                        <a href="{{ route('packet.ritel') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+
+
+                    </div> <!-- END SECTION CONTENT (ROW) -->
+
+
+                </div> <!-- End container -->
+    </section> <!-- END TEXT CONTENT -->
+
+
+
+
+
+
+    <!-- TEXT CONTENT
+                                                                                                                                                ============================================= -->
+    <section id="lnk-1" class="pt-100 ct-04 content-section division">
+        <div class="container">
+
+
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6">
+                    <div class="txt-block right-column wow fadeInLeft">
+
+                        <!-- Section ID -->
+                        <span class="section-id">INTERNET PLUS TV</span>
+
+                        <!-- Title -->
+                        <h2 class="s-46 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
+
+                        <!-- Text -->
+                        <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
+                            momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
+                            Anda terpenuhi.
+                        </p>
+
+                        <a href="{{ route('packet.internettv') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6">
+                    <div class="img-block left-column wow fadeInRight">
+                        <img class="img-fluid r-04 " src="{{ asset('front-end/images/img-iptv.png') }}"
+                            alt="content-image">
+                    </div>
+                </div>
+
+            </div> <!-- END SECTION CONTENT (ROW) -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END TEXT CONTENT -->
+
+    <!-- DIVIDER LINE -->
+
+    <!-- BOX CONTENT============================================= -->
+    <section class="pt-100 ws-wrapper content-section">
+        <div class="container">
+            <div class="bc-1-wrapper ">
+                <div class="section-overlay">
+                    <div class="row d-flex align-items-center">
+
+                        <!-- IMAGE BLOCK -->
+                        <div class="col-md-6">
+                            <div class="img-block left-column wow fadeInRight">
+                                <img class="img-fluid r-04" src="{{ asset('front-end/images/img-07.png') }}"
+                                    alt="content-image">
+                            </div>
+                        </div>
+                        <!-- TEXT BLOCK -->
+                        <div class="col-md-6">
+                            <div class="txt-block right-column wow fadeInLeft">
+
+                                <!-- Section ID -->
+                                <span class="section-id">DEDICATED</span>
+
+                                <!-- Title -->
+                                <h2 class="s-46 w-700">Internet Dedicated untuk Bisnis Anda</h2>
+
+                                <!-- Text -->
+                                <p>Dengan internet dedicated, Anda mendapatkan koneksi yang stabil dan terjamin. Layanan ini
+                                    dirancang khusus untuk memberikan performa terbaik tanpa gangguan, memastikan bisnis
+                                    Anda selalu terhubung.
+                                </p>
+
+                                <a href="{{ route('packet.dedicated') }}"><button
+                                        class="btn btn-primary btn--theme">Selengkapnya</button></a>
+
+                            </div>
+                        </div> <!-- END TEXT BLOCK -->
+                    </div> <!-- End row -->
+                </div> <!-- End section overlay -->
+            </div> <!-- End content wrapper -->
+        </div> <!-- End container -->
+    </section> <!-- END BOX CONTENT -->
 
 
     <!-- FEATURES-============================================= -->
@@ -400,148 +533,86 @@
 
         </div> <!-- End container -->
     </section> <!-- END FEATURES-11 -->
-
-
-    <!-- DIVIDER LINE -->
-    <hr class="divider">
-
-    <!-- TEXT CONTENT
-                                                                                                                                            ============================================= -->
-    <section id="lnk-1" class="pt-100 ct-02 content-section division">
+    <!-- STATISTIC-1============================================= -->
+    <div id="statistic-1" class="py-100 statistic-section division">
         <div class="container">
+            <!-- STATISTIC-1 WRAPPER -->
+            <div class="statistic-1-wrapper">
+                <div class="row justify-content-md-center row-cols-1 row-cols-md-3">
 
 
-            <!-- SECTION CONTENT (ROW) -->
-            <div class="row d-flex align-items-center">
+                    <!-- STATISTIC BLOCK #1 -->
+                    <div class="col">
+                        <div id="sb-1-1" class="wow fadeInUp">
+                            <div class="statistic-block">
 
-
-                <!-- IMAGE BLOCK -->
-                <div class="col-md-6">
-                    <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/img-07.png') }}" alt="content-image">
-                    </div>
-                </div>
-
-
-                <!-- TEXT BLOCK -->
-                <div class="col-md-6">
-                    <div class="txt-block right-column wow fadeInLeft">
-
-                        <!-- Section ID -->
-                        <span class="section-id">BROADBAND</span>
-
-                        <!-- Title -->
-                        <h2 class="s-46 w-700">Internet Rumahan Yang Ramah di Kantong</h2>
-
-                        <!-- Text -->
-                        <p>Nikmati Akses Internet Cepat dan Terjangkau dengan Layanan Broadband Kami. Temukan Paket yang
-                            Sesuai dengan Kebutuhan Anda dan Nikmati Koneksi Tak Terbatas!
-                        </p>
-
-                        <a href="{{ route('packet.ritel') }}"><button
-                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
-
-
-                    </div> <!-- END SECTION CONTENT (ROW) -->
-
-
-                </div> <!-- End container -->
-    </section> <!-- END TEXT CONTENT -->
-
-
-
-
-
-
-    <!-- TEXT CONTENT
-                                                                                                                                            ============================================= -->
-    <section id="lnk-1" class="pt-100 ct-04 content-section division">
-        <div class="container">
-
-
-            <!-- SECTION CONTENT (ROW) -->
-            <div class="row d-flex align-items-center">
-
-                <!-- TEXT BLOCK -->
-                <div class="col-md-6">
-                    <div class="txt-block right-column wow fadeInLeft">
-
-                        <!-- Section ID -->
-                        <span class="section-id">INTERNET PLUS TV</span>
-
-                        <!-- Title -->
-                        <h2 class="s-46 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
-
-                        <!-- Text -->
-                        <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
-                            momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
-                            Anda terpenuhi.
-                        </p>
-
-                        <a href="{{ route('packet.internettv') }}"><button
-                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
-                    </div>
-                </div> <!-- END TEXT BLOCK -->
-                <!-- IMAGE BLOCK -->
-                <div class="col-md-6">
-                    <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid r-04 " src="{{ asset('front-end/images/img-iptv.png') }}"
-                            alt="content-image">
-                    </div>
-                </div>
-
-            </div> <!-- END SECTION CONTENT (ROW) -->
-
-
-        </div> <!-- End container -->
-    </section> <!-- END TEXT CONTENT -->
-
-    <!-- DIVIDER LINE -->
-
-    <!-- BOX CONTENT============================================= -->
-    <section class="pt-100 ws-wrapper content-section">
-        <div class="container">
-            <div class="bc-1-wrapper ">
-                <div class="section-overlay">
-                    <div class="row d-flex align-items-center">
-
-                        <!-- IMAGE BLOCK -->
-                        <div class="col-md-6">
-                            <div class="img-block left-column wow fadeInRight">
-                                <img class="img-fluid r-04" src="{{ asset('front-end/images/img-07.png') }}"
-                                    alt="content-image">
-                            </div>
-                        </div>
-                        <!-- TEXT BLOCK -->
-                        <div class="col-md-6">
-                            <div class="txt-block right-column wow fadeInLeft">
-
-                                <!-- Section ID -->
-                                <span class="section-id">DEDICATED</span>
-
-                                <!-- Title -->
-                                <h2 class="s-46 w-700">Internet Dedicated untuk Bisnis Anda</h2>
+                                <!-- Digit -->
+                                <div class="statistic-block-digit text-center">
+                                    <h2 class="s-46 statistic-number"><span class="count-element">89</span>k</h2>
+                                </div>
 
                                 <!-- Text -->
-                                <p>Dengan internet dedicated, Anda mendapatkan koneksi yang stabil dan terjamin. Layanan ini
-                                    dirancang khusus untuk memberikan performa terbaik tanpa gangguan, memastikan bisnis
-                                    Anda selalu terhubung.
-                                </p>
-
-                                <a href="{{ route('packet.dedicated') }}"><button
-                                        class="btn btn-primary btn--theme">Selengkapnya</button></a>
+                                <div class="statistic-block-txt color--grey">
+                                    <p class="p-md">Porta justo integer and velna vitae auctor</p>
+                                </div>
 
                             </div>
-                        </div> <!-- END TEXT BLOCK -->
-                    </div> <!-- End row -->
-                </div> <!-- End section overlay -->
-            </div> <!-- End content wrapper -->
+                        </div>
+                    </div> <!-- END STATISTIC BLOCK #1 -->
+
+
+                    <!-- STATISTIC BLOCK #2 -->
+                    <div class="col">
+                        <div id="sb-1-2" class="wow fadeInUp">
+                            <div class="statistic-block">
+
+                                <!-- Digit -->
+                                <div class="statistic-block-digit text-center">
+                                    <h2 class="s-46 statistic-number"><span class="count-element">76</span>%</h2>
+                                </div>
+
+                                <!-- Text -->
+                                <div class="statistic-block-txt color--grey">
+                                    <p class="p-md">Ligula magna suscipit vitae and rutrum</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- END STATISTIC BLOCK #2 -->
+
+
+                    <!-- STATISTIC BLOCK #3 -->
+                    <div class="col">
+                        <div id="sb-1-3" class="wow fadeInUp">
+                            <div class="statistic-block">
+
+                                <!-- Digit -->
+                                <div class="statistic-block-digit text-center">
+                                    <h2 class="s-46 statistic-number">
+                                        <span class="count-element">4</span>.<span class="count-element">93</span>
+                                    </h2>
+                                </div>
+
+                                <!-- Text -->
+                                <div class="statistic-block-txt color--grey">
+                                    <p class="p-md">Sagittis congue augue egestas an egestas</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- END STATISTIC BLOCK #3 -->
+
+
+                </div> <!-- End row -->
+            </div> <!-- END STATISTIC-1 WRAPPER -->
+
+
         </div> <!-- End container -->
-    </section> <!-- END BOX CONTENT -->
+    </div> <!-- END STATISTIC-1 -->
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                            ============================================= -->
+                                                                                                                                                ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
@@ -868,89 +939,6 @@
         </div> <!-- End container -->
     </section> <!-- END TESTIMONIALS-1 -->
 
-
-
-
-
-    <!-- STATISTIC-1
-                                                                                                                   ============================================= -->
-    <div id="statistic-1" class="py-100 statistic-section division">
-        <div class="container">
-
-
-            <!-- STATISTIC-1 WRAPPER -->
-            <div class="statistic-1-wrapper">
-                <div class="row justify-content-md-center row-cols-1 row-cols-md-3">
-
-
-                    <!-- STATISTIC BLOCK #1 -->
-                    <div class="col">
-                        <div id="sb-1-1" class="wow fadeInUp">
-                            <div class="statistic-block">
-
-                                <!-- Digit -->
-                                <div class="statistic-block-digit text-center">
-                                    <h2 class="s-46 statistic-number"><span class="count-element">89</span>k</h2>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="statistic-block-txt color--grey">
-                                    <p class="p-md">Porta justo integer and velna vitae auctor</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> <!-- END STATISTIC BLOCK #1 -->
-
-
-                    <!-- STATISTIC BLOCK #2 -->
-                    <div class="col">
-                        <div id="sb-1-2" class="wow fadeInUp">
-                            <div class="statistic-block">
-
-                                <!-- Digit -->
-                                <div class="statistic-block-digit text-center">
-                                    <h2 class="s-46 statistic-number"><span class="count-element">76</span>%</h2>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="statistic-block-txt color--grey">
-                                    <p class="p-md">Ligula magna suscipit vitae and rutrum</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> <!-- END STATISTIC BLOCK #2 -->
-
-
-                    <!-- STATISTIC BLOCK #3 -->
-                    <div class="col">
-                        <div id="sb-1-3" class="wow fadeInUp">
-                            <div class="statistic-block">
-
-                                <!-- Digit -->
-                                <div class="statistic-block-digit text-center">
-                                    <h2 class="s-46 statistic-number">
-                                        <span class="count-element">4</span>.<span class="count-element">93</span>
-                                    </h2>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="statistic-block-txt color--grey">
-                                    <p class="p-md">Sagittis congue augue egestas an egestas</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> <!-- END STATISTIC BLOCK #3 -->
-
-
-                </div> <!-- End row -->
-            </div> <!-- END STATISTIC-1 WRAPPER -->
-
-
-        </div> <!-- End container -->
-    </div> <!-- END STATISTIC-1 -->
 
 
     <section id="banner-12" class="banner-section">
