@@ -1,98 +1,98 @@
 <!-- Menu -->
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-  <div class="app-brand demo">
-    <a href="{{ route('dashboard') }}" class="app-brand-link">
-      <span class="app-brand-logo demo">
-        <img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="logo" height="50">
-      </span>
-    </a>
+    <div class="app-brand demo">
+        <a href="{{ route('dashboard') }}" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="logo" height="50">
+            </span>
+        </a>
 
-    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-      <i class="bx bx-chevron-left bx-sm align-middle"></i>
-    </a>
-  </div>
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
 
-  <div class="menu-inner-shadow"></div>
+    <div class="menu-inner-shadow"></div>
 
-  <ul class="menu-inner pt-5">
-    <!-- Dashboards -->
-    <li class="{{Request::is('admin/dashboard') ? 'menu-item active' : 'menu-item'}}">
-      <a href="{{ route('dashboard') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home"></i>
-        <div data-i18n="Dashboards">Dashboard</div>
-      </a>
-    </li>
+    <ul class="menu-inner pt-5">
+        <!-- Dashboards -->
+        <li class="{{ Request::is('admin/dashboard') ? 'menu-item active' : 'menu-item' }}">
+            <a href="{{ route('dashboard') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div data-i18n="Dashboards">Dashboard</div>
+            </a>
+        </li>
 
-    <li class="menu-header small text-uppercase">
-      <span class="menu-header-text">Master</span>
-    </li>
-    <!-- Packet -->
-    <li class="{{$sidebar == 'packet' ? 'menu-item active open' : 'menu-item'}}">
-      <a href=" javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-basket"></i>
-        <div data-i18n="Paket">Paket</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="{{$page_name == 'Categori' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.categoripacket') }}" class="menu-link">
-            <div data-i18n="Category">Kategori</div>
-          </a>
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Master</span>
         </li>
-        <li class="{{$page_name == 'Daftar Paket' ? 'menu-item active' : 'menu-item'}}">
-          <a href="{{ route('backend.packet') }}" class="menu-link">
-            <div data-i18n="Pricing Packet">Harga Paket</div>
-          </a>
+        <!-- Packet -->
+        <li class="{{ $sidebar == 'packet' ? 'menu-item active open' : 'menu-item' }}">
+            <a href=" javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-basket"></i>
+                <div data-i18n="Paket">Paket</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="{{ $page_name == 'Categori' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.categoripacket') }}" class="menu-link">
+                        <div data-i18n="Category">Kategori</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Daftar Paket' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('backend.packet') }}" class="menu-link">
+                        <div data-i18n="Pricing Packet">Harga Paket</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Deskripsi Paket' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('backend.deskription') }}" class="menu-link">
+                        <div data-i18n="Pricing Deskripsi">Deskripsi Paket</div>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="{{$page_name == 'Deskripsi Paket' ? 'menu-item active' : 'menu-item'}}">
-          <a href="{{ route('backend.deskription') }}" class="menu-link">
-            <div data-i18n="Pricing Deskripsi">Deskripsi Paket</div>
-          </a>
+        {{-- management promo --}}
+        <li class="{{ $sidebar == 'Promo' ? 'menu-item active open' : 'menu-item' }}">
+            <a href=" javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+                <div data-i18n="promo">Promo</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="{{ $page_name == 'Promo' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.promo') }}" class="menu-link">
+                        <div data-i18n="Promo">Promo Banner</div>
+                    </a>
+                </li>
+            </ul>
         </li>
-      </ul>
-    </li>
-    {{-- management promo --}}
-    <li class="{{$sidebar == 'Promo' ? 'menu-item active open' : 'menu-item'}}">
-      <a href=" javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
-        <div data-i18n="promo">Promo</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="{{$page_name == 'Promo' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.promo') }}" class="menu-link">
-            <div data-i18n="Promo">Promo Banner</div>
-          </a>
-        </li>
-      </ul>
-    </li>
 
-    {{-- management ODP --}}
+        {{-- management ODP --}}
 
-    <li class="{{$sidebar == 'Odp' ? 'menu-item active open' : 'menu-item'}}">
-      <a href=" javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div data-i18n="odp">ODP</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="{{$page_name == 'Area' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.area') }}" class="menu-link">
-            <div data-i18n="area">Area</div>
-          </a>
+        <li class="{{ $sidebar == 'Odp' ? 'menu-item active open' : 'menu-item' }}">
+            <a href=" javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="odp">ODP</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="{{ $page_name == 'Area' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.area') }}" class="menu-link">
+                        <div data-i18n="area">Area</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Odp' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.odp') }}" class="menu-link">
+                        <div data-i18n="Promo">Data Odp</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Maps Odp' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.maps') }}" class="menu-link">
+                        <div data-i18n="Maps">Maps</div>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="{{$page_name == 'Odp' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.odp') }}" class="menu-link">
-            <div data-i18n="Promo">Data Odp</div>
-          </a>
-        </li>
-        <li class="{{$page_name == 'Maps Odp' ? 'menu-item active' : 'menu-item'}}">
-          <a href=" {{ route('backend.maps') }}" class="menu-link">
-            <div data-i18n="Maps">Maps</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-    <!-- Management Blog -->
-    {{-- <li class="menu-item">
+        <!-- Management Blog -->
+        {{-- <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-blanket"></i>
         <div data-i18n="Paket">Blog</div>
@@ -122,34 +122,43 @@
         <div data-i18n="Basic">Pendaftar</div>
       </a>
     </li> --}}
-    <!-- Setting -->
-    <li class="{{$sidebar == 'setting' ? 'menu-item active open' : 'menu-item'}}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-cog"></i>
-        <div data-i18n="Account Settings">Pengaturan</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="{{$page_name == 'User' ? 'menu-item active' : 'menu-item'}}">
-          <a href="{{ route('backend.users') }}" class="menu-link">
-            <div data-i18n="Account">User</div>
-          </a>
+        {{-- partner --}}
+        <li class="{{ Request::is('admin/partner') ? 'menu-item active' : 'menu-item' }}">
+            <a href="{{ route('backend.partner') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div data-i18n="Partner">Partner</div>
+            </a>
         </li>
+
+
+        <!-- Setting -->
+        <li class="{{ $sidebar == 'setting' ? 'menu-item active open' : 'menu-item' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Account Settings">Pengaturan</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="{{ $page_name == 'User' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('backend.users') }}" class="menu-link">
+                        <div data-i18n="Account">User</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="pages-account-settings-notifications.html" class="menu-link">
+                        <div data-i18n="Notifications">Role Permissison</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- Components -->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+        <!-- Cards -->
         <li class="menu-item">
-          <a href="pages-account-settings-notifications.html" class="menu-link">
-            <div data-i18n="Notifications">Role Permissison</div>
-          </a>
+            <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Cards</div>
+            </a>
         </li>
-      </ul>
-    </li>
-    <!-- Components -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-    <!-- Cards -->
-    <li class="menu-item">
-      <a href="cards-basic.html" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div data-i18n="Basic">Cards</div>
-      </a>
-    </li>
-  </ul>
+    </ul>
 </aside>
 <!-- / Menu -->

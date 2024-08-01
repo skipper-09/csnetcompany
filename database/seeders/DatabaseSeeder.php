@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             PacketSeeder::class,
             DescriptionSeeder::class,
             AreaSeeder::class,
-            OdpSeeder::class
+            OdpSeeder::class,
+            PartnerSeeder::class
         ]);
         // User::factory()->create([
         //     'name' => 'Test User',

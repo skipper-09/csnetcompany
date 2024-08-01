@@ -40,7 +40,7 @@
 
 
     <!-- BRANDS-1                                                                     ============================================= -->
-    <div id="brands-carousel-5" class=" pt-50 brands-section">
+    <div id="brands-carousel-5" class=" py-50 brands-section">
         <div class="container">
 
             {{-- <!-- BRANDS TITLE -->
@@ -55,70 +55,15 @@
             <!-- BRANDS CAROUSEL -->
             <div class="row">
                 <div class="col text-center">
-                    <div class="owl-carousel brands-carousel-6">
-
-
+                    <div class="owl-carousel brands-carousel-5">
                         <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-1.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
+                        @foreach ($partner as $item)
+                            <div class="brand-logo p-2">
+                                <a href="#"><img class="img-fluid"
+                                        src="{{ url('storage/images/partner/' . $item->logo) }}" alt="brand-logo"></a>
+                            </div>
+                        @endforeach
 
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-2.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-3.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-4.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-5.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-6.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-7.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-8.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
-
-
-                        <!-- BRAND LOGO IMAGE -->
-                        <div class="brand-logo">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front-end/images/brand-9.png') }}"
-                                    alt="brand-logo"></a>
-                        </div>
                     </div>
                 </div>
             </div> <!-- END BRANDS CAROUSEL -->
@@ -128,8 +73,8 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                ============================================= -->
-    <section id="features-2" class="py-20 features-section division">
+                                                                                                                                                                            ============================================= -->
+    <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-9">
@@ -154,7 +99,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                ============================================= -->
+                                                                                                                                                                            ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -202,7 +147,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                ============================================= -->
+                                                                                                                                                                            ============================================= -->
     <section id="lnk-1" class="pt-100 ct-04 content-section division">
         <div class="container">
 
@@ -233,8 +178,7 @@
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-6">
                     <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid r-04 " src="{{ asset('front-end/images/img-iptv.png') }}"
-                            alt="content-image">
+                        <img class="img-fluid r-04 " src="{{ asset('front-end/images/img-iptv.png') }}" alt="content-image">
                     </div>
                 </div>
 
@@ -612,7 +556,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                ============================================= -->
+                                                                                                                                                                            ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 

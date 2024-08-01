@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
+use App\Http\Controllers\Backend\Partner\PartnerController;
 use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
@@ -59,6 +60,19 @@ Route::prefix('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+    //route partner
+    Route::prefix('partner')->group(function () {
+        Route::get('', [PartnerController::class, 'index'])->name('backend.partner');
+        Route::get('/getData', [PartnerController::class, 'getData'])->name('backend.partner.getData');
+        Route::get('tambah', [PartnerController::class, 'create'])->name('backend.add.partner');
+        Route::post('store', [PartnerController::class, 'store'])->name('backend.partner.store');
+        Route::get('/edit/{id}', [PartnerController::class, 'show'])->name('backend.partner.edit');
+        Route::put('/update/{id}', [PartnerController::class, 'update'])->name('backend.partner.update');
+        Route::delete('/delete/{id}', [PartnerController::class, 'destroy'])->name('backend.partner.delete');
+    });
+
 
     //route profile
     Route::prefix('profile')->group(function () {

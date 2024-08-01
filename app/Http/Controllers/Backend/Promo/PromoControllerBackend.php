@@ -115,8 +115,8 @@ class PromoControllerBackend extends Controller
                 $file  = $request->file('logo');
                 $filename = 'promo_' . rand(0, 999999999) . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('storage/images/promo/'), $filename);
-                if (file_exists(public_path('storage/images/promo/' . $promo->logo))) {
-                    File::delete(public_path('storage/images/promo/' . $promo->logo));
+                if (file_exists(public_path('storage/images/promo/' . $data->logo))) {
+                    File::delete(public_path('storage/images/promo/' . $data->logo));
                 }
             } else {
                 $filename = $data->logo;

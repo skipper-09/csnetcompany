@@ -37,21 +37,10 @@
 @endpush
 
 @section('content')
-    <!-- HERO-2
-                                                                                                                           ============================================= -->
+    <!-- HERO-2                                                                                                             ============================================= -->
     <section id="hero-2" class="bg--snow hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
-
-
-                <!-- HERO IMAGE -->
-                <div class="col-md-6 order-last order-md-2">
-                    <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/a21.jpg') }}" alt="hero-image">
-                    </div>
-                </div>
-
-
                 <!-- HERO TEXT -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="hero-2-txt wow fadeInLeft">
@@ -71,6 +60,12 @@
 
 
                 </div> <!-- End row -->
+                <!-- HERO IMAGE -->
+                <div class="col-md-6 order-last order-md-2">
+                    <div class="hero-2-img wow fadeInRight">
+                        <img class="img-fluid" src="{{ asset('front-end/images/hero11.svg') }}" alt="hero-image">
+                    </div>
+                </div>
             </div> <!-- End container -->
     </section> <!-- END HERO-2 -->
 
@@ -78,7 +73,7 @@
 
 
     <!-- PRICING-1
-                                                                                                               ============================================= -->
+                                                                                                                       ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -156,7 +151,7 @@
 
 
     <!-- PRICING COMPARE
-                                                                                                                   ============================================= -->
+                                                                                                                           ============================================= -->
     <section id="comp-table" class="pt-100 pb-60 pricing-section division">
         <div class="container">
 
@@ -226,7 +221,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                  ============================================= -->
+                                                                                                                          ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -402,7 +397,7 @@
 
 
     <!-- BANNER-1
-                                                                                                                   ============================================= -->
+                                                                                                                           ============================================= -->
     <section id="banner-1" class="pt-100 banner-section">
         <div class="container">
 
