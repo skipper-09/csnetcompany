@@ -37,8 +37,6 @@
             </div> <!-- End row -->
         </div> <!-- End container -->
     </section> <!-- END HERO-2 -->
-
-
     <!-- BRANDS-1                                                                     ============================================= -->
     <div id="brands-carousel-5" class=" py-50 brands-section">
         <div class="container">
@@ -73,7 +71,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                            ============================================= -->
+                                                                                                                                                                                                                ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -99,7 +97,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                            ============================================= -->
+                                                                                                                                                                                                                ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -111,7 +109,7 @@
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-6">
                     <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/img-07.png') }}" alt="content-image">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="content-image">
                     </div>
                 </div>
 
@@ -146,41 +144,49 @@
 
 
 
+
+
+
+
     <!-- TEXT CONTENT
-                                                                                                                                                                            ============================================= -->
-    <section id="lnk-1" class="pt-100 ct-04 content-section division">
+                       ============================================= -->
+    <section class="pt-100 ct-01 content-section division">
         <div class="container">
 
 
             <!-- SECTION CONTENT (ROW) -->
             <div class="row d-flex align-items-center">
 
+
                 <!-- TEXT BLOCK -->
-                <div class="col-md-6">
-                    <div class="txt-block right-column wow fadeInLeft">
+                <div class="col-md-6 order-last order-md-2">
+                    <div class="txt-block left-column wow fadeInRight">
 
                         <!-- Section ID -->
                         <span class="section-id">INTERNET PLUS TV</span>
 
                         <!-- Title -->
-                        <h2 class="s-46 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
+                        <h2 class="s-44 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
 
                         <!-- Text -->
                         <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
                             momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
                             Anda terpenuhi.
                         </p>
-
                         <a href="{{ route('packet.internettv') }}"><button
                                 class="btn btn-primary btn--theme">Selengkapnya</button></a>
+
                     </div>
                 </div> <!-- END TEXT BLOCK -->
+
+
                 <!-- IMAGE BLOCK -->
-                <div class="col-md-6">
-                    <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid r-04 " src="{{ asset('front-end/images/img-iptv.png') }}" alt="content-image">
+                <div class="col-md-6 order-first order-md-2">
+                    <div class="img-block right-column wow fadeInLeft">
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-iptv.png') }}" alt="content-image">
                     </div>
                 </div>
+
 
             </div> <!-- END SECTION CONTENT (ROW) -->
 
@@ -477,86 +483,10 @@
 
         </div> <!-- End container -->
     </section> <!-- END FEATURES-11 -->
-    <!-- STATISTIC-1============================================= -->
-    <div id="statistic-1" class="py-100 statistic-section division">
-        <div class="container">
-            <!-- STATISTIC-1 WRAPPER -->
-            <div class="statistic-1-wrapper">
-                <div class="row justify-content-md-center row-cols-1 row-cols-md-3">
-
-
-                    <!-- STATISTIC BLOCK #1 -->
-                    <div class="col">
-                        <div id="sb-1-1" class="wow fadeInUp">
-                            <div class="statistic-block">
-
-                                <!-- Digit -->
-                                <div class="statistic-block-digit text-center">
-                                    <h2 class="s-46 statistic-number"><span class="count-element">89</span>k</h2>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="statistic-block-txt color--grey">
-                                    <p class="p-md">Porta justo integer and velna vitae auctor</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> <!-- END STATISTIC BLOCK #1 -->
-
-
-                    <!-- STATISTIC BLOCK #2 -->
-                    <div class="col">
-                        <div id="sb-1-2" class="wow fadeInUp">
-                            <div class="statistic-block">
-
-                                <!-- Digit -->
-                                <div class="statistic-block-digit text-center">
-                                    <h2 class="s-46 statistic-number"><span class="count-element">76</span>%</h2>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="statistic-block-txt color--grey">
-                                    <p class="p-md">Ligula magna suscipit vitae and rutrum</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> <!-- END STATISTIC BLOCK #2 -->
-
-
-                    <!-- STATISTIC BLOCK #3 -->
-                    <div class="col">
-                        <div id="sb-1-3" class="wow fadeInUp">
-                            <div class="statistic-block">
-
-                                <!-- Digit -->
-                                <div class="statistic-block-digit text-center">
-                                    <h2 class="s-46 statistic-number">
-                                        <span class="count-element">4</span>.<span class="count-element">93</span>
-                                    </h2>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="statistic-block-txt color--grey">
-                                    <p class="p-md">Sagittis congue augue egestas an egestas</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div> <!-- END STATISTIC BLOCK #3 -->
-
-
-                </div> <!-- End row -->
-            </div> <!-- END STATISTIC-1 WRAPPER -->
-
-
-        </div> <!-- End container -->
-    </div> <!-- END STATISTIC-1 -->
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                            ============================================= -->
+                                                                                                                                                                                                                ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
@@ -885,7 +815,7 @@
 
 
 
-    <section id="banner-12" class="banner-section">
+    {{-- <section id="banner-12" class="banner-section">
         <div class="container">
             <!-- BANNER-12 WRAPPER -->
             <div class="banner-12-wrapper bg--03 bg--scroll r-16">
@@ -924,6 +854,6 @@
 
 
         </div> <!-- End container -->
-    </section> <!-- END BANNER-12 -->
+    </section> <!-- END BANNER-12 --> --}}
 
 @endsection

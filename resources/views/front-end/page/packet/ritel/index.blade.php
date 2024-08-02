@@ -38,7 +38,7 @@
 
 @section('content')
     <!-- HERO-2                                                                                                             ============================================= -->
-    <section id="hero-2" class="bg--snow hero-section">
+    <section id="hero-2" class="bg--08 hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <!-- HERO TEXT -->
@@ -63,7 +63,7 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/hero11.svg') }}" alt="hero-image">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="hero-image">
                     </div>
                 </div>
             </div> <!-- End container -->
@@ -73,7 +73,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                       ============================================= -->
+                                                                                                                                                   ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -151,7 +151,7 @@
 
 
     <!-- PRICING COMPARE
-                                                                                                                           ============================================= -->
+                                                                                                                                                       ============================================= -->
     <section id="comp-table" class="pt-100 pb-60 pricing-section division">
         <div class="container">
 
@@ -221,7 +221,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                          ============================================= -->
+                                                                                                                                                      ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -397,7 +397,7 @@
 
 
     <!-- BANNER-1
-                                                                                                                           ============================================= -->
+                                                                                                                                                       ============================================= -->
     <section id="banner-1" class="pt-100 banner-section">
         <div class="container">
 

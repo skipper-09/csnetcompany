@@ -150,7 +150,7 @@
                 </li>
             </ul>
         </li>
-        <!-- Components -->
+        {{-- <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->
         <li class="menu-item">
@@ -158,7 +158,7 @@
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Cards</div>
             </a>
-        </li>
+        </li> --}}
     </ul>
 </aside>
 <!-- / Menu -->

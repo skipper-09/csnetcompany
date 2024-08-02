@@ -12,6 +12,7 @@ class HomeController extends Controller
     {
         $data = [
             'page_name' => 'Home',
+            'navlight' => true,
             'partner' => partner::all()
         ];
         return view('front-end.page.home.index', $data);
