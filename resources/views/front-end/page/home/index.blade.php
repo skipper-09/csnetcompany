@@ -71,7 +71,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                    ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -84,7 +84,7 @@
                         <div class="d-flex gap-2 justify-content-center">
                             <input type="text" value="{{ request('query') }}" name="query"
                                 class="form-control w-50 rounded-5" placeholder="Kode Pos">
-                            <button class="btn btn-sm btn--black hover--theme rounded-5" type="submit">Cek Area</button>
+                            <button class="btn btn-primary btn--theme rounded-5" type="submit">Cek Area</button>
                         </div>
                     </form>
                 </div>
@@ -97,7 +97,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                    ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -149,7 +149,7 @@
 
 
     <!-- TEXT CONTENT
-                       ============================================= -->
+                                                           ============================================= -->
     <section class="pt-100 ct-01 content-section division">
         <div class="container">
 
@@ -486,7 +486,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                    ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
@@ -523,8 +523,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Etiam sapien sagittis congue augue a massa varius egestas ultrice varius magna
-                                    a tempus aliquet undo cursus suscipit
+                                <p>Layanan pelanggan yang responsif dan ramah. Masalah koneksi saya cepat teratasi. Paket
+                                    harga yang ditawarkan juga sangat kompetitif.
                                 </p>
 
                                 <!-- Author -->
@@ -559,9 +559,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>At sagittis congue augue diam egestas magna an ipsum vitae purus ipsum primis
-                                    and cubilia laoreet augue egestas a luctus donec ltrice ligula porta augue magna
-                                    suscipit lectus gestas
+                                <p>Proses instalasi cepat dan teknisinya sangat profesional. Internet stabil dan cepat,
+                                    sangat cocok untuk kebutuhan sehari-hari saya.
                                 </p>
 
                                 <!-- Author -->
@@ -596,8 +595,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Mauris gestas magnis a sapien etiam sapien congue an augue egestas and ultrice
-                                    vitae purus diam an integer congue magna ligula egestas magna suscipit
+                                <p>Kecepatan internet yang luar biasa! Streaming, gaming, dan download semua berjalan lancar
+                                    tanpa hambatan. Sangat puas dengan layanan ini.
                                 </p>
 
                                 <!-- Author -->
@@ -632,8 +631,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Mauris donec a magnis sapien etiam pretium a congue augue volutpat lectus
-                                    aenean magna and undo mauris lectus laoreet tempor egestas rutrum
+                                <p>Harga yang ditawarkan sesuai dengan kualitas. Kecepatan internet sangat memuaskan, bahkan
+                                    saat banyak perangkat terhubung.
                                 </p>
 
                                 <!-- Author -->
@@ -668,10 +667,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>An augue cubilia undo laoreet magna suscipit egestas ipsum lectus purus ipsum
-                                    and primis augue an ultrice ligula egestas suscipit a lectus gestas auctor
-                                    tempus
-                                    feugiat impedit
+                                <p>Konektivitas yang sangat stabil dan kecepatan yang konsisten. Saya dapat bekerja dari
+                                    rumah tanpa masalah.
                                 </p>
 
                                 <!-- Author -->
@@ -706,8 +703,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>An augue cubilia laoreet undo magna ipsum semper suscipit egestas magna ipsum
-                                    ligula a vitae purus and ipsum primis cubilia magna suscipit
+                                <p>Teknisi instalasi sangat ramah dan membantu. Prosesnya cepat dan saya mendapatkan panduan
+                                    lengkap tentang cara menggunakan layanan.
                                 </p>
 
                                 <!-- Author -->
@@ -742,9 +739,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Augue egestas porta tempus volutpat egestas augue cubilia laoreet a magna
-                                    suscipit luctus dolor blandit vitae purus neque tempus an aliquet porta gestas
-                                    rutrum blandit vitae
+                                <p>Sangat senang dengan layanan ini. Tidak ada gangguan sama sekali dan kecepatan internet
+                                    selalu sesuai dengan yang dijanjikan.
                                 </p>
 
                                 <!-- Author -->
@@ -779,8 +775,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Augue at vitae purus tempus egestas volutpat augue undo cubilia laoreet magna
-                                    suscipit luctus dolor blandit at purus tempus feugiat impedit
+                                <p>Paket harga yang fleksibel dan banyak pilihan. Layanan pelanggan selalu siap membantu
+                                    kapan pun saya membutuhkannya.
                                 </p>
 
                                 <!-- Author -->

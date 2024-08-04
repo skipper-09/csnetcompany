@@ -29,8 +29,11 @@
             <div id="map"></div>
         </div>
     @else
-        <h1 class="mt-100 text-center">Belum tercover</h1>
-        <p class="text-center">Ingin di daerah ini terjangkau layanan idnet hubungi kami!!</p>
+        <div class="mt-100 d-flex flex-column justify-content-center align-items-center">
+            <img class="img-fluid" width="300px" src="{{ asset('front-end/images/Search.gif') }}" alt="search">
+            <h1 class="text-center">Belum tercover</h1>
+            <p class="text-center">Ingin di daerah ini terjangkau layanan idnet hubungi kami!!</p>
+        </div>
     @endif
 
 @endsection

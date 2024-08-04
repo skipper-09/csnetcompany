@@ -38,43 +38,24 @@
 
 @section('content')
     <!-- HERO-2
-                                                   ============================================= -->
-    <section id="hero-2" class="bg--snow hero-section">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-
-
-                <!-- HERO IMAGE -->
-                <div class="col-md-6 order-last order-md-2">
-                    <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/a21.jpg') }}" alt="hero-image">
-                    </div>
-                </div>
-
-
-                <!-- HERO TEXT -->
-                <div class="col-md-6 order-first order-md-2">
+                                                                                                                                   ============================================= -->
+    <section id="hero-2" class="bg--business hero-section">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-9 order-first order-md-2">
                     <div class="hero-2-txt wow fadeInLeft">
 
                         <!-- Title -->
-                        <h2 class="s-56 w-700 color--black">Business Internet</h2>
+                        <h2 class="s-56 w-700 color--white">Business Internet</h2>
 
                         <!-- Text -->
-                        <p class="p-lg">
+                        <p class="p-lg color--white">
                             Kami memahami bahwa kecepatan dan keandalan internet adalah jantung dari setiap bisnis modern.
                             Dengan
                             Dedicated Business Internet Wifi, Anda mendapatkan akses internet yang eksklusif dan cepat tanpa
                             kompromi,
                             yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.
                         </p>
-
-
-                        {{--
-					<!-- HERO DIGITS -->
-					<div class="hero-digits">
-						<button class="btn btn--theme btn-outline-light rounded-5 ">Lihat Paket</button>
-
-					</div> <!-- END HERO DIGITS --> --}}
 
                     </div>
                 </div> <!-- END HERO TEXT -->
@@ -143,7 +124,7 @@
 
 
     <!-- FEATURES-11
-                                       ============================================= -->
+                                                                                                                       ============================================= -->
     <section id="features-11" class="pt-100 features-section division">
         <div class="container">
 
@@ -300,10 +281,9 @@
 
                             <!-- Text -->
                             <div class="fbox-txt">
-                                <h6 class="s-22 w-700">Komitmen Terhadap Kepuasan Pelanggan</h6>
-                                <p>Kepuasan Anda adalah prioritas kami. Dengan jaringan 100% fiber optic dan kestabilan
-                                    jaringan, kami memastikan setiap pelanggan mendapatkan layanan yang memenuhi dan
-                                    melebihi harapan.
+                                <h6 class="s-22 w-700">Simetris 1:1</h6>
+                                <p>Layanan Dedicated memiliki kecepatan download dan upload yang simetris yakni 1:1 di jalur
+                                    koneksi domestik maupun internasional.
                                 </p>
                             </div>
 
@@ -391,7 +371,7 @@
 
 
     <!-- FAQs-2
-                                          ============================================= -->
+                                                                                                                          ============================================= -->
     <section id="faqs-2" class=" pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -587,5 +567,47 @@
             </div> <!-- End row -->
         </div> <!-- End container -->
     </section> <!-- END FAQs-2 -->
+
+
+    <section id="banner-12" class="banner-section">
+        <div class="container">
+            <!-- BANNER-12 WRAPPER -->
+            <div class="banner-12-wrapper bg--03 bg--scroll r-16">
+                <div class="banner-overlay">
+                    <div class="row d-flex align-items-center">
+                        <!-- BANNER-12 TEXT -->
+                        <div class="col-md-7">
+                            <div class="banner-12-txt color--white">
+
+                                <!-- Title -->
+                                <h2 class="s-45 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
+
+                                <!-- Text -->
+                                <p class="p-lg">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
+                                    memungkinakan anda untuk memperluas jangkauam bisnis muncul sebagai pemenang ditengah
+                                    persaingan bisnis yang ketat.
+                                </p>
+
+                                <!-- Button -->
+                                <a href="#" class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
+
+                            </div>
+                        </div> <!-- END BANNER-12 TEXT -->
+
+
+                        <!-- BANNER-12 IMAGE -->
+                        <div class="col-md-5">
+                            <div class="banner-12-img text-center">
+                                <img class="img-fluid" src="{{ asset('front-end/images/img-16.png') }}"
+                                    alt="banner-image">
+                            </div>
+                        </div>
+                    </div> <!-- End row -->
+                </div> <!-- End banner overlay -->
+            </div> <!-- END BANNER-12 WRAPPER -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END BANNER-12 -->
 
 @endsection

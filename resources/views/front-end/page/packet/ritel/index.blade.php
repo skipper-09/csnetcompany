@@ -73,7 +73,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                                                   ============================================= -->
+                                                                                                                                                               ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -124,7 +124,9 @@
                                                     <h4>@currency($item->price)/{{ $item->duration }}</h4>
                                                 </div>
                                                 <div class=" text-center mb-4">
-                                                    <button type="button" class="btn btn--theme">Daftar</button>
+                                                    <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
+                                                        <button type="button" class="btn btn--theme">Daftar</button>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,7 +153,7 @@
 
 
     <!-- PRICING COMPARE
-                                                                                                                                                       ============================================= -->
+                                                                                                                                                                   ============================================= -->
     <section id="comp-table" class="pt-100 pb-60 pricing-section division">
         <div class="container">
 
@@ -219,9 +221,256 @@
 
 
 
+    <!-- FEATURES-============================================= -->
+    <section id="features-11" class="pt-100 features-section division">
+        <div class="container">
+
+
+            <!-- SECTION TITLE -->
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-9">
+                    <div class="section-title mb-70">
+
+                        <!-- Title -->
+                        <h2 class="s-40 w-700">Keunggulan Paket Broadband</h2>
+
+                        <!-- Text -->
+                        {{-- <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p> --}}
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FEATURES-11 WRAPPER -->
+            <div class="fbox-wrapper">
+                <div class="row row-cols-1 row-cols-md-2 rows-3">
+
+
+                    <!-- FEATURE BOX #1 -->
+                    <div class="col">
+                        <div class="fbox-11 fb-1 wow fadeInUp">
+
+                            <!-- Icon -->
+                            <div class="fbox-ico-wrap">
+                                <div class="fbox-ico ico-50">
+                                    <div class="shape-ico color--theme">
+
+                                        <!-- Vector Icon -->
+                                        <span class="flaticon-graphics"></span>
+
+                                        <!-- Shape -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                transform="translate(100 100)" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div> <!-- End Icon -->
+
+                            <!-- Text -->
+                            <div class="fbox-txt">
+                                <h6 class="s-22 w-700">100% Fiber Oftic</h6>
+                                <p>Kami menggunakan 100% fiber optic untuk memastikan Anda mendapatkan kecepatan internet
+                                    yang tak tertandingi. Dengan teknologi ini, Anda dapat menikmati streaming, gaming, dan
+                                    browsing tanpa hambatan.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div> <!-- END FEATURE BOX #1 -->
+
+
+                    <!-- FEATURE BOX #2 -->
+                    <div class="col">
+                        <div class="fbox-11 fb-2 wow fadeInUp">
+
+                            <!-- Icon -->
+                            <div class="fbox-ico-wrap">
+                                <div class="fbox-ico ico-50">
+                                    <div class="shape-ico color--theme">
+
+                                        <!-- Vector Icon -->
+                                        <span class="flaticon-24-hours"></span>
+
+                                        <!-- Shape -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                transform="translate(100 100)" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div> <!-- End Icon -->
+
+                            <!-- Text -->
+                            <div class="fbox-txt">
+                                <h6 class="s-22 w-700">24/7 Customer Service</h6>
+                                <p>Kami berkomitmen untuk memberikan layanan pelanggan terbaik. Tim kami siap membantu Anda
+                                    24/7 untuk memastikan pengalaman internet Anda selalu optimal.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div> <!-- END FEATURE BOX #2 -->
+
+
+                    <!-- FEATURE BOX #3 -->
+                    <div class="col">
+                        <div class="fbox-11 fb-3 wow fadeInUp">
+
+                            <!-- Icon -->
+                            <div class="fbox-ico-wrap">
+                                <div class="fbox-ico ico-50">
+                                    <div class="shape-ico color--theme">
+
+                                        <!-- Vector Icon -->
+                                        <span class="flaticon-price-label"></span>
+
+                                        <!-- Shape -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                transform="translate(100 100)" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div> <!-- End Icon -->
+
+                            <!-- Text -->
+                            <div class="fbox-txt">
+                                <h6 class="s-22 w-700">Harga Kompetitif</h6>
+                                <p>Kami menawarkan paket internet dengan harga yang kompetitif tanpa mengorbankan kualitas.
+                                    Dengan 100% fiber optic, Anda mendapatkan nilai terbaik untuk investasi Anda.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div> <!-- END FEATURE BOX #3 -->
+
+
+                    <!-- FEATURE BOX #4 -->
+                    <div class="col">
+                        <div class="fbox-11 fb-4 wow fadeInUp">
+
+                            <!-- Icon -->
+                            <div class="fbox-ico-wrap">
+                                <div class="fbox-ico ico-50">
+                                    <div class="shape-ico color--theme">
+
+                                        <!-- Vector Icon -->
+                                        <span class="flaticon-iteration"></span>
+
+                                        <!-- Shape -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                transform="translate(100 100)" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div> <!-- End Icon -->
+
+                            <!-- Text -->
+                            <div class="fbox-txt">
+                                <h6 class="s-22 w-700">Komitmen Terhadap Kepuasan Pelanggan</h6>
+                                <p>Kepuasan Anda adalah prioritas kami. Dengan jaringan 100% fiber optic dan kestabilan
+                                    jaringan, kami memastikan setiap pelanggan mendapatkan layanan yang memenuhi dan
+                                    melebihi harapan.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div> <!-- END FEATURE BOX #4 -->
+
+
+                    <!-- FEATURE BOX #5 -->
+                    <div class="col">
+                        <div class="fbox-11 fb-5 wow fadeInUp">
+
+                            <!-- Icon -->
+                            <div class="fbox-ico-wrap">
+                                <div class="fbox-ico ico-50">
+                                    <div class="shape-ico color--theme">
+
+                                        <!-- Vector Icon -->
+                                        <span class="flaticon-trophy"></span>
+
+                                        <!-- Shape -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                transform="translate(100 100)" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div> <!-- End Icon -->
+
+                            <!-- Text -->
+                            <div class="fbox-txt">
+                                <h6 class="s-22 w-700">Stabil dan Handal</h6>
+                                <p>Dengan 100% fiber optic, kami menjamin koneksi internet yang stabil dan andal. Tidak ada
+                                    lagi masalah buffering atau gangguan koneksi di saat-saat penting.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div> <!-- END FEATURE BOX #5 -->
+
+
+                    <!-- FEATURE BOX #6 -->
+                    <div class="col">
+                        <div class="fbox-11 fb-6 wow fadeInUp">
+
+                            <!-- Icon -->
+                            <div class="fbox-ico-wrap">
+                                <div class="fbox-ico ico-50">
+                                    <div class="shape-ico color--theme">
+
+                                        <!-- Vector Icon -->
+                                        <span class="flaticon-search-engine-1"></span>
+
+                                        <!-- Shape -->
+                                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                transform="translate(100 100)" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div> <!-- End Icon -->
+
+                            <!-- Text -->
+                            <div class="fbox-txt">
+                                <h6 class="s-22 w-700">Tim Teknisi Handal</h6>
+                                <p>Kami memiliki tim teknisi yang terlatih dan berpengalaman dalam menangani berbagai
+                                    masalah teknis. Setiap teknisi kami adalah profesional yang berdedikasi untuk memberikan
+                                    layanan terbaik.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div> <!-- END FEATURE BOX #6 -->
+
+
+                </div> <!-- End row -->
+            </div> <!-- END FEATURES-11 WRAPPER -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END FEATURES-11 -->
+
+
 
     <!-- FAQs-2
-                                                                                                                                                      ============================================= -->
+                                                                                                                                                                  ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -397,7 +646,7 @@
 
 
     <!-- BANNER-1
-                                                                                                                                                       ============================================= -->
+                                                                                                                                                                   ============================================= -->
     <section id="banner-1" class="pt-100 banner-section">
         <div class="container">
 

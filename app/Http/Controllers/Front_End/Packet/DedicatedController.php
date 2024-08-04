@@ -10,6 +10,7 @@ class DedicatedController extends Controller
     public function index()
     {
         $data = [
+            'navlight' => true,
             'page_name' => 'Dedicated'
         ];
         return view('front-end.page.packet.dedicated.index', $data);
