@@ -1059,6 +1059,7 @@ section,
 }
 .bg--10 {
     background-image: url(../images/bg-10.png);
+    height: 100vh;
 }
 /*------------------------------------------*/
 /*  SECTION DIVIDER

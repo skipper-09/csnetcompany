@@ -41,8 +41,8 @@
                                                                                                                                    ============================================= -->
     <section id="hero-2" class="bg--business hero-section">
         <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-9 order-first order-md-2">
+            <div class="d-flex align-self-center justify-content-center pt-100">
+                <div class="col-md-12 col-lg-9 order-first order-md-2">
                     <div class="hero-2-txt wow fadeInLeft">
 
                         <!-- Title -->

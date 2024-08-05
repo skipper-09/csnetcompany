@@ -52,9 +52,9 @@
                                     <li aria-haspopup="true"><a href="{{ route('packet.promo') }}">Promo</a></li>
                                 </ul>
                             </li>
-                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}"
+                            {{-- <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}"
                                     class="h-link">Blog</a>
-                            </li>
+                            </li> --}}
 
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
@@ -191,9 +191,9 @@
                                     <li aria-haspopup="true"><a href="{{ route('packet.promo') }}">Promo</a></li>
                                 </ul>
                             </li>
-                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}"
+                            {{-- <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}"
                                     class="h-link">Blog</a>
-                            </li>
+                            </li> --}}
 
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>

@@ -6,7 +6,7 @@
     <!-- HERO-2                                                                       ============================================= -->
     <section id="hero-2" class="bg--10 hero-section">
         <div class="container">
-            <div class="row d-flex align-items-center">
+            <div class="row d-flex align-items-center justify-content-center">
 
 
                 <!-- HERO IMAGE -->

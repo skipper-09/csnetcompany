@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
 {{-- endowlcarosel --}}
 <style>
+    .hero-promo{
+        padding-top: 80px;
+    }
     .img-hero {
         height: 500px
     }
@@ -56,7 +59,7 @@
 @section('content')
 <!-- HERO-2
                        ============================================= -->
-<section id="" class="hero-section">
+<section id="" class="hero-promo">
     <div class="owl-carousel">
         @foreach ($promo as $item)
         <div><img class="fullscreen-img" src="{{ url('storage/images/promo/'.$item->logo) }}" alt="{{ $item->name }}">
@@ -141,8 +144,6 @@
 
 
 
-<!-- DIVIDER LINE -->
-<hr class="divider">
 
 
 
