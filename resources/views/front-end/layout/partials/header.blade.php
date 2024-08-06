@@ -5,10 +5,11 @@
 
             <!-- MOBILE HEADER -->
             <div class="wsmobileheader clearfix">
-                <a href="{{ route('home') }}">
-                    <span class="smllogo"><img src="{{ asset('front-end/images/logo-idnet.webp') }}"
-                            alt="mobile-logo"></span>
-                </a>
+                <span class="smllogo">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="mobile-logo">
+                    </a>
+                </span>
                 <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
             </div>
 
@@ -146,8 +147,10 @@
 
             <!-- MOBILE HEADER -->
             <div class="wsmobileheader clearfix">
-                <a href="{{ route('home') }}"><span class="smllogo"><img
-                            src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="mobile-logo"></span></a>
+                <span class="smllogo">
+                    <a href="{{ route('home') }}"><img src="{{ asset('front-end/images/logo-idnet.webp') }}"
+                            alt="mobile-logo"></a>
+                </span>
                 <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
             </div>
 

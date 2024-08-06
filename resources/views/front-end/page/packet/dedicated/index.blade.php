@@ -370,6 +370,47 @@
     </section> <!-- END FEATURES-11 -->
 
 
+    <section id="banner-12" class="banner-section pt-40">
+        <div class="container">
+            <!-- BANNER-12 WRAPPER -->
+            <div class="banner-12-wrapper bg--03 bg--scroll r-16">
+                <div class="banner-overlay">
+                    <div class="row d-flex align-items-center">
+                        <!-- BANNER-12 TEXT -->
+                        <div class="col-md-7">
+                            <div class="banner-12-txt color--white">
+
+                                <!-- Title -->
+                                <h2 class="s-45 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
+
+                                <!-- Text -->
+                                <p class="p-lg">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
+                                    memungkinakan anda untuk memperluas jangkauam bisnis muncul sebagai pemenang ditengah
+                                    persaingan bisnis yang ketat.
+                                </p>
+
+                                <!-- Button -->
+                                <a href="#" class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
+
+                            </div>
+                        </div> <!-- END BANNER-12 TEXT -->
+
+
+                        <!-- BANNER-12 IMAGE -->
+                        <div class="col-md-5">
+                            <div class="banner-12-img text-center">
+                                <img class="img-fluid" src="{{ asset('front-end/images/img-16.png') }}"
+                                    alt="banner-image">
+                            </div>
+                        </div>
+                    </div> <!-- End row -->
+                </div> <!-- End banner overlay -->
+            </div> <!-- END BANNER-12 WRAPPER -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END BANNER-12 -->
+
     <!-- FAQs-2
                                                                                                                           ============================================= -->
     <section id="faqs-2" class=" pb-30 inner-page-hero faqs-section division">
@@ -557,7 +598,7 @@
                     <!-- MORE QUESTIONS LINK -->
                     <div class="more-questions">
                         <div class="more-questions-txt bg--white-400 r-100">
-                            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="contacts.html"
+                            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="{{ route('contact') }}"
                                     class="color--theme">Hubungi Kami</a></p>
                         </div>
                     </div>
@@ -569,45 +610,6 @@
     </section> <!-- END FAQs-2 -->
 
 
-    <section id="banner-12" class="banner-section">
-        <div class="container">
-            <!-- BANNER-12 WRAPPER -->
-            <div class="banner-12-wrapper bg--03 bg--scroll r-16">
-                <div class="banner-overlay">
-                    <div class="row d-flex align-items-center">
-                        <!-- BANNER-12 TEXT -->
-                        <div class="col-md-7">
-                            <div class="banner-12-txt color--white">
 
-                                <!-- Title -->
-                                <h2 class="s-45 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
-
-                                <!-- Text -->
-                                <p class="p-lg">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
-                                    memungkinakan anda untuk memperluas jangkauam bisnis muncul sebagai pemenang ditengah
-                                    persaingan bisnis yang ketat.
-                                </p>
-
-                                <!-- Button -->
-                                <a href="#" class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
-
-                            </div>
-                        </div> <!-- END BANNER-12 TEXT -->
-
-
-                        <!-- BANNER-12 IMAGE -->
-                        <div class="col-md-5">
-                            <div class="banner-12-img text-center">
-                                <img class="img-fluid" src="{{ asset('front-end/images/img-16.png') }}"
-                                    alt="banner-image">
-                            </div>
-                        </div>
-                    </div> <!-- End row -->
-                </div> <!-- End banner overlay -->
-            </div> <!-- END BANNER-12 WRAPPER -->
-
-
-        </div> <!-- End container -->
-    </section> <!-- END BANNER-12 -->
 
 @endsection

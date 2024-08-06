@@ -1061,6 +1061,11 @@ section,
     background-image: url(../images/bg-10.png);
     height: 100vh;
 }
+.bg--ritel {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url(../images/futuristic.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
 /*------------------------------------------*/
 /*  SECTION DIVIDER
 /*------------------------------------------*/

@@ -2,7 +2,14 @@
 
 @section('title', $page_name)
 @push('css')
+    <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
+
     <style>
+        #hero-2 {
+            height: 100vh;
+        }
+
         .bg--heading {
             background-position: center !important;
             background-repeat: no-repeat;
@@ -33,12 +40,28 @@
             border-color: #e9ecef #e9ecef #dee2e6;
             color: #0056b3;
         }
+
+
+
+        .pricing {
+            width: 100%;
+        }
+
+        .pricing .card {
+            border: none;
+            border-radius: 16px;
+        }
+
+        /* .pricing .card :hover{
+                        background-color: #25316D;
+                        border-radius: 16px
+                    } */
     </style>
 @endpush
 
 @section('content')
     <!-- HERO-2                                                                                                             ============================================= -->
-    <section id="hero-2" class="bg--08 hero-section">
+    <section id="hero-2" class="bg--ritel hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <!-- HERO TEXT -->
@@ -46,16 +69,17 @@
                     <div class="hero-2-txt wow fadeInLeft">
 
                         <!-- Title -->
-                        <h2 class="s-56 w-700 color--black">Broadband Internet</h2>
+                        <h2 class="s-56 w-700 color--white">Broadband Internet</h2>
 
                         <!-- Text -->
-                        <p class="p-lg">Nikmati pengalaman internet tanpa batas dengan kecepatan tinggi dan koneksi yang
+                        <p class="p-lg color--white">Nikmati pengalaman internet tanpa batas dengan kecepatan tinggi dan
+                            koneksi yang
                             stabil. Dengan IDNET, Anda mendapatkan lebih dari sekadar koneksi internet.
                         </p>
+                        <a href="#pricing-1"><button class="btn btn--theme btn-sm">Berlangganan Sekarang</button></a>
                         <!-- HERO DIGITS -->
-                        <p class="p-lg">Mulai Dari <span class=" s-22 w-500 color--black">Rp. 100.000</span> /Bulan</p>
-                        {{-- <div class="hero-digits clearfix">
-                        </div> --}}
+                        {{-- <p class="p-lg">Mulai Dari <span class=" s-22 w-500 color--black">Rp. 100.000</span> /Bulan</p> --}}
+
                     </div> <!-- END HERO TEXT -->
 
 
@@ -69,155 +93,6 @@
             </div> <!-- End container -->
     </section> <!-- END HERO-2 -->
 
-
-
-
-    <!-- PRICING-1
-                                                                                                                                                               ============================================= -->
-    <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
-        <div class="container">
-
-
-            <!-- SECTION TITLE -->
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8">
-                    <div class="section-title mb-70">
-
-                        <!-- Title -->
-                        <h2 class="s-40 w-700">Daftar Harga Paket Broadband</h2>
-                    </div>
-                </div>
-            </div> <!-- END SECTION TITLE -->
-
-
-            <!-- PRICING TABLES -->
-            <div class="pricing-1-wrapper">
-                <div class="row justify-content-center">
-                    @foreach ($packet as $item)
-                        <div class="col-md-4  gy-4 gap-4">
-                            <div class="card shadow-sm w-60 r-16 border-none">
-                                <div class="">
-                                    <div class="bg--heading division">
-                                        <div class="pricing-title ">
-                                            <h5 class="text-center s-28 w-700 text-uppercase">{{ $item->name }}</h5>
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-content px-4" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="one-month" role="tabpanel"
-                                            aria-labelledby="one-month-tab">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <ul class="list-unstyled mb-4">
-                                                        @foreach ($item->packetDescription as $des)
-                                                            <li
-                                                                class="d-flex align-items-center justify-content-start gap-2">
-                                                                <img src="{{ url('storage/images/descrip/' . $des->logo) }}"
-                                                                    alt="" height="20"> {{ $des->name }}
-                                                            </li>
-                                                        @endforeach
-
-
-                                                    </ul>
-                                                </div>
-                                                <div class="col-12 text-center mb-4">
-                                                    <h4>@currency($item->price)/{{ $item->duration }}</h4>
-                                                </div>
-                                                <div class=" text-center mb-4">
-                                                    <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
-                                                        <button type="button" class="btn btn--theme">Daftar</button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-            </div> <!-- PRICING TABLES -->
-
-
-        </div> <!-- End container -->
-    </section> <!-- END PRICING-1 -->
-
-
-
-
-    <!-- DIVIDER LINE -->
-    <hr class="divider">
-
-
-
-
-    <!-- PRICING COMPARE
-                                                                                                                                                                   ============================================= -->
-    <section id="comp-table" class="pt-100 pb-60 pricing-section division">
-        <div class="container">
-
-
-            <!-- SECTION TITLE -->
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-9">
-                    <div class="section-title mb-70">
-                        <!-- Title -->
-                        <h2 class="s-34 w-700">Rekomendasi Perangkat Untuk Kecepatan Internet Maksimal</h2>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- PRICING COMPARE -->
-            <div class="comp-table wow fadeInUp">
-
-                <div class="">
-                    <!-- Table -->
-                    <div class="table-responsive mb-50">
-                        <table class="table text-center">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50%;">Kecepatan Internet</th>
-                                    <th style="width: 50%;">Rekomendasi Jumlah Perangkat</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <th>10 Mbps</th>
-                                    <td class="color--black">1-4 Perangkat</td>
-
-                                </tr>
-
-                                <tr>
-                                    <th>15 Mbps</th>
-                                    <td class="color--black">4-8 Perangkat</td>
-                                </tr>
-                                <tr>
-                                    <th>20 Mbps</th>
-                                    <td class="color--black">4-8 Perangkat</td>
-                                </tr>
-                                <tr>
-                                    <th>25 Mbps</th>
-                                    <td class="color--black">4-8 Perangkat</td>
-                                </tr>
-                                <tr>
-                                    <th>50 Mbps</th>
-                                    <td class="color--black">4-8 Perangkat</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-                    </div> <!-- End Table -->
-
-                </div>
-
-            </div> <!-- END PRICING COMPARE -->
-        </div> <!-- End container -->
-    </section> <!-- END PRICING COMPARE -->
 
 
 
@@ -469,8 +344,152 @@
 
 
 
+
+
+    <!-- PRICING-1
+                                                                                                                                                                           ============================================= -->
+    <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
+        <div class="container">
+
+
+            <!-- SECTION TITLE -->
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="section-title mb-70">
+
+                        <!-- Title -->
+                        <h2 class="s-40 w-700">Daftar Harga Paket Broadband</h2>
+                    </div>
+                </div>
+            </div> <!-- END SECTION TITLE -->
+
+
+            <!-- PRICING TABLES -->
+            <div class="pricing ">
+                <div class="owl-carousel owl-theme">
+                    @foreach ($packet as $item)
+                        <div class="card r-16 border-none">
+                            <div class="align-self-center">
+                                <div
+                                    class="{{ $item->best_seller == true ? 'bg--heading division' : 'bg-pricing division' }}">
+                                    <div class="pricing-title ">
+                                        <h5 class="text-center s-28 w-700 text-uppercase">{{ $item->name }}</h5>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content px-4" id="myTabContent">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ul class="list-unstyled mb-4">
+                                                @foreach ($item->packetDescription as $des)
+                                                    <li class="d-flex align-items-center justify-content-start gap-2">
+                                                        <img style="width: 30px"
+                                                            src="{{ url('storage/images/descrip/' . $des->logo) }}"
+                                                            alt="">
+                                                        {{ $des->name }}
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 text-center mb-4">
+                                            <h4 style="color: #25316D" class="w-700">@currency($item->price)/{{ $item->duration }}</h4>
+                                        </div>
+                                        <div class=" text-center mb-4">
+                                            <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
+                                                <button type="button" class="btn btn--theme btn-sm">Berlangganan
+                                                    Sekarang</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div> <!-- PRICING TABLES -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END PRICING-1 -->
+
+
+
+    {{-- <!-- PRICING COMPARE
+                                                                                                                                                                               ============================================= -->
+    <section id="comp-table" class="pt-100 pb-60 pricing-section division">
+        <div class="container">
+
+
+            <!-- SECTION TITLE -->
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-9">
+                    <div class="section-title mb-70">
+                        <!-- Title -->
+                        <h2 class="s-34 w-700">Rekomendasi Perangkat Untuk Kecepatan Internet Maksimal</h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PRICING COMPARE -->
+            <div class="comp-table wow fadeInUp">
+
+                <div class="">
+                    <!-- Table -->
+                    <div class="table-responsive mb-50">
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50%;">Kecepatan Internet</th>
+                                    <th style="width: 50%;">Rekomendasi Jumlah Perangkat</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <th>10 Mbps</th>
+                                    <td class="color--black">1-4 Perangkat</td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>15 Mbps</th>
+                                    <td class="color--black">4-8 Perangkat</td>
+                                </tr>
+                                <tr>
+                                    <th>20 Mbps</th>
+                                    <td class="color--black">4-8 Perangkat</td>
+                                </tr>
+                                <tr>
+                                    <th>25 Mbps</th>
+                                    <td class="color--black">4-8 Perangkat</td>
+                                </tr>
+                                <tr>
+                                    <th>50 Mbps</th>
+                                    <td class="color--black">4-8 Perangkat</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div> <!-- End Table -->
+
+                </div>
+
+            </div> <!-- END PRICING COMPARE -->
+        </div> <!-- End container -->
+    </section> <!-- END PRICING COMPARE -->
+ --}}
+
+
+
+
+
     <!-- FAQs-2
-                                                                                                                                                                  ============================================= -->
+                                                                                                                                                                              ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -631,7 +650,7 @@
                     <!-- MORE QUESTIONS LINK -->
                     <div class="more-questions">
                         <div class="more-questions-txt bg--white-400 r-100">
-                            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="contacts.html"
+                            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="{{ route('contact') }}"
                                     class="color--theme">Hubungi Kami</a></p>
                         </div>
                     </div>
@@ -645,47 +664,38 @@
 
 
 
-    <!-- BANNER-1
-                                                                                                                                                                   ============================================= -->
-    <section id="banner-1" class="pt-100 banner-section">
-        <div class="container">
+    @push('js')
+        {{-- call coursel owl --}}
+        <script src="{{ asset('front-end/vendor/OwlCarousel/dist/owl.carousel.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $(".owl-carousel").owlCarousel({
+                    margin:20,
+                    loop: false,
+                    autoplay: false,
+                    autoplayHoverPause: false,
+                    dots: false,
+                    // animateOut: 'slideOutLeft',\
+                    responsiveClass: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false
+                        },
+                        768: {
+                            items: 2,
+                            nav: false
+                        },
+                        1000: {
+                            items: 3,
+                            nav: false,
 
+                        }
+                    }
+                });
+            });
+        </script>
+        {{-- owlcorousel --}}
+    @endpush
 
-            <!-- BANNER-1 WRAPPER -->
-            <div class="banner-1-wrapper r-16">
-                <div class="banner-overlay bg--05 bg--fixed">
-                    <div class="row">
-
-
-                        <!-- BANNER-1 TEXT -->
-                        <div class="col">
-                            <div class="banner-1-txt color--white">
-
-                                <!-- Title -->
-                                <h2 class="s-45 w-700">Give it a try, it's free!</h2>
-
-                                <!-- Text -->
-                                <p class="p-xl">It only takes a few clicks to get started</p>
-
-                                <!-- Button -->
-                                <a href="signup-1.html" class="btn r-04 btn--theme hover--tra-white">Get srarted - it's
-                                    free
-                                </a>
-
-                                <!-- Button Text -->
-                                <p class="p-sm btn-txt ico-15 o-85">
-                                    <span class="flaticon-check"></span> Free for 14 days, no credit card required.
-                                </p>
-
-                            </div>
-                        </div> <!-- END BANNER-1 TEXT -->
-
-
-                    </div> <!-- End row -->
-                </div> <!-- End banner overlay -->
-            </div> <!-- END BANNER-1 WRAPPER -->
-
-
-        </div> <!-- End container -->
-    </section> <!-- END BANNER-1 -->
 @endsection
