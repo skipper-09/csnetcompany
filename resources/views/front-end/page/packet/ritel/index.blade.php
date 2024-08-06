@@ -53,9 +53,9 @@
         }
 
         /* .pricing .card :hover{
-                        background-color: #25316D;
-                        border-radius: 16px
-                    } */
+                                        background-color: #25316D;
+                                        border-radius: 16px
+                                    } */
     </style>
 @endpush
 
@@ -87,7 +87,8 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="hero-image">
+                        <img class="img-fluid" style="width: 400px" src="{{ asset('front-end/images/Group 832.png') }}"
+                            alt="hero-image">
                     </div>
                 </div>
             </div> <!-- End container -->
@@ -347,7 +348,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                                                                           ============================================= -->
+                                                                                                                                                                                           ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -393,7 +394,8 @@
                                             </ul>
                                         </div>
                                         <div class="col-12 text-center mb-4">
-                                            <h4 style="color: #25316D" class="w-700">@currency($item->price)/{{ $item->duration }}</h4>
+                                            <h4 style="color: #25316D" class="w-700">
+                                                @currency($item->price)/{{ $item->duration }}</h4>
                                         </div>
                                         <div class=" text-center mb-4">
                                             <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
@@ -489,7 +491,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                              ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -670,7 +672,7 @@
         <script>
             $(document).ready(function() {
                 $(".owl-carousel").owlCarousel({
-                    margin:20,
+                    margin: 20,
                     loop: false,
                     autoplay: false,
                     autoplayHoverPause: false,

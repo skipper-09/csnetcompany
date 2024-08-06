@@ -38,7 +38,7 @@
 
 @section('content')
     <!-- HERO-2
-                                                                                                                                   ============================================= -->
+                                                                                                                                                       ============================================= -->
     <section id="hero-2" class="bg--business hero-section">
         <div class="container text-center">
             <div class="d-flex align-self-center justify-content-center pt-100">
@@ -124,7 +124,7 @@
 
 
     <!-- FEATURES-11
-                                                                                                                       ============================================= -->
+                                                                                                                                           ============================================= -->
     <section id="features-11" class="pt-100 features-section division">
         <div class="container">
 
@@ -370,15 +370,15 @@
     </section> <!-- END FEATURES-11 -->
 
 
-    <section id="banner-12" class="banner-section pt-40">
+    <section id="banner-12" class="banner-section pt-30">
         <div class="container">
             <!-- BANNER-12 WRAPPER -->
-            <div class="banner-12-wrapper bg--03 bg--scroll r-16">
+            <div class="banner-12-wrapper bg--03 bg--scroll r-16 ">
                 <div class="banner-overlay">
                     <div class="row d-flex align-items-center">
                         <!-- BANNER-12 TEXT -->
                         <div class="col-md-7">
-                            <div class="banner-12-txt color--white">
+                            <div class="banner-12-txt color--white py-4">
 
                                 <!-- Title -->
                                 <h2 class="s-45 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
@@ -412,7 +412,7 @@
     </section> <!-- END BANNER-12 -->
 
     <!-- FAQs-2
-                                                                                                                          ============================================= -->
+                                                                                                                                              ============================================= -->
     <section id="faqs-2" class=" pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">

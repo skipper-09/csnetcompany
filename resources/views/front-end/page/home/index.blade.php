@@ -71,7 +71,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                                                                                                    ============================================= -->
+                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -97,7 +97,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                    ============================================= -->
+                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -149,7 +149,7 @@
 
 
     <!-- TEXT CONTENT
-                                                           ============================================= -->
+                                                                                       ============================================= -->
     <section class="pt-100 ct-01 content-section division">
         <div class="container">
 
@@ -183,7 +183,8 @@
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="img-block right-column wow fadeInLeft">
-                        <img class="img-fluid" src="{{ asset('front-end/images/img-iptv.png') }}" alt="content-image">
+                        <img class="" style="width: 600px" src="{{ asset('front-end/images/img-tv.png') }}"
+                            alt="content-image">
                     </div>
                 </div>
 
@@ -486,7 +487,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                    ============================================= -->
+                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
