@@ -53,9 +53,13 @@
         }
 
         /* .pricing .card :hover{
-                                        background-color: #25316D;
-                                        border-radius: 16px
-                                    } */
+                                            background-color: #25316D;
+                                            border-radius: 16px
+                                        } */
+
+        .img-fluid {
+            width: 90%
+        }
     </style>
 @endpush
 
@@ -87,8 +91,7 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" style="width: 400px" src="{{ asset('front-end/images/Group 832.png') }}"
-                            alt="hero-image">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="hero-image">
                     </div>
                 </div>
             </div> <!-- End container -->
@@ -348,7 +351,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                                                                                           ============================================= -->
+                                                                                                                                                                                               ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -491,7 +494,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                  ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
