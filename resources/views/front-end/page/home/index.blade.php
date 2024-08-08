@@ -37,6 +37,10 @@
             </div> <!-- End row -->
         </div> <!-- End container -->
     </section> <!-- END HERO-2 -->
+
+
+
+
     <!-- BRANDS-1                                                                     ============================================= -->
     <div id="brands-carousel-5" class=" py-50 brands-section">
         <div class="container">
@@ -71,7 +75,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -97,7 +101,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -148,8 +152,7 @@
 
 
 
-    <!-- TEXT CONTENT
-                                                                                       ============================================= -->
+    <!-- TEXT CONTENT============================================= -->
     <section class="pt-100 ct-01 content-section division">
         <div class="container">
 
@@ -487,7 +490,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 

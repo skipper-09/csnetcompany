@@ -38,7 +38,7 @@
 
 @section('content')
     <!-- HERO-2
-                                                                                                                                                       ============================================= -->
+                                                                                                                                                           ============================================= -->
     <section id="hero-2" class="bg--business hero-section">
         <div class="container text-center">
             <div class="d-flex align-self-center justify-content-center pt-100">
@@ -124,7 +124,7 @@
 
 
     <!-- FEATURES-11
-                                                                                                                                           ============================================= -->
+                                                                                                                                               ============================================= -->
     <section id="features-11" class="pt-100 features-section division">
         <div class="container">
 
@@ -381,7 +381,7 @@
                             <div class="banner-12-txt color--white py-4">
 
                                 <!-- Title -->
-                                <h2 class="s-45 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
+                                <h2 class="s-50 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
 
                                 <!-- Text -->
                                 <p class="p-lg">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
@@ -412,7 +412,7 @@
     </section> <!-- END BANNER-12 -->
 
     <!-- FAQs-2
-                                                                                                                                              ============================================= -->
+                                                                                                                                                  ============================================= -->
     <section id="faqs-2" class=" pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">

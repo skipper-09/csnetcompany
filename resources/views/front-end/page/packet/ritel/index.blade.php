@@ -53,9 +53,9 @@
         }
 
         /* .pricing .card :hover{
-                                            background-color: #25316D;
-                                            border-radius: 16px
-                                        } */
+                                                                        background-color: #25316D;
+                                                                        border-radius: 16px
+                                                                    } */
 
         .img-fluid {
             width: 90%
@@ -64,7 +64,7 @@
 @endpush
 
 @section('content')
-    <!-- HERO-2                                                                                                             ============================================= -->
+    {{-- <!-- HERO-2                                                                                                             ============================================= -->
     <section id="hero-2" class="bg--ritel hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -82,7 +82,6 @@
                         </p>
                         <a href="#pricing-1"><button class="btn btn--theme btn-sm">Berlangganan Sekarang</button></a>
                         <!-- HERO DIGITS -->
-                        {{-- <p class="p-lg">Mulai Dari <span class=" s-22 w-500 color--black">Rp. 100.000</span> /Bulan</p> --}}
 
                     </div> <!-- END HERO TEXT -->
 
@@ -95,8 +94,56 @@
                     </div>
                 </div>
             </div> <!-- End container -->
-    </section> <!-- END HERO-2 -->
+    </section> <!-- END HERO-2 --> --}}
 
+    <!-- HERO-5============================================= -->
+    <section id="hero-5" class="bg--scroll hero-section">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+
+
+                <!-- HERO TEXT -->
+                <div class="col-md-6">
+                    <div class="hero-5-txt wow fadeInRight">
+
+                        <!-- Title -->
+                        <h2 class="s-50 w-700">Konesi Internet Tanpa Batas</h2>
+
+                        <!-- Text -->
+                        <p class="p-lg">Nikmati kecepatan internet luar biasa untuk streaming, gaming, dan bekerja tanpa
+                            hambatan dengan harga terjangkau.
+                        </p>
+
+                        <!-- Button -->
+                        <a href="#banner-7" class="btn r-04 btn--theme hover--theme">Mulai Sekarang</a>
+
+                    </div>
+                </div> <!-- END HERO TEXT -->
+
+
+                <!-- HERO IMAGE -->
+                <div class="col-md-6">
+                    <div class="hero-5-img wow fadeInLeft">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="hero-image">
+                    </div>
+                </div>
+
+
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+
+
+        <!-- WAVE SHAPE BOTTOM -->
+        <div class="wave-shape-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 170">
+                <path fill-opacity="1"
+                    d="M0,160L120,160C240,160,480,160,720,138.7C960,117,1200,75,1320,53.3L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+
+
+    </section> <!-- END HERO-5 -->
 
 
 
@@ -351,7 +398,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                           ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -494,7 +541,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                                  ============================================= -->
+                                                                                                                                                                                                                              ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">

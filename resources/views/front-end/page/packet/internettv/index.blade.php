@@ -7,7 +7,7 @@
 
 @section('content')
     <!-- HERO-25
-           ============================================= -->
+                   ============================================= -->
     <section id="hero-25" class="1gr--whitesmoke bg--fixed hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -21,12 +21,11 @@
                         <span class="section-id">INTERNET PLUS TV</span>
 
                         <!-- Title -->
-                        <h2 class="s-52 w-700">Nikmati Layanan Tv dan Internet Secara Bersamaan</h2>
+                        <h2 class="s-50 w-700">Koneksi Internet Tercepat & Hiburan TV Terbaik</h2>
 
                         <!-- Text -->
-                        <p class="p-lg">Jelajahi jendela dunia yang luas dengan teknologi 100% fiber optik serta dapatkan
-                            kualitas internet stabil dan super cepat yang memiliki kemampuan symmetric bandwidth upload dan
-                            download dan benar-benar unlimited tanpa FUP (Fair Usage Policy) serta Siaran Tv Full HD.
+                        <p class="p-lg">Gabungkan kecepatan internet yang stabil dengan tayangan TV premium untuk
+                            pengalaman terbaik di rumah Anda.
                         </p>
 
                         <!-- Button -->
@@ -52,7 +51,7 @@
 
 
     <!-- FEATURES-7
-           ============================================= -->
+                   ============================================= -->
     <section id="features-7" class="pt-100 features-section division">
         <div class="container">
 
@@ -215,7 +214,7 @@
 
 
     <!-- IMAGE CONTENT
-       ============================================= -->
+               ============================================= -->
     <section id="lnk-2" class="bg--05 bg--scroll ct-10 content-section division">
         <div class="section-overlay pt-100">
             <div class="container">
@@ -250,7 +249,8 @@
                             </a>
 
                             <!-- Preview Image -->
-                            <img class="img-fluid" src="{{ asset('front-end/images/dashboard-06.png') }}" alt="video-preview">
+                            <img class="img-fluid" src="{{ asset('front-end/images/dashboard-06.png') }}"
+                                alt="video-preview">
 
                         </div>
                     </div>
