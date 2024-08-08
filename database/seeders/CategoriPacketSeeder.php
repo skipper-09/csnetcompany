@@ -18,7 +18,7 @@ class CategoriPacketSeeder extends Seeder
                 'name' => 'Broadbad'
             ],
             [
-                'name' => 'Dedicated'
+                'name' => 'Internet + TV'
             ],
             [
                 'name' => 'Promo'

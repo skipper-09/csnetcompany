@@ -11,7 +11,7 @@ class InternettvController extends Controller
     public function index(){
         $data=[
             'page_name' => 'Internet&TV',
-            'packet'=> packet::all(),
+            'packet'=> packet::with('packetDescription')->where('is_active',true)->where('category_id',2)->get(),
         ];
         return view('front-end.page.packet.internettv.index',$data);
     }
