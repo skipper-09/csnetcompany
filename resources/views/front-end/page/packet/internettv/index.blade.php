@@ -2,10 +2,10 @@
 
 @section('title', $page_name)
 @push('css')
-<link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
-<style>
-    .bg--heading {
+    <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
+    <style>
+        .bg--heading {
             background-position: center !important;
             background-repeat: no-repeat;
             background-size: cover !important;
@@ -46,13 +46,13 @@
             border: none;
             border-radius: 16px;
         }
-</style>
+    </style>
 @endpush
 
 
 @section('content')
     <!-- HERO-25
-                           ============================================= -->
+                                                           ============================================= -->
     <section id="hero-25" class="1gr--whitesmoke bg--fixed hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -97,7 +97,7 @@
 
 
     <!-- FEATURES-12
-           ============================================= -->
+                                           ============================================= -->
     <section id="features-12" class="shape--bg shape--white-500 pt-100 features-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -266,7 +266,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                                                               ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -338,15 +338,14 @@
 
 
 
-    <!-- FEATURES-7
-                           ============================================= -->
+    <!-- FEATURES-7 -->
     <section id="features-7" class="pt-100 pb-30 features-section division">
         <div class="container">
 
 
             <!-- SECTION TITLE -->
-            <div class="row justify-content-center r-06">
-                <img src="{{ asset('front-end/images/BANNER 600X100CM.webp') }}" alt="">
+            <div class="row justify-content-center">
+                <img class="" src="{{ asset('front-end/images/BANNER 600X100CM.webp') }}" alt="">
             </div>
         </div> <!-- End container -->
     </section> <!-- END FEATURES-7 -->
@@ -356,7 +355,7 @@
 
 
     <!-- IMAGE CONTENT
-                       ============================================= -->
+                                                       ============================================= -->
     <section id="lnk-2" class="bg--02 bg--scroll ct-10 content-section division">
         <div class="section-overlay pt-100">
             <div class="container">
@@ -404,7 +403,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                                                                      ============================================= -->
+                                                                                                                                                                                                                                                                      ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -579,35 +578,35 @@
 @endsection
 
 @push('js')
-{{-- call coursel owl --}}
-<script src="{{ asset('front-end/vendor/OwlCarousel/dist/owl.carousel.min.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        $(".owl-carousel").owlCarousel({
-            margin: 20,
-            loop: false,
-            autoplay: false,
-            autoplayHoverPause: false,
-            dots: false,
-            // animateOut: 'slideOutLeft',\
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false
-                },
-                768: {
-                    items: 2,
-                    nav: false
-                },
-                1000: {
-                    items: 3,
-                    nav: false,
+    {{-- call coursel owl --}}
+    <script src="{{ asset('front-end/vendor/OwlCarousel/dist/owl.carousel.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                margin: 20,
+                loop: false,
+                autoplay: false,
+                autoplayHoverPause: false,
+                dots: false,
+                // animateOut: 'slideOutLeft',\
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    768: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false,
 
+                    }
                 }
-            }
+            });
         });
-    });
-</script>
-{{-- owlcorousel --}}
+    </script>
+    {{-- owlcorousel --}}
 @endpush
