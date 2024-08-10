@@ -3,49 +3,47 @@
 @section('title', $page_name)
 @section('content')
 
-    <!-- HERO-10============================================= -->
-    <section id="hero-2" class="bg--scroll hero-section">
+    <!-- HERO-18============================================= -->
+    <section id="hero-18" class="bg--scroll hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
 
 
-                <!-- HERO TEXT -->
-                <div class="col-md-6">
-                    <div class="hero-2-txt wow fadeInRight">
-
-                        <!-- Title -->
-                        <h2 class="s-52 w-700">Tentang Kami</h2>
-                        <!-- Text -->
-                        <p class="p-lg">Idnet hadir untuk mengoptimalkan aktivitas digital kita semua dengan layanan
-                            internet yang
-                            super kencang dan dapat diandalkan.
-                            Jelajahi internet dengan bebas dan tanpa khawatir akan jaringan yang tidak stabil dengan
-                            kualitas koneksi
-                            yang terpercaya dan layanan customer service yang siap siaga.</p>
-                    </div>
-                </div> <!-- END HERO TEXT -->
-
-
                 <!-- HERO IMAGE -->
-                <div class="col-md-6">
-                    <div class="hero-2-img wow fadeInLeft">
-                        {{-- <img class="img-fluid" src="{{ asset('front-end/images/dashboard-04.png') }}" alt="hero-image"> --}}
-                        <iframe class="rounded-3" width="600" height="400"
-                            src="https://www.youtube.com/embed/TlGkoH3JSUo?autoplay=1&mute=1" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="col-md-6 order-last order-md-2">
+                    <div class="hero-18-img wow fadeInRight">
+                        <img class="img-fluid"
+                            src="https://www.myrepublic.co.id/_next/image?url=%2Fimg%2Fgothel%2Fuploads%2Fabout_page_header_1_3dc6fecf9d.png&w=640&q=75"
+                            alt="hero-image">
                     </div>
                 </div>
 
 
+                <!-- HERO TEXT -->
+                <div class="col-md-6 order-first order-md-2">
+                    <div class="hero-18-txt wow fadeInLeft">
+
+                        <!-- Title -->
+                        <h2 class="s-56 w-700">Tentang Kami</h2>
+
+                        <!-- Text -->
+                        <p class="p-xl">Idnet hadir untuk mengoptimalkan aktivitas digital kita semua dengan layanan
+                            internet yang super kencang dan dapat diandalkan. Jelajahi internet dengan bebas dan tanpa
+                            khawatir akan jaringan yang tidak stabil dengan kualitas koneksi yang terpercaya dan layanan
+                            customer service yang siap siaga.
+                        </p>
+
+
+
+                    </div>
+                </div> <!-- END HERO TEXT -->
+
+
             </div> <!-- End row -->
         </div> <!-- End container -->
-    </section> <!-- END HERO-10 -->
+    </section> <!-- END HERO-18 -->
 
-
-    <!-- CONTACTS-1
-                       ============================================= -->
+    <!-- CONTACTS-1============================================= -->
     <section id="contacts-1" class="pb-50 inner-page-hero contacts-section division">
         <div class="container">
             <!-- SECTION TITLE -->
@@ -120,7 +118,7 @@
 
 
     <section class="pb-50 inner-page-hero contacts-section division">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-title text-center mb-80">
                 <!-- Title -->
                 <h2 class="s-40 w-700">Lokasi Kantor Kami</h2>

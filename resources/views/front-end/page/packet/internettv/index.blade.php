@@ -52,7 +52,7 @@
 
 @section('content')
     <!-- HERO-25
-                                                           ============================================= -->
+                                                                   ============================================= -->
     <section id="hero-25" class="1gr--whitesmoke bg--fixed hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -97,7 +97,7 @@
 
 
     <!-- FEATURES-12
-                                           ============================================= -->
+                                                   ============================================= -->
     <section id="features-12" class="shape--bg shape--white-500 pt-100 features-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -266,7 +266,7 @@
 
 
     <!-- PRICING-1
-                                                                                                                                                                                                                                                               ============================================= -->
+                                                                                                                                                                                                                                                                       ============================================= -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -355,8 +355,8 @@
 
 
     <!-- IMAGE CONTENT
-                                                       ============================================= -->
-    <section id="lnk-2" class="bg--02 bg--scroll ct-10 content-section division">
+                                                               ============================================= -->
+    <section id="lnk-2" class="bg--05 bg--scroll ct-10 content-section division">
         <div class="section-overlay pt-100">
             <div class="container">
 
@@ -364,13 +364,13 @@
                 <!-- SECTION TITLE -->
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-9">
-                        <div class="section-title  mb-70">
+                        <div class="section-title color--white  mb-70">
 
                             <!-- Title -->
-                            <h2 class="s-50 w-700 color--black">Layanan TV Terbaik</h2>
+                            <h2 class="s-50 w-700 ">Layanan TV Terbaik</h2>
 
                             <!-- Text -->
-                            <p class="s-21 color--black">Nikmati Layanan TV Full HD dirumahmu.</p>
+                            <p class="s-21 ">Nikmati Layanan TV Full HD dirumahmu.</p>
 
                         </div>
                     </div>
@@ -403,7 +403,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                                                                                                      ============================================= -->
+                                                                                                                                                                                                                                                                              ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">

@@ -157,6 +157,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::prefix('users')->group(function () {
             Route::get('', [UserController::class, 'index'])->name('backend.users');
             Route::get('/getData', [UserController::class, 'getData'])->name('backend.users.getData');
+            Route::get('tambah', [UserController::class, 'create'])->name('backend.add.users');
+            Route::post('store', [UserController::class, 'store'])->name('backend.users.store');
+            Route::get('/edit/{id}', [UserController::class, 'edit'])->name('backend.users.edit');
+            Route::put('/update/{id}', [UserController::class, 'update'])->name('backend.users.update');
+            Route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('backend.users.delete');
         });
     });
 });
