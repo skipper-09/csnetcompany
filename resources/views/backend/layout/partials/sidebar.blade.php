@@ -129,6 +129,13 @@
                 <div data-i18n="Partner">Partner</div>
             </a>
         </li>
+        {{-- faq --}}
+        <li class="{{ Request::is('admin/faq') ? 'menu-item active' : 'menu-item' }}">
+            <a href="{{ route('backend.faq') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div data-i18n="Faq">Faq</div>
+            </a>
+        </li>
 
 
         <!-- Setting -->

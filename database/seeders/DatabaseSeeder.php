@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             DescriptionSeeder::class,
             AreaSeeder::class,
             OdpSeeder::class,
-            PartnerSeeder::class
+            PartnerSeeder::class,
+            FaqSeeder::class
         ]);
         // User::factory()->create([
         //     'name' => 'Test User',

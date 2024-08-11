@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\Coverage\AreaController;
 use App\Http\Controllers\Backend\Coverage\MapsController;
 use App\Http\Controllers\Backend\Coverage\OdpController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Faq\FaqController as FaqFaqController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
@@ -71,6 +72,19 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/edit/{id}', [PartnerController::class, 'show'])->name('backend.partner.edit');
         Route::put('/update/{id}', [PartnerController::class, 'update'])->name('backend.partner.update');
         Route::delete('/delete/{id}', [PartnerController::class, 'destroy'])->name('backend.partner.delete');
+    });
+
+
+
+     //route faq
+     Route::prefix('faq')->group(function () {
+        Route::get('', [FaqFaqController::class, 'index'])->name('backend.faq');
+        Route::get('/getData', [FaqFaqController::class, 'getData'])->name('backend.faq.getData');
+        Route::get('tambah', [FaqFaqController::class, 'create'])->name('backend.add.faq');
+        Route::post('store', [FaqFaqController::class, 'store'])->name('backend.faq.store');
+        Route::get('/edit/{id}', [FaqFaqController::class, 'show'])->name('backend.faq.edit');
+        Route::put('/update/{id}', [FaqFaqController::class, 'update'])->name('backend.faq.update');
+        Route::delete('/delete/{id}', [FaqFaqController::class, 'destroy'])->name('backend.faq.delete');
     });
 
 

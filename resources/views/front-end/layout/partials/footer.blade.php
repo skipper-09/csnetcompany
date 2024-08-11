@@ -36,13 +36,13 @@
                     <!-- Links -->
                     <ul class="foo-links clearfix">
                         <li>
-                            <p><a href="about.html">Broadband</a></p>
+                            <a href="{{ route('packet.ritel') }}"><p class="text-white">Broadband</p></a>
                         </li>
                         <li>
-                            <p><a href="careers.html">Dedicated</a></p>
+                            <a href="{{ route('packet.dedicated') }}"><p class="text-white">Dedicated</p></a>
                         </li>
                         <li>
-                            <p><a href="blog-listing.html">Internet + TV</a></p>
+                            <a href="{{ route('packet.internettv') }}"><p class="text-white">Internet + TV</p></a>
                         </li>
                     </ul>
 
@@ -60,13 +60,13 @@
                     <!-- Links -->
                     <ul class="foo-links clearfix">
                         <li>
-                            <p><a href="">Daftar</a></p>
+                            <a href="{{ route('packet.ritel') }}"><p class="text-white">Daftar</p></a>
                         </li>
                         <li>
-                            <p><a href="">Billing</a></p>
+                            <a href="https://client.idnet.id/login" target="_blank" rel="noopener noreferrer"><p class="text-white">Billing</p></a>
                         </li>
                         <li>
-                            <p><a href="">Hubungi Kami</a></p>
+                            <a href="{{ route('contact') }}"><p class="text-white">Hubungi Kami</p></a>
                         </li>
                     </ul>
 

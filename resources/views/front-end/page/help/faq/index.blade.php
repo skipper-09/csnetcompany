@@ -24,13 +24,14 @@
           <ul class="accordion">
 
 
-            <!-- QUESTIONS CATEGORY #1 -->
-            <li class="accordion-item is-active">
+            @foreach ($faq as $item)
+                <!-- QUESTIONS CATEGORY #1 -->
+            <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
 
 
               <!-- CATEGORY HEADER -->
               <div class="accordion-thumb">
-                <h4 class="s-20 w-700">Apa itu Idnet?</h4>
+                <h4 class="s-20 w-700">{{$item->question}}</h4>
               </div>
 
 
@@ -39,114 +40,13 @@
                 <!-- Answer -->
                 <div class="faqs-2-answer color--grey">
                   <!-- Text -->
-                  <p>Idnet adalah perusahaan internet yang menggunakan teknologi Fiber-to-the-home (FTTH) dengan 100% fiber optic untuk memberikan layanan internet dan layanan lainnya secara maksimal untuk pelanggan.
+                  <p>{{$item->answer}}
                   </p>
 
                 </div> <!-- END QUESTION #1 -->
               </div> <!-- END CATEGORY ANSWERS -->
             </li> <!-- END QUESTIONS CATEGORY #1 -->
-            <!-- QUESTIONS CATEGORY #1 -->
-            <li class="accordion-item ">
-
-
-              <!-- CATEGORY HEADER -->
-              <div class="accordion-thumb">
-                <h4 class="s-20 w-700">Bagaiman cara mengetahui Informasi mengenai Idnet?</h4>
-              </div>
-
-
-              <!-- CATEGORY ANSWERS -->
-              <div class="accordion-panel">
-                <!-- Answer -->
-                <div class="faqs-2-answer color--grey">
-                  <!-- Text -->
-                  <p>Kunjungi website : idnet.id atau email ke contact@idnet.id atau menghubungi call center 021-3000 1515, WA 0815 900 1515, media sosial Idnet atau datang langsung ke kantor kami.
-                  </p>
-
-                </div> <!-- END QUESTION #1 -->
-              </div> <!-- END CATEGORY ANSWERS -->
-            </li> <!-- END QUESTIONS CATEGORY #1 -->
-            <!-- QUESTIONS CATEGORY #1 -->
-            <li class="accordion-item ">
-
-
-              <!-- CATEGORY HEADER -->
-              <div class="accordion-thumb">
-                <h4 class="s-20 w-700">Bagaimana syarat & ketentuan untuk berlangganan layanan Idnet?</h4>
-              </div>
-
-
-              <!-- CATEGORY ANSWERS -->
-              <div class="accordion-panel">
-                <!-- Answer -->
-                <div class="faqs-2-answer color--grey">
-                  <!-- Text -->
-                  <p>Syarat & ketentuan berlangganan :
-                  </p>
-                  <ol>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                    <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                  </ol>
-
-                </div> <!-- END QUESTION #1 -->
-              </div> <!-- END CATEGORY ANSWERS -->
-            </li> <!-- END QUESTIONS CATEGORY #1 -->
-            <!-- QUESTIONS CATEGORY #1 -->
-            <li class="accordion-item ">
-
-
-              <!-- CATEGORY HEADER -->
-              <div class="accordion-thumb">
-                <h4 class="s-20 w-700">Apa keunggulan dari layanan Idnet?</h4>
-              </div>
-
-
-              <!-- CATEGORY ANSWERS -->
-              <div class="accordion-panel">
-                <!-- Answer -->
-                <div class="faqs-2-answer color--grey">
-                  <!-- Text -->
-                  <ol>
-                    <li>Menggunakan teknologi Fiber-to-the-home (FTTH) dengan 100% fiber optic untuk memberikan layanan yang dapat diandalkan oleh pelanggan.</li>
-                    <li>Layanan internet unlimited, cepat, stabil serta dapat diandalkan.</li>
-                    <li>Memberikan "value for money" bagi pelanggan untuk kebutuhan terkini dan kebutuhan lainnya..</li>
-                    <li>Memiliki pelayanan pelanggan yang baik dengan dukungan call center, email dan social media.</li>
-                    <li>Memiliki billing untuk melihat informasi tagihan internet secara berkala.</li>
-                  </ol>
-
-                </div> <!-- END QUESTION #1 -->
-              </div> <!-- END CATEGORY ANSWERS -->
-            </li> <!-- END QUESTIONS CATEGORY #1 -->
-            <!-- QUESTIONS CATEGORY #1 -->
-            <li class="accordion-item ">
-
-
-              <!-- CATEGORY HEADER -->
-              <div class="accordion-thumb">
-                <h4 class="s-20 w-700">Berapa lama waktu pemasangan baru Idnet?</h4>
-              </div>
-
-
-              <!-- CATEGORY ANSWERS -->
-              <div class="accordion-panel">
-                <!-- Answer -->
-                <div class="faqs-2-answer color--grey">
-                  <!-- Text -->
-                  <p>1 -3* hari setelah kesepakatan pelanggan & Indosat HiFi
-                    *Hanya estimasi, waktu pemasangan sebenarnya akan tergantung situasi di lapangan.
-                    Petugas Indosat Ooredoo Hutchison yang ditunjuk akan menghubungi pelanggan untuk kepastian pemasangan.
-                  </p>
-
-                </div> <!-- END QUESTION #1 -->
-              </div> <!-- END CATEGORY ANSWERS -->
-            </li> <!-- END QUESTIONS CATEGORY #1 -->
-
-
+            @endforeach
           </ul>
         </div> <!-- END QUESTIONS ACCORDION -->
 
@@ -154,7 +54,7 @@
         <!-- MORE QUESTIONS LINK -->
         <div class="more-questions">
           <div class="more-questions-txt bg--white-400 r-100">
-            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="contacts.html" class="color--theme">Hubungi Kami</a></p>
+            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="{{ route('contact') }}" class="color--theme">Hubungi Kami</a></p>
           </div>
         </div>
 
