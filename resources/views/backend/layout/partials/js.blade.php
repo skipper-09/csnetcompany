@@ -61,18 +61,24 @@
         Italic,
         Font,
         Paragraph,
-        List
+        List,
+        Link,
+        AutoLink,
     } from 'ckeditor5';
 
     ClassicEditor
         .create( document.querySelector( '#editor' ), {
-            plugins: [ Essentials, Bold, Italic, Font, Paragraph,List ],
+            plugins: [ Essentials, Bold, Italic, Font, Paragraph,List,Link,
+            AutoLink ],
             toolbar: {
                 items: [
                     'undo', 'redo', '|', 'bold', 'italic', '|',
-                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','bulletedList', 'numberedList'
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','bulletedList', 'numberedList','link'
                 ]
-            }
+            },
+            menuBar: {
+            isVisible: true
+        },
         } )
         .then( /* ... */ )
         .catch( /* ... */ );

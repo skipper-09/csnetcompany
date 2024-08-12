@@ -40,8 +40,8 @@
                 <!-- Answer -->
                 <div class="faqs-2-answer color--grey">
                   <!-- Text -->
-                  <p>{{$item->answer}}
-                  </p>
+                  {!! $item->answer !!}
+                  
 
                 </div> <!-- END QUESTION #1 -->
               </div> <!-- END CATEGORY ANSWERS -->
