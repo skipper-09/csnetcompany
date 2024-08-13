@@ -60,7 +60,7 @@
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
-                  <label class="form-label" for="basic-default-fullname">Logo</label>
+                  <label class="form-label" for="basic-default-fullname">Gambar Banner</label>
                   <input type="file" id="file" name="logo" class="form-control @error('logo') is-invalid @enderror"
                     id="basic-default-fullname" />
                   <p class="text-primary">Kosongi bila tidak ingin merubah gambar</p>
@@ -71,6 +71,18 @@
                   @enderror
                 </div>
               </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="mb-3">
+                    <label class="form-label" for="basic-default-fullname">Deskripsi</label>
+                    <textarea name="deskripsi" id="editor" class="editor  @error('deskripsi') is-invalid @enderror"
+                        >{{$promo->deskripsi}}</textarea>
+                    @error('deskripsi')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
             </div>
             <button type="submit" class="btn btn-primary">Edit {{$page_name}}</button>
           </form>

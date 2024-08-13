@@ -23,5 +23,10 @@ class packet extends Model
     public function packetDescription()
     {
         return $this->hasMany(Description::class);
-    }   
+    }  
+    
+    public function packetpromo()
+    {
+        return $this->hasMany(promo_paket::class);
+    } 
 }

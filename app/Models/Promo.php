@@ -9,7 +9,12 @@ class Promo extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'logo','is_active'
+        'name', 'logo','is_active','slug','deskripsi'
     ];
     protected $primaryKey = 'id';
+
+    public function paketpromo()
+    {
+        return $this->hasMany(promo_paket::class);
+    } 
 }

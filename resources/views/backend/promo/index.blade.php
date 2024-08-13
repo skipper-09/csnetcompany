@@ -29,6 +29,7 @@
           <tr>
             <th>Nama Promo</th>
             <th>Gambar</th>
+            <th>Deskripsi</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -64,6 +65,11 @@
                     {
                         data: 'logo',
                         name: 'logo'
+                    },
+                    {
+                        data: 'deskripsi',
+                        name: 'deskripsi',
+                        
                     },
                   
                     {

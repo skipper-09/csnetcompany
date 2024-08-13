@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Number;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Str;
 
 class PromoControllerBackend extends Controller
 {
@@ -75,10 +76,13 @@ class PromoControllerBackend extends Controller
                 $filename = 'promo_' . rand(0, 999999999) . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('storage/images/promo/'), $filename);
             }
+            $slug = Str::slug($request->name);
             Promo::create([
                 'name' => $request->name,
                 'logo' => $filename,
-                'is_active' => $request->is_active
+                'deskripsi'=>$request->deskripsi,
+                'is_active' => $request->is_active,
+                'slug'=>$slug
             ]);
             return redirect()->route('backend.promo')->with(['success' => 'Berhasil Menambahkan Promo!']);
         } catch (Exception $e) {
@@ -121,11 +125,13 @@ class PromoControllerBackend extends Controller
             } else {
                 $filename = $data->logo;
             }
-
+            $slug = Str::slug($request->name);
             $data->update([
-                'name' => $request->name,
-                'packet_id' => $request->packet_id,
-                'logo' => $filename
+               'name' => $request->name,
+                'logo' => $filename,
+                'deskripsi'=>$request->deskripsi,
+                'is_active' => $request->is_active,
+                'slug'=>$slug
             ]);
             return redirect()->route('backend.promo')->with(['success' => 'Berhasil Edit Promo!']);
         } catch (Exception $e) {

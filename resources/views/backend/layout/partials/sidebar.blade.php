@@ -60,7 +60,7 @@
             <ul class="menu-sub">
                 <li class="{{ $page_name == 'Promo' ? 'menu-item active' : 'menu-item' }}">
                     <a href=" {{ route('backend.promo') }}" class="menu-link">
-                        <div data-i18n="Promo">Promo Banner</div>
+                        <div data-i18n="Promo">Promo</div>
                     </a>
                 </li>
             </ul>
