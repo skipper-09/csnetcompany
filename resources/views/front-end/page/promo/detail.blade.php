@@ -89,7 +89,7 @@
                             {{-- <span class="post-tag color--green-400">Community</span> --}}
 
                             <!-- Title -->
-                            <h2 class="s-46 w-700 text-capitalize">{{ $promo->name }}</h2>
+                            {{-- <h2 class="s-46 w-700 text-capitalize">{{ $promo->name }}</h2> --}}
 
                             {{-- <!-- Post Meta -->
                             <div class="blog-post-meta mt-35">
