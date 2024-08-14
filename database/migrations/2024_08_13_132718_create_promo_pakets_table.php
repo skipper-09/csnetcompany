@@ -16,8 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('promotion_id');
             $table->unsignedBigInteger('packet_id');
             $table->enum('discount_type', ['percent', 'fixed_amount']);
-            $table->decimal('discount_amount');
-            $table->decimal('discounted_price');
+            $table->integer('discount_amount');
+            $table->integer('discounted_price');
             $table->boolean('status')->default(true);
             $table->timestamps();
             $table->foreign('promotion_id')->references('id')->on('promos')->onDelete('cascade')->onUpdate('cascade');

@@ -43,7 +43,9 @@ class Description_packet extends Controller
             $urlimage = asset("storage/images/descrip/$chanel->logo");
             return '<img src="' . $urlimage . '" border="0" 
         width="50" />';
-        })->rawColumns(['action', 'logo'])->make(true);
+        })->editColumn('packet_id', function ($query) {
+            return $query->paket->name;
+        })->rawColumns(['action', 'logo','packet_id'])->make(true);
     }
 
 

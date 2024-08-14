@@ -39,6 +39,7 @@ Route::prefix('packet')->group(function () {
     Route::get('/dedicated', [DedicatedController::class, 'index'])->name('packet.dedicated');
     Route::get('/internet-tv', [InternettvController::class, 'index'])->name('packet.internettv');
     Route::get('/promo', [PromoContoller::class, 'index'])->name('packet.promo');
+    Route::get('/promo/{slug}', [PromoContoller::class, 'detailpromo'])->name('packet.promo.detail');
 });
 Route::prefix('bantuan')->group(function () {
     Route::get('/tutorial', [RitelController::class, 'index'])->name('help.tips');

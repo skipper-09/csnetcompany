@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
+                        <th>Nama Paket</th>
                         <th>Logo</th>
                         <th>Actions</th>
                     </tr>
@@ -58,6 +59,10 @@
                     {
                         data: 'name',
                         name: 'name'
+                    },
+                    {
+                        data: 'packet_id',
+                        name: 'packet_id'
                     },
                     {
                         data: 'logo',

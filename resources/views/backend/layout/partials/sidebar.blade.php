@@ -130,14 +130,14 @@
         {{-- partner --}}
         <li class="{{ Request::is('admin/partner') ? 'menu-item active' : 'menu-item' }}">
             <a href="{{ route('backend.partner') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home"></i>
+                <i class="menu-icon tf-icons bx bx-category"></i>
                 <div data-i18n="Partner">Partner</div>
             </a>
         </li>
         {{-- faq --}}
         <li class="{{ Request::is('admin/faq') ? 'menu-item active' : 'menu-item' }}">
             <a href="{{ route('backend.faq') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home"></i>
+                <i class="menu-icon tf-icons bx bx-unite"></i>
                 <div data-i18n="Faq">Faq</div>
             </a>
         </li>

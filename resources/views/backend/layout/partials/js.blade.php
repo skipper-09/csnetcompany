@@ -64,16 +64,18 @@
         List,
         Link,
         AutoLink,
+        Image, ImageInsert,
+        HeadingButtonsUI, ParagraphButtonUI,Heading 
     } from 'ckeditor5';
 
     ClassicEditor
         .create( document.querySelector( '#editor' ), {
-            plugins: [ Essentials, Bold, Italic, Font, Paragraph,List,Link,
-            AutoLink ],
+            plugins: [ Essentials, Bold, Italic, Font, Paragraph,List,Link,AutoLink,
+            AutoLink,Image, ImageInsert,Heading ],
             toolbar: {
                 items: [
-                    'undo', 'redo', '|', 'bold', 'italic', '|',
-                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','bulletedList', 'numberedList','link'
+                    'undo', 'redo', '|', 'bold', 'italic', '|', 'heading','|',
+                    'fontSize', 'fontFamily', '|', 'fontColor', 'fontBackgroundColor','bulletedList', 'numberedList','link','insertImage'
                 ]
             },
             menuBar: {
