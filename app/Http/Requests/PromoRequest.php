@@ -25,13 +25,15 @@ class PromoRequest extends FormRequest
             return [
                 'name' => 'required',
                 'logo' => 'image|max:512|file|mimes:jpeg,jpg,png,svg',
-                'is_active' => 'required'
+                'is_active' => 'required',
+                'deskripsi' => 'required',
             ];
         } else {
             return [
                 'name' => 'required',
                 'logo' => 'required|image|file|mimes:jpeg,jpg,png,svg',
                 'is_active' => 'required',
+                'deskripsi' => 'required',
             ];
         }
     }
@@ -43,6 +45,7 @@ class PromoRequest extends FormRequest
             'logo.required' => 'Gambar Promo Wajib Diisi',
             'logo.image' => 'File yang dimasukkan bukan gambar',
             'logo.mimes' => 'Inputkan file gambar saja',
+            'deskripsi' => 'Deskripsi Promo Wajib Diisi',
             'is_active.required' => 'Status Wajib Diisi'
         ];
     }

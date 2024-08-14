@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
 use App\Http\Controllers\Backend\Partner\PartnerController;
 use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
+use App\Http\Controllers\Backend\Promo\PromoPacketController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
@@ -76,8 +77,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 
 
-     //route faq
-     Route::prefix('faq')->group(function () {
+    //route faq
+    Route::prefix('faq')->group(function () {
         Route::get('', [FaqFaqController::class, 'index'])->name('backend.faq');
         Route::get('/getData', [FaqFaqController::class, 'getData'])->name('backend.faq.getData');
         Route::get('tambah', [FaqFaqController::class, 'create'])->name('backend.add.faq');
@@ -137,6 +138,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/edit/{id}', [PromoControllerBackend::class, 'show'])->name('backend.promo.edit');
         Route::put('/update/{id}', [PromoControllerBackend::class, 'update'])->name('backend.promo.update');
         Route::delete('/delete/{id}', [PromoControllerBackend::class, 'destroy'])->name('backend.promo.delete');
+
+        //promo paket
+        Route::prefix('paket')->group(function () {
+            Route::get('', [PromoPacketController::class, 'index'])->name('backend.promo_paket');
+            Route::get('/getData', [PromoPacketController::class, 'getData'])->name('backend.promo_paket.getData');
+            Route::get('tambah', [PromoPacketController::class, 'create'])->name('backend.add.promo_paket');
+            Route::post('store', [PromoPacketController::class, 'store'])->name('backend.promo_paket.store');
+            Route::get('/edit/{id}', [PromoPacketController::class, 'show'])->name('backend.promo_paket.edit');
+            Route::put('/update/{id}', [PromoPacketController::class, 'update'])->name('backend.promo_paket.update');
+            Route::delete('/delete/{id}', [PromoPacketController::class, 'destroy'])->name('backend.promo_paket.delete');
+        });
     });
 
 

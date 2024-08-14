@@ -9,7 +9,12 @@ class promo_paket extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'promotion_id', 'packet_id'
+        'promotion_id',
+        'packet_id',
+        'discount_type',
+        'discount_amount',
+        'discounted_price',
+        'status'
     ];
     protected $primaryKey = 'id';
 

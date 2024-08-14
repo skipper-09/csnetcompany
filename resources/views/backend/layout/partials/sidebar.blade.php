@@ -63,6 +63,11 @@
                         <div data-i18n="Promo">Promo</div>
                     </a>
                 </li>
+                <li class="{{ $page_name == 'Promo Paket' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.promo_paket') }}" class="menu-link">
+                        <div data-i18n="Promo Paket">Promo Paket</div>
+                    </a>
+                </li>
             </ul>
         </li>
 
