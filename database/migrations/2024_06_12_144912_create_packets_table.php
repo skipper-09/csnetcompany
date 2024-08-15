@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->integer('price');
+            $table->integer('speed');
             $table->boolean('is_active')->default(true);
             $table->boolean('best_seller')->default(false);
             $table->enum('duration', ['Bulan', 'Tahun'])->default('Bulan');

@@ -42,23 +42,52 @@
         }
 
 
+        .owl-stage-outer {
+            height: 700px !important;
+            justify-content: start;
+            display: flex;
+            align-items: center
+        }
 
         .pricing {
             width: 100%;
+            height: 100%;
+        }
+
+        .pricing-title {
+            background-color: #25316D;
+            border-radius: 100%;
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            position: absolute;
+            top: -60px;
+            left: 100px;
+            z-index: 9999;
         }
 
         .pricing .card {
-            border: none;
-            border-radius: 16px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+                0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* max-width: 600px; */
+            margin: auto;
         }
 
-        /* .pricing .card :hover{
-                                                                        background-color: #25316D;
-                                                                        border-radius: 16px
-                                                                    } */
+        .pricing .content {
+            margin-top: 100px !important
+        }
 
-        .img-fluid {
-            width: 90%
+        .pricing .content h5 {
+            color: #25316D
+        }
+
+        .owl-carousel {
+            width: 100%;
         }
     </style>
 @endpush
@@ -397,8 +426,7 @@
 
 
 
-    <!-- PRICING-1
-                                                                                                                                                                                                                           ============================================= -->
+    <!-- PRICING-1-->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -409,7 +437,9 @@
                     <div class="section-title mb-70">
 
                         <!-- Title -->
-                        <h2 class="s-40 w-700">Daftar Harga Paket Broadband</h2>
+                        <h2 class="s-40 w-700">Tentukan Bandwidth Sesuai Kebutuhanmu</h2>
+                        <p class="p-xl">Sekarang saatnya menikmati kecepatan baru internet fiber ultra cepat dan
+                            unlimited dari Idnet</p>
                     </div>
                 </div>
             </div> <!-- END SECTION TITLE -->
@@ -424,14 +454,19 @@
                                 <div
                                     class="{{ $item->best_seller == true ? 'bg--heading division' : 'bg-pricing division' }}">
                                     <div class="pricing-title ">
-                                        <h5 class="text-center s-28 w-700 text-uppercase">{{ $item->name }}</h5>
+                                        <h5 class="text-center s-28 w-700 text-uppercase color--white">{{ $item->speed }}
+                                            Mbps
+                                        </h5>
                                     </div>
                                 </div>
 
-                                <div class="tab-content px-4" id="myTabContent">
 
-                                    <div class="row">
+                                <div class="content">
+                                    <h5 class="text-center s-28 w-700 text-uppercase">{{ $item->name }}
+                                    </h5>
+                                    <div class="row mt-2">
                                         <div class="col-12">
+                                            <p class="color--grey text-uppercase d-flex w-600">Fitur</p>
                                             <ul class="list-unstyled mb-4">
                                                 @foreach ($item->packetDescription as $des)
                                                     <li class="d-flex align-items-center justify-content-start gap-2">
@@ -455,6 +490,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     @endforeach
@@ -541,7 +577,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">

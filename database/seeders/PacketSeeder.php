@@ -14,8 +14,9 @@ class PacketSeeder extends Seeder
     public function run(): void
     {
         packet::insert([
-            'name'=>'10 MBPS',
-            'category_id'=>1,
+            'name' => 'Speed Bootster',
+            'speed' => 10,
+            'category_id' => 1,
             'price' => 100000,
             'duration' => 'Bulan',
         ]);

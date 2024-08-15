@@ -79,6 +79,7 @@ class PacketController extends Controller
             'is_active' => $request->is_active,
             'best_seller' => $request->best_seller,
             'duration' => $request->duration,
+            'speed' => $request->speed
         ]);
 
         return redirect()->route('backend.packet')->with(['success' => 'Berhasil Menambahkan Paket!']);
@@ -112,6 +113,7 @@ class PacketController extends Controller
             'best_seller' => $request->best_seller,
             'is_active' => $request->is_active,
             'duration' => $request->duration,
+            'speed' => $request->speed
         ]);
 
         return redirect()->route('backend.packet')->with('success', 'Berhasil Update Paket');
