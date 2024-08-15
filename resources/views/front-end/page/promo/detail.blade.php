@@ -6,66 +6,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
-
-    <style>
-        #hero-2 {
-            height: 100vh;
-        }
-
-        .bg--heading {
-            background-position: center !important;
-            background-repeat: no-repeat;
-            background-size: cover !important;
-        }
-
-        .pricing-title {
-            height: 150px !important;
-            align-content: center !important;
-            align-items: center !important;
-        }
-
-        .nav-tabs .nav-link {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            color: #495057;
-            margin-right: 5px;
-            border-radius: 0.25rem 0.25rem 0 0;
-        }
-
-        .nav-tabs .nav-link.active {
-            background-color: #fff;
-            border-color: #dee2e6 #dee2e6 #fff;
-            color: #495057;
-        }
-
-        .nav-tabs .nav-link:hover {
-            border-color: #e9ecef #e9ecef #dee2e6;
-            color: #0056b3;
-        }
-
-
-
-        .pricing {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pricing .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-                0 6px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 400px;
-            margin: auto;
-        }
-
-        .owl-carousel {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('front-end/css/custom.css') }}">
 @endpush
 
 @section('content')
@@ -138,8 +79,8 @@
             @if (count($promopaket)>0)
 
 
-                <section id="pricing-1" class=" pb-40 pt-100">
-                    <div class="container-fluid">
+                <section id="pricing-1" class=" inner-page-hero pricing-section pt-100">
+                    <div class="container">
 
 
                         <!-- SECTION TITLE -->
@@ -151,7 +92,62 @@
                             </div>
                         </div> <!-- END SECTION TITLE -->
 
-                        <!-- PRICING TABLES -->
+
+<!-- PRICING TABLES -->
+<div class="pricing ">
+    <div class="owl-carousel ">
+        @foreach ($promopaket as $item)
+            <div class="card ">
+                <div class="align-self-center">
+                    <div
+                        class="bg-pricing division">
+                        <div class="{{ $item->paket->best_seller == true ? 'best-seller' : 'pricing-title' }}">
+                            <h5 class="text-center s-28 w-700 color--white">{{ $item->paket->speed }}
+                                Mbps
+                            </h5>
+                        </div>
+                    </div>
+
+
+                    <div class="content">
+                        <h5 class="text-center s-26 w-700 text-uppercase">{{ $item->paket->name }}
+                        </h5>
+                        <div class="row mt-2">
+                            <div class="col-12 px-4">
+                                <p class="text-uppercase fitur d-flex">Fitur</p>
+                                <ul class="list-unstyled">
+                                    @foreach ($item->paket->packetDescription as $des)
+                                        <li class="d-flex align-items-center justify-content-start gap-2">
+                                            <img style="width: 30px"
+                                                src="{{ url('storage/images/descrip/' . $des->logo) }}"
+                                                alt="">
+                                            {{ $des->name }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="col-12 text-center mb-4">
+                                <h4 style="color: #25316D" class="w-700">
+                                    @currency($item->paket->price)/{{ $item->paket->duration }}</h4>
+                            </div>
+                            <div class=" text-center mb-4">
+                                <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
+                                    <button type="button" class="btn btn--theme btn-sm">Berlangganan
+                                        Sekarang</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+</div> <!-- PRICING TABLES -->
+
+
+                        {{-- <!-- PRICING TABLES -->
                         <div class="pricing">
                             <div class="owl-carousel owl-theme">
                                 @foreach ($promopaket as $item)
@@ -202,7 +198,7 @@
                                 @endforeach
 
                             </div>
-                        </div> <!-- PRICING TABLES -->
+                        </div> <!-- PRICING TABLES --> --}}
 
 
 

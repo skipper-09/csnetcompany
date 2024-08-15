@@ -4,7 +4,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('front-end/css/custom.css') }}">
     <style>
         #hero-2 {
             height: 100vh;
@@ -16,115 +16,33 @@
             background-size: cover !important;
         }
 
-        .pricing-title {
-            height: 150px !important;
-            align-content: center !important;
-            align-items: center !important;
-        }
 
-        .nav-tabs .nav-link {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            color: #495057;
-            margin-right: 5px;
-            border-radius: 0.25rem 0.25rem 0 0;
-        }
+        /* .nav-tabs .nav-link {
+                        background-color: #f8f9fa;
+                        border: 1px solid #dee2e6;
+                        color: #495057;
+                        margin-right: 5px;
+                        border-radius: 0.25rem 0.25rem 0 0;
+                    }
 
-        .nav-tabs .nav-link.active {
-            background-color: #fff;
-            border-color: #dee2e6 #dee2e6 #fff;
-            color: #495057;
-        }
+                    .nav-tabs .nav-link.active {
+                        background-color: #fff;
+                        border-color: #dee2e6 #dee2e6 #fff;
+                        color: #495057;
+                    }
 
-        .nav-tabs .nav-link:hover {
-            border-color: #e9ecef #e9ecef #dee2e6;
-            color: #0056b3;
-        }
+                    .nav-tabs .nav-link:hover {
+                        border-color: #e9ecef #e9ecef #dee2e6;
+                        color: #0056b3;
+                    } */
 
 
-        .owl-stage-outer {
-            height: 700px !important;
-            justify-content: start;
-            display: flex;
-            align-items: center
-        }
 
-        .pricing {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pricing-title {
-            background-color: #25316D;
-            border-radius: 100%;
-            width: 150px;
-            height: 150px;
-            padding: 10px;
-            position: absolute;
-            top: -60px;
-            left: 100px;
-            z-index: 9999;
-        }
-
-        .pricing .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-                0 6px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* max-width: 600px; */
-            margin: auto;
-        }
-
-        .pricing .content {
-            margin-top: 100px !important
-        }
-
-        .pricing .content h5 {
-            color: #25316D
-        }
-
-        .owl-carousel {
-            width: 100%;
-        }
+       
     </style>
 @endpush
 
 @section('content')
-    {{-- <!-- HERO-2                                                                                                             ============================================= -->
-    <section id="hero-2" class="bg--ritel hero-section">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <!-- HERO TEXT -->
-                <div class="col-md-6 order-first order-md-2">
-                    <div class="hero-2-txt wow fadeInLeft">
-
-                        <!-- Title -->
-                        <h2 class="s-56 w-700 color--white">Broadband Internet</h2>
-
-                        <!-- Text -->
-                        <p class="p-lg color--white">Nikmati pengalaman internet tanpa batas dengan kecepatan tinggi dan
-                            koneksi yang
-                            stabil. Dengan IDNET, Anda mendapatkan lebih dari sekadar koneksi internet.
-                        </p>
-                        <a href="#pricing-1"><button class="btn btn--theme btn-sm">Berlangganan Sekarang</button></a>
-                        <!-- HERO DIGITS -->
-
-                    </div> <!-- END HERO TEXT -->
-
-
-                </div> <!-- End row -->
-                <!-- HERO IMAGE -->
-                <div class="col-md-6 order-last order-md-2">
-                    <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="hero-image">
-                    </div>
-                </div>
-            </div> <!-- End container -->
-    </section> <!-- END HERO-2 --> --}}
-
     <!-- HERO-5============================================= -->
     <section id="hero-5" class="bg--scroll hero-section">
         <div class="container">
@@ -447,14 +365,14 @@
 
             <!-- PRICING TABLES -->
             <div class="pricing ">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel ">
                     @foreach ($packet as $item)
-                        <div class="card r-16 border-none">
+                        <div class="card ">
                             <div class="align-self-center">
                                 <div
-                                    class="{{ $item->best_seller == true ? 'bg--heading division' : 'bg-pricing division' }}">
-                                    <div class="pricing-title ">
-                                        <h5 class="text-center s-28 w-700 text-uppercase color--white">{{ $item->speed }}
+                                    class="bg-pricing division">
+                                    <div class="{{ $item->best_seller == true ? 'best-seller' : 'pricing-title' }}">
+                                        <h5 class="text-center s-28 w-700 color--white">{{ $item->speed }}
                                             Mbps
                                         </h5>
                                     </div>
@@ -462,12 +380,12 @@
 
 
                                 <div class="content">
-                                    <h5 class="text-center s-28 w-700 text-uppercase">{{ $item->name }}
+                                    <h5 class="text-center s-26 w-700 text-uppercase">{{ $item->name }}
                                     </h5>
                                     <div class="row mt-2">
-                                        <div class="col-12">
-                                            <p class="color--grey text-uppercase d-flex w-600">Fitur</p>
-                                            <ul class="list-unstyled mb-4">
+                                        <div class="col-12 px-4">
+                                            <p class="text-uppercase fitur d-flex">Fitur</p>
+                                            <ul class="list-unstyled">
                                                 @foreach ($item->packetDescription as $des)
                                                     <li class="d-flex align-items-center justify-content-start gap-2">
                                                         <img style="width: 30px"
@@ -577,7 +495,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -762,6 +680,7 @@
                     loop: false,
                     autoplay: false,
                     autoplayHoverPause: false,
+                    autoHeight: true,
                     dots: false,
                     // animateOut: 'slideOutLeft',\
                     responsiveClass: true,
