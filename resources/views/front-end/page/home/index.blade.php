@@ -75,7 +75,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                            ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -101,7 +101,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                            ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -186,8 +186,7 @@
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="img-block right-column wow fadeInLeft">
-                        <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}"
-                            alt="content-image">
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}" alt="content-image">
                     </div>
                 </div>
 
@@ -490,7 +489,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                            ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
@@ -815,27 +814,28 @@
 
 
 
-    {{-- <section id="banner-12" class="banner-section">
+    <section id="banner-12" class="banner-section pt-30">
         <div class="container">
             <!-- BANNER-12 WRAPPER -->
-            <div class="banner-12-wrapper bg--03 bg--scroll r-16">
+            <div class="banner-12-wrapper bg--03 bg--scroll r-16 ">
                 <div class="banner-overlay">
                     <div class="row d-flex align-items-center">
                         <!-- BANNER-12 TEXT -->
                         <div class="col-md-7">
-                            <div class="banner-12-txt color--white">
+                            <div class="banner-12-txt color--white py-4">
 
                                 <!-- Title -->
-                                <h2 class="s-45 w-700">We are looking for talented individuals</h2>
+                                <h2 class="s-50 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
 
                                 <!-- Text -->
-                                <p class="p-lg">We're constantly looking for talented people to join our team.
-                                    Don't hesitate to get in touch with us
+                                <p class="p-lg">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
+                                    memungkinakan anda untuk memperluas jangkauam bisnis muncul sebagai pemenang ditengah
+                                    persaingan bisnis yang ketat.
                                 </p>
 
                                 <!-- Button -->
-                                <a href="mailto:yourdomain@mail.com"
-                                    class="btn r-04 btn--theme hover--tra-white">yourdomain@mail.com</a>
+                                <a href="https://wa.me/6282116879977?text=Halo"
+                                    class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
 
                             </div>
                         </div> <!-- END BANNER-12 TEXT -->
@@ -854,6 +854,70 @@
 
 
         </div> <!-- End container -->
-    </section> <!-- END BANNER-12 --> --}}
+    </section> <!-- END BANNER-12 -->
+
+
+    <!-- FAQs-2-->
+    <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-xl-10">
+
+
+                    <!-- INNER PAGE TITLE -->
+                    <div class="inner-page-title">
+                        <h2 class="s-46 w-700">Tanya Jawab</h2>
+                        <p class="p-lg">Temukan jawaban untuk pertanyaan-pertanyaan yang sering diajukan oleh pelanggan
+                            lainnya</p>
+                    </div>
+
+
+                    <!-- QUESTIONS ACCORDION -->
+                    <div class="accordion-wrapper">
+                        <ul class="accordion">
+
+
+                            @foreach ($faq as $item)
+                                <!-- QUESTIONS CATEGORY #1 -->
+                                <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
+
+
+                                    <!-- CATEGORY HEADER -->
+                                    <div class="accordion-thumb">
+                                        <h4 class="s-20 w-700">{{ $item->question }}</h4>
+                                    </div>
+
+
+                                    <!-- CATEGORY ANSWERS -->
+                                    <div class="accordion-panel">
+                                        <!-- Answer -->
+                                        <div class="faqs-2-answer color--grey">
+                                            <!-- Text -->
+                                            {!! $item->answer !!}
+
+
+                                        </div> <!-- END QUESTION #1 -->
+                                    </div> <!-- END CATEGORY ANSWERS -->
+                                </li> <!-- END QUESTIONS CATEGORY #1 -->
+                            @endforeach
+
+
+                        </ul>
+                    </div> <!-- END QUESTIONS ACCORDION -->
+
+
+                    <!-- MORE QUESTIONS LINK -->
+                    <div class="more-questions">
+                        <div class="more-questions-txt bg--white-400 r-100">
+                            <p class="p-lg">Punya Pertanyaan Lainnya? <a href="{{ route('contact') }}"
+                                    class="color--theme">Hubungi Kami</a></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+    </section> <!-- END FAQs-2 -->
 
 @endsection

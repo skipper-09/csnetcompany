@@ -4,55 +4,19 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-end/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-end/css/custom.css') }}">
     <style>
         .bg--heading {
             background-position: center !important;
             background-repeat: no-repeat;
             background-size: cover !important;
         }
-
-        .pricing-title {
-            height: 150px !important;
-            align-content: center !important;
-            align-items: center !important;
-        }
-
-        .nav-tabs .nav-link {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            color: #495057;
-            margin-right: 5px;
-            border-radius: 0.25rem 0.25rem 0 0;
-        }
-
-        .nav-tabs .nav-link.active {
-            background-color: #fff;
-            border-color: #dee2e6 #dee2e6 #fff;
-            color: #495057;
-        }
-
-        .nav-tabs .nav-link:hover {
-            border-color: #e9ecef #e9ecef #dee2e6;
-            color: #0056b3;
-        }
-
-
-
-        .pricing {
-            width: 100%;
-        }
-
-        .pricing .card {
-            border: none;
-            border-radius: 16px;
-        }
     </style>
 @endpush
 
 
 @section('content')
-    <!-- HERO-25
-                                                                   ============================================= -->
+    <!-- HERO-2-->
     <section id="hero-25" class="1gr--whitesmoke bg--fixed hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -96,8 +60,7 @@
 
 
 
-    <!-- FEATURES-12
-                                                   ============================================= -->
+    <!-- FEATURES-12 -->
     <section id="features-12" class="shape--bg shape--white-500 pt-100 features-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -265,8 +228,7 @@
 
 
 
-    <!-- PRICING-1
-                                                                                                                                                                                                                                                                       ============================================= -->
+    <!-- PRICING-1 -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
 
@@ -285,22 +247,26 @@
 
             <!-- PRICING TABLES -->
             <div class="pricing ">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel ">
                     @foreach ($packet as $item)
-                        <div class="card r-16 border-none">
+                        <div class="card ">
                             <div class="align-self-center">
-                                <div
-                                    class="{{ $item->best_seller == true ? 'bg--heading division' : 'bg-pricing division' }}">
-                                    <div class="pricing-title ">
-                                        <h5 class="text-center s-28 w-700 text-uppercase">{{ $item->name }}</h5>
+                                <div class="bg-pricing division">
+                                    <div class="{{ $item->best_seller == true ? 'best-seller' : 'pricing-title' }}">
+                                        <h5 class="text-center s-28 w-700 color--white">{{ $item->speed }}
+                                            Mbps
+                                        </h5>
                                     </div>
                                 </div>
 
-                                <div class="tab-content px-4" id="myTabContent">
 
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <ul class="list-unstyled mb-4">
+                                <div class="content">
+                                    <h5 class="text-center s-26 w-700 text-uppercase">{{ $item->name }}
+                                    </h5>
+                                    <div class="row mt-2">
+                                        <div class="col-12 px-4">
+                                            <p class="text-uppercase fitur d-flex">Fitur</p>
+                                            <ul class="list-unstyled">
                                                 @foreach ($item->packetDescription as $des)
                                                     <li class="d-flex align-items-center justify-content-start gap-2">
                                                         <img style="width: 30px"
@@ -323,6 +289,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     @endforeach
@@ -339,7 +306,7 @@
 
 
     <!-- FEATURES-7 -->
-    <section id="features-7" class="pt-100 pb-30 features-section division">
+    <section id="features-7" class="pb-30 features-section division">
         <div class="container">
 
 
@@ -355,7 +322,7 @@
 
 
     <!-- IMAGE CONTENT
-                                                               ============================================= -->
+                                                                                                       ============================================= -->
     <section id="lnk-2" class="bg--05 bg--scroll ct-10 content-section division">
         <div class="section-overlay pt-100">
             <div class="container">
@@ -403,7 +370,7 @@
 
 
     <!-- FAQs-2
-                                                                                                                                                                                                                                                                              ============================================= -->
+                                                                                                                                                                                                                                                                                                                      ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -424,28 +391,28 @@
 
 
                             @foreach ($faq as $item)
-                            <!-- QUESTIONS CATEGORY #1 -->
-                        <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
-            
-            
-                          <!-- CATEGORY HEADER -->
-                          <div class="accordion-thumb">
-                            <h4 class="s-20 w-700">{{$item->question}}</h4>
-                          </div>
-            
-            
-                          <!-- CATEGORY ANSWERS -->
-                          <div class="accordion-panel">
-                            <!-- Answer -->
-                            <div class="faqs-2-answer color--grey">
-                              <!-- Text -->
-                              {!! $item->answer !!}
-                              
-            
-                            </div> <!-- END QUESTION #1 -->
-                          </div> <!-- END CATEGORY ANSWERS -->
-                        </li> <!-- END QUESTIONS CATEGORY #1 -->
-                        @endforeach
+                                <!-- QUESTIONS CATEGORY #1 -->
+                                <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
+
+
+                                    <!-- CATEGORY HEADER -->
+                                    <div class="accordion-thumb">
+                                        <h4 class="s-20 w-700">{{ $item->question }}</h4>
+                                    </div>
+
+
+                                    <!-- CATEGORY ANSWERS -->
+                                    <div class="accordion-panel">
+                                        <!-- Answer -->
+                                        <div class="faqs-2-answer color--grey">
+                                            <!-- Text -->
+                                            {!! $item->answer !!}
+
+
+                                        </div> <!-- END QUESTION #1 -->
+                                    </div> <!-- END CATEGORY ANSWERS -->
+                                </li> <!-- END QUESTIONS CATEGORY #1 -->
+                            @endforeach
 
 
                         </ul>
@@ -478,6 +445,7 @@
                 loop: false,
                 autoplay: false,
                 autoplayHoverPause: false,
+                autoHeight: true,
                 dots: false,
                 // animateOut: 'slideOutLeft',\
                 responsiveClass: true,
