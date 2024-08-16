@@ -75,7 +75,7 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                                                                                                                                                            ============================================= -->
+                                                                                                                                                                                                                                                                                                                    ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
             <div class="row justify-content-center">
@@ -101,7 +101,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                                            ============================================= -->
+                                                                                                                                                                                                                                                                                                                    ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -489,7 +489,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                                                                            ============================================= -->
+                                                                                                                                                                                                                                                                                                                    ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
@@ -913,8 +913,6 @@
                                     class="color--theme">Hubungi Kami</a></p>
                         </div>
                     </div>
-
-
                 </div>
             </div> <!-- End row -->
         </div> <!-- End container -->
