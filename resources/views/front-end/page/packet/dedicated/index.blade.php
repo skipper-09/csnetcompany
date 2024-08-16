@@ -390,7 +390,7 @@
                                 </p>
 
                                 <!-- Button -->
-                                <a href="#" class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
+                                <a href="https://wa.me/6282116879977?text=Halo" class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
 
                             </div>
                         </div> <!-- END BANNER-12 TEXT -->
@@ -431,164 +431,29 @@
                         <ul class="accordion">
 
 
+                            @foreach ($faq as $item)
                             <!-- QUESTIONS CATEGORY #1 -->
-                            <li class="accordion-item is-active">
-
-
-                                <!-- CATEGORY HEADER -->
-                                <div class="accordion-thumb">
-                                    <h4 class="s-20 w-700">Apa itu Internet Dedicatd?</h4>
-                                </div>
-
-
-                                <!-- CATEGORY ANSWERS -->
-                                <div class="accordion-panel">
-                                    <!-- Answer -->
-                                    <div class="faqs-2-answer color--grey">
-                                        <!-- Text -->
-                                        <br>
-                                        Internet Dedicated adalah layanan koneksi internet yang dirancang secara eksklusif
-                                        untuk memenuhi
-                                        tuntutan bisnis dan
-                                        keperluan para profesional. Berbeda dengan layanan broadband biasa, Internet
-                                        Dedicated menghadirkan
-                                        performa yang dapat
-                                        diandalkan, kecepatan yang tinggi, dan kestabilan yang konsisten. Keberadaan layanan
-                                        ini menjadi
-                                        sangat penting dalam
-                                        menjalankan operasi bisnis masa kini yang sangat bergantung pada konektivitas yang
-                                        tidak
-                                        terganggu.<br />
-
-                                        Koneksi internet yang handal dan cepat membentuk landasan vital bagi suksesnya
-                                        bisnis di era modern.
-                                        Perlunya menjaga
-                                        kerahasiaan data bisnis dan melindunginya dari gangguan eksternal seperti serangan
-                                        siber atau
-                                        lonjakan trafik pada
-                                        jaringan internet umum, mendorong perlunya memiliki koneksi yang tahan banting dan
-                                        aman. Tidak hanya
-                                        itu, dibutuhkan
-                                        performa layanan yang sesuai untuk beragam jenis bisnis, terutama yang membutuhkan
-                                        koneksi intensif.
-
-
-                                        </p>
-
-                                    </div> <!-- END QUESTION #1 -->
-                                </div> <!-- END CATEGORY ANSWERS -->
-                            </li> <!-- END QUESTIONS CATEGORY #1 -->
-                            <!-- QUESTIONS CATEGORY #1 -->
-                            <li class="accordion-item ">
-
-
-                                <!-- CATEGORY HEADER -->
-                                <div class="accordion-thumb">
-                                    <h4 class="s-20 w-700">Bagaiman cara mengetahui Informasi mengenai Idnet?</h4>
-                                </div>
-
-
-                                <!-- CATEGORY ANSWERS -->
-                                <div class="accordion-panel">
-                                    <!-- Answer -->
-                                    <div class="faqs-2-answer color--grey">
-                                        <!-- Text -->
-                                        <p>Kunjungi website : idnet.id atau email ke contact@idnet.id atau menghubungi call
-                                            center 021-3000
-                                            1515, WA 0815 900 1515, media sosial Idnet atau datang langsung ke kantor kami.
-                                        </p>
-
-                                    </div> <!-- END QUESTION #1 -->
-                                </div> <!-- END CATEGORY ANSWERS -->
-                            </li> <!-- END QUESTIONS CATEGORY #1 -->
-                            <!-- QUESTIONS CATEGORY #1 -->
-                            <li class="accordion-item ">
-
-
-                                <!-- CATEGORY HEADER -->
-                                <div class="accordion-thumb">
-                                    <h4 class="s-20 w-700">Bagaimana syarat & ketentuan untuk berlangganan layanan Idnet?
-                                    </h4>
-                                </div>
-
-
-                                <!-- CATEGORY ANSWERS -->
-                                <div class="accordion-panel">
-                                    <!-- Answer -->
-                                    <div class="faqs-2-answer color--grey">
-                                        <!-- Text -->
-                                        <p>Syarat & ketentuan berlangganan :
-                                        </p>
-                                        <ol>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                            <li>Pelanggan warga negara Indonesia wajib menggunakan KTP yang berlaku.</li>
-                                        </ol>
-
-                                    </div> <!-- END QUESTION #1 -->
-                                </div> <!-- END CATEGORY ANSWERS -->
-                            </li> <!-- END QUESTIONS CATEGORY #1 -->
-                            <!-- QUESTIONS CATEGORY #1 -->
-                            <li class="accordion-item ">
-
-
-                                <!-- CATEGORY HEADER -->
-                                <div class="accordion-thumb">
-                                    <h4 class="s-20 w-700">Apa keunggulan dari layanan Idnet?</h4>
-                                </div>
-
-
-                                <!-- CATEGORY ANSWERS -->
-                                <div class="accordion-panel">
-                                    <!-- Answer -->
-                                    <div class="faqs-2-answer color--grey">
-                                        <!-- Text -->
-                                        <ol>
-                                            <li>Menggunakan teknologi Fiber-to-the-home (FTTH) dengan 100% fiber optic untuk
-                                                memberikan layanan
-                                                yang dapat diandalkan oleh pelanggan.</li>
-                                            <li>Layanan internet unlimited, cepat, stabil serta dapat diandalkan.</li>
-                                            <li>Memberikan "value for money" bagi pelanggan untuk kebutuhan terkini dan
-                                                kebutuhan lainnya..</li>
-                                            <li>Memiliki pelayanan pelanggan yang baik dengan dukungan call center, email
-                                                dan social media.</li>
-                                            <li>Memiliki billing untuk melihat informasi tagihan internet secara berkala.
-                                            </li>
-                                        </ol>
-
-                                    </div> <!-- END QUESTION #1 -->
-                                </div> <!-- END CATEGORY ANSWERS -->
-                            </li> <!-- END QUESTIONS CATEGORY #1 -->
-                            <!-- QUESTIONS CATEGORY #1 -->
-                            <li class="accordion-item ">
-
-
-                                <!-- CATEGORY HEADER -->
-                                <div class="accordion-thumb">
-                                    <h4 class="s-20 w-700">Berapa lama waktu pemasangan baru Idnet?</h4>
-                                </div>
-
-
-                                <!-- CATEGORY ANSWERS -->
-                                <div class="accordion-panel">
-                                    <!-- Answer -->
-                                    <div class="faqs-2-answer color--grey">
-                                        <!-- Text -->
-                                        <p>1 -3* hari setelah kesepakatan pelanggan & Indosat HiFi
-                                            *Hanya estimasi, waktu pemasangan sebenarnya akan tergantung situasi di
-                                            lapangan.
-                                            Petugas Indosat Ooredoo Hutchison yang ditunjuk akan menghubungi pelanggan untuk
-                                            kepastian
-                                            pemasangan.
-                                        </p>
-
-                                    </div> <!-- END QUESTION #1 -->
-                                </div> <!-- END CATEGORY ANSWERS -->
-                            </li> <!-- END QUESTIONS CATEGORY #1 -->
+                        <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
+            
+            
+                          <!-- CATEGORY HEADER -->
+                          <div class="accordion-thumb">
+                            <h4 class="s-20 w-700">{{$item->question}}</h4>
+                          </div>
+            
+            
+                          <!-- CATEGORY ANSWERS -->
+                          <div class="accordion-panel">
+                            <!-- Answer -->
+                            <div class="faqs-2-answer color--grey">
+                              <!-- Text -->
+                              {!! $item->answer !!}
+                              
+            
+                            </div> <!-- END QUESTION #1 -->
+                          </div> <!-- END CATEGORY ANSWERS -->
+                        </li> <!-- END QUESTIONS CATEGORY #1 -->
+                        @endforeach
 
 
                         </ul>

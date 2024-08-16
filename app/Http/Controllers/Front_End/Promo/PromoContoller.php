@@ -16,6 +16,7 @@ class PromoContoller extends Controller
             'page_name' => 'Promo',
             'packet' => packet::with('packetDescription')->where('is_active', true)->where('category_id', 3)->get(),
             'promo' => Promo::where('is_active', true)->get(),
+            'slider'=> Promo::where([['is_active', true],['slider',true]])->get(),
         ];
         return view('front-end.page.promo.index', $data);
     }

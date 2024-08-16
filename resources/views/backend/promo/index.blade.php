@@ -29,7 +29,9 @@
           <tr>
             <th>Nama Promo</th>
             <th>Gambar</th>
+            <th>short Deskripsi</th>
             <th>Deskripsi</th>
+            <th>Slider</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -67,11 +69,20 @@
                         name: 'logo'
                     },
                     {
+                        data: 'shortdeskripsi',
+                        name: 'shortdeskripsi',
+                        width: '300px'
+                    },
+                    {
                         data: 'deskripsi',
                         name: 'deskripsi',
-                        
+                        width: '300px'
                     },
                   
+                    {
+                        data: 'slider',
+                        name: 'slider'
+                    },
                     {
                         data: 'is_active',
                         name: 'is_active'

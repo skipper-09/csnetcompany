@@ -9,7 +9,7 @@ class Promo extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'logo','is_active','slug','deskripsi'
+        'name', 'logo','is_active','slug','deskripsi','shortdeskripsi','slider'
     ];
     protected $primaryKey = 'id';
 

@@ -43,6 +43,22 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Slider</label>
+                                        <select name="slider" id=""
+                                            class="form-control @error('slider') is-invalid @enderror">
+                                            <option value="">Slider ?</option>
+                                            <option value="1">Ya</option>
+                                            <option value="0">Tidak</option>
+                                        </select>
+                                        @error('slider')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Status</label>
                                         <select name="is_active" id=""
                                             class="form-control @error('is_active') is-invalid @enderror">
@@ -72,9 +88,20 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Short Deskripsi</label>
+                                        <textarea name="shortdeskripsi" class="form-control  @error('shortdeskripsi') is-invalid @enderror"></textarea>
+                                        @error('shortdeskripsi')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Deskripsi</label>
-                                        <textarea name="deskripsi" id="editor" class="editor  @error('deskripsi') is-invalid @enderror"
-                                            ></textarea>
+                                        <textarea name="deskripsi" id="editor" class="editor  @error('deskripsi') is-invalid @enderror"></textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

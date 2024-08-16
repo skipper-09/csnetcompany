@@ -186,7 +186,7 @@
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="img-block right-column wow fadeInLeft">
-                        <img class="" style="width: 600px" src="{{ asset('front-end/images/img-tv.png') }}"
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}"
                             alt="content-image">
                     </div>
                 </div>

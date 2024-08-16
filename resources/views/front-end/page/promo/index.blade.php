@@ -34,10 +34,10 @@
 
 @section('content')
     <!-- HERO-2
-                                   ============================================= -->
+                                       ============================================= -->
     <section id="" class="hero-promo">
         <div class="owl-carousel">
-            @foreach ($promo as $item)
+            @foreach ($slider as $item)
                 <div>
                     <a href="{{ route('packet.promo.detail', ['slug' => $item->slug]) }}">
                         <img class="fullscreen-img" src="{{ url('storage/images/promo/' . $item->logo) }}"
@@ -49,8 +49,17 @@
 
 
 
+    <div class="container">
+        <!-- BLOG POSTS CATEGORY -->
+        <div class="row">
+            <div class="col">
+                <div class="posts-category ico-20 wow fadeInUp">
+                    <h4 class="s-34 w-700">Promo Terbaru <span class="flaticon-next"></span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    
 
     <div class="container pt-30">
         <!-- POSTS WRAPPER -->
@@ -65,7 +74,8 @@
 
                             <!-- BLOG POST IMAGE -->
                             <div class="blog-post-img mb-35">
-                                <img class="img-fluid r-16" src="{{url('storage/images/promo/' . $item->logo)}}" alt="blog-post-image">
+                                <img class="img-fluid r-16" src="{{ url('storage/images/promo/' . $item->logo) }}"
+                                    alt="blog-post-image">
                             </div>
 
 
@@ -77,10 +87,13 @@
 
                                 <!-- Post Link -->
                                 <h6 class="s-20 w-700 text-capitalize">
-                                    <a href="{{ route('packet.promo.detail', ['slug'=>$item->slug]) }}">{{$item->name}}
+                                    <a href="{{ route('packet.promo.detail', ['slug' => $item->slug]) }}">{{ $item->name }}
                                     </a>
                                 </h6>
 
+                                <!-- Text -->
+									<p>{{$item->shortdeskripsi}}
+									</p>
                                 {{-- <!-- Post Meta -->
                                 <div class="blog-post-meta mt-20">
                                     <ul class="post-meta-list ico-10">
@@ -123,7 +136,8 @@
                                 </p>
 
                                 <!-- Button -->
-                                <a href="#" class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
+                                <a href="https://wa.me/6282116879977?text=Halo"
+                                    class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
 
                             </div>
                         </div> <!-- END BANNER-12 TEXT -->
@@ -132,8 +146,7 @@
                         <!-- BANNER-12 IMAGE -->
                         <div class="col-md-5">
                             <div class="banner-12-img text-center">
-                                <img class="img-fluid" src="{{ asset('front-end/images/img-16.png') }}"
-                                    alt="banner-image">
+                                <img class="img-fluid" src="{{ asset('front-end/images/img-16.png') }}" alt="banner-image">
                             </div>
                         </div>
                     </div> <!-- End row -->

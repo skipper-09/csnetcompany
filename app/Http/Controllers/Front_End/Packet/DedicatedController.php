@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front_End\Packet;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use App\Models\packet;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class DedicatedController extends Controller
         $data = [
             'navlight' => true,
             'page_name' => 'Dedicated',
+            'faq'=>Faq::all(),
         ];
         return view('front-end.page.packet.dedicated.index', $data);
     }

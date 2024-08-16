@@ -22,11 +22,9 @@ class DatabaseSeeder extends Seeder
             AreaSeeder::class,
             OdpSeeder::class,
             PartnerSeeder::class,
-            FaqSeeder::class
+            FaqSeeder::class,
+            TremOfServiceSeeder::class,
+            PrivacyPolicySeeder::class
         ]);
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

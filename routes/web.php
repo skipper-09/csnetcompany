@@ -11,9 +11,11 @@ use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
 use App\Http\Controllers\Backend\Partner\PartnerController;
+use App\Http\Controllers\Backend\Privacy\PrivacyControllerBackend;
 use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
 use App\Http\Controllers\Backend\Promo\PromoPacketController;
 use App\Http\Controllers\Backend\Setting\UserController;
+use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
 use App\Http\Controllers\Front_End\Coverage\CoverageController;
@@ -22,7 +24,11 @@ use App\Http\Controllers\Front_End\Home\HomeController;
 use App\Http\Controllers\Front_End\Packet\DedicatedController;
 use App\Http\Controllers\Front_End\Packet\InternettvController;
 use App\Http\Controllers\Front_End\Packet\RitelController;
+use App\Http\Controllers\Front_End\Privacy\PrivacyController;
 use App\Http\Controllers\Front_End\Promo\PromoContoller;
+use App\Http\Controllers\Front_End\TremOfService\TremOfServiceController;
+use App\Models\PrivacyPolicy;
+use App\Models\TremofService;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -51,6 +57,8 @@ Route::get('/coverage', [CoverageController::class, 'index'])->name('coverage');
 
 
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
+Route::get('/syarat-dan-ketentuan', [TremOfServiceController::class, 'index'])->name('tremofservice');
+Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
 
 
 //backend routes
@@ -87,6 +95,24 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/edit/{id}', [FaqFaqController::class, 'show'])->name('backend.faq.edit');
         Route::put('/update/{id}', [FaqFaqController::class, 'update'])->name('backend.faq.update');
         Route::delete('/delete/{id}', [FaqFaqController::class, 'destroy'])->name('backend.faq.delete');
+    });
+
+    //route tremofservice
+    Route::prefix('tremofservice')->group(function () {
+        Route::get('', [TremofServiceBackendController::class, 'index'])->name('backend.tremofservice');
+        Route::get('/getData', [TremofServiceBackendController::class, 'getData'])->name('backend.tremofservice.getData');
+        Route::get('/edit/{id}', [TremofServiceBackendController::class, 'show'])->name('backend.tremofservice.edit');
+        Route::put('/update/{id}', [TremofServiceBackendController::class, 'update'])->name('backend.tremofservice.update');
+        Route::delete('/delete/{id}', [TremofServiceBackendController::class, 'destroy'])->name('backend.tremofservice.delete');
+    });
+
+    //route privacy policy
+    Route::prefix('privacy-policy')->group(function () {
+        Route::get('', [PrivacyControllerBackend::class, 'index'])->name('backend.privacypolicy');
+        Route::get('/getData', [PrivacyControllerBackend::class, 'getData'])->name('backend.privacypolicy.getData');
+        Route::get('/edit/{id}', [PrivacyControllerBackend::class, 'show'])->name('backend.privacypolicy.edit');
+        Route::put('/update/{id}', [PrivacyControllerBackend::class, 'update'])->name('backend.privacypolicy.update');
+        Route::delete('/delete/{id}', [PrivacyControllerBackend::class, 'destroy'])->name('backend.privacypolicy.delete');
     });
 
 

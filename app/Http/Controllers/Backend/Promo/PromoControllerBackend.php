@@ -47,7 +47,11 @@ class PromoControllerBackend extends Controller
             $active = '';
             $query->is_active == 1 ? $active = '<span class="badge bg-label-primary">Aktif</span>' : $active = '<span class="badge bg-label-warning">Tidak</span>';
             return $active;
-        })->rawColumns(['action', 'logo', 'is_active'])->make(true);
+        })->addColumn('slider', function ($query) {
+            $slider = '';
+            $query->slider == 1 ? $slider = '<span class="badge bg-label-primary">Aktif</span>' : $slider = '<span class="badge bg-label-warning">Tidak</span>';
+            return $slider;
+        })->rawColumns(['action', 'logo', 'is_active','slider'])->make(true);
     }
 
 
@@ -80,8 +84,10 @@ class PromoControllerBackend extends Controller
             Promo::create([
                 'name' => $request->name,
                 'logo' => $filename,
+                'shortdeskripsi'=>$request->shortdeskripsi,
                 'deskripsi'=>$request->deskripsi,
                 'is_active' => $request->is_active,
+                'slider'=>$request->slider,
                 'slug'=>$slug
             ]);
             return redirect()->route('backend.promo')->with(['success' => 'Berhasil Menambahkan Promo!']);
@@ -129,8 +135,10 @@ class PromoControllerBackend extends Controller
             $data->update([
                'name' => $request->name,
                 'logo' => $filename,
+                'shortdeskripsi'=>$request->shortdeskripsi,
                 'deskripsi'=>$request->deskripsi,
                 'is_active' => $request->is_active,
+                'slider'=>$request->slider,
                 'slug'=>$slug
             ]);
             return redirect()->route('backend.promo')->with(['success' => 'Berhasil Edit Promo!']);

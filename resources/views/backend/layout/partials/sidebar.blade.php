@@ -141,6 +141,20 @@
                 <div data-i18n="Faq">Faq</div>
             </a>
         </li>
+        {{-- Trem Of Service --}}
+        <li class="{{ Request::is('admin/tremofservice') ? 'menu-item active' : 'menu-item' }}">
+            <a href="{{ route('backend.tremofservice') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-unite"></i>
+                <div data-i18n="TremofService">Trems Of Service</div>
+            </a>
+        </li>
+        {{-- privacy policy --}}
+        <li class="{{ Request::is('admin/privacy-policy') ? 'menu-item active' : 'menu-item' }}">
+            <a href="{{ route('backend.privacypolicy') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-unite"></i>
+                <div data-i18n="Privacy Policy">Privacy Policy</div>
+            </a>
+        </li>
 
 
         <!-- Setting -->

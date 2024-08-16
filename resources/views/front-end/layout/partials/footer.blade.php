@@ -84,16 +84,10 @@
                     <!-- Links -->
                     <ul class="foo-links clearfix">
                         <li>
-                            <p><a href="terms.html">Terms of Use</a></p>
+                            <a href="{{ route('tremofservice') }}" ><p class="text-white">Terms of Use</p></a>
                         </li>
                         <li>
-                            <p><a href="privacy.html">Privacy Policy</a></p>
-                        </li>
-                        <li>
-                            <p><a href="cookies.html">Cookie Policy</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#">Site Map</a></p>
+                            <a href="{{ route('privacy') }}"><p class="text-white">Privacy Policy</p></a>
                         </li>
                     </ul>
 

@@ -27,6 +27,9 @@ class PromoRequest extends FormRequest
                 'logo' => 'image|max:512|file|mimes:jpeg,jpg,png,svg',
                 'is_active' => 'required',
                 'deskripsi' => 'required',
+                'shortdeskripsi' => 'required',
+                'slider'=>'required',
+
             ];
         } else {
             return [
@@ -34,6 +37,8 @@ class PromoRequest extends FormRequest
                 'logo' => 'required|image|file|mimes:jpeg,jpg,png,svg',
                 'is_active' => 'required',
                 'deskripsi' => 'required',
+                'shortdeskripsi' => 'required',
+                'slider'=>'required',
             ];
         }
     }
@@ -45,8 +50,10 @@ class PromoRequest extends FormRequest
             'logo.required' => 'Gambar Promo Wajib Diisi',
             'logo.image' => 'File yang dimasukkan bukan gambar',
             'logo.mimes' => 'Inputkan file gambar saja',
-            'deskripsi' => 'Deskripsi Promo Wajib Diisi',
-            'is_active.required' => 'Status Wajib Diisi'
+            'deskripsi.required' => 'Deskripsi Promo Wajib Diisi',
+            'shortdeskripsi.required' => 'Deskripsi Singkat Promo Wajib Diisi',
+            'is_active.required' => 'Status Wajib Diisi',
+            'slider.required' => 'Slider Wajib Diisi',
         ];
     }
 }

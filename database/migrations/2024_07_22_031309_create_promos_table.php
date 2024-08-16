@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->string('shortdeskripsi');
             $table->longText('deskripsi');
             $table->string('logo');
+            $table->boolean('slider')->default(true);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
