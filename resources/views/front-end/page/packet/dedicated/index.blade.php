@@ -110,7 +110,7 @@
 
                             <!-- Preview Image -->
                             <img class="img-fluid"
-                                src="https://indonet.co.id/wp-content/uploads/2022/03/indonet-dedicated-internet-topology-1536x1168.png"
+                                src="{{ asset('front-end/images/dedicated.png') }}"
                                 alt="video-preview">
 
                         </div>
