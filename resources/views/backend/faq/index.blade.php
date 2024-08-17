@@ -27,6 +27,7 @@
       <table class=" table table-striped " id="dataTable" style="width:100%">
         <thead>
           <tr>
+            <th>Tipe</th>
             <th>Pertanyaan</th>
             <th>Jawaban</th>
             <th>Actions</th>
@@ -51,6 +52,10 @@
                     serverSide: true,
                     ajax: '{{ route('backend.faq.getData') }}',
                     columns: [
+                      {
+                            data: 'type',
+                            name: 'type'
+                        },
                         {
                             data: 'question',
                             name: 'question'

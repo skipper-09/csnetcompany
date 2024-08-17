@@ -14,21 +14,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="idnet">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Internet Service Provider Tercepat dan Unlimited">
+    <meta name="keywords" content="internet, isp, idnet, internet murah, internet unlimited">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- SITE TITLE -->
-    <title>@yield('title')</title>
+    <title>@yield('title') - IDNET</title>
 
     <!-- FAVICON AND TOUCH ICONS -->
     <link rel="shortcut icon" href="{{ asset('front-end/images/logo-idnet.webp') }}" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('front-end/images/logo-idnet.webp') }}" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+    
 
     {{-- css style include --}}
     @include('front-end.layout.partials.css')

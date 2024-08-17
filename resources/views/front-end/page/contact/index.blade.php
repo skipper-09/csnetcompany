@@ -21,15 +21,15 @@
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-18-img wow fadeInRight">
                         <img class="img-fluid"
-                            src="https://www.myrepublic.co.id/_next/image?url=%2Fimg%2Fgothel%2Fuploads%2Fabout_page_header_1_3dc6fecf9d.png&w=640&q=75"
-                            alt="hero-image">
+                            src="{{ asset('front-end/images/about1.png') }}"
+                            alt="Tentang Kami">
                     </div>
                 </div>
 
 
                 <!-- HERO TEXT -->
                 <div class="col-md-6 order-first order-md-2">
-                    <div class="hero-18-txt wow fadeInLeft">
+                    <div class="hero-18-txt wow fadeInLeft color--white">
 
                         <!-- Title -->
                         <h2 class="s-56 w-700">Tentang Kami</h2>

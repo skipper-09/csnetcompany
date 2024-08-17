@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->longText('answer');
+            $table->enum('type',['All','Dedicated','Broadband','Tv'])->default('All');
             $table->timestamps();
         });
     }

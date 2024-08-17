@@ -9,7 +9,7 @@ class Faq extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'question', 'answer'
+        'question', 'answer','type'
     ];
     protected $primaryKey = 'id';
 }

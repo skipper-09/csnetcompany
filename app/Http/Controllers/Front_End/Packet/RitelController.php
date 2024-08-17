@@ -14,7 +14,7 @@ class RitelController extends Controller
         $data=[
             'page_name' => 'Broadband',
             'packet'=> packet::with('packetDescription')->where('is_active',true)->where('category_id',1)->get(),
-            'faq'=>Faq::all(),
+            'faq'=>Faq::where('type','Broadband')->limit(5)->get(),
         ];
         return view('front-end.page.packet.ritel.index',$data);
     }

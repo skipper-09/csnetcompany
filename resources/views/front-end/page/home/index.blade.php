@@ -292,7 +292,7 @@
 
                             <!-- Text -->
                             <div class="fbox-txt">
-                                <h6 class="s-22 w-700">100% Fiber Oftic</h6>
+                                <h6 class="s-22 w-700">100% Fiber Optic</h6>
                                 <p>Kami menggunakan 100% fiber optic untuk memastikan Anda mendapatkan kecepatan internet
                                     yang tak tertandingi. Dengan teknologi ini, Anda dapat menikmati streaming, gaming, dan
                                     browsing tanpa hambatan.

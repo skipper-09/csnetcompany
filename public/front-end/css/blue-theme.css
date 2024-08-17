@@ -5094,7 +5094,8 @@ span.sm-info {
     height: 100%;
     top: 0;
     left: 26%;
-    background-image: url(../images/hero-18.jpg);
+    /* background-image: url(../images/hero-1.jpg); */
+    background-color: #25316D;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

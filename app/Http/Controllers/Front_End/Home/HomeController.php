@@ -15,7 +15,7 @@ class HomeController extends Controller
             'page_name' => 'Home',
             'navlight' => true,
             'partner' => partner::all(),
-            'faq' => Faq::all()
+            'faq' => Faq::where('type','All')->limit(10)->get()
         ];
         return view('front-end.page.home.index', $data);
     }

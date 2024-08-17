@@ -55,8 +55,12 @@ class FaqController extends Controller
     public function store(FaqRequest $request)
     {
         try {
-            $data = $request->validated();
-            Faq::create($data);
+            $request->validated();
+            Faq::create([
+                'question' => $request->question,
+                'answer' => $request->answer,
+                'type' => $request->type,
+            ]);
             return redirect()->route('backend.faq')->with(['success' => 'Berhasil Membuat Faq!']);
         } catch (Exception $e) {
             return response()->json([
@@ -90,6 +94,7 @@ class FaqController extends Controller
         $data->update([
             'question' => $request->question,
             'answer' => $request->answer,
+            'type' => $request->type,
         ]);
         return redirect()->route('backend.faq')->with(['success' => 'Berhasil Mengubah Faq']);
         } catch (Exception $e) {

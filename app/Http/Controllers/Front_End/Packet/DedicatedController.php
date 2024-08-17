@@ -14,7 +14,7 @@ class DedicatedController extends Controller
         $data = [
             'navlight' => true,
             'page_name' => 'Dedicated',
-            'faq'=>Faq::all(),
+            'faq'=>Faq::where('type','Dedicated')->limit(5)->get(),
         ];
         return view('front-end.page.packet.dedicated.index', $data);
     }

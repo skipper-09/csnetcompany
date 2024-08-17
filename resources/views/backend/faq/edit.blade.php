@@ -38,6 +38,24 @@
                   @enderror
                 </div>
               </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                    <label class="form-label" for="basic-default-fullname">Tipe Faq</label>
+                    <select name="type" id=""
+                        class="form-control @error('type') is-invalid @enderror">
+                        <option value="">Pilih Tipe Faq</option>
+                        <option value="All" {{ $faq->type == 'All' ? 'selected' : '' }}>All</option>
+                        <option value="Dedicated" {{ $faq->type == 'Dedicated' ? 'selected' : '' }}>Dedicated</option>
+                        <option value="Broadband" {{ $faq->type == 'Broadband' ? 'selected' : '' }}>Broadband</option>
+                        <option value="Tv" {{ $faq->type == 'Tv' ? 'selected' : '' }}>Tv</option>
+                    </select>
+                    @error('type')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
               <div class="col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label class="form-label" for="basic-default-fullname">Jawaban</label>

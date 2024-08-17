@@ -16,12 +16,11 @@
                 <!-- Title -->
                 <h6 class="s-17 w-700 text-white">Sosial Media</h6>
                 <ul class="footer-socials ico-25 text-center clearfix">
-                    <li><a href="#"><span class="flaticon-facebook text-white"></span></a></li>
-                    <li><a href="#"><span class="flaticon-twitter text-white"></span></a></li>
-                    <li><a href="https://www.instagram.com/idnet.official"><span
-                                class="flaticon-instagram text-white "></span></a>
+                    <li><a href="https://www.facebook.com/idnetjember" target="_blank"><img class="w-200" src="{{ asset('front-end/images/facebook.png') }}"></a>
                     </li>
-                    <li><a href="#"><span class="flaticon-linkedin-logo text-white"></span></a></li>
+                    <li><a href="https://www.instagram.com/idnet.official" target="_blank"><img class="w-200" src="{{ asset('front-end/images/instagram.png') }}"></a>
+                    </li>
+                    <li><a href="https://www.tiktok.com/@idnet.official" target="_blank"><img src="{{ asset('front-end/images/tiktok.png') }}" ></a></li>
                 </ul>
             </div>
 
