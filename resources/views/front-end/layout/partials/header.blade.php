@@ -60,7 +60,7 @@
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="#lnk-1">Tips & Tutorial</a></li>
+                                    <li aria-haspopup="true"><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
                             </li>
@@ -115,8 +115,8 @@
 
 
                             <!-- SIMPLE NAVIGATION LINK -->
-                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('contact') }}"
-                                    class="h-link">Hubungi Kami</a></li>
+                            <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">Cek Area</a>
+                            </li>
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- SIGN IN LINK -->
@@ -201,7 +201,7 @@
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="#lnk-1">Tips & Tutorial</a></li>
+                                    <li aria-haspopup="true"><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
                             </li>
@@ -256,8 +256,8 @@
 
 
                             <!-- SIMPLE NAVIGATION LINK -->
-                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('contact') }}"
-                                    class="h-link">Hubungi Kami</a></li>
+                            <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">Cek Area</a>
+                            </li>
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- SIGN IN LINK -->

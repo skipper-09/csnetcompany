@@ -24,7 +24,11 @@ class DatabaseSeeder extends Seeder
             PartnerSeeder::class,
             FaqSeeder::class,
             TremOfServiceSeeder::class,
-            PrivacyPolicySeeder::class
+            PrivacyPolicySeeder::class,
+            KotaSeeder::class,
+            KecamatanSeeder::class,
+            KelurahanSeeder::class,
+            JalanSeeder::class,
         ]);
     }
 }

@@ -74,7 +74,7 @@
 
 
 
-    <!-- CEK AREA
+    {{-- <!-- CEK AREA
                                                                                                                                                                                                                                                                                                                     ============================================= -->
     <section id="features-2" class="py-50 features-section division">
         <div class="container">
@@ -94,14 +94,14 @@
                 </div>
             </div>
         </div> <!-- End container -->
-    </section> <!-- END CEK AREA-2 -->
+    </section> <!-- END CEK AREA-2 --> --}}
 
     <!-- DIVIDER LINE -->
     {{-- <hr class="divider"> --}}
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                                                    ============================================= -->
+                                                                                                                                                                                                                                                                                                                        ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -489,7 +489,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                                                                                    ============================================= -->
+                                                                                                                                                                                                                                                                                                                        ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 

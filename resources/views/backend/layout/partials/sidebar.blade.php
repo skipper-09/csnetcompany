@@ -96,6 +96,38 @@
                 </li>
             </ul>
         </li>
+
+
+        {{-- management CEK COVERAGE --}}
+
+        <li class="{{ $sidebar == 'cek coverage' ? 'menu-item active open' : 'menu-item' }}">
+            <a href=" javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="kota">Coverage Area</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="{{ $page_name == 'Kota' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.kota') }}" class="menu-link">
+                        <div data-i18n="area">Kota</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Kecamatan' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.kecamatan') }}" class="menu-link">
+                        <div data-i18n="kecamatan">Kecamatan</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Kelurahan' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.kelurahan') }}" class="menu-link">
+                        <div data-i18n="kelurahan">Kelurahan</div>
+                    </a>
+                </li>
+                <li class="{{ $page_name == 'Jalan' ? 'menu-item active' : 'menu-item' }}">
+                    <a href=" {{ route('backend.jalan') }}" class="menu-link">
+                        <div data-i18n="jalan">Jalan</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- Management Blog -->
         {{-- <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">

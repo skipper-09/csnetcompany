@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\Auth\ProfileController;
+use App\Http\Controllers\Backend\CekCoverage\Jalan\JalanController;
+use App\Http\Controllers\Backend\CekCoverage\Kecamatan\KecamatanController;
+use App\Http\Controllers\Backend\CekCoverage\Kelurahan\KelurahanController;
+use App\Http\Controllers\Backend\CekCoverage\Kota\KotaController;
 use App\Http\Controllers\Backend\Coverage\AreaController;
 use App\Http\Controllers\Backend\Coverage\MapsController;
 use App\Http\Controllers\Backend\Coverage\OdpController;
@@ -175,6 +179,45 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::get('/edit/{id}', [PromoPacketController::class, 'show'])->name('backend.promo_paket.edit');
             Route::put('/update/{id}', [PromoPacketController::class, 'update'])->name('backend.promo_paket.update');
             Route::delete('/delete/{id}', [PromoPacketController::class, 'destroy'])->name('backend.promo_paket.delete');
+        });
+    });
+
+    Route::prefix('coverage-area')->group(function () {
+        Route::prefix('kota')->group(function () {
+            Route::get('', [KotaController::class, 'index'])->name('backend.kota');
+            Route::get('/getData', [KotaController::class, 'getData'])->name('backend.kota.getData');
+            Route::get('tambah', [KotaController::class, 'create'])->name('backend.add.kota');
+            Route::post('store', [KotaController::class, 'store'])->name('backend.kota.store');
+            Route::get('/edit/{id}', [KotaController::class, 'show'])->name('backend.kota.edit');
+            Route::put('/update/{id}', [KotaController::class, 'update'])->name('backend.kota.update');
+            Route::delete('/delete/{id}', [KotaController::class, 'destroy'])->name('backend.kota.delete');
+        });
+        Route::prefix('kecamatan')->group(function () {
+            Route::get('', [KecamatanController::class, 'index'])->name('backend.kecamatan');
+            Route::get('/getData', [KecamatanController::class, 'getData'])->name('backend.kecamatan.getData');
+            Route::get('tambah', [KecamatanController::class, 'create'])->name('backend.add.kecamatan');
+            Route::post('store', [KecamatanController::class, 'store'])->name('backend.kecamatan.store');
+            Route::get('/edit/{id}', [KecamatanController::class, 'show'])->name('backend.kecamatan.edit');
+            Route::put('/update/{id}', [KecamatanController::class, 'update'])->name('backend.kecamatan.update');
+            Route::delete('/delete/{id}', [KecamatanController::class, 'destroy'])->name('backend.kecamatan.delete');
+        });
+        Route::prefix('kelurahan')->group(function () {
+            Route::get('', [KelurahanController::class, 'index'])->name('backend.kelurahan');
+            Route::get('/getData', [KelurahanController::class, 'getData'])->name('backend.kelurahan.getData');
+            Route::get('tambah', [KelurahanController::class, 'create'])->name('backend.add.kelurahan');
+            Route::post('store', [KelurahanController::class, 'store'])->name('backend.kelurahan.store');
+            Route::get('/edit/{id}', [KelurahanController::class, 'show'])->name('backend.kelurahan.edit');
+            Route::put('/update/{id}', [KelurahanController::class, 'update'])->name('backend.kelurahan.update');
+            Route::delete('/delete/{id}', [KelurahanController::class, 'destroy'])->name('backend.kelurahan.delete');
+        });
+        Route::prefix('jalan')->group(function () {
+            Route::get('', [JalanController::class, 'index'])->name('backend.jalan');
+            Route::get('/getData', [JalanController::class, 'getData'])->name('backend.jalan.getData');
+            Route::get('tambah', [JalanController::class, 'create'])->name('backend.add.jalan');
+            Route::post('store', [JalanController::class, 'store'])->name('backend.jalan.store');
+            Route::get('/edit/{id}', [JalanController::class, 'show'])->name('backend.jalan.edit');
+            Route::put('/update/{id}', [JalanController::class, 'update'])->name('backend.jalan.update');
+            Route::delete('/delete/{id}', [JalanController::class, 'destroy'])->name('backend.jalan.delete');
         });
     });
 
