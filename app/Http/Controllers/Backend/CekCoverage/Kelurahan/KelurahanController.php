@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend\CekCoverage\Kelurahan;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kecamatan;
 use App\Models\Kelurahan;
+use Exception;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -42,15 +44,24 @@ class KelurahanController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'sidebar' => 'cek coverage',
+            'page_name' => 'Kelurahan',
+            'kecamatan'=>Kecamatan::all()
+        ];
+        return view('backend.cek_coverage.kelurahan.add', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    { 
+        Kelurahan::insert([
+        'name' => $request->name,
+        'kecamatan_id'=>$request->kecamatan_id
+    ]);
+    return redirect()->route('backend.kelurahan')->with(['success' => 'Berhasil Menambahkan kelurahan!']);
     }
 
     /**
@@ -58,23 +69,27 @@ class KelurahanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = [
+            'sidebar' => 'cek coverage',
+            'page_name' => 'Kelurahan',
+            'kecamatan'=>Kecamatan::all(),
+            'kelurahan'=> Kelurahan::findOrFail($id)
+        ];
+        return view('backend.cek_coverage.kelurahan.edit', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Kelurahan::find($id);
+        $data->update([
+            'name' => $request->name,
+            'kecamatan'=>$request->kecamatan_id
+        ]);
+        return redirect()->route('backend.kelurahan')->with(['success' => 'Berhasil Merubah Kelurahan!']);
     }
 
     /**
@@ -82,6 +97,19 @@ class KelurahanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            Kelurahan::where('id', $id)->delete();
+            //return response
+            return response()->json([
+                'status' => 'success',
+                'success' => true,
+                'message' => 'Kelurahan Berhasil Dihapus!.',
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'Kelurahan Tidak Bisa Dihapus Karena Masih digunakan!',
+                'trace' => $e->getTrace()
+            ]);
+        }
     }
 }

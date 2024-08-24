@@ -21,7 +21,7 @@
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
             <div class="mb-4">
-                <a href="{{ route('backend.add.kota') }}" class="btn btn-sm btn-primary">Tambah
+                <a href="{{ route('backend.add.kecamatan') }}" class="btn btn-sm btn-primary">Tambah
                     {{ $page_name }}</a>
             </div>
             <div class="table-responsive text-nowrap">
