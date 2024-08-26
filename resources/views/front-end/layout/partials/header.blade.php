@@ -256,7 +256,8 @@
 
 
                             <!-- SIMPLE NAVIGATION LINK -->
-                            <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">Cek Area</a>
+                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}"
+                                    class="h-link">Cek Area</a>
                             </li>
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}

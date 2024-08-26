@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\Promo\PromoPacketController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
+use App\Http\Controllers\Front_End\Cekarea\CekareaController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
 use App\Http\Controllers\Front_End\Coverage\CoverageController;
 use App\Http\Controllers\Front_End\Help\FaqController;
@@ -58,6 +59,10 @@ Route::prefix('bantuan')->group(function () {
 
 
 Route::get('/coverage', [CoverageController::class, 'index'])->name('coverage');
+Route::get('/cek-area', [CekareaController::class, 'index'])->name('cekarea');
+Route::get('/get-kecamatan/{kota_id}', [CekareaController::class, 'getKecamatan']);
+Route::get('/get-kelurahan/{kecamatan_id}', [CekareaController::class, 'getKelurahan']);
+Route::get('/get-jalan/{kelurahan_id}', [CekareaController::class, 'getJalan']);
 
 
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');

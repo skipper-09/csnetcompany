@@ -12,4 +12,9 @@ class Kota extends Model
         'name',
     ];
     protected $primaryKey = 'id';
+
+    public function kecamatan()
+    {
+        return $this->hasMany(Kecamatan::class);
+    }
 }
