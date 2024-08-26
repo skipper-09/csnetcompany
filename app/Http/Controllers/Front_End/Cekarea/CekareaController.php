@@ -15,8 +15,9 @@ class CekareaController extends Controller
 {
     public function index()
     {
+
         $data = [
-            'page_name' => 'Home',
+            'page_name' => 'Cek Area Cakupan',
             'navlight' => true,
             'kota' => Kota::all(),
         ];

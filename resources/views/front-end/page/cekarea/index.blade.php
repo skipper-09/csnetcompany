@@ -12,7 +12,7 @@
 
 @section('content')
     <!-- HERO-2                                                                       ============================================= -->
-    <section id="hero-2" class="bg--10 hero-section">
+    <section id="hero-2" class="bg--05 hero-section">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
 
@@ -30,14 +30,12 @@
                     <div class="hero-2-txt wow fadeInLeft">
 
                         <!-- Title -->
-                        <h2 class="s-56 w-700 color--white">Layanan Internet Tanpa Batas!</h2>
+                        <h2 class="s-45 w-700 color--white">Cek Area Layanan Internet Wifi Idnet Di Daerah Kamu!</h2>
 
                         <!-- Text -->
-                        <p class="p-lg color--white">Ciptakan ekosistem digital bisnis bersama IDNET. Didukung dengan
-                            konektivitas yang
-                            handal dengan beragam pilihan Paket yang murah hingga layanan digital yang dapat membantu bisnis
-                            Anda agar makin eksis.
-                        </p>
+                        <p class="p-lg color--white">Nikmati Jaringan Internet Tercepat dan Unlimited. Cek sekarang apakah
+                            kotamu sudah tercover oleh jaringan Idnet.</p>
+
                     </div>
                 </div> <!-- END HERO TEXT -->
 
@@ -54,19 +52,20 @@
 
 
     <!-- CEK AREA
-                                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
-    <section id="features-2" class="py-50 features-section division">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ============================================= -->
+    <section id="features-2" class="py-50 features-section division bg-map">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-9">
-                    <div class="section-title mb-30">
-                        <!-- Title -->
-                        <h2 class="s-30 w-700 ">Temukan Idnet di Area Kamu</h2>
-                    </div>
+
                     <!-- CONTACT FORM -->
 
                     <div class="form-holder p-5 r-10 cekarea">
-                        <form name="contactform" class="row contact-form color--white">
+                        <div class="section-title mb-30">
+                            <!-- Title -->
+                            <h2 class="s-30 w-700 color--white ">Periksa Alamat Anda</h2>
+                        </div>
+                        <form class="row contact-form color--white">
 
                             <!-- Form Select -->
                             <div class="col-md-12 input-subject">
@@ -100,15 +99,22 @@
 
                                 </select>
                             </div>
-
-                            <!-- Contact Form Message -->
-                            <div class="col-lg-12 contact-form-msg">
-                                <span class="loading"></span>
+                            <div class="d-flex">
+                                <button type="submit" id="cekarea" class="btn btn-sm btn--tra-white"
+                                    style="display: none;" disabled>Cek Area</button>
                             </div>
 
                         </form>
 
                     </div> <!-- END CONTACT FORM -->
+
+
+                    <div class="mt-10 text-center pt-100  py-20 d-none h-180" id="result">
+                        <h4 class="s-24 w-500">Area Ini Sudah Tercover Idnet</h4>
+                        <a href="https://forms.gle/JWxGAcGYQt2bmLf18" target="_blank"><button
+                                class="btn btn-sm btn--theme mt-10">Daftar</button></a>
+                    </div>
+
                 </div>
             </div>
         </div> <!-- End container -->
@@ -184,6 +190,29 @@
                         $('#jalan').empty().append('<option value="">Pilih Jalan</option>');
                     }
                 });
+            });
+
+            $('#jalan').on('change', function() {
+                var jalanID = $(this).val();
+                if (jalanID) {
+                    $('#cekarea').show().prop('disabled', false);
+                } else {
+                    $('#cekarea').hide().prop('disabled', true);
+                }
+            });
+
+
+            $('#cekarea').on('click', function(e) {
+                e.preventDefault();
+                var jalanID = $('#jalan').val();
+                if (jalanID) {
+                    $('#result').removeClass('d-none');
+                    // Scroll to the result element
+                    $('html, body').animate({
+                        scrollTop: $('#result').offset().top
+                    }, 1000);
+                }
+
             });
         </script>
     @endpush

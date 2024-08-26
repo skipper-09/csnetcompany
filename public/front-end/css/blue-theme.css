@@ -1019,6 +1019,7 @@ section,
 .bg--06,
 .bg--07,
 .bg--08,
+.bg-map,
 .bg--10 {
     background-repeat: no-repeat;
     background-position: center center;
@@ -1051,6 +1052,9 @@ section,
 }
 .bg--heading {
     background-image: url(../images/pricing.png);
+}
+.bg-map{
+    background-image: url(../images/map.png);
 }
 .bg--business {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
