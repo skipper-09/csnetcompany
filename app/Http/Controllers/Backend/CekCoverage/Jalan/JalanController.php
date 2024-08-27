@@ -48,7 +48,7 @@ class JalanController extends Controller
         $data = [
             'sidebar' => 'cek coverage',
             'page_name' => 'Jalan',
-            'kelurahan'=>Kelurahan::all()
+            'kelurahan' => Kelurahan::all()
         ];
         return view('backend.cek_coverage.jalan.add', $data);
     }
@@ -58,9 +58,17 @@ class JalanController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'kelurahan_id' => 'required'
+        ],
+        [
+            'name.required' => 'Nama Jalan atau Alamat Wajib Di Isi.',
+            'kelurahan_id.required' => 'Wajib Mengisi Kelurahan.'
+        ]);
         Jalan::insert([
             'name' => $request->name,
-            'kelurahan_id'=>$request->kelurahan_id
+            'kelurahan_id' => $request->kelurahan_id
         ]);
         return redirect()->route('backend.jalan')->with(['success' => 'Berhasil Menambahkan Jalan!']);
     }
@@ -74,22 +82,30 @@ class JalanController extends Controller
             'sidebar' => 'cek coverage',
             'page_name' => 'Jalan',
             'kelurahan' => Kelurahan::all(),
-            'jalan'=>Jalan::findOrFail($id)
+            'jalan' => Jalan::findOrFail($id)
         ];
         return view('backend.cek_coverage.jalan.edit', $data);
     }
 
- 
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'kelurahan_id' => 'required'
+        ],
+        [
+            'name.required' => 'Nama Jalan atau Alamat Wajib Di Isi.',
+            'kelurahan_id.required' => 'Wajib Mengisi Kelurahan.'
+        ]);
         $data = Jalan::find($id);
         $data->update([
             'name' => $request->name,
-            'kelurahan_id'=>$request->kelurahan_id
+            'kelurahan_id' => $request->kelurahan_id
         ]);
         return redirect()->route('backend.jalan')->with(['success' => 'Berhasil Merubah Jalan!']);
     }

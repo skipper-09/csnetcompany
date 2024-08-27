@@ -24,7 +24,8 @@
     margin-right: auto;
     z-index: 100;
     justify-content: center;
-    align-content: center
+    align-content: center;
+    align-items: center;
 }
 .best-seller {
     background-color: #FE7724;

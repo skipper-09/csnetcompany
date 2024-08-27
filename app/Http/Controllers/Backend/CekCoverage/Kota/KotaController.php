@@ -53,7 +53,12 @@ class KotaController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate([
+            'name' => 'required',
+        ],
+        [
+            'name.required' => 'Nama Kota Wajib Di Isi.',
+        ]);
         Kota::insert([
             'name' => $request->name,
         ]);
@@ -78,6 +83,12 @@ class KotaController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required',
+        ],
+        [
+            'name.required' => 'Nama Kota Wajib Di Isi.',
+        ]);
         $data = Kota::findOrFail($id);
         $data->update([
             'name' => $request->name,

@@ -57,6 +57,14 @@ class KelurahanController extends Controller
      */
     public function store(Request $request)
     { 
+        $request->validate([
+            'name' => 'required',
+            'kecamatan_id' => 'required'
+        ],
+        [
+            'name.required' => 'Nama kelurahan Wajib Di Isi.',
+            'kecamatan_id.required' => 'Wajib Mengisi Kecamatan.'
+        ]);
         Kelurahan::insert([
         'name' => $request->name,
         'kecamatan_id'=>$request->kecamatan_id
@@ -84,6 +92,14 @@ class KelurahanController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'kecamatan_id' => 'required'
+        ],
+        [
+            'name.required' => 'Nama kelurahan Wajib Di Isi.',
+            'kecamatan_id.required' => 'Wajib Mengisi Kecamatan.'
+        ]);
         $data = Kelurahan::find($id);
         $data->update([
             'name' => $request->name,

@@ -58,6 +58,14 @@ class KecamatanController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'kota_id' => 'required'
+        ],
+        [
+            'name.required' => 'Nama Kecamatan Wajib Di Isi.',
+            'kota_id.required' => 'Wajib Mengisi Kota.'
+        ]);
         Kecamatan::insert([
             'name' => $request->name,
             'kota_id'=>$request->kota_id
@@ -85,6 +93,14 @@ class KecamatanController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'kota_id' => 'required'
+        ],
+        [
+            'name.required' => 'Nama Kecamatan Wajib Di Isi.',
+            'kota_id.required' => 'Wajib Mengisi Kota.'
+        ]);
         $data = Kecamatan::find($id);
         $data->update([
             'name' => $request->name,
