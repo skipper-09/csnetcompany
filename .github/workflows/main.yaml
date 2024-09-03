@@ -15,7 +15,6 @@ jobs:
       - name: Git pulling the latest commits
         run: $SSH_COMMAND git -C /srv/www/idnet.id pull origin main --rebase
       - run: |
-          $SSH_COMMAND cd /srv/www/idnet.id && \
-          composer install
+          $SSH_COMMAND "cd /srv/www/idnet.id && composer install"
       - name: Restart nginx web server
         run: $SSH_COMMAND sudo systemctl restart nginx
