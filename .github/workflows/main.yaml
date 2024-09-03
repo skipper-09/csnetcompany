@@ -14,10 +14,17 @@ jobs:
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
       - name: Git pulling the latest commits
         run: $SSH_COMMAND git -C /srv/www/idnet.id pull origin main --rebase
-      - run: |
+      - name: Composer deployment
+        run: |
           $SSH_COMMAND <<EOF
             cd /srv/www/idnet.id
             composer install
+            php artisan cache:clear
+
+            php artisan optimize
+            php artisan config:cache
+            php artisan route:cache
+            php artisan vire:cache
           EOF
       - name: Restart nginx web server
         run: $SSH_COMMAND sudo systemctl restart nginx
