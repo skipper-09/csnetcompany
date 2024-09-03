@@ -10,4 +10,8 @@ jobs:
         with:
           key: ${{ secrets.SSH_KEY_PAIR }}
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-      - run: ssh -p 2222 deploy@103.172.196.74 touch hello.txt
+      #- run: ssh -p 2222 deploy@103.172.196.74
+      - name: Git pulling the latest commits
+        run: git -C /srv/www/idnet.id pull origin main --rebase
+      - name: Restart nginx web server
+        run: sudo systemctl restart nginx
