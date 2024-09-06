@@ -18,7 +18,7 @@
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
             <div class="mb-4">
-                <a href="{{ route('backend.add.packet') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
+                <a href="{{ route('backend.add.media') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
             <div class="row">
                 @foreach ($media as $item)

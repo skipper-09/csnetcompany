@@ -22,13 +22,21 @@
     <title>@yield('title') - IDNET</title>
 
     <!-- FAVICON AND TOUCH ICONS -->
-    <link rel="shortcut icon" href="{{ asset('front-end/images/logo-idnet.webp') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    {{-- <link rel="shortcut icon" href="{{ asset('front-end/images/logo-idnet.webp') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('front-end/images/logo-idnet.webp') }}" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> --}}
+
 
     {{-- css style include --}}
     @include('front-end.layout.partials.css')
