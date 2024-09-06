@@ -24,16 +24,19 @@ class UserController extends Controller
 
     public function getData()
     {
-        $query = User::whereNotIn('id', [Auth::user()->id])->get();
+        // $query = User::whereNotIn('id', [Auth::user()->id])->get();
+        $query = User::with('roles')->whereNotIn('name',['Developer'])->get();
         return DataTables::of($query)->addIndexColumn()->addColumn('action', function ($query) {
             $button = '';
-            // $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
-            //                                             class="fas fa-pen"></i></a>';
+            $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
+                                                        class="fas fa-pen"></i></a>';
 
             $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.users.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
             return '<div class="d-flex gap-1">' . $button . '</div>';
-        })->make(true);
+        })->editColumn('roles', function ($data) {
+            return $data->roles[0]->name;
+        })->rawColumns(['action', 'roles'])->make(true);
     }
 
     public function create()
@@ -51,9 +54,7 @@ class UserController extends Controller
         try {
             $request->validated();
             $request->merge(['password' => Hash::make($request->password),]);
-
             User::create($request->only(['name', 'email', 'password',]));
-
             return redirect()->route('backend.users')->with(['success' => 'Berhasil Menambahkan User!']);
         } catch (Exception $e) {
             return response()->json([

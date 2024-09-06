@@ -25,11 +25,9 @@
           <form id="formAuthentication" class="mb-3" action="{{ route('auth.signin') }}" method="POST">
             @csrf
             <div class="mb-3">
-              <label for="email" class="form-label">Email or Username</label>
-              <input type="text" name="email" class="form-control" id="email" name="email-username"
-                placeholder="Enter your email or username" autofocus />
-
-
+              <label for="email" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="email" 
+                placeholder="Enter your username" autofocus />
             </div>
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">

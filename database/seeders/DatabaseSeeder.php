@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         $this->call([
+            PermissionSeeder::class,
+            RoleSeeder::class,
             UserSeeder::class,
             CategoriPacketSeeder::class,
             PacketSeeder::class,
@@ -29,6 +31,7 @@ class DatabaseSeeder extends Seeder
             KecamatanSeeder::class,
             KelurahanSeeder::class,
             JalanSeeder::class,
+            MediaSeeder::class,
         ]);
     }
 }

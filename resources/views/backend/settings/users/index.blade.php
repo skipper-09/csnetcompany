@@ -29,7 +29,9 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Email</th> 
+                            <th>Role</th> 
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -61,10 +63,17 @@
                         name: 'name'
                     },
                     {
+                        data: 'username',
+                        name: 'username'
+                    },
+                    {
                         data: 'email',
                         name: 'email'
                     },
-
+                    {
+                        data: 'roles',
+                        name: 'roles'
+                    },
                     {
                         data: 'action',
                         name: 'action'

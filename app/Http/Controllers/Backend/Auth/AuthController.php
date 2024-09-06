@@ -17,23 +17,23 @@ class AuthController extends Controller
     public function signin(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
-        $user = User::where(['email' => $request->email]);
+        $user = User::where(['username' => $request->username]);
         if ($user->count() > 0) {
             $user = $user->first();
 
             if ($user->is_block == 1) {
-                return response()->json([
+                return redirect()->back()->withErrors([
                     'message' => 'Akun ini telah di kunci, silahkan hubungi admin untuk membuka akun.'
-                ], 500);
+                ]);
             } else {
-                if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
                     $request->session()->regenerate();
                     if ($request->rememberme == 'Y') {
                         $time = 60 * 60 * 24 * 365;
-                        Cookie::queue('email', $request->email, $time);
+                        Cookie::queue('username', $request->username, $time);
                         Cookie::queue('password', $request->password, $time);
                     }
                     return redirect()->route('dashboard')->with(['success' => "Berhasil Login"]);
@@ -46,7 +46,7 @@ class AuthController extends Controller
             }
         } else {
             return redirect()->back()->withErrors([
-                'message' => 'Email dan password tidak terdaftar'
+                'message' => 'Akun tidak terdaftar'
             ]);
         }
     }

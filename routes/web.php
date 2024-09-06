@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\Coverage\MapsController;
 use App\Http\Controllers\Backend\Coverage\OdpController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Faq\FaqController as FaqFaqController;
+use App\Http\Controllers\Backend\Media\MediaController;
 use App\Http\Controllers\Backend\Packet\CategoriController;
 use App\Http\Controllers\Backend\Packet\Description_packet;
 use App\Http\Controllers\Backend\Packet\PacketController;
@@ -91,6 +92,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/edit/{id}', [PartnerController::class, 'show'])->name('backend.partner.edit');
         Route::put('/update/{id}', [PartnerController::class, 'update'])->name('backend.partner.update');
         Route::delete('/delete/{id}', [PartnerController::class, 'destroy'])->name('backend.partner.delete');
+    });
+    //route media
+    Route::prefix('media')->group(function () {
+        Route::get('', [MediaController::class, 'index'])->name('backend.media');
+        Route::get('/getData', [MediaController::class, 'getData'])->name('backend.media.getData');
+        Route::get('tambah', [MediaController::class, 'create'])->name('backend.add.media');
+        Route::post('store', [MediaController::class, 'store'])->name('backend.media.store');
+        Route::get('/edit/{id}', [MediaController::class, 'show'])->name('backend.media.edit');
+        Route::put('/update/{id}', [MediaController::class, 'update'])->name('backend.media.update');
+        Route::delete('/delete/{id}', [MediaController::class, 'destroy'])->name('backend.media.delete');
+        Route::get('detail/{slug}',[MediaController::class, 'detail'])->name('backend.media.detail');
     });
 
 

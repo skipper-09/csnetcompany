@@ -166,6 +166,13 @@
                 <div data-i18n="Partner">Partner</div>
             </a>
         </li>
+        {{-- Media --}}
+        <li class="{{ Request::is('admin/media') ? 'menu-item active' : 'menu-item' }}">
+            <a href="{{ route('backend.media') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div data-i18n="media">Media</div>
+            </a>
+        </li>
         {{-- faq --}}
         <li class="{{ Request::is('admin/faq') ? 'menu-item active' : 'menu-item' }}">
             <a href="{{ route('backend.faq') }}" class="menu-link">
