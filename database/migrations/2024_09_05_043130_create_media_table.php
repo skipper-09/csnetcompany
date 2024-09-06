@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type',['pdf','vidio']);
-            $table->string('url')->nullable();
+            $table->enum('type', ['pdf', 'vidio']);
+            $table->longText('url')->nullable();
             $table->string('pdf')->nullable();
             $table->string('usertype');
             $table->string('slug');

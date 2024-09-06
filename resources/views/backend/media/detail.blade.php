@@ -22,9 +22,7 @@
             @if ($media[0]->type == 'vidio')
                 {{-- <iframe style="height: 100vh" src="https://www.youtube.com/embed/{{ $media[0]->url }}?si=WxRE9THu8zx6k-1Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> --}}
                 <video id="my-video" class="video-js vjs-big-play-centered vjs-theme-sea" controls fluid='true' autoplay>
-                    <source
-                        src="{{ $media[0]->url }}"
-                        type="video/mp4" />
+                    <source src="{{ $media[0]->url }}" type="video/mp4" />
                 </video>
             @else
                 <canvas id="the-canvas"></canvas>
@@ -54,13 +52,16 @@
         // If absolute URL from the remote server is provided, configure the CORS
         // header on that server.
         //    var url = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf';
-        var url;
+
+        var dataurl;
         var data = @json($media);
         data.forEach(element => {
-            url = element.pdf;
+            dataurl = element.pdf;
         });
-        console.log(data);
-        
+        var urlbase = "{{ url('storage/file/') }}/";
+        var url = urlbase + dataurl;
+
+
 
         // Loaded via <script> tag, create shortcut to access PDF.js exports.
         var {

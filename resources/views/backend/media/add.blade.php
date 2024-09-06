@@ -45,7 +45,7 @@
                                             class="form-control @error('type') is-invalid @enderror">
                                             <option value="">Pilih Tipe Konten</option>
                                             <option value="pdf">PDF</option>
-                                            <option value="url">VIDIO</option>
+                                            <option value="vidio">VIDIO</option>
                                         </select>
                                         @error('type')
                                             <div class="invalid-feedback">
@@ -71,8 +71,7 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Input File</label>
                                         <input type="file" name="pdf"
-                                            class="form-control hidden @error('pdf') is-invalid @enderror"
-                                            id="filepdf" />
+                                            class="form-control hidden @error('pdf') is-invalid @enderror" id="filepdf" />
                                         @error('pdf')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -97,8 +96,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                                
-                               
+
+
                             </div>
                             <button type="submit" class="btn btn-primary">Tambah Daftar Paket</button>
                         </form>
@@ -110,23 +109,23 @@
     </div>
 
 
-@push('js')
-    <script>
-        $(document).on('change','#Typecontent',function(){
-            let val = $('#Typecontent option:selected').val();
-            if (val == 'pdf') {
-                $('#pdf').removeClass('d-none');
-                $('#vidio').addClass('d-none');
-            }else if(val == 'url'){
-                $('#vidio').removeClass('d-none');
-                $('#pdf').addClass('d-none');
-            }else{
-                $('#pdf').addClass('d-none');
-                $('#vidio').addClass('d-none');
-            }
-            
-        })
-    </script>
-@endpush
+    @push('js')
+        <script>
+            $(document).on('change', '#Typecontent', function() {
+                let val = $('#Typecontent option:selected').val();
+                if (val == 'pdf') {
+                    $('#pdf').removeClass('d-none');
+                    $('#vidio').addClass('d-none');
+                } else if (val == 'vidio') {
+                    $('#vidio').removeClass('d-none');
+                    $('#pdf').addClass('d-none');
+                } else {
+                    $('#pdf').addClass('d-none');
+                    $('#vidio').addClass('d-none');
+                }
+
+            })
+        </script>
+    @endpush
 
 @endsection

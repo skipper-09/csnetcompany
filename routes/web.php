@@ -102,7 +102,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/edit/{id}', [MediaController::class, 'show'])->name('backend.media.edit');
         Route::put('/update/{id}', [MediaController::class, 'update'])->name('backend.media.update');
         Route::delete('/delete/{id}', [MediaController::class, 'destroy'])->name('backend.media.delete');
-        Route::get('detail/{slug}',[MediaController::class, 'detail'])->name('backend.media.detail');
+        Route::get('detail/{slug}', [MediaController::class, 'detail'])->name('backend.media.detail');
     });
 
 
