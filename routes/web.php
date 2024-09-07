@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\Partner\PartnerController;
 use App\Http\Controllers\Backend\Privacy\PrivacyControllerBackend;
 use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
 use App\Http\Controllers\Backend\Promo\PromoPacketController;
+use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
@@ -272,9 +273,19 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::get('/getData', [UserController::class, 'getData'])->name('backend.users.getData');
             Route::get('tambah', [UserController::class, 'create'])->name('backend.add.users');
             Route::post('store', [UserController::class, 'store'])->name('backend.users.store');
-            Route::get('/edit/{id}', [UserController::class, 'edit'])->name('backend.users.edit');
+            Route::get('/edit/{id}', [UserController::class, 'show'])->name('backend.users.edit');
             Route::put('/update/{id}', [UserController::class, 'update'])->name('backend.users.update');
             Route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('backend.users.delete');
+        });
+
+        Route::prefix('role')->group(function () {
+            Route::get('', [RoleController::class, 'index'])->name('backend.role');
+            Route::get('/getData', [RoleController::class, 'getData'])->name('backend.role.getData');
+            Route::get('tambah', [RoleController::class, 'create'])->name('backend.add.role');
+            Route::post('store', [RoleController::class, 'store'])->name('backend.role.store');
+            Route::get('/edit/{id}', [RoleController::class, 'show'])->name('backend.role.edit');
+            Route::put('/update/{id}', [RoleController::class, 'update'])->name('backend.role.update');
+            Route::delete('/delete/{id}', [RoleController::class, 'destroy'])->name('backend.role.delete');
         });
     });
 });

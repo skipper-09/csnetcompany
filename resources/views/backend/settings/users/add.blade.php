@@ -51,6 +51,37 @@
                                         @enderror
                                     </div>
                                 </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Username</label>
+                                        <input type="text" name="username"
+                                            class="form-control @error('username') is-invalid @enderror"
+                                            id="basic-default-fullname" placeholder="Username" />
+                                        @error('username')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Role User</label>
+                                        <select name="role" id=""
+                                            class="form-control @error('role') is-invalid @enderror">
+                                            <option value="">Pilih Role</option>
+                                            @foreach ($role as $i)
+                                                <option value="{{ $i->name }}">{{ $i->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('role')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Password</label>
@@ -77,10 +108,8 @@
                                         @enderror
                                     </div>
                                 </div>
-
-
                             </div>
-                            <button type="submit" class="btn btn-primary">Tanbah {{ $page_name }}</button>
+                            <button type="submit" class="btn btn-primary">Tambah {{ $page_name }}</button>
                         </form>
                     </div>
                 </div>

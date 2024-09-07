@@ -15,17 +15,23 @@ class RoleSeeder extends Seeder
     {
         //create role 
         $developer = Role::create(['name' => 'Developer']);
-        $administrator = Role::create(['name'=>'Administrator']);
+        $administrator = Role::create(['name' => 'Administrator']);
 
         //give permission role
         $developer->givePermissionTo([
             'read-dashboard',
-            'read-users', 'create-users', 'update-users', 'delete-users',
+            'read-users',
+            'create-users',
+            'update-users',
+            'delete-users',
         ]);
 
         $administrator->givePermissionTo([
-'read-dashboard',
-            'read-users', 'create-users', 'update-users', 'delete-users',
+            'read-dashboard',
+            'read-users',
+            'create-users',
+            'update-users',
+            'delete-users',
         ]);
     }
 }

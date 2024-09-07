@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
@@ -25,10 +26,10 @@ class UserController extends Controller
     public function getData()
     {
         // $query = User::whereNotIn('id', [Auth::user()->id])->get();
-        $query = User::with('roles')->whereNotIn('name',['Developer'])->get();
+        $query = User::with('roles')->whereNotIn('name', ['Developer'])->get();
         return DataTables::of($query)->addIndexColumn()->addColumn('action', function ($query) {
             $button = '';
-            $button .= ' <a href="' . route('dashboard') . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
+            $button .= ' <a href="' . route('backend.users.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
 
             $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.users.delete', ['id' => $query->id]) . '"><i
@@ -44,6 +45,7 @@ class UserController extends Controller
         $data = [
             'sidebar' => 'setting',
             'page_name' => 'User',
+            'role' => Role::whereNotIn('name', ['Developer'])->get(),
         ];
         return view('backend.settings.users.add', $data);
     }
@@ -54,7 +56,7 @@ class UserController extends Controller
         try {
             $request->validated();
             $request->merge(['password' => Hash::make($request->password),]);
-            User::create($request->only(['name', 'email', 'password',]));
+            User::create($request->only(['name', 'email', 'password', 'username',]))->assignRole($request->role);
             return redirect()->route('backend.users')->with(['success' => 'Berhasil Menambahkan User!']);
         } catch (Exception $e) {
             return response()->json([
@@ -65,25 +67,39 @@ class UserController extends Controller
     }
 
 
+    public function show($id)
+    {
+        $data = [
+            'sidebar' => 'setting',
+            'page_name' => 'User',
+            'role' => Role::whereNotIn('name', ['Developer'])->get(),
+            'user' => User::find($id),
+        ];
+        return view('backend.settings.users.edit', $data);
+    }
+
+
     public function update(UserRequest $request, User $user, $id)
     {
         try {
             $request->validated();
-            $user->find($id);
+            $user->find($id)->get();
             if ($request->password == null && $request->password_confirmation == null) {
                 $user->update([
                     'name' => $request->name,
                     'email' => $request->email,
                     'password' => $user->password,
+                    'username' => $request->username,
                 ]);
             } else {
                 $user->update([
                     'name' => $request->name,
+                    'username' => $request->username,
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
                 ]);
             }
-            return redirect()->route('dashboard')->with(['success' => 'Berhasil Update Profile!']);
+            return redirect()->route('backend.users')->with(['success' => 'Berhasil Update Profile!']);
         } catch (Exception $e) {
             return response()->json([
                 'message' => $e->getMessage(),
@@ -102,11 +118,11 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'success',
                 'success' => true,
-                'message' => 'Data Paket Berhasil Dihapus!.',
+                'message' => 'User Berhasil Dihapus!.',
             ]);
         } catch (Exception $e) {
             return response()->json([
-                'message' => 'Data Paket Tidak Bisa Dihapus Karena Masih digunakan!',
+                'message' => 'User Tidak Bisa Dihapus Karena Masih digunakan!',
                 'trace' => $e->getTrace()
             ]);
         }

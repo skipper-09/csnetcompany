@@ -15,12 +15,14 @@ class PermissionSeeder extends Seeder
     {
         $arrayOfPermissionNames = [
             'read-dashboard',
-            'read-users', 'create-users', 'update-users', 'delete-users',
+            'read-users',
+            'create-users',
+            'update-users',
+            'delete-users',
         ];
         $permissions = collect($arrayOfPermissionNames)->map(function ($permission) {
             return ['name' => $permission, 'guard_name' => 'web'];
         });
-
         Permission::insert($permissions->toArray());
     }
 }

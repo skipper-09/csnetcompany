@@ -25,12 +25,14 @@ class UserRequest extends FormRequest
             return [
                 'name' => '',
                 'email' => '',
-                'password' => 'min:6',
-                'password_confirmation' => 'min:6|same:password',
+                // 'password' => 'min:6',
+                // 'password_confirmation' => 'min:6|same:password',
             ];
         } else {
             return [
                 'name' => 'required',
+                'username' => 'required',
+                'role' => 'required',
                 'email' => 'required|unique:users,email',
                 'password' => 'min:6|required_with:password_confirmation',
                 'password_confirmation' => 'min:6|same:password'

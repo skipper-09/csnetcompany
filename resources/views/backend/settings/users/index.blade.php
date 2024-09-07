@@ -11,8 +11,8 @@
                 <h4 class="fw-bold">User</h4>
 
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active">Setting</li>
-                    <li class="breadcrumb-item">Home</li>
+                    <li class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item">User</li>
                 </ol>
 
 
@@ -30,8 +30,8 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Username</th>
-                            <th>Email</th> 
-                            <th>Role</th> 
+                            <th>Email</th>
+                            <th>Role</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

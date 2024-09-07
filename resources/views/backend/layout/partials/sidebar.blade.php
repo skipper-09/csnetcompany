@@ -208,11 +208,12 @@
                         <div data-i18n="Account">User</div>
                     </a>
                 </li>
-                {{-- <li class="menu-item">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
-                        <div data-i18n="Notifications">Role Permissison</div>
+                <li class="{{ $page_name == 'Role' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('backend.role') }}" class="menu-link">
+                        <div data-i18n="role">Role Permission</div>
                     </a>
-                </li> --}}
+                </li>
+
             </ul>
         </li>
         {{-- <!-- Components -->
