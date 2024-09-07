@@ -39,9 +39,9 @@
             </div>
             @endcanany
             @if (!Auth::user()->hasrole(['Administrator','Developer']))
-            <div class="row gap-3">
+            <div class="row">
                 @foreach ($media as $item)
-                    <div class="col-4">
+                    <div class="col-4 mb-4">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">{{ $item->name }}</h4>

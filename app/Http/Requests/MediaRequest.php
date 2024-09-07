@@ -24,7 +24,7 @@ class MediaRequest extends FormRequest
         return [
             'name' => 'required',
             'type' => 'required',
-            'pdf' => "mimetypes:application/pdf|max:10000",
+            'pdf' => "mimetypes:application/pdf|max:100000",
             'usertype' => 'required',
         ];
     }
