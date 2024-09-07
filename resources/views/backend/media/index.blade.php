@@ -20,18 +20,31 @@
             <div class="mb-4">
                 <a href="{{ route('backend.add.media') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
-            <div class="row">
+            <div class="table-responsive text-nowrap">
+                <table class=" table table-striped " id="dataTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Tipe</th>
+                            <th>User</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {{-- <div class="row">
                 @foreach ($media as $item)
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ $item->name }}</h4>
-                            <a href="{{ route('backend.media.detail', ['slug'=>$item->slug]) }}"><button class="btn btn-sm btn-primary">{{ $item->type == 'pdf' ? 'Baca Selengkapnya' : 'Lihat Vidio' }}</button></a>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $item->name }}</h4>
+                                <a href="{{ route('backend.media.detail', ['slug' => $item->slug]) }}"><button
+                                        class="btn btn-sm btn-primary">{{ $item->type == 'pdf' ? 'Baca Selengkapnya' : 'Lihat Vidio' }}</button></a>
+                            </div>
                         </div>
                     </div>
-                </div> 
                 @endforeach
-            </div>
+            </div> --}}
 
             {{-- <div>
                 <button class="btn btn-sm btn-primary" id="prev">Previous</button>
@@ -42,11 +55,46 @@
               
               <canvas id="the-canvas"></canvas>
         </div> --}}
-        <!--/ Striped Rows -->
-    </div>
-@endsection
+            <!--/ Striped Rows -->
+        </div>
+    @endsection
 
 
-@push('js')
+    @push('js')
+        <script>
+            $(document).ready(function() {
+                $('#dataTable').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: '{{ route('backend.media.getData') }}',
+                    columns: [
+                        // {
+                        //       data: 'DT_RowIndex',
+                        //       orderable: false,
+                        //       searchable: false,
+                        //       class:'text-center'
+                        //   },
+                        {
+                            data: 'name',
+                            name: 'name'
+                        },
+                        {
+                            data: 'type',
+                            name: 'type'
+                        },
+                        {
+                            data: 'usertype',
+                            name: 'usertype'
+                        },
 
-@endpush
+                        {
+                            data: 'action',
+                            name: 'action'
+                        }
+
+                    ]
+                });
+
+            });
+        </script>
+    @endpush
