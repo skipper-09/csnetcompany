@@ -34,7 +34,9 @@
         <thead>
           <tr>
             <th>Detail</th>
+            @can('update-tremofservice')
             <th>Actions</th>
+            @endcan
           </tr>
         </thead>
       </table>
@@ -66,12 +68,12 @@
                         name: 'tremofservice',
                         width: '100px'
                     },
-                    
+                    @can('update-tremofservice')
                     {
                         data: 'action',
                         name: 'action'
                     }
-
+                    @endcan
                 ]
             });
 

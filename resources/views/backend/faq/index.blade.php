@@ -20,9 +20,11 @@
   </div>
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
+    @can('create-faq')
     <div class="mb-4">
       <a href="{{ route('backend.add.faq') }}" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
     </div>
+    @endcan
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">
         <thead>
@@ -30,7 +32,9 @@
             <th>Tipe</th>
             <th>Pertanyaan</th>
             <th>Jawaban</th>
+            @canany(['update-faq','delete-faq'])
             <th>Actions</th>
+            @endcanany
           </tr>
         </thead>
 
@@ -64,10 +68,12 @@
                             data: 'answer',
                             name: 'answer'
                         },
+                        @canany(['update-faq','delete-faq'])
                         {
                             data: 'action',
                             name: 'action'
                         }
+                        @endcanany
                       
                     ]
                 });

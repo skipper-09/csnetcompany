@@ -18,10 +18,12 @@
     </div>
     <!-- Striped Rows -->
     <div class="card px-4 py-4">
+        @can('create-deskripsi')
         <div class="mb-4">
             <a href="{{ route('backend.add.deskription') }}" class="btn btn-sm btn-primary">Tambah
                 {{ $page_name }}</a>
         </div>
+        @endcan
 
         <div class="table-responsive text-nowrap">
             <table class=" table table-striped " id="dataTable" style="width:100%">
@@ -30,7 +32,9 @@
                         <th>Nama</th>
                         <th>Nama Paket</th>
                         <th>Logo</th>
+                        @canany(['update-deskripsi','delete-deskripsi'])
                         <th>Actions</th>
+                        @endcanany
                     </tr>
                 </thead>
             </table>
@@ -68,11 +72,12 @@
                         data: 'logo',
                         name: 'logo'
                     },
-
+                    @canany(['update-deskripsi','delete-deskripsi'])
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

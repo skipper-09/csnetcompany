@@ -20,16 +20,20 @@
         </div>
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
+            @can('create-role')
             <div class="mb-4">
                 <a href="{{ route('backend.add.role') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
+            @endcan
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
                         <tr>
                             <th>Nama</th>
                             <th>Guard</th>
+                            @canany(['update-role','delete-role'])
                             <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
 
@@ -57,10 +61,12 @@
                         data: 'guard_name',
                         name: 'guard_name'
                     },
+                    @canany(['update-role','delete-role'])
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

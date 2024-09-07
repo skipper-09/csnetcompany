@@ -17,9 +17,11 @@
     </div>
     <!-- Striped Rows -->
     <div class="card px-4 py-4">
+        @can('create-odp')
         <div class="mb-4">
             <a href="{{ route('backend.add.odp') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
         </div>
+        @endcan
         <div class="table-responsive text-nowrap">
             <table class=" table table-striped " id="dataTable" style="width:100%">
                 <thead>
@@ -29,7 +31,10 @@
                         <th>Port</th>
                         <th>Area</th>
                         <th>Tikor</th>
+                        @canany(['update-odp','delete-odp'])
+                            
                         <th>Actions</th>
+                        @endcanany
                     </tr>
                 </thead>
 
@@ -77,11 +82,12 @@
                         data: 'latlong',
                         name: 'latlong',
                     },
-                    
+                    @canany(['update-odp','delete-odp'])
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

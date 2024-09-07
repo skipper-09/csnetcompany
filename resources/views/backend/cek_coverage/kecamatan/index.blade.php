@@ -20,10 +20,12 @@
         </div>
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
+            @can('create-kecamatan')
             <div class="mb-4">
                 <a href="{{ route('backend.add.kecamatan') }}" class="btn btn-sm btn-primary">Tambah
                     {{ $page_name }}</a>
             </div>
+            @endcan
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
@@ -31,7 +33,9 @@
                             <th>No</th>
                             <th>Kecamatan</th>
                             <th>Kota</th>
+                            @canany(['update-kecamatan','delete-kecamatan'])
                             <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
 
@@ -66,10 +70,12 @@
                         data: 'kota_id',
                         name: 'kota_id'
                     },
+                    @canany(['update-kecamatan','delete-kecamatan'])
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

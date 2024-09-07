@@ -16,22 +16,56 @@ class RoleSeeder extends Seeder
         //create role 
         $developer = Role::create(['name' => 'Developer']);
         $administrator = Role::create(['name' => 'Administrator']);
+        $noc = Role::create(['name' => 'Noc']);
 
         //give permission role
         $developer->givePermissionTo([
             'read-dashboard',
-            'read-users',
-            'create-users',
-            'update-users',
-            'delete-users',
+            'read-partner','create-partner','update-partner','delete-partner',
+            'read-media','create-media','update-media','delete-media',
+            'read-faq','create-faq','update-faq','delete-faq',
+            'read-tremofservice','update-tremofservice','delete-tremofservice',
+            'read-privacyppolicy','update-privacyppolicy','delete-privacyppolicy',
+            'read-paket','create-paket','update-paket','delete-paket',
+            'read-deskripsi','create-deskripsi','update-deskripsi','delete-deskripsi',
+            'read-promo','create-promo','update-promo','delete-promo',
+            'read-promopaket','create-promopaket','update-promopaket','delete-promopaket',
+            'read-kota','create-kota','update-kota','delete-kota',
+            'read-kecamatan','create-kecamatan','update-kecamatan','delete-kecamatan',
+            'read-kelurahan','create-kelurahan','update-kelurahan','delete-kelurahan',
+            'read-jalan','create-jalan','update-jalan','delete-jalan',
+            'read-area','create-area','update-area','delete-area',
+            'read-odp','create-odp','update-odp','delete-odp',
+
+            'read-users','create-users','update-users','delete-users',
+            'read-role','create-role','update-role','delete-role',
         ]);
 
         $administrator->givePermissionTo([
             'read-dashboard',
-            'read-users',
-            'create-users',
-            'update-users',
-            'delete-users',
+            'read-partner','create-partner','update-partner','delete-partner',
+            'read-media','create-media','update-media','delete-media',
+            'read-faq','create-faq','update-faq','delete-faq',
+            'read-tremofservice','update-tremofservice','delete-tremofservice',
+            'read-privacyppolicy','update-privacyppolicy','delete-privacyppolicy',
+            'read-paket','create-paket','update-paket','delete-paket',
+            'read-deskripsi','create-deskripsi','update-deskripsi','delete-deskripsi',
+            'read-promo','create-promo','update-promo','delete-promo',
+            'read-promopaket','create-promopaket','update-promopaket','delete-promopaket',
+            'read-kota','create-kota','update-kota','delete-kota',
+            'read-kecamatan','create-kecamatan','update-kecamatan','delete-kecamatan',
+            'read-kelurahan','create-kelurahan','update-kelurahan','delete-kelurahan',
+            'read-jalan','create-jalan','update-jalan','delete-jalan',
+            'read-area','create-area','update-area','delete-area',
+            'read-odp','create-odp','update-odp','delete-odp',
+
+            'read-users','create-users','update-users','delete-users',
+            'read-role','create-role','update-role','delete-role',
+        ]);
+
+        $noc->givePermissionTo([
+            
+            'read-media'
         ]);
     }
 }

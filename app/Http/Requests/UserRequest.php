@@ -23,8 +23,10 @@ class UserRequest extends FormRequest
     {
         if ($this->isMethod('PUT')) {
             return [
-                'name' => '',
-                'email' => '',
+                'name' => 'required',
+                'email' => 'required',
+                'role' => 'required',
+                'username' => 'required'
                 // 'password' => 'min:6',
                 // 'password_confirmation' => 'min:6|same:password',
             ];

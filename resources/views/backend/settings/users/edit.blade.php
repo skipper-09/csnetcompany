@@ -69,7 +69,7 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Role User</label>
-                                        <select name="role" id=""
+                                        <select name="role" 
                                             class="form-control @error('role') is-invalid @enderror">
                                             <option value="">Pilih Role</option>
                                             @foreach ($role as $i)
@@ -111,7 +111,22 @@
                                         @enderror
                                     </div>
                                 </div>
-
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Status</label>
+                                        <select name="is_block" id=""
+                                            class="form-control @error('is_block') is-invalid @enderror">
+                                            <option value="">Pilih Status</option>
+                                            <option value="0" {{$user->is_block == 0 ? 'selected' : '' }}>AKTIF</option>
+                                            <option value="1" {{$user->is_block == 1 ? 'selected' : '' }}>BLOCK</option>
+                                        </select>
+                                        @error('is_block')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Edit {{ $page_name }}</button>
                         </form>

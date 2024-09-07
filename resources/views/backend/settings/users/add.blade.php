@@ -108,6 +108,22 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Status</label>
+                                        <select name="is_block" id=""
+                                            class="form-control @error('is_block') is-invalid @enderror">
+                                            <option value="">Pilih Status</option>
+                                            <option value="0">AKTIF</option>
+                                            <option value="1">BLOCK</option>
+                                        </select>
+                                        @error('is_block')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Tambah {{ $page_name }}</button>
                         </form>

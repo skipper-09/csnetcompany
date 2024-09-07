@@ -19,16 +19,20 @@
         </div>
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
+            @can('create-partner')
             <div class="mb-4">
                 <a href="{{ route('backend.add.partner') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
+            @endcan
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
                         <tr>
                             <th>Nama</th>
                             <th>Logo</th>
+                            @canany(['update-partner','delete-partner'])
                             <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
                 </table>
@@ -63,10 +67,12 @@
                         data: 'logo',
                         name: 'logo'
                     },
+                    @canany(['update-partner','delete-partner'])
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

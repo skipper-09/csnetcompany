@@ -15,7 +15,7 @@ class PartnerSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create('id_ID');
-        for ($i = 0; $i <= 5; $i++) {
+        for ($i = 0; $i <= 1; $i++) {
             partner::insert([
                 'name' => $faker->name,
                 'logo' => $faker->imageUrl

@@ -17,9 +17,11 @@
         </div>
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
+            @can('create-paket')
             <div class="mb-4">
                 <a href="{{ route('backend.add.packet') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
+            @endcan
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
@@ -31,7 +33,10 @@
                             <th>Kategori Paket</th>
                             <th>Best Seller</th>
                             <th>Status</th>
+                            @canany(['update-paket','delete-paket'])
+                                
                             <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
                 </table>
@@ -85,10 +90,12 @@
                         data: 'is_active',
                         name: 'is_active'
                     },
+                    @canany(['update-paket','delete-paket'])
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

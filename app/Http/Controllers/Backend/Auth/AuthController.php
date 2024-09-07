@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Gate;
 
 class AuthController extends Controller
 {
@@ -36,7 +37,11 @@ class AuthController extends Controller
                         Cookie::queue('username', $request->username, $time);
                         Cookie::queue('password', $request->password, $time);
                     }
-                    return redirect()->route('dashboard')->with(['success' => "Berhasil Login"]);
+                    if ($user->hasPermissionTo('read-dashboard')) {
+                        return redirect()->route('dashboard')->with(['success' => "Berhasil Login"]);
+                    }else{
+                        return redirect()->route('backend.media')->with(['success' => "Berhasil Login"]);
+                    }
                 } else {
                     return
                         redirect()->back()->withErrors([

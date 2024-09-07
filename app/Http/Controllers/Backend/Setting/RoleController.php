@@ -27,7 +27,8 @@ class RoleController extends Controller
             $button = '';
             $button .= ' <a href="' . route('backend.role.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
-
+            $button .= ' <a href="' . route('backend.role.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-primary action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Permission"><i
+                                                        class="fas fa-eye"></i></a>';
             $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.role.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
             return '<div class="d-flex gap-1">' . $button . '</div>';

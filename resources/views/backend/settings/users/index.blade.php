@@ -20,9 +20,11 @@
         </div>
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
+            @can('create-users')
             <div class="mb-4">
                 <a href="{{ route('backend.add.users') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
+            @endcan
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
@@ -32,7 +34,11 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Status</th>
+                            @canany(['update-users','delete-users'])
+                                
                             <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
 
@@ -75,9 +81,15 @@
                         name: 'roles'
                     },
                     {
+                        data: 'is_block',
+                        name: 'is_block'
+                    },
+                    @canany(['update-users','delete-users'])
+                    {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcanany
 
                 ]
             });

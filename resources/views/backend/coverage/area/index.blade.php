@@ -17,16 +17,20 @@
   </div>
   <!-- Striped Rows -->
   <div class="card px-4 py-4">
-    <div class="mb-4">
+    @can('create-area')
+    <div class="mb-4">    
       <a href="{{ route('backend.add.area') }}" class="btn btn-sm btn-primary">Tambah {{$page_name}}</a>
     </div>
+      @endcan
     <div class="table-responsive text-nowrap">
       <table class=" table table-striped " id="dataTable" style="width:100%">
         <thead>
           <tr>
             <th>Nama</th>
             <th>Kode Pos</th>
+            @canany(['update-area','delete-area'])
             <th>Actions</th>
+            @endcanany
           </tr>
         </thead>
 
@@ -63,10 +67,13 @@
                             data: 'kode_pos',
                             name: 'kode_pos',
                         },
+                        @canany(['update-area','delete-area'])
+              
                         {
                             data: 'action',
                             name: 'action'
                         }
+                        @endcanany
                       
                     ]
                 });

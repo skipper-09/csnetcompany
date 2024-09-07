@@ -34,7 +34,9 @@
         <thead>
           <tr>
             <th>Detail</th>
+            @can('update-privacyppolicy')
             <th>Actions</th>
+            @endcan
           </tr>
         </thead>
       </table>
@@ -66,11 +68,12 @@
                         name: 'privacy',
                         width: '100px'
                     },
-                    
+                    @can('update-privacyppolicy')
                     {
                         data: 'action',
                         name: 'action'
                     }
+                    @endcan
 
                 ]
             });

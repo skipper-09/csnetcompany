@@ -17,17 +17,21 @@
         </div>
         <!-- Striped Rows -->
         <div class="card px-4 py-4">
+            @can('create-media')
             <div class="mb-4">
                 <a href="{{ route('backend.add.media') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
+            @endcan
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
                         <tr>
                             <th>Judul</th>
                             <th>Tipe</th>
+                            @canany(['update-media','delete-media'])
                             <th>User</th>
                             <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
                 </table>
@@ -82,6 +86,7 @@
                             data: 'type',
                             name: 'type'
                         },
+                        @canany(['update-media','delete-media'])
                         {
                             data: 'usertype',
                             name: 'usertype'
@@ -91,6 +96,7 @@
                             data: 'action',
                             name: 'action'
                         }
+                        @endcanany
 
                     ]
                 });
