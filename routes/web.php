@@ -155,13 +155,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         });
 
         Route::prefix('categori')->group(function () {
-            Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket');
+            Route::get('', [CategoriController::class, 'index'])->name('backend.categoripacket')->can('read-categoripaket');
             Route::get('/getData', [CategoriController::class, 'getData'])->name('backend.categoripacket.getData');
-            Route::get('tambah', [CategoriController::class, 'create'])->name('backend.add.categoripacket');
+            Route::get('tambah', [CategoriController::class, 'create'])->name('backend.add.categoripacket')->can('create-categoripaket');
             Route::post('store', [CategoriController::class, 'store'])->name('backend.categoripacket.store');
-            Route::get('/edit/{id}', [CategoriController::class, 'show'])->name('backend.categoripacket.edit');
+            Route::get('/edit/{id}', [CategoriController::class, 'show'])->name('backend.categoripacket.edit')->can('delete-categoripaket');
             Route::put('/update/{id}', [CategoriController::class, 'update'])->name('backend.categoripacket.update');
-            Route::delete('/delete/{id}', [CategoriController::class, 'destroy'])->name('backend.categoripacket.delete');
+            Route::delete('/delete/{id}', [CategoriController::class, 'destroy'])->name('backend.categoripacket.delete')->can('delete-categoripaket');
         });
         //deskripsi paket
         Route::prefix('deskripsi')->group(function () {
@@ -259,7 +259,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::delete('/delete/{id}', [OdpController::class, 'destroy'])->name('backend.odp.delete')->can('delete-odp');
         });
         Route::prefix('maps')->group(function () {
-            Route::get('', [MapsController::class, 'index'])->name('backend.maps');
+            Route::get('', [MapsController::class, 'index'])->name('backend.maps')->can('read-maps');
         });
     });
 

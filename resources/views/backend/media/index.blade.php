@@ -22,6 +22,7 @@
                 <a href="{{ route('backend.add.media') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
             </div>
             @endcan
+            @canany(['update-media','delete-media'])
             <div class="table-responsive text-nowrap">
                 <table class=" table table-striped " id="dataTable" style="width:100%">
                     <thead>
@@ -36,7 +37,9 @@
                     </thead>
                 </table>
             </div>
-            {{-- <div class="row">
+            @endcanany
+            @if (!Auth::user()->hasrole(['Administrator','Developer']))
+            <div class="row gap-3">
                 @foreach ($media as $item)
                     <div class="col-4">
                         <div class="card">
@@ -48,7 +51,8 @@
                         </div>
                     </div>
                 @endforeach
-            </div> --}}
+            </div>
+            @endif
 
             {{-- <div>
                 <button class="btn btn-sm btn-primary" id="prev">Previous</button>

@@ -21,6 +21,7 @@ class PermissionSeeder extends Seeder
             'read-tremofservice','update-tremofservice','delete-tremofservice',
             'read-privacyppolicy','update-privacyppolicy','delete-privacyppolicy',
             'read-paket','create-paket','update-paket','delete-paket',
+            'read-categoripaket','create-categoripaket','update-categoripaket','delete-categoripaket',
             'read-deskripsi','create-deskripsi','update-deskripsi','delete-deskripsi',
             'read-promo','create-promo','update-promo','delete-promo',
             'read-promopaket','create-promopaket','update-promopaket','delete-promopaket',
@@ -30,7 +31,7 @@ class PermissionSeeder extends Seeder
             'read-jalan','create-jalan','update-jalan','delete-jalan',
             'read-area','create-area','update-area','delete-area',
             'read-odp','create-odp','update-odp','delete-odp',
-
+            'read-maps',
             'read-users','create-users','update-users','delete-users',
             'read-role','create-role','update-role','delete-role',
         ];
