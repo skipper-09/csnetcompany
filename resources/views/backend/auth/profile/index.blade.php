@@ -13,7 +13,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h4 class="fw-bold">Update {{ $page_name }}</h4>
-                        <form action="{{ route('backend.users.update', ['id' => $profile->id]) }}" method="POST"
+                        <form action="{{ route('backend.profile.update', ['id' => $profile->id]) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             {{ method_field('PUT') }}
@@ -38,6 +38,19 @@
                                             class="form-control  @error('email') is-invalid @enderror"
                                             id="basic-default-fullname" value="{{ $profile->email }}" />
                                         @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Username</label>
+                                        <input type="text" name="username" readonly
+                                            class="form-control  @error('username') is-invalid @enderror"
+                                            id="basic-default-fullname" value="{{ $profile->username }}" />
+                                        @error('username')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
