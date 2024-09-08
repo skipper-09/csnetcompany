@@ -17,4 +17,6 @@ class ProfileController extends Controller
         ];
         return view('backend.auth.profile.index', $data);
     }
+
+    public function update(Request $request) {}
 }

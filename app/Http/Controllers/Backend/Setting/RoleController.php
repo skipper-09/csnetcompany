@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Setting;
 use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
@@ -27,8 +28,8 @@ class RoleController extends Controller
             $button = '';
             $button .= ' <a href="' . route('backend.role.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-success action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
                                                         class="fas fa-pen"></i></a>';
-            $button .= ' <a href="' . route('backend.role.edit', ['id' => $query->id]) . '" class="btn btn-sm btn-primary action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Permission"><i
-                                                        class="fas fa-eye"></i></a>';
+            // $button .= ' <a href="' . route('backend.role.permission', ['id' => $query->id]) . '" class="btn btn-sm btn-primary action " data-id=' . $query->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Permission"><i
+            //                                             class="fas fa-eye"></i></a>';
             $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $query->id . ' data-type="delete" data-route="' . route('backend.role.delete', ['id' => $query->id]) . '"><i
                                                             class="fas fa-trash"></i></button>';
             return '<div class="d-flex gap-1">' . $button . '</div>';
@@ -40,6 +41,7 @@ class RoleController extends Controller
         $data = [
             'sidebar' => 'setting',
             'page_name' => 'Role',
+            'permissions' => Permission::all(),
         ];
         return view('backend.settings.role.add', $data);
     }
@@ -47,7 +49,8 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate(['name' => 'required']);
-        Role::create($request->only(['name']));
+        $role = Role::create($request->only(['name']));
+        $role->givePermissionTo($request->permissions);
         return redirect()->route('backend.role')->with(['success' => 'Berhasil Membuat Role!']);
     }
 
@@ -57,7 +60,8 @@ class RoleController extends Controller
         $data = [
             'sidebar' => 'setting',
             'page_name' => 'Role',
-            'role' => Role::find($id)
+            'role' => Role::find($id),
+            'permissions' => Permission::all(),
         ];
         return view('backend.settings.role.edit', $data);
     }
@@ -67,6 +71,7 @@ class RoleController extends Controller
     {
         $request->validate(['name' => 'required']);
         $role = Role::find($id);
+        $role->syncPermissions($request->permissions);
         $role->update($request->only(['name']));
         return redirect()->route('backend.role')->with(['success' => 'Berhasil Update Role!']);
     }

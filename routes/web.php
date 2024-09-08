@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\Partner\PartnerController;
 use App\Http\Controllers\Backend\Privacy\PrivacyControllerBackend;
 use App\Http\Controllers\Backend\Promo\PromoControllerBackend;
 use App\Http\Controllers\Backend\Promo\PromoPacketController;
+use App\Http\Controllers\Backend\Setting\PermissionController;
 use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendController;

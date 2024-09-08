@@ -32,7 +32,27 @@
                                     </div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">Tambah {{ $page_name }}</button>
+                            <div class="mt-2">
+                                <h3>Permissions</h3>
+
+                                <div class="gap-3 d-flex align-content-start justify-content-start mb-2">
+                                    <button type="button" class="btn btn-sm btn-primary" id="select-all">Select
+                                        All</button>
+                                    <button type="button" class="btn btn-sm btn-primary" id="deselect-all">Deselect
+                                        All</button>
+                                </div>
+
+                                @foreach ($permissions as $permission)
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="{{ $permission->name }}"
+                                            class="permission-checkbox form-check-input"
+                                            {{ isset($role) && $role->permissions->contains($permission->id) ? 'checked' : '' }}>
+                                        <label class="form-check-label">{{ $permission->name }}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-2">Tambah {{ $page_name }}</button>
                         </form>
                     </div>
                 </div>
@@ -40,5 +60,21 @@
 
         </div>
     </div>
+
+    @push('js')
+        <script>
+            $(document).ready(function() {
+                // Select all checkboxes
+                $('#select-all').click(function() {
+                    $('.permission-checkbox').prop('checked', true);
+                });
+
+                // Deselect all checkboxes
+                $('#deselect-all').click(function() {
+                    $('.permission-checkbox').prop('checked', false);
+                });
+            });
+        </script>
+    @endpush
 
 @endsection
