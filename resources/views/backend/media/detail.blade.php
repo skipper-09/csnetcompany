@@ -4,6 +4,14 @@
 
 @push('css')
     <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <style>
+        #the-canvas{
+            height: 130vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 @endpush
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
@@ -25,20 +33,17 @@
                     <source src="{{ $media[0]->url }}" type="video/mp4" />
                 </video>
             @else
-                <canvas type="text/html"  id="the-canvas"></canvas>
-                <div class="d-flex mt-3 gap-3 justify-content-center">
+            <embed src="{{ url('storage/file/'.$media[0]->pdf . "#toolbar=0") }}"  id="the-canvas">
+                {{-- <canvas type="text/html"  id="the-canvas"></canvas>
+                <div class="d-flex mt-1 gap-3 justify-content-center">
                     <button class="btn btn-sm btn-primary" id="prev">Previous</button>
                     &nbsp; &nbsp;
                     <div>
                         <span>page: <span id="page_num"></span>/<span id="page_count"></span></span>
                     </div>
                     <button class="btn btn-sm btn-primary" id="next">Next</button>
-                </div>
+                </div> --}}
             @endif
-
-
-
-
         </div>
         <!--/ Striped Rows -->
     </div>
@@ -73,7 +78,7 @@
 
         var pdfDoc = null,
             pageNum = 1,
-            pageRendering = false,
+            pageRendering = true,
             pageNumPending = null,
             scale = 1.5,
             canvas = document.getElementById('the-canvas'),
