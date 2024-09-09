@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MediaRequest;
 use App\Models\Media;
 use App\Models\Promo;
-use Auth;
+
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
@@ -23,7 +24,7 @@ class MediaController extends Controller
         $data = [
             'sidebar' => 'media',
             'page_name' => 'Media',
-            'media' => Media::where('usertype',$auth)->get()
+            'media' => Media::where('usertype', $auth)->get()
         ];
         return view('backend.media.index', $data);
     }
@@ -61,7 +62,7 @@ class MediaController extends Controller
         $data = [
             'sidebar' => 'media',
             'page_name' => 'Media',
-            'role' => Role::whereNotIn('name', ['Developer','Administrator'])->get()
+            'role' => Role::whereNotIn('name', ['Developer', 'Administrator'])->get()
         ];
         return view('backend.media.add', $data);
     }

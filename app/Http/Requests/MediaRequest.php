@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class MediaRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class MediaRequest extends FormRequest
         return [
             'name' => 'required',
             'type' => 'required',
-            'pdf' => "mimetypes:application/pdf|max:10240",
+            'pdf' => "mimetypes:application/pdf|" . File::types(['pdf'])->smallerThan(20 * 1024),
             'usertype' => 'required',
         ];
     }

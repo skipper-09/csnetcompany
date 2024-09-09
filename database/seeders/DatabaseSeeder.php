@@ -32,6 +32,9 @@ class DatabaseSeeder extends Seeder
             KelurahanSeeder::class,
             JalanSeeder::class,
             MediaSeeder::class,
+            JobLocationSeeder::class,
+            CategoryJobSeeder::class,
+            HiringSeeder::class,
         ]);
     }
 }

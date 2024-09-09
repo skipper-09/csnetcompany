@@ -24,6 +24,7 @@ use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
+use App\Http\Controllers\Front_End\Career\CareerController;
 use App\Http\Controllers\Front_End\Cekarea\CekareaController;
 use App\Http\Controllers\Front_End\COntact\ContactController;
 use App\Http\Controllers\Front_End\Coverage\CoverageController;
@@ -71,6 +72,9 @@ Route::get('/get-jalan/{kelurahan_id}', [CekareaController::class, 'getJalan']);
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
 Route::get('/syarat-dan-ketentuan', [TremOfServiceController::class, 'index'])->name('tremofservice');
 Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
+
+//career
+Route::get('/career', [CareerController::class, 'index'])->name('career');
 
 
 //backend routes

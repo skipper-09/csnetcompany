@@ -9,18 +9,20 @@
             <!-- FOOTER LOGO -->
             <div class="col-xl-3">
                 <div class="footer-info">
-                    <img class="footer-logo" src="{{ asset('front-end/images/logo-white-idnet.png') }}"
-                        alt="footer-logo">
+                    <img class="footer-logo" src="{{ asset('front-end/images/logo-white-idnet.png') }}" alt="footer-logo">
                 </div>
                 <!-- Social Links -->
                 <!-- Title -->
                 <h6 class="s-17 w-700 text-white">Sosial Media</h6>
                 <ul class="footer-socials ico-25 text-center clearfix">
-                    <li><a href="https://www.facebook.com/idnetjember" target="_blank"><img class="w-200" src="{{ asset('front-end/images/facebook.png') }}"></a>
+                    <li><a href="https://www.facebook.com/idnetjember" target="_blank"><img class="w-200"
+                                src="{{ asset('front-end/images/facebook.png') }}"></a>
                     </li>
-                    <li><a href="https://www.instagram.com/idnet.official" target="_blank"><img class="w-200" src="{{ asset('front-end/images/instagram.png') }}"></a>
+                    <li><a href="https://www.instagram.com/idnet.official" target="_blank"><img class="w-200"
+                                src="{{ asset('front-end/images/instagram.png') }}"></a>
                     </li>
-                    <li><a href="https://www.tiktok.com/@idnet.official" target="_blank"><img src="{{ asset('front-end/images/tiktok.png') }}" ></a></li>
+                    <li><a href="https://www.tiktok.com/@idnet.official" target="_blank"><img
+                                src="{{ asset('front-end/images/tiktok.png') }}"></a></li>
                 </ul>
             </div>
 
@@ -35,13 +37,19 @@
                     <!-- Links -->
                     <ul class="foo-links clearfix">
                         <li>
-                            <a href="{{ route('packet.ritel') }}"><p class="text-white">Broadband</p></a>
+                            <a href="{{ route('packet.ritel') }}">
+                                <p class="text-white">Broadband</p>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ route('packet.dedicated') }}"><p class="text-white">Dedicated</p></a>
+                            <a href="{{ route('packet.dedicated') }}">
+                                <p class="text-white">Dedicated</p>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ route('packet.internettv') }}"><p class="text-white">Internet + TV</p></a>
+                            <a href="{{ route('packet.internettv') }}">
+                                <p class="text-white">Internet + TV</p>
+                            </a>
                         </li>
                     </ul>
 
@@ -59,13 +67,19 @@
                     <!-- Links -->
                     <ul class="foo-links clearfix">
                         <li>
-                            <a href="{{ route('packet.ritel') }}"><p class="text-white">Daftar</p></a>
+                            <a href="{{ route('packet.ritel') }}">
+                                <p class="text-white">Daftar</p>
+                            </a>
                         </li>
                         <li>
-                            <a href="https://client.idnet.id/login" target="_blank" rel="noopener noreferrer"><p class="text-white">Billing</p></a>
+                            <a href="https://client.idnet.id/login" target="_blank" rel="noopener noreferrer">
+                                <p class="text-white">Billing</p>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ route('contact') }}"><p class="text-white">Hubungi Kami</p></a>
+                            <a href="{{ route('contact') }}">
+                                <p class="text-white">Hubungi Kami</p>
+                            </a>
                         </li>
                     </ul>
 
@@ -83,10 +97,19 @@
                     <!-- Links -->
                     <ul class="foo-links clearfix">
                         <li>
-                            <a href="{{ route('tremofservice') }}" ><p class="text-white">Terms of Use</p></a>
+                            <a href="{{ route('tremofservice') }}">
+                                <p class="text-white">Terms of Use</p>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ route('privacy') }}"><p class="text-white">Privacy Policy</p></a>
+                            <a href="{{ route('privacy') }}">
+                                <p class="text-white">Privacy Policy</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('career') }}">
+                                <p class="text-white">Career</p>
+                            </a>
                         </li>
                     </ul>
 
@@ -173,7 +196,7 @@
 
 
 @push('js')
-<script>
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-</script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
 @endpush
