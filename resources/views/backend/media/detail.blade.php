@@ -25,7 +25,7 @@
                     <source src="{{ $media[0]->url }}" type="video/mp4" />
                 </video>
             @else
-                <canvas id="the-canvas"></canvas>
+                <canvas type="text/html"  id="the-canvas"></canvas>
                 <div class="d-flex mt-3 gap-3 justify-content-center">
                     <button class="btn btn-sm btn-primary" id="prev">Previous</button>
                     &nbsp; &nbsp;

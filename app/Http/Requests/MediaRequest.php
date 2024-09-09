@@ -24,7 +24,7 @@ class MediaRequest extends FormRequest
         return [
             'name' => 'required',
             'type' => 'required',
-            'pdf' => "mimetypes:application/pdf|max:100000",
+            'pdf' => "mimetypes:application/pdf|max:10240",
             'usertype' => 'required',
         ];
     }
@@ -35,6 +35,7 @@ class MediaRequest extends FormRequest
             'name.required' => 'Judul Wajib Diisi',
             'type.required' => 'Tipe Konten Wajib Diisi',
             'pdf.mimetypes' => 'Hanya Menerima Inputan File PDF',
+            'pdf.max' => 'Size File Melebihi Batas 10Mb',
             'usertype.required' => 'Tipe User Wajib Diisi',
         ];
     }
