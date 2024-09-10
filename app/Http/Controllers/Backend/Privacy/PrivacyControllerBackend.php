@@ -13,7 +13,7 @@ class PrivacyControllerBackend extends Controller
     public function index()
     {
         $data = [
-            'sidebar' => 'privacy',
+            'sidebar' => 'Informasi',
             'page_name' => 'Kebijakan Privasi',
         ];
         return view('backend.privacy.index', $data);
@@ -38,7 +38,7 @@ class PrivacyControllerBackend extends Controller
     public function show($id)
     {
         $data = [
-            'sidebar' => 'privacy',
+            'sidebar' => 'Informasi',
             'page_name' => 'Kebijakan Privasi',
             'privacy' => PrivacyPolicy::find($id),
         ];

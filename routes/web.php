@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\Auth\ProfileController;
+use App\Http\Controllers\Backend\Career\LocationJobController;
 use App\Http\Controllers\Backend\CekCoverage\Jalan\JalanController;
 use App\Http\Controllers\Backend\CekCoverage\Kecamatan\KecamatanController;
 use App\Http\Controllers\Backend\CekCoverage\Kelurahan\KelurahanController;
@@ -36,8 +37,7 @@ use App\Http\Controllers\Front_End\Packet\RitelController;
 use App\Http\Controllers\Front_End\Privacy\PrivacyController;
 use App\Http\Controllers\Front_End\Promo\PromoContoller;
 use App\Http\Controllers\Front_End\TremOfService\TremOfServiceController;
-use App\Models\PrivacyPolicy;
-use App\Models\TremofService;
+use App\Http\Controllers\Backend\Career\CategoryJobController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -67,6 +67,7 @@ Route::get('/cek-area', [CekareaController::class, 'index'])->name('cekarea');
 Route::get('/get-kecamatan/{kota_id}', [CekareaController::class, 'getKecamatan']);
 Route::get('/get-kelurahan/{kecamatan_id}', [CekareaController::class, 'getKelurahan']);
 Route::get('/get-jalan/{kelurahan_id}', [CekareaController::class, 'getJalan']);
+Route::get('/view/file/{filename}', [MediaController::class, 'showFile'])->middleware('auth');
 
 
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
@@ -75,6 +76,7 @@ Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
 
 //career
 Route::get('/career', [CareerController::class, 'index'])->name('career');
+Route::get('/career/{slug}', [CareerController::class, 'detail'])->name('career.detail');
 
 
 //backend routes
@@ -179,6 +181,42 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::delete('delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete')->can('delete-deskripsi');
         });
     });
+
+
+
+// page packet
+Route::prefix('career')->group(function () {
+    Route::prefix('kategori')->group(function () {
+        Route::get('', [CategoryJobController::class, 'index'])->name('backend.categoryjob')->can('read-categoryjob');
+        Route::get('/getData', [CategoryJobController::class, 'getData'])->name('backend.categoryjob.getData');
+        Route::get('tambah', [CategoryJobController::class, 'create'])->name('backend.add.categoryjob')->can('create-categoryjob');
+        Route::post('store', [CategoryJobController::class, 'store'])->name('backend.categoryjob.store');
+        Route::get('/edit/{id}', [CategoryJobController::class, 'show'])->name('backend.categoryjob.edit')->can('update-categoryjob');
+        Route::put('/update/{id}', [CategoryJobController::class, 'update'])->name('backend.categoryjob.update');
+        Route::delete('/delete/{id}', [CategoryJobController::class, 'destroy'])->name('backend.categoryjob.delete')->can('delete-categoryjob');
+    });
+
+    Route::prefix('lokasi')->group(function () {
+        Route::get('', [LocationJobController::class, 'index'])->name('backend.locationjob')->can('read-locationjob');
+        Route::get('/getData', [LocationJobController::class, 'getData'])->name('backend.locationjob.getData');
+        Route::get('tambah', [LocationJobController::class, 'create'])->name('backend.add.locationjob')->can('create-locationjob');
+        Route::post('store', [LocationJobController::class, 'store'])->name('backend.locationjob.store');
+        Route::get('/edit/{id}', [LocationJobController::class, 'show'])->name('backend.locationjob.edit')->can('delete-locationjob');
+        Route::put('/update/{id}', [LocationJobController::class, 'update'])->name('backend.locationjob.update');
+        Route::delete('/delete/{id}', [LocationJobController::class, 'destroy'])->name('backend.locationjob.delete')->can('delete-locationjob');
+    });
+    // //deskripsi paket
+    // Route::prefix('deskripsi')->group(function () {
+    //     Route::get('', [Description_packet::class, 'index'])->name('backend.deskription')->can('read-deskripsi');
+    //     Route::get('getData', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
+    //     Route::get('tambah', [Description_packet::class, 'create'])->name('backend.add.deskription')->can('create-deskripsi');
+    //     Route::post('store', [Description_packet::class, 'store'])->name('backend.deskription.store');
+    //     Route::get('edit/{id}', [Description_packet::class, 'edit'])->name('backend.deskription.edit')->can('update-deskripsi');
+    //     Route::put('update/{id}', [Description_packet::class, 'update'])->name('backend.deskription.update');
+    //     Route::delete('delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete')->can('delete-deskripsi');
+    // });
+});
+
 
     //page promo
 

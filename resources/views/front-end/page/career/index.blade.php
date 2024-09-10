@@ -39,7 +39,7 @@
                     <!-- IMAGE BLOCK -->
                     <div class="col-md-6">
                         <div class="img-block right-column wow fadeInLeft">
-                            <img class="img-fluid" src="{{ asset('front-end/images/img-18.png') }}" alt="content-image">
+                            <img class="img-fluid"  src="{{ asset('front-end/images/Asset 1.png') }}" alt="content-image">
                         </div>
                     </div>
 
@@ -76,27 +76,25 @@
                     <div id="a3-1" class="txt-block">
 
                         <!-- Title -->
-                        <h5 class="s-24 w-700 mb-20">Bergabunglah dengan Tim Kami</h5>
+                        <h5 class="s-24 w-700 mb-20">Mengapa Bergabung dengan Kami?</h5>
 
                         <!-- Text -->
-                        <p>Apakah Anda siap untuk tumbuh bersama perusahaan yang dinamis dan inovatif? Kami mencari individu
-                            berbakat yang penuh semangat dan berdedikasi untuk mencapai kesuksesan bersama. Di sini, kami
-                            percaya bahwa karyawan adalah aset terbesar kami, dan kami berkomitmen untuk menciptakan
-                            lingkungan kerja yang mendukung pengembangan karier, kreativitas, dan kolaborasi.
+                        <p>Kesempatan untuk Berkembang Kami percaya bahwa kesuksesan dimulai dari orang-orang hebat. Bergabunglah dengan kami, dan jadilah bagian dari perusahaan yang memberikan ruang untuk kreativitas, inovasi, dan pengembangan diri.
                         </p>
 
                         <!-- List -->
                         <ul class="simple-list">
 
                             <li class="list-item">
-                                <p>Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum
-                                    aliquam undo congue dolor cursus
+                                <p class="mb-0">Kami mendukung keseimbangan antara pekerjaan dan kehidupan pribadi Anda.
                                 </p>
                             </li>
-
                             <li class="list-item">
-                                <p class="mb-0">Cursus purus suscipit vitae cubilia magnis volute egestas vitae
-                                    sapien turpis ultrice auctor congue magna placerat
+                                <p class="mb-0">Di sini, setiap pekerjaan membawa dampak nyata, baik bagi perusahaan maupun masyarakat.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p class="mb-0">Kami menghargai ide-ide baru dan keinginan untuk terus belajar.
                                 </p>
                             </li>
 
@@ -111,19 +109,30 @@
                     <div id="a3-2" class="txt-block">
 
                         <!-- Title -->
-                        <h5 class="s-24 w-700 mb-20">We deliver results</h5>
+                        <h5 class="s-24 w-700 mb-20">Karier yang Sesuai dengan Passion Anda</h5>
 
                         <!-- Text -->
-                        <p>Nemo ipsam egestas volute turpis egestas ipsum and purus sapien ultrice an aliquam quaerat
-                            ipsum augue turpis sapien cursus congue magna purus quaerat at ligula purus egestas magna
-                            cursus undo varius purus magnis sapien quaerat
+                        <p>Ciptakan Masa Depan yang Anda Inginkan Di perusahaan kami, karier Anda adalah perjalanan menuju kesuksesan. Kami menawarkan berbagai peran yang memungkinkan Anda untuk terus belajar, bertumbuh, dan mencapai tujuan karier jangka panjang Anda.
                         </p>
 
-                        <!-- Text -->
-                        <p class="mb-0">Egestas volute nemo ipsam turpis egestas ipsum and purus sapien ultrice an
-                            aliquam quaerat ipsum augue turpis sapien cursus congue magna purus quaerat at ligula purus
-                            egestas magna cursus undo varius purus quaerat sapien magnis
-                        </p>
+                        <!-- List -->
+                        <ul class="simple-list">
+
+                            <li class="list-item">
+                                <p class="mb-0">Kami mendorong karyawan untuk mengambil inisiatif dan mengembangkan keterampilan kepemimpinan.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p class="mb-0">Kami percaya pada inovasi dan menyediakan ruang bagi ide-ide kreatif Anda untuk bersinar.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p class="mb-0">Kolaborasi adalah inti dari setiap proyek yang kami kerjakan.
+                                </p>
+                            </li>
+
+                        </ul>
+                        
 
                     </div>
                 </div> <!-- END ABOUT-3 TEXT -->
@@ -250,7 +259,7 @@
                         <!-- OPEN ROLE #1 -->
                         <div class="col">
                             <div class="role-box bg--white-300 r-10">
-                                <a href="career-role.html">
+                                <a href="{{ route('career.detail', ['slug'=>$item->slug]) }}">
                                     <span>{{ $item->categoryjob->name }}</span>
                                     <h6 class="s-20 w-700">{{ $item->name }}</h6>
                                     <p>{{ $item->joblocation->name }}</p>

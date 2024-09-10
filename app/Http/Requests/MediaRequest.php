@@ -25,7 +25,7 @@ class MediaRequest extends FormRequest
         return [
             'name' => 'required',
             'type' => 'required',
-            'pdf' => "mimetypes:application/pdf|" . File::types(['pdf'])->smallerThan(20 * 1024),
+            'pdf' => "mimetypes:application/pdf|max:20000",
             'usertype' => 'required',
         ];
     }

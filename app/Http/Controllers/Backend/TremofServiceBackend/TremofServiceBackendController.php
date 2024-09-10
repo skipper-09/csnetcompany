@@ -13,7 +13,7 @@ class TremofServiceBackendController extends Controller
     public function index()
     {
         $data = [
-            'sidebar' => 'tremofservice',
+            'sidebar' => 'Informasi',
             'page_name' => 'Syarat Dan Ketentuan',
         ];
         return view('backend.tremofservice.index', $data);
@@ -38,7 +38,7 @@ class TremofServiceBackendController extends Controller
     public function show($id)
     {
         $data = [
-            'sidebar' => 'tremofservice',
+            'sidebar' => 'Informasi',
             'page_name' => 'Syarat Dan Ketentuan',
             'tremofservice' => TremofService::find($id),
         ];

@@ -6,10 +6,17 @@
     <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
     <style>
         #the-canvas {
-            height: 100vh;
+            height: 150vh;
             width: 100%;
             margin: 0;
             padding: 0;
+        }
+        
+        .toolbar {
+            display: none !important;
+        }
+        #toolbarViewerRight{
+            display: inline;
         }
     </style>
 @endpush
@@ -33,8 +40,9 @@
                     <source src="{{ $media[0]->url }}" type="video/mp4" />
                 </video>
             @else
-                <embed src="{{ url('storage/file/' . $media[0]->pdf . '#toolbar=0') }}" id="the-canvas">
-                {{-- <canvas type="text/html"  id="the-canvas"></canvas>
+                <iframe src="{{ url('storage/file/' . $media[0]->pdf.'#toolbar=0') }}" id="the-canvas"></iframe>
+                
+                 {{-- <canvas type="text/html"  id="the-canvas"></canvas>
                 <div class="d-flex mt-1 gap-3 justify-content-center">
                     <button class="btn btn-sm btn-primary" id="prev">Previous</button>
                     &nbsp; &nbsp;
@@ -51,9 +59,9 @@
 
 
 @push('js')
-    <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
-
-    {{-- <script type="module">
+    {{-- <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+    
+    <script type="module">
         // If absolute URL from the remote server is provided, configure the CORS
         // header on that server.
         //    var url = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf';
@@ -63,7 +71,7 @@
         data.forEach(element => {
             dataurl = element.pdf;
         });
-        var urlbase = "{{ url('storage/file/') }}/";
+        var urlbase = "{{ url('/view/file') }}/";
         var url = urlbase + dataurl;
 
 
@@ -166,7 +174,7 @@
             // Initial/first page rendering
             renderPage(pageNum);
         });
-    </script> --}}
+    </script>  --}}
 
 
     {{-- //vidio --}}

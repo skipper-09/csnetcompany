@@ -31,6 +31,8 @@ class PermissionSeeder extends Seeder
             'read-jalan','create-jalan','update-jalan','delete-jalan',
             'read-area','create-area','update-area','delete-area',
             'read-odp','create-odp','update-odp','delete-odp',
+            'read-categoryjob','create-categoryjob','update-categoryjob','delete-categoryjob',
+            'read-locationjob','create-locationjob','update-locationjob','delete-locationjob',
             'read-maps',
             'read-users','create-users','update-users','delete-users',
             'read-role','create-role','update-role','delete-role',

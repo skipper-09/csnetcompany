@@ -162,6 +162,35 @@
     </ul>
 </li>
 @endcanany
+
+
+@canany(['read-categoryjob','read-locationjob'])
+{{-- management Informasi --}}
+<li class="{{ $sidebar == 'job' ? 'menu-item active open' : 'menu-item' }}">
+    <a href=" javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-briefcase-alt-2"></i>
+        <div data-i18n="kota">Management Career</div>
+    </a>
+    <ul class="menu-sub">
+        @can('read-categoryjob')
+        <li class="{{ $page_name == 'Kategori' ? 'menu-item active' : 'menu-item' }}">
+            <a href=" {{ route('backend.categoryjob') }}" class="menu-link">
+                <div data-i18n="area">Kategori</div>
+            </a>
+        </li>
+        @endcan
+        @can('read-locationjob')
+        <li class="{{ $page_name == 'Lokasi' ? 'menu-item active' : 'menu-item' }}">
+            <a href=" {{ route('backend.locationjob') }}" class="menu-link">
+                <div data-i18n="kecamatan">Lokasi</div>
+            </a>
+        </li>
+        @endcan
+    </ul>
+</li>
+@endcanany
+
+
         <!-- Management Blog -->
         {{-- <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -206,13 +235,48 @@
     {{-- Media --}}
     <li class="{{ Request::is('admin/media') ? 'menu-item active' : 'menu-item' }}">
         <a href="{{ route('backend.media') }}" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-category"></i>
+            <i class="menu-icon tf-icons bx bx-box"></i>
             <div data-i18n="media">Media</div>
         </a>
     </li>
     @endcan
-    @can('read-faq')
-    {{-- faq --}}
+
+    @canany(['read-faq','read-tremofservice','read-privacyppolicy'])
+    <li class="{{ $sidebar == 'Informasi' ? 'menu-item active open' : 'menu-item' }}">
+        <a href=" javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt-2"></i>
+            <div data-i18n="kota">Management Informasi</div>
+        </a>
+        <ul class="menu-sub">
+            @can('read-faq')
+            <li class="{{ $page_name == 'Faq' ? 'menu-item active' : 'menu-item' }}">
+                <a href=" {{ route('backend.faq') }}" class="menu-link">
+                    <div data-i18n="area">Faq</div>
+                </a>
+            </li>
+            @endcan
+            @can('read-tremofservice')
+            <li class="{{ $page_name == 'Syarat Dan Ketentuan' ? 'menu-item active' : 'menu-item' }}">
+                <a href=" {{ route('backend.tremofservice') }}" class="menu-link">
+                    <div data-i18n="area">Trems Of Service</div>
+                </a>
+            </li>
+            @endcan
+            @can('read-privacyppolicy')
+            <li class="{{ $page_name == 'Kebijakan Privasi' ? 'menu-item active' : 'menu-item' }}">
+                <a href=" {{ route('backend.privacypolicy') }}" class="menu-link">
+                    <div data-i18n="area">Privacy Policy</div>
+                </a>
+            </li>
+            @endcan
+           
+        </ul>
+    </li>
+    @endcanany
+    
+
+    {{-- @can('read-faq')
+    
     <li class="{{ Request::is('admin/faq') ? 'menu-item active' : 'menu-item' }}">
         <a href="{{ route('backend.faq') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-unite"></i>
@@ -221,7 +285,7 @@
     </li>
     @endcan
     @can('read-tremofservice')
-    {{-- Trem Of Service --}}
+    
     <li class="{{ Request::is('admin/tremofservice') ? 'menu-item active' : 'menu-item' }}">
         <a href="{{ route('backend.tremofservice') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-unite"></i>
@@ -230,14 +294,14 @@
     </li>
     @endcan
     @can('read-privacyppolicy')
-    {{-- privacy policy --}}
+    
     <li class="{{ Request::is('admin/privacy-policy') ? 'menu-item active' : 'menu-item' }}">
         <a href="{{ route('backend.privacypolicy') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-unite"></i>
             <div data-i18n="Privacy Policy">Privacy Policy</div>
         </a>
     </li>
-    @endcan
+    @endcan --}}
 
 @canany(['read-users','read-role'])
 <!-- Setting -->

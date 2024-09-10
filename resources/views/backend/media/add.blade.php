@@ -99,7 +99,7 @@
 
 
                             </div>
-                            <button type="submit" class="btn btn-primary">Tambah Daftar Paket</button>
+                            <button type="submit" class="btn btn-primary">Tambah {{ $page_name }}</button>
                         </form>
                     </div>
                 </div>

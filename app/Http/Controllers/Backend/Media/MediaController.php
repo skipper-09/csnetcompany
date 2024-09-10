@@ -57,6 +57,31 @@ class MediaController extends Controller
     }
 
 
+    public function showFile($filename)
+    {
+        // Validasi apakah file ada dan pengguna berhak mengakses
+        $filePath = public_path('/storage/file/' . $filename);
+
+        // Jika file tidak ditemukan, atau tidak ada izin, tampilkan 404
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Cek otorisasi pengguna di sini, jika diperlukan
+        // Contoh: jika hanya admin yang boleh mengakses
+        // if (auth()->user()->role !== 'admin') {
+        //     abort(403, 'Unauthorized action.');
+        // }
+
+        // Stream file PDF tanpa memberikan URL file yang asli
+        return response()->file($filePath, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="' . $filename . '"',
+            'X-Content-Type-Options' => 'nosniff'
+        ]);
+    }
+
+
     public function create()
     {
         $data = [

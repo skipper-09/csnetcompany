@@ -19,7 +19,7 @@ class FaqController extends Controller
     public function index()
     {
         $data = [
-            'sidebar' => 'faq',
+            'sidebar' => 'Informasi',
             'page_name' => 'Faq',
         ];
         return view('backend.faq.index', $data);
@@ -43,7 +43,7 @@ class FaqController extends Controller
     public function create()
     {
         $data = [
-            'sidebar' => 'faq',
+            'sidebar' => 'Informasi',
             'page_name' => 'Faq',
         ];
         return view('backend.faq.add', $data);
@@ -76,7 +76,7 @@ class FaqController extends Controller
     public function show(string $id)
     {
         $data = [
-            'sidebar' => 'faq',
+            'sidebar' => 'Informasi',
             'page_name' => 'Faq',
             'faq'=> Faq::find($id)
         ];
