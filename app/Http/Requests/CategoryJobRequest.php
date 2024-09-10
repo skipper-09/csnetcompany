@@ -29,8 +29,7 @@ class CategoryJobRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Kategori Wajib Diisi',
-           
+            'name.required' => 'Kategori Wajib Diisi', 
         ];
     }
 }
