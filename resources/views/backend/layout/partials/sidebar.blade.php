@@ -186,6 +186,13 @@
             </a>
         </li>
         @endcan
+        @can('read-hiring')
+        <li class="{{ $page_name == 'Pekerjaan' ? 'menu-item active' : 'menu-item' }}">
+            <a href=" {{ route('backend.hiring') }}" class="menu-link">
+                <div data-i18n="kecamatan">Pekerjaan</div>
+            </a>
+        </li>
+        @endcan
     </ul>
 </li>
 @endcanany

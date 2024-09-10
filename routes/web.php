@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\Auth\ProfileController;
+use App\Http\Controllers\Backend\Career\HiringJobController;
 use App\Http\Controllers\Backend\Career\LocationJobController;
 use App\Http\Controllers\Backend\CekCoverage\Jalan\JalanController;
 use App\Http\Controllers\Backend\CekCoverage\Kecamatan\KecamatanController;
@@ -184,7 +185,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 
 
-// page packet
+// page career
 Route::prefix('career')->group(function () {
     Route::prefix('kategori')->group(function () {
         Route::get('', [CategoryJobController::class, 'index'])->name('backend.categoryjob')->can('read-categoryjob');
@@ -195,7 +196,7 @@ Route::prefix('career')->group(function () {
         Route::put('/update/{id}', [CategoryJobController::class, 'update'])->name('backend.categoryjob.update');
         Route::delete('/delete/{id}', [CategoryJobController::class, 'destroy'])->name('backend.categoryjob.delete')->can('delete-categoryjob');
     });
-
+//career location
     Route::prefix('lokasi')->group(function () {
         Route::get('', [LocationJobController::class, 'index'])->name('backend.locationjob')->can('read-locationjob');
         Route::get('/getData', [LocationJobController::class, 'getData'])->name('backend.locationjob.getData');
@@ -205,16 +206,16 @@ Route::prefix('career')->group(function () {
         Route::put('/update/{id}', [LocationJobController::class, 'update'])->name('backend.locationjob.update');
         Route::delete('/delete/{id}', [LocationJobController::class, 'destroy'])->name('backend.locationjob.delete')->can('delete-locationjob');
     });
-    // //deskripsi paket
-    // Route::prefix('deskripsi')->group(function () {
-    //     Route::get('', [Description_packet::class, 'index'])->name('backend.deskription')->can('read-deskripsi');
-    //     Route::get('getData', [Description_packet::class, 'getData'])->name('backend.deskription.getData');
-    //     Route::get('tambah', [Description_packet::class, 'create'])->name('backend.add.deskription')->can('create-deskripsi');
-    //     Route::post('store', [Description_packet::class, 'store'])->name('backend.deskription.store');
-    //     Route::get('edit/{id}', [Description_packet::class, 'edit'])->name('backend.deskription.edit')->can('update-deskripsi');
-    //     Route::put('update/{id}', [Description_packet::class, 'update'])->name('backend.deskription.update');
-    //     Route::delete('delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete')->can('delete-deskripsi');
-    // });
+    //career
+    Route::prefix('')->group(function () {
+        Route::get('', [HiringJobController::class, 'index'])->name('backend.hiring')->can('read-hiring');
+        Route::get('getData', [HiringJobController::class, 'getData'])->name('backend.hiring.getData');
+        Route::get('tambah', [HiringJobController::class, 'create'])->name('backend.add.hiring')->can('create-hiring');
+        Route::post('store', [HiringJobController::class, 'store'])->name('backend.hiring.store');
+        Route::get('edit/{id}', [HiringJobController::class, 'edit'])->name('backend.hiring.edit')->can('update-hiring');
+        Route::put('update/{id}', [HiringJobController::class, 'update'])->name('backend.hiring.update');
+        Route::delete('delete/{id}', [HiringJobController::class, 'destroy'])->name('backend.hiring.delete')->can('delete-hiring');
+    });
 });
 
 
