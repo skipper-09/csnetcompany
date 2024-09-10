@@ -130,13 +130,13 @@
                     <p class="footer-mail-link ico-25">
                     <div class="d-flex ico-25 align-content-center align-items-center  gap-1">
                         <span class="flaticon-email"></span>
-                        <a href="mailto:yourdomain@mail.com">
-                            <p class="s-15 text-white">hello@yourdomain.com</p>
+                        <a href="mailto:admin@idnet.id">
+                            <p class="s-15 text-white">admin@idnet.id</p>
                         </a>
                     </div>
                     <div class="d-flex ico-25 align-content-center align-items-center  gap-1">
                         <span class="flaticon-whatsapp text-white"></span>
-                        <a href="">
+                        <a href="https://wa.me/6282116879977?text=Halo">
                             <p class="s-15 text-white">6282116879977</p>
                         </a>
                     </div>
