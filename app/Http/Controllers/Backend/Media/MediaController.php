@@ -68,7 +68,7 @@ class MediaController extends Controller
         }
 
         // Cek otorisasi pengguna di sini, jika diperlukan
-        // Contoh: jika hanya admin yang boleh mengakses
+        
         // if (auth()->user()->role !== 'admin') {
         //     abort(403, 'Unauthorized action.');
         // }
@@ -76,8 +76,9 @@ class MediaController extends Controller
         // Stream file PDF tanpa memberikan URL file yang asli
         return response()->file($filePath, [
             'Content-Type' => 'application/octet-stream',
-            'Content-Disposition' => 'inline; filename="' . $filename . '"',
-            'X-Content-Type-Options' => 'nosniff'
+            // 'Content-Disposition' => 'inline; filename="' . $filename .'.binary'. '"',
+            'X-Content-Type-Options' => 'nosniff',
+            'Content-Transfer-Encoding' => 'binary'
         ]);
     }
 
