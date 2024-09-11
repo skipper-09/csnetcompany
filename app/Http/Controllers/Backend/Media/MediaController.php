@@ -75,7 +75,7 @@ class MediaController extends Controller
 
         // Stream file PDF tanpa memberikan URL file yang asli
         return response()->file($filePath, [
-            'Content-Type' => 'application/pdf',
+            'Content-Type' => 'application/octet-stream',
             'Content-Disposition' => 'inline; filename="' . $filename . '"',
             'X-Content-Type-Options' => 'nosniff'
         ]);

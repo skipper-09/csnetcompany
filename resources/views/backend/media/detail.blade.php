@@ -6,7 +6,7 @@
     <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
     <style>
         #the-canvas {
-            height: 150vh;
+            height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -40,9 +40,9 @@
                     <source src="{{ $media[0]->url }}" type="video/mp4" />
                 </video>
             @else
-                <iframe src="{{ url('storage/file/' . $media[0]->pdf.'#toolbar=0') }}" id="the-canvas"></iframe>
+                {{-- <iframe src="{{ url('storage/file/' . $media[0]->pdf.'#toolbar=0') }}" id="the-canvas"></iframe> --}}
                 
-                 {{-- <canvas type="text/html"  id="the-canvas"></canvas>
+                 <canvas type="text/html" id="the-canvas"></canvas>
                 <div class="d-flex mt-1 gap-3 justify-content-center">
                     <button class="btn btn-sm btn-primary" id="prev">Previous</button>
                     &nbsp; &nbsp;
@@ -50,7 +50,7 @@
                         <span>page: <span id="page_num"></span>/<span id="page_count"></span></span>
                     </div>
                     <button class="btn btn-sm btn-primary" id="next">Next</button>
-                </div> --}}
+                </div>
             @endif
         </div>
         <!--/ Striped Rows -->
@@ -59,7 +59,7 @@
 
 
 @push('js')
-    {{-- <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+    <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
     
     <script type="module">
         // If absolute URL from the remote server is provided, configure the CORS
@@ -174,7 +174,7 @@
             // Initial/first page rendering
             renderPage(pageNum);
         });
-    </script>  --}}
+    </script> 
 
 
     {{-- //vidio --}}
