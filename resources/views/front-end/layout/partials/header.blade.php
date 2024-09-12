@@ -60,6 +60,7 @@
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
                                 <ul class="sub-menu">
+                                    <li aria-haspopup="true"><a href="{{ route('career') }}">Career</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
@@ -201,6 +202,7 @@
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
                                 <ul class="sub-menu">
+                                    <li aria-haspopup="true"><a href="{{ route('career') }}">Career</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>

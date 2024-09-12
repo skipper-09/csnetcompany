@@ -106,11 +106,11 @@
                                 <p class="text-white">Privacy Policy</p>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('career') }}">
                                 <p class="text-white">Career</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
 
                 </div>
