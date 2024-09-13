@@ -9,7 +9,7 @@ class Media extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name','type','pdf','url','usertype','slug'
+        'name','type','pdf','url','usertype','slug','urldrive'
     ];
     protected $primaryKey = 'id';
 }

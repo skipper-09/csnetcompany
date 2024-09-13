@@ -41,16 +41,22 @@
                 </video>
             @else
                 {{-- <iframe src="{{ url('storage/file/' . $media[0]->pdf.'#toolbar=0') }}" id="the-canvas"></iframe> --}}
-                
-                 <canvas type="text/html" id="the-canvas"></canvas>
-                <div class="d-flex mt-1 gap-3 justify-content-center">
-                    <button class="btn btn-sm btn-primary" id="prev">Previous</button>
-                    &nbsp; &nbsp;
-                    <div>
-                        <span>page: <span id="page_num"></span>/<span id="page_count"></span></span>
-                    </div>
-                    <button class="btn btn-sm btn-primary" id="next">Next</button>
-                </div>
+                @if ($media[0]->pdf == null)
+                <iframe src="https://drive.google.com/file/d/{{ $media[0]->urldrive }}/preview" width="100%" height="600px" allow="autoplay"></iframe>
+                @else
+                <canvas type="text/html" id="the-canvas"></canvas>
+               <div class="d-flex mt-1 gap-3 justify-content-center">
+                   <button class="btn btn-sm btn-primary" id="prev">Previous</button>
+                   &nbsp; &nbsp;
+                   <div>
+                       <span>page: <span id="page_num"></span>/<span id="page_count"></span></span>
+                   </div>
+                   <button class="btn btn-sm btn-primary" id="next">Next</button>
+               </div>
+               @if ($media[0]->urldrive != null)
+               <a href="https://drive.google.com/file/d/{{ $media[0]->urldrive }}/preview" ><button class="btn btn-sm btn-primary">Lihat File Drive</button></a>
+               @endif
+                @endif
             @endif
         </div>
         <!--/ Striped Rows -->

@@ -67,12 +67,25 @@
                                         @enderror
                                     </div>
                                 </div>
+                                
                                 <div class="col-md-6 col-sm-12 d-none" id="pdf">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Input File</label>
                                         <input type="file" name="pdf"
                                             class="form-control hidden @error('pdf') is-invalid @enderror" id="filepdf" />
                                         @error('pdf')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 d-none" id="urldrive">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Input URL DRIVE</label>
+                                        <input type="text" name="urldrive"
+                                            class="form-control hidden @error('urldrive') is-invalid @enderror" id="filepdf" />
+                                        @error('urldrive')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -115,13 +128,16 @@
                 let val = $('#Typecontent option:selected').val();
                 if (val == 'pdf') {
                     $('#pdf').removeClass('d-none');
+                    $('#urldrive').removeClass('d-none');
                     $('#vidio').addClass('d-none');
                 } else if (val == 'vidio') {
                     $('#vidio').removeClass('d-none');
                     $('#pdf').addClass('d-none');
+                    $('#urldrive').addClass('d-none');
                 } else {
                     $('#pdf').addClass('d-none');
                     $('#vidio').addClass('d-none');
+                    $('#urldrive').addClass('d-none');
                 }
 
             })

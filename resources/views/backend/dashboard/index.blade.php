@@ -1,6 +1,6 @@
 @extends('backend.layout.app')
 
-@section('title',$page_name);
+@section('title',$page_name)
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">

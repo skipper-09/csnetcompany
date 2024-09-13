@@ -17,6 +17,7 @@ return new class extends Migration
             $table->enum('type', ['pdf', 'vidio']);
             $table->longText('url')->nullable();
             $table->string('pdf')->nullable();
+            $table->string('urldrive')->nullable();
             $table->string('usertype');
             $table->string('slug');
             $table->timestamps();

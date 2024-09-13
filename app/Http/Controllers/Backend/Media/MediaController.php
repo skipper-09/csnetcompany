@@ -93,8 +93,18 @@ class MediaController extends Controller
         return view('backend.media.add', $data);
     }
 
+
+   
+
     public function store(MediaRequest $request)
     {
+        function getGoogleDriveFileId($url) {
+            // Gunakan preg_match untuk mendapatkan ID file dari URL
+            if (preg_match('/\/file\/d\/([a-zA-Z0-9_-]+)\//', $url, $matches)) {
+                return $matches[1];  
+            }
+            return null;  
+        }
         try {
             $request->validated();
 
@@ -105,13 +115,15 @@ class MediaController extends Controller
                 $file->move(public_path('storage/file/'), $filename);
             }
             $slug = Str::slug($request->name);
+            $fileId = getGoogleDriveFileId($request->urldrive);
             Media::create([
                 'name' => $request->name,
                 'type' => $request->type == '' ? '' : $request->type,
                 'pdf' => $filename,
                 'url' => $request->url == '' ? '' : $request->url,
                 'usertype' => $request->usertype,
-                'slug' => $slug
+                'slug' => $slug,
+                'urldrive'=> $fileId,
             ]);
             return redirect()->route('backend.media')->with(['success' => 'Berhasil Menambahkan Media!']);
         } catch (Exception $e) {
@@ -137,6 +149,13 @@ class MediaController extends Controller
 
     public function update(MediaRequest $request, $id)
     {
+        function getGoogleDriveFileId($url) {
+            // Gunakan preg_match untuk mendapatkan ID file dari URL
+            if (preg_match('/\/file\/d\/([a-zA-Z0-9_-]+)\//', $url, $matches)) {
+                return $matches[1];  
+            }
+            return null;  
+        }
         try {
             $request->validated();
             $data = media::find($id);
@@ -149,6 +168,7 @@ class MediaController extends Controller
                     File::delete(public_path('storage/file/' . $data->pdf));
                 }
             }
+            $fileId = getGoogleDriveFileId($request->urldrive);
             $slug = Str::slug($request->name);
             $data->update([
                 'name' => $request->name,
@@ -156,7 +176,8 @@ class MediaController extends Controller
                 'pdf' => $filename,
                 'url' => $request->url == '' ? '' : $request->url,
                 'usertype' => $request->usertype,
-                'slug' => $slug
+                'slug' => $slug,
+                'urldrive'=> $fileId,
             ]);
             return redirect()->route('backend.media')->with(['success' => 'Berhasil Menambahkan Media!']);
         } catch (Exception $e) {
