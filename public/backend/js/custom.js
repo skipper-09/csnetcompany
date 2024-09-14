@@ -10,10 +10,11 @@ $("#dataTable").on("click", ".action", function () {
             title: "Apakah Kamu Yakin?",
             text: "Menghapus data ini bersifat permanen",
             icon: "warning",
-            buttons: true,
+            confirmButtonText: "Yes, delete it!",
+            showCancelButton: true,
             dangerMode: true,
         }).then((willDelete) => {
-            if (willDelete) {
+            if (willDelete.value) {
                 $.ajax({
                     url: route,
                     method: "DELETE",
