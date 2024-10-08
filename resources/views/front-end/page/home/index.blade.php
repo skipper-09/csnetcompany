@@ -101,7 +101,7 @@
 
 
     <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                                                        ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="lnk-1" class="pt-100 ct-02 content-section division">
         <div class="container">
 
@@ -489,7 +489,7 @@
 
 
     <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                                                                                        ============================================= -->
+                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
 
@@ -516,42 +516,45 @@
                     <div class="owl-carousel owl-theme reviews-1-wrapper">
 
 
-                        <!-- TESTIMONIAL #1 -->
-                        <div class="review-1 bg--white-100 block-shadow r-08">
+                        @if (isset($review) && is_array($review) && count($review) > 0)
+                            @foreach ($review as $item)
+                                <!-- TESTIMONIAL #1 -->
+                                <div class="review-1 bg--white-100 block-shadow r-08">
 
-                            <!-- Quote Icon -->
-                            <div class="review-ico ico-65"><span class="flaticon-quote"></span></div>
+                                    <!-- Quote Icon -->
+                                    <div class="review-ico ico-65"><span class="flaticon-quote"></span></div>
 
-                            <!-- Text -->
-                            <div class="review-txt">
+                                    <!-- Text -->
+                                    <div class="review-txt">
 
-                                <!-- Text -->
-                                <p>Layanan pelanggan yang responsif dan ramah. Masalah koneksi saya cepat teratasi. Paket
-                                    harga yang ditawarkan juga sangat kompetitif.
-                                </p>
+                                        <!-- Text -->
+                                        <p>{{ htmlspecialchars($item['review_text']) }}
+                                        </p>
 
-                                <!-- Author -->
-                                <div class="author-data clearfix">
+                                        <!-- Author -->
+                                        <div class="author-data clearfix">
 
-                                    <!-- Avatar -->
-                                    <div class="review-avatar">
-                                        <img src="{{ asset('front-end/images/review-author-1.jpg') }}"
-                                            alt="review-avatar">
-                                    </div>
+                                            <!-- Avatar -->
+                                            <div class="review-avatar">
+                                                <img src="{{ htmlspecialchars($item['author_image']) }}"
+                                                    alt="review-avatar" class="img-fluid">
+                                            </div>
 
-                                    <!-- Data -->
-                                    <div class="review-author">
-                                        <h6 class="s-18 w-700">Scott Boxer</h6>
-                                        <p class="p-sm">@scott_boxer</p>
-                                    </div>
+                                            <!-- Data -->
+                                            <div class="review-author">
+                                                <h6 class="s-18 w-700">{{ htmlspecialchars($item['author_title']) }}</h6>
+                                                <p class="p-sm">{{ htmlspecialchars($item['author_title']) }}</p>
+                                            </div>
 
-                                </div> <!-- End Author -->
+                                        </div> <!-- End Author -->
 
-                            </div> <!-- End Text -->
+                                    </div> <!-- End Text -->
 
-                        </div> <!-- END TESTIMONIAL #1 -->
+                                </div> <!-- END TESTIMONIAL #1 -->
+                            @endforeach
+                        @endif
 
-
+                        {{-- 
                         <!-- TESTIMONIAL #2 -->
                         <div class="review-1 bg--white-100 block-shadow r-08">
 
@@ -598,7 +601,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Kecepatan internet yang luar biasa! Streaming, gaming, dan download semua berjalan lancar
+                                <p>Kecepatan internet yang luar biasa! Streaming, gaming, dan download semua berjalan
+                                    lancar
                                     tanpa hambatan. Sangat puas dengan layanan ini.
                                 </p>
 
@@ -634,7 +638,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Harga yang ditawarkan sesuai dengan kualitas. Kecepatan internet sangat memuaskan, bahkan
+                                <p>Harga yang ditawarkan sesuai dengan kualitas. Kecepatan internet sangat memuaskan,
+                                    bahkan
                                     saat banyak perangkat terhubung.
                                 </p>
 
@@ -706,7 +711,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Teknisi instalasi sangat ramah dan membantu. Prosesnya cepat dan saya mendapatkan panduan
+                                <p>Teknisi instalasi sangat ramah dan membantu. Prosesnya cepat dan saya mendapatkan
+                                    panduan
                                     lengkap tentang cara menggunakan layanan.
                                 </p>
 
@@ -742,7 +748,8 @@
                             <div class="review-txt">
 
                                 <!-- Text -->
-                                <p>Sangat senang dengan layanan ini. Tidak ada gangguan sama sekali dan kecepatan internet
+                                <p>Sangat senang dengan layanan ini. Tidak ada gangguan sama sekali dan kecepatan
+                                    internet
                                     selalu sesuai dengan yang dijanjikan.
                                 </p>
 
@@ -801,7 +808,7 @@
 
                             </div> <!-- End Text -->
 
-                        </div> <!-- END TESTIMONIAL #8 -->
+                        </div> <!-- END TESTIMONIAL #8 --> --}}
 
 
                     </div>

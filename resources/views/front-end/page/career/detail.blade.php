@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- CAREER ROLE
-           ============================================= -->
+                                       ============================================= -->
     <section id="role-page" class="pb-80 inner-page-hero division">
         <div class="container">
             <div class="row justify-content-center">
