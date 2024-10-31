@@ -133,7 +133,7 @@
             </div>
             <div class="d-flex justify-content-center align-content-center w-full">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.2534680421713!2d113.67975527388964!3d-8.177200881965254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695ff742fd511%3A0xce77bf76306d86e6!2sIDNET!5e0!3m2!1sid!2sid!4v1718975737414!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.6227000588287!2d114.35253777463451!3d-8.240640791792543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd15bc57dc302cf%3A0xa94b68857d6e73f5!2sCSNET%20OFFICE!5e0!3m2!1sen!2sid!4v1730358788245!5m2!1sen!2sid"
                      height="600" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>

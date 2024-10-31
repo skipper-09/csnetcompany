@@ -12,7 +12,7 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/Intranet-amico.svg') }}" alt="hero-image">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Asset 1.png') }}" alt="hero-image">
                     </div>
                 </div>
 
@@ -22,13 +22,10 @@
                     <div class="hero-2-txt wow fadeInLeft">
 
                         <!-- Title -->
-                        <h2 class="s-56 w-700 color--white">Layanan Internet Tanpa Batas!</h2>
+                        <h2 class="s-56 w-700 color--white">Internet Cepat Tanpa Batas!</h2>
 
                         <!-- Text -->
-                        <p class="p-lg color--white">Ciptakan ekosistem digital bisnis bersama IDNET. Didukung dengan
-                            konektivitas yang
-                            handal dengan beragam pilihan Paket yang murah hingga layanan digital yang dapat membantu bisnis
-                            Anda agar makin eksis.
+                        <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari Csnet, dengan pilihan paket terjangkau yang dirancang untuk mendukung kemajuan bisnis Anda. Pastikan bisnis Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari Csnet.
                         </p>
                     </div>
                 </div> <!-- END HERO TEXT -->
@@ -74,173 +71,6 @@
 
 
 
-    {{-- <!-- CEK AREA
-                                                                                                                                                                                                                                                                                                                    ============================================= -->
-    <section id="features-2" class="py-50 features-section division">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-9">
-                    <div class="section-title mb-30">
-                        <!-- Title -->
-                        <h2 class="s-30 w-700 ">Temukan Idnet di Area Kamu</h2>
-                    </div>
-                    <form action="{{ route('coverage') }}" method="get">
-                        <div class="d-flex gap-2 justify-content-center">
-                            <input type="text" value="{{ request('query') }}" name="query"
-                                class="form-control w-50 rounded-5" placeholder="Kode Pos">
-                            <button class="btn btn-primary btn--theme rounded-5" type="submit">Cek Area</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> <!-- End container -->
-    </section> <!-- END CEK AREA-2 --> --}}
-
-    <!-- DIVIDER LINE -->
-    {{-- <hr class="divider"> --}}
-
-
-    <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
-    <section id="lnk-1" class="pt-100 ct-02 content-section division">
-        <div class="container">
-
-
-            <!-- SECTION CONTENT (ROW) -->
-            <div class="row d-flex align-items-center">
-
-
-                <!-- IMAGE BLOCK -->
-                <div class="col-md-6">
-                    <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="content-image">
-                    </div>
-                </div>
-
-
-                <!-- TEXT BLOCK -->
-                <div class="col-md-6">
-                    <div class="txt-block right-column wow fadeInLeft">
-
-                        <!-- Section ID -->
-                        <span class="section-id">BROADBAND</span>
-
-                        <!-- Title -->
-                        <h2 class="s-46 w-700">Internet Rumahan Yang Ramah di Kantong</h2>
-
-                        <!-- Text -->
-                        <p>Nikmati Akses Internet Cepat dan Terjangkau dengan Layanan Broadband Kami. Temukan Paket yang
-                            Sesuai dengan Kebutuhan Anda dan Nikmati Koneksi Tak Terbatas!
-                        </p>
-
-                        <a href="{{ route('packet.ritel') }}"><button
-                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
-
-
-                    </div> <!-- END SECTION CONTENT (ROW) -->
-
-
-                </div> <!-- End container -->
-    </section> <!-- END TEXT CONTENT -->
-
-
-
-
-
-
-
-
-
-
-    <!-- TEXT CONTENT============================================= -->
-    <section class="pt-100 ct-01 content-section division">
-        <div class="container">
-
-
-            <!-- SECTION CONTENT (ROW) -->
-            <div class="row d-flex align-items-center">
-
-
-                <!-- TEXT BLOCK -->
-                <div class="col-md-6 order-last order-md-2">
-                    <div class="txt-block left-column wow fadeInRight">
-
-                        <!-- Section ID -->
-                        <span class="section-id">INTERNET PLUS TV</span>
-
-                        <!-- Title -->
-                        <h2 class="s-44 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
-
-                        <!-- Text -->
-                        <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
-                            momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
-                            Anda terpenuhi.
-                        </p>
-                        <a href="{{ route('packet.internettv') }}"><button
-                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
-
-                    </div>
-                </div> <!-- END TEXT BLOCK -->
-
-
-                <!-- IMAGE BLOCK -->
-                <div class="col-md-6 order-first order-md-2">
-                    <div class="img-block right-column wow fadeInLeft">
-                        <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}" alt="content-image">
-                    </div>
-                </div>
-
-
-            </div> <!-- END SECTION CONTENT (ROW) -->
-
-
-        </div> <!-- End container -->
-    </section> <!-- END TEXT CONTENT -->
-
-    <!-- DIVIDER LINE -->
-
-    <!-- BOX CONTENT============================================= -->
-    <section class="pt-100 ws-wrapper content-section">
-        <div class="container">
-            <div class="bc-1-wrapper ">
-                <div class="section-overlay">
-                    <div class="row d-flex align-items-center">
-
-                        <!-- IMAGE BLOCK -->
-                        <div class="col-md-6">
-                            <div class="img-block left-column wow fadeInRight">
-                                <img class="img-fluid r-04" src="{{ asset('front-end/images/img-07.png') }}"
-                                    alt="content-image">
-                            </div>
-                        </div>
-                        <!-- TEXT BLOCK -->
-                        <div class="col-md-6">
-                            <div class="txt-block right-column wow fadeInLeft">
-
-                                <!-- Section ID -->
-                                <span class="section-id">DEDICATED</span>
-
-                                <!-- Title -->
-                                <h2 class="s-46 w-700">Internet Dedicated untuk Bisnis Anda</h2>
-
-                                <!-- Text -->
-                                <p>Dengan internet dedicated, Anda mendapatkan koneksi yang stabil dan terjamin. Layanan ini
-                                    dirancang khusus untuk memberikan performa terbaik tanpa gangguan, memastikan bisnis
-                                    Anda selalu terhubung.
-                                </p>
-
-                                <a href="{{ route('packet.dedicated') }}"><button
-                                        class="btn btn-primary btn--theme">Selengkapnya</button></a>
-
-                            </div>
-                        </div> <!-- END TEXT BLOCK -->
-                    </div> <!-- End row -->
-                </div> <!-- End section overlay -->
-            </div> <!-- End content wrapper -->
-        </div> <!-- End container -->
-    </section> <!-- END BOX CONTENT -->
-
-
     <!-- FEATURES-============================================= -->
     <section id="features-11" class="pt-100 features-section division">
         <div class="container">
@@ -252,7 +82,7 @@
                     <div class="section-title mb-70">
 
                         <!-- Title -->
-                        <h2 class="s-40 w-700">Kenapa Harus Memilih IDNET?</h2>
+                        <h2 class="s-40 w-700">Kenapa Harus Berlangganan Csnet?</h2>
 
                         <!-- Text -->
                         {{-- <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p> --}}
@@ -278,6 +108,7 @@
 
                                         <!-- Vector Icon -->
                                         <span class="flaticon-graphics"></span>
+                                      
 
                                         <!-- Shape -->
                                         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -486,6 +317,175 @@
 
         </div> <!-- End container -->
     </section> <!-- END FEATURES-11 -->
+
+    {{-- <!-- CEK AREA
+                                                                                                                                                                                                                                                                                                                    ============================================= -->
+    <section id="features-2" class="py-50 features-section division">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-9">
+                    <div class="section-title mb-30">
+                        <!-- Title -->
+                        <h2 class="s-30 w-700 ">Temukan Idnet di Area Kamu</h2>
+                    </div>
+                    <form action="{{ route('coverage') }}" method="get">
+                        <div class="d-flex gap-2 justify-content-center">
+                            <input type="text" value="{{ request('query') }}" name="query"
+                                class="form-control w-50 rounded-5" placeholder="Kode Pos">
+                            <button class="btn btn-primary btn--theme rounded-5" type="submit">Cek Area</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- End container -->
+    </section> <!-- END CEK AREA-2 --> --}}
+
+    <!-- DIVIDER LINE -->
+    {{-- <hr class="divider"> --}}
+
+
+    <!-- TEXT CONTENT
+                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
+    <section id="lnk-1" class="pt-100 ct-02 content-section division">
+        <div class="container">
+
+
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+
+
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6">
+                    <div class="img-block left-column wow fadeInRight">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="content-image">
+                    </div>
+                </div>
+
+
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6">
+                    <div class="txt-block right-column wow fadeInLeft">
+
+                        <!-- Section ID -->
+                        <span class="section-id">BROADBAND</span>
+
+                        <!-- Title -->
+                        <h2 class="s-46 w-700">Internet Rumahan Yang Ramah di Kantong</h2>
+
+                        <!-- Text -->
+                        <p>Nikmati Akses Internet Cepat dan Terjangkau dengan Layanan Broadband Kami. Temukan Paket yang
+                            Sesuai dengan Kebutuhan Anda dan Nikmati Koneksi Tak Terbatas!
+                        </p>
+
+                        <a href="{{ route('packet.ritel') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+
+
+                    </div> <!-- END SECTION CONTENT (ROW) -->
+
+
+                </div> <!-- End container -->
+    </section> <!-- END TEXT CONTENT -->
+
+
+
+
+
+
+
+
+
+
+    <!-- TEXT CONTENT============================================= -->
+    <section class="pt-100 ct-01 content-section division">
+        <div class="container">
+
+
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+
+
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6 order-last order-md-2">
+                    <div class="txt-block left-column wow fadeInRight">
+
+                        <!-- Section ID -->
+                        <span class="section-id">INTERNET PLUS TV</span>
+
+                        <!-- Title -->
+                        <h2 class="s-44 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
+
+                        <!-- Text -->
+                        <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
+                            momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
+                            Anda terpenuhi.
+                        </p>
+                        <a href="{{ route('packet.internettv') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+
+
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6 order-first order-md-2">
+                    <div class="img-block right-column wow fadeInLeft">
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}" alt="content-image">
+                    </div>
+                </div>
+
+
+            </div> <!-- END SECTION CONTENT (ROW) -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END TEXT CONTENT -->
+
+    <!-- DIVIDER LINE -->
+
+    <!-- BOX CONTENT============================================= -->
+    <section class="pt-100 ws-wrapper content-section">
+        <div class="container">
+            <div class="bc-1-wrapper ">
+                <div class="section-overlay">
+                    <div class="row d-flex align-items-center">
+
+                        <!-- IMAGE BLOCK -->
+                        <div class="col-md-6">
+                            <div class="img-block left-column wow fadeInRight">
+                                <img class="img-fluid r-04" src="{{ asset('front-end/images/img-07.png') }}"
+                                    alt="content-image">
+                            </div>
+                        </div>
+                        <!-- TEXT BLOCK -->
+                        <div class="col-md-6">
+                            <div class="txt-block right-column wow fadeInLeft">
+
+                                <!-- Section ID -->
+                                <span class="section-id">DEDICATED</span>
+
+                                <!-- Title -->
+                                <h2 class="s-46 w-700">Internet Dedicated untuk Bisnis Anda</h2>
+
+                                <!-- Text -->
+                                <p>Dengan internet dedicated, Anda mendapatkan koneksi yang stabil dan terjamin. Layanan ini
+                                    dirancang khusus untuk memberikan performa terbaik tanpa gangguan, memastikan bisnis
+                                    Anda selalu terhubung.
+                                </p>
+
+                                <a href="{{ route('packet.dedicated') }}"><button
+                                        class="btn btn-primary btn--theme">Selengkapnya</button></a>
+
+                            </div>
+                        </div> <!-- END TEXT BLOCK -->
+                    </div> <!-- End row -->
+                </div> <!-- End section overlay -->
+            </div> <!-- End content wrapper -->
+        </div> <!-- End container -->
+    </section> <!-- END BOX CONTENT -->
+
+
+
 
 
     <!-- TESTIMONIALS-1

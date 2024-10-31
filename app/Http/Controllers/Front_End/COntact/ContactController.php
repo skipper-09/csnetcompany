@@ -11,6 +11,7 @@ class ContactController extends Controller
     {
         $data = [
             'page_name' => 'Hubungi Kami',
+            'navlight' => true,
         ];
         return view('front-end.page.contact.index', $data);
     }

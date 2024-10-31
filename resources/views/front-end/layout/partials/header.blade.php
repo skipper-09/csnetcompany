@@ -65,7 +65,7 @@
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
                             </li>
-                            {{--
+                            
                         <!-- MEGAMENU -->
                         
 
@@ -210,7 +210,7 @@
                                 </div> <!-- End container -->
                             </div> <!-- End wsmegamenu -->
                         </li> <!-- END MEGAMENU --> --}}
-
+                        
 
                             <!-- SIMPLE NAVIGATION LINK -->
                             <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}"
