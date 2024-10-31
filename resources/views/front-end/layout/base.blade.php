@@ -13,21 +13,21 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="idnet">
+    <meta name="author" content="csnet">
     <meta name="description" content="Internet Service Provider Tercepat dan Unlimited">
-    <meta name="keywords" content="internet, isp, idnet, internet murah, internet unlimited">
+    <meta name="keywords" content="internet, isp, csnet, internet murah, internet unlimited">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- SITE TITLE -->
-    <title>@yield('title') - IDNET</title>
+    <title>@yield('title') - CSNET Internet Service Provider</title>
 
 
 
 
     <!-- FAVICON AND TOUCH ICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-96x96.png') }}">
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">

@@ -12,7 +12,7 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/hero-img2.png') }}" alt="hero-image">
+                        <img class="img-fluid" src="{{ asset('front-end/images/Intranet-amico.svg') }}" alt="hero-image">
                     </div>
                 </div>
 

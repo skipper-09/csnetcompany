@@ -10,7 +10,7 @@
           <!-- Logo -->
           <div class="app-brand justify-content-center">
             <a href="{{ route('home') }}" class="app-brand-link gap-2">
-              <img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="logo" height="50">
+              <img src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo" height="50">
             </a>
           </div>
           <!-- /Logo -->

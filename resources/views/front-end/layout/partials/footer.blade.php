@@ -9,19 +9,19 @@
             <!-- FOOTER LOGO -->
             <div class="col-xl-3">
                 <div class="footer-info">
-                    <img class="footer-logo" src="{{ asset('front-end/images/logo-white-idnet.png') }}" alt="footer-logo">
+                    <img class="footer-logo" src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="footer-logo">
                 </div>
                 <!-- Social Links -->
                 <!-- Title -->
                 <h6 class="s-17 w-700 text-white">Sosial Media</h6>
                 <ul class="footer-socials ico-25 text-center clearfix">
-                    <li><a href="https://www.facebook.com/idnetjember" target="_blank"><img class="w-200"
+                    <li><a href="https://www.facebook.com/CSNetbwi" target="_blank"><img class="w-200"
                                 src="{{ asset('front-end/images/facebook.png') }}"></a>
                     </li>
-                    <li><a href="https://www.instagram.com/idnet.official" target="_blank"><img class="w-200"
+                    <li><a href="https://www.instagram.com/csnet_id/" target="_blank"><img class="w-200"
                                 src="{{ asset('front-end/images/instagram.png') }}"></a>
                     </li>
-                    <li><a href="https://www.tiktok.com/@idnet.official" target="_blank"><img
+                    <li><a href="https://www.tiktok.com/@csnet_official" target="_blank"><img
                                 src="{{ asset('front-end/images/tiktok.png') }}"></a></li>
                 </ul>
             </div>
@@ -124,26 +124,25 @@
                     <!-- Title -->
                     <h6 class="s-17 w-700 text-white">Hubungi Kami</h6>
                     <p class="s-15">
-                        Untuk informasi lebih lanjut mengenai ID Net silakan hubungi kami di:
+                        Untuk informasi lebih lanjut mengenai Cs Net silakan hubungi kami di:
                     </p>
                     <!-- Mail Link -->
                     <p class="footer-mail-link ico-25">
                     <div class="d-flex ico-25 align-content-center align-items-center  gap-1">
                         <span class="flaticon-email"></span>
-                        <a href="mailto:admin@idnet.id">
-                            <p class="s-15 text-white">admin@idnet.id</p>
+                        <a href="mailto:admin@csnet.id">
+                            <p class="s-15 text-white">admin@csnet.id</p>
                         </a>
                     </div>
                     <div class="d-flex ico-25 align-content-center align-items-center  gap-1">
                         <span class="flaticon-whatsapp text-white"></span>
-                        <a href="https://wa.me/6282116879977?text=Halo">
-                            <p class="s-15 text-white">6282116879977</p>
+                        <a href="https://wa.me/6282111777179?text=Halo">
+                            <p class="s-15 text-white">6282111777179</p>
                         </a>
                     </div>
                     <div class="d-flex ico-25 align-content-center  gap-1">
                         <span class="flaticon-map"></span>
-                        <p class="s-15">Ruko Gajah Mada Square, Jl. Gajah Mada.187 Blok A 21, Kaliwates Kidul,
-                            Kaliwates, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68121 </p>
+                        <p class="s-15">jln. Letjen S. Parman No. 58, Pakis, Banyuwangi 68418</p>
                     </div>
                     </p>
 

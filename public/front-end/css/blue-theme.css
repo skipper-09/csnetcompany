@@ -1024,6 +1024,8 @@ section,
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+   min-height: fit-content;
+   
 }
 
 .bg--01 {
@@ -1061,7 +1063,7 @@ section,
         url(../images/business.jpg) no-repeat center center/cover;
 }
 .bg--10 {
-    background-image: url(../images/bg-10.png);
+    background-image: url(../images/abstract.jpg);
 }
 .bg--ritel {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
@@ -10302,7 +10304,7 @@ span.release-date span {
 
 .footer {
     padding-bottom: 50px;
-    background-color: #25316d;
+    background-color: #0478BF;
     color: white;
 }
 
@@ -12788,8 +12790,8 @@ body.theme--dark {
 
 .btn--theme {
     color: #fff !important;
-    border-color: #25316d !important;
-    background-color: #25316d !important;
+    border-color: #0478BF !important;
+    background-color: #0478BF !important;
 }
 
 .hover--theme:hover,
