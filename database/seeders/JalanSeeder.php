@@ -14,7 +14,7 @@ class JalanSeeder extends Seeder
     public function run(): void
     {
         Jalan::insert([
-            'name' => 'Perum Patrang',
+            'name' => 'Pakis',
             'kelurahan_id' => 1
         ]);
     }

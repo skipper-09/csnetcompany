@@ -14,7 +14,7 @@ class KelurahanSeeder extends Seeder
     public function run(): void
     {
         Kelurahan::insert([
-            'name' => 'Patrang',
+            'name' => 'Sumberrejo',
             'kecamatan_id' => 1
         ]);
     }

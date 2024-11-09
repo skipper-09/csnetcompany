@@ -14,7 +14,7 @@ class KotaSeeder extends Seeder
     public function run(): void
     {
         Kota::insert([
-            'name' => 'Jember'
+            'name' => 'Banyuwangi'
         ]);
     }
 }

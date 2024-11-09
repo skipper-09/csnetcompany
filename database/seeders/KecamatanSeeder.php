@@ -14,7 +14,7 @@ class KecamatanSeeder extends Seeder
     public function run(): void
     {
         Kecamatan::insert([
-            'name' => 'Patrang',
+            'name' => 'Banyuwangi',
             'kota_id' => 1
         ]);
     }
