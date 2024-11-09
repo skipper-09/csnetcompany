@@ -4,7 +4,7 @@
     <div class="app-brand demo">
         <a href="{{ route('dashboard') }}" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <img src="{{ asset('front-end/images/logo-idnet.webp') }}" alt="logo" height="50">
+                <img src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo" height="50">
             </span>
         </a>
 

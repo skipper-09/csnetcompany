@@ -3,40 +3,31 @@
 @section('title', $page_name)
 
 @section('content')
-    <!-- HERO-2                                                                       ============================================= -->
     <section id="hero-2" class="bg--10 hero-section">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
-
-
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-2-img wow fadeInRight">
                         <img class="img-fluid" src="{{ asset('front-end/images/Asset 1.png') }}" alt="hero-image">
                     </div>
                 </div>
-
-
                 <!-- HERO TEXT -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="hero-2-txt wow fadeInLeft">
-
                         <!-- Title -->
                         <h2 class="s-56 w-700 color--white">Internet Cepat Tanpa Batas!</h2>
-
                         <!-- Text -->
-                        <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari Csnet, dengan pilihan paket terjangkau yang dirancang untuk mendukung kemajuan bisnis Anda. Pastikan bisnis Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari Csnet.
+                        <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari Csnet, dengan
+                            pilihan paket terjangkau yang dirancang untuk mendukung kemajuan bisnis Anda. Pastikan bisnis
+                            Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari Csnet.
                         </p>
                     </div>
-                </div> <!-- END HERO TEXT -->
-
-
+                </div>
+                <!-- END HERO TEXT -->
             </div> <!-- End row -->
         </div> <!-- End container -->
     </section> <!-- END HERO-2 -->
-
-
-
 
     <!-- BRANDS-1                                                                     ============================================= -->
     <div id="brands-carousel-5" class=" py-50 brands-section">
@@ -69,24 +60,15 @@
         </div> <!-- End container -->
     </div> <!-- END BRANDS-1 -->
 
-
-
     <!-- FEATURES-============================================= -->
-    <section id="features-11" class="pt-100 features-section division">
+    {{-- <section id="features-11" class="pt-100 features-section division">
         <div class="container">
-
-
             <!-- SECTION TITLE -->
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-9">
                     <div class="section-title mb-70">
-
                         <!-- Title -->
                         <h2 class="s-40 w-700">Kenapa Harus Berlangganan Csnet?</h2>
-
-                        <!-- Text -->
-                        {{-- <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p> --}}
-
                     </div>
                 </div>
             </div>
@@ -95,8 +77,6 @@
             <!-- FEATURES-11 WRAPPER -->
             <div class="fbox-wrapper">
                 <div class="row row-cols-1 row-cols-md-2 rows-3">
-
-
                     <!-- FEATURE BOX #1 -->
                     <div class="col">
                         <div class="fbox-11 fb-1 wow fadeInUp">
@@ -108,7 +88,7 @@
 
                                         <!-- Vector Icon -->
                                         <span class="flaticon-graphics"></span>
-                                      
+
 
                                         <!-- Shape -->
                                         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -316,7 +296,201 @@
 
 
         </div> <!-- End container -->
-    </section> <!-- END FEATURES-11 -->
+    </section> --}}
+    <!-- END FEATURES-11 -->
+
+    <section id="features-12" class="shape--bg shape--white-500 pt-50 features-section division">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <!-- TEXT BLOCK -->	
+                <div class="col-md-5">
+                    <div class="txt-block left-column wow fadeInRight">
+                        <!-- Title -->	
+                        <h2 class="s-40 w-700">Kenapa Harus Berlangganan Csnet?</h2>
+                        <!-- Text -->	
+                        <p>Kami menghadirkan solusi internet pintar dengan hasil yang nyata dan instan. Nikmati pengalaman internet yang maksimal dengan teknologi terkini dan layanan terbaik dari Csnet.</p>
+                        <!-- CONTENT BOX #1 -->
+                        <div class="cbox-1 ico-15">
+
+                             <div class="ico-wrap color--theme">
+                                 <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
+                             </div>
+
+                            <div class="cbox-1-txt">
+                                <p>
+                                    Kecepatan Internet Tercepat dengan 100% Fiber Optic
+                                </p>
+                            </div>
+                        </div>
+                        <!-- CONTENT BOX #2 -->
+                        <div class="cbox-1 ico-15">
+
+                             <div class="ico-wrap color--theme">
+                                 <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
+                             </div>
+
+                            <div class="cbox-1-txt">
+                                <p>
+                                    Layanan Pelanggan 24/7
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- CONTENT BOX #3 -->
+                        <div class="cbox-1 ico-15">
+
+                             <div class="ico-wrap color--theme">
+                                 <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
+                             </div>
+
+                            <div class="cbox-1-txt">
+                                <p class="mb-0">Harga Terjangkau, Kualitas Terbaik</p>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>	<!-- END TEXT BLOCK -->	
+
+
+                <!-- FEATURES-12 WRAPPER -->
+                <div class="col-md-7">
+                    <div class="fbox-12-wrapper wow fadeInLeft">	
+                        <div class="row">
+
+
+                             <div class="col-md-6">
+
+                                 <!-- FEATURE BOX #1 -->
+                                 <div id="fb-12-1" class="fbox-12 bg--white-100 block-shadow r-12 mb-30">
+
+                                    <!-- Icon -->
+                                    <div class="fbox-ico ico-50">
+                                        <div class="shape-ico color--theme">
+
+                                            <!-- Vector Icon -->
+                                            <span class="flaticon-trophy"></span>
+
+                                            <!-- Shape -->
+                                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                            </svg>
+
+                                        </div>
+                                    </div>	<!-- End Icon -->
+
+                                    <!-- Text -->
+                                    <div class="fbox-txt">
+                                        <h5 class="s-19 w-700">
+                                            Koneksi Internet yang Stabil dan Handal
+                                        </h5>
+                                        <p>
+                                            Dengan teknologi fiber optic 100%, kami menjamin koneksi internet yang stabil dan tanpa gangguan, bahkan saat penggunaan intensif.
+                                        </p>
+                                    </div>
+
+                                 </div>
+
+                                 <!-- FEATURE BOX #2 -->
+                                 <div id="fb-12-2" class="fbox-12 bg--white-100 block-shadow r-12">
+
+                                    <!-- Icon -->
+                                    <div class="fbox-ico ico-50">
+                                        <div class="shape-ico color--theme">
+
+                                            <!-- Vector Icon -->
+                                            <span class="flaticon-global"></span>
+
+                                            <!-- Shape -->
+                                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                            </svg>
+
+                                        </div>
+                                    </div>	<!-- End Icon -->
+
+                                    <!-- Text -->
+                                    <div class="fbox-txt">
+                                        <h5 class="s-19 w-700">Jaringan yang Ramah Lingkungan</h5>
+                                        <p>Jaringan fiber optic Csnet lebih cepat, efisien, dan ramah lingkungan, menggunakan bahan hemat energi untuk mendukung keberlanjutan.</p>
+                                    </div>
+
+                                 </div>
+
+
+                             </div>
+
+
+                             <div class="col-md-6">
+
+
+                                 <!-- FEATURE BOX #3 -->
+                                 <div id="fb-12-3" class="fbox-12 bg--white-100 block-shadow r-12 mb-30">
+
+                                     <!-- Icon -->
+                                    <div class="fbox-ico ico-50">
+                                        <div class="shape-ico color--theme">
+
+                                            <!-- Vector Icon -->
+                                            <span class="flaticon-iteration"></span>
+
+                                            <!-- Shape -->
+                                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                            </svg>
+
+                                        </div>
+                                    </div>	<!-- End Icon -->
+
+                                    <!-- Text -->
+                                    <div class="fbox-txt">
+                                        <h5 class="s-19 w-700">Komitmen Terhadap Kepuasan Pelanggan</h5>
+                                        <p>
+                                            Dengan jaringan 100% fiber optic yang stabil, kami memastikan layanan yang memenuhi dan melebihi harapan Anda.
+                                        </p>
+                                    </div>
+
+                                 </div>
+
+                                 <!-- FEATURE BOX #4 -->
+                                 <div id="fb-12-4" class="fbox-12 bg--white-100 block-shadow r-12">
+
+                                    <!-- Icon -->
+                                    <div class="fbox-ico ico-50">
+                                        <div class="shape-ico color--theme">
+
+                                            <!-- Vector Icon -->
+                                            <span class="flaticon-search-engine-1"></span>
+
+                                            <!-- Shape -->
+                                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                            </svg>
+
+                                        </div>
+                                    </div>	<!-- End Icon -->
+
+                                    <!-- Text -->
+                                    <div class="fbox-txt">
+                                        <h5 class="s-19 w-700">Tim Teknisi Handal</h5>
+                                        <p>Tim teknisi kami yang terlatih dan berpengalaman siap memberikan solusi terbaik untuk setiap masalah teknis Anda.</p>
+                                    </div>
+
+                                 </div>
+
+
+                             </div>
+
+
+                         </div>
+                    </div>	<!-- End row -->
+                </div>	<!-- END FEATURES-12 WRAPPER -->
+
+
+            </div>    <!-- End row -->
+        </div>     <!-- End container -->
+    </section>	<!-- END FEATURES-12 -->
 
     {{-- <!-- CEK AREA
                                                                                                                                                                                                                                                                                                                     ============================================= -->
@@ -343,78 +517,18 @@
     <!-- DIVIDER LINE -->
     {{-- <hr class="divider"> --}}
 
-
-    <!-- TEXT CONTENT
-                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
-    <section id="lnk-1" class="pt-100 ct-02 content-section division">
-        <div class="container">
-
-
-            <!-- SECTION CONTENT (ROW) -->
-            <div class="row d-flex align-items-center">
-
-
-                <!-- IMAGE BLOCK -->
-                <div class="col-md-6">
-                    <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/Group 832.png') }}" alt="content-image">
-                    </div>
-                </div>
-
-
-                <!-- TEXT BLOCK -->
-                <div class="col-md-6">
-                    <div class="txt-block right-column wow fadeInLeft">
-
-                        <!-- Section ID -->
-                        <span class="section-id">BROADBAND</span>
-
-                        <!-- Title -->
-                        <h2 class="s-46 w-700">Internet Rumahan Yang Ramah di Kantong</h2>
-
-                        <!-- Text -->
-                        <p>Nikmati Akses Internet Cepat dan Terjangkau dengan Layanan Broadband Kami. Temukan Paket yang
-                            Sesuai dengan Kebutuhan Anda dan Nikmati Koneksi Tak Terbatas!
-                        </p>
-
-                        <a href="{{ route('packet.ritel') }}"><button
-                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
-
-
-                    </div> <!-- END SECTION CONTENT (ROW) -->
-
-
-                </div> <!-- End container -->
-    </section> <!-- END TEXT CONTENT -->
-
-
-
-
-
-
-
-
-
-
     <!-- TEXT CONTENT============================================= -->
-    <section class="pt-100 ct-01 content-section division">
+    {{-- <section class="pt-100 ct-01 content-section division">
         <div class="container">
-
-
             <!-- SECTION CONTENT (ROW) -->
             <div class="row d-flex align-items-center">
-
-
                 <!-- TEXT BLOCK -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="txt-block left-column wow fadeInRight">
-
                         <!-- Section ID -->
                         <span class="section-id">INTERNET PLUS TV</span>
-
                         <!-- Title -->
                         <h2 class="s-44 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
-
                         <!-- Text -->
                         <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
                             momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
@@ -422,29 +536,107 @@
                         </p>
                         <a href="{{ route('packet.internettv') }}"><button
                                 class="btn btn-primary btn--theme">Selengkapnya</button></a>
-
                     </div>
                 </div> <!-- END TEXT BLOCK -->
-
-
                 <!-- IMAGE BLOCK -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="img-block right-column wow fadeInLeft">
                         <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}" alt="content-image">
                     </div>
                 </div>
-
-
             </div> <!-- END SECTION CONTENT (ROW) -->
+        </div> <!-- End container -->
+    </section> <!-- END TEXT CONTENT --> --}}
 
-
+    <section id="lnk-1" class="py-100 ct-01 content-section division">
+        <div class="container">
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6 order-last order-md-2">
+                    <div class="txt-block left-column wow fadeInRight">
+                        <!-- Section ID -->
+                        <span class="section-id">BROADBAND</span>
+                        <!-- Title -->
+                        <h2 class="s-44 w-700">Internet Rumahan Yang Ramah di Kantong</h2>
+                        <!-- Text -->
+                        <p>Nikmati Akses Internet Cepat dan Terjangkau dengan Layanan Broadband Kami. Temukan Paket yang
+                            Sesuai dengan Kebutuhan Anda dan Nikmati Koneksi Tak Terbatas!
+                        </p>
+                        <a href="{{ route('packet.ritel') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6 order-first order-md-2">
+                    <div class="img-block right-column wow fadeInLeft">
+                        <img class="img-fluid r-04" src="{{ asset('front-end/images/sample.jpg') }}" alt="content-image">
+                    </div>
+                </div>
+            </div> <!-- END SECTION CONTENT (ROW) -->
         </div> <!-- End container -->
     </section> <!-- END TEXT CONTENT -->
 
-    <!-- DIVIDER LINE -->
+    {{-- <section class="pt-100 ct-01 content-section division">
+        <div class="container">
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6 order-last order-md-2">
+                    <div class="txt-block left-column wow fadeInRight">
+                        <!-- Section ID -->
+                        <span class="section-id">INTERNET PLUS TV</span>
+                        <!-- Title -->
+                        <h2 class="s-44 w-700">Solusi Terbaik untuk Keluarga Modern</h2>
+                        <!-- Text -->
+                        <p>Gabungkan koneksi internet cepat dan berbagai saluran TV menarik dalam satu paket hemat. Nikmati
+                            momen bersama keluarga dengan layanan yang memastikan semua kebutuhan hiburan dan konektivitas
+                            Anda terpenuhi.
+                        </p>
+                        <a href="{{ route('packet.internettv') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6 order-first order-md-2">
+                    <div class="img-block right-column wow fadeInLeft">
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-tv.png') }}" alt="content-image">
+                    </div>
+                </div>
+            </div> <!-- END SECTION CONTENT (ROW) -->
+        </div> <!-- End container -->
+    </section> --}}
+
+    <!-- TEXT CONTENT============================================= -->
+    <section class="py-100 ct-02 content-section division">
+        <div class="container">
+            <!-- SECTION CONTENT (ROW) -->
+            <div class="row d-flex align-items-center">
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6">
+                    <div class="img-block left-column wow fadeInRight">
+                        <img class="img-fluid" src="{{ asset('front-end/images/sample 2.png') }}" alt="content-image">
+                    </div>
+                </div>
+                <!-- TEXT BLOCK -->
+                <div class="col-md-6">
+                    <div class="txt-block right-column wow fadeInLeft">
+                        <!-- Section ID -->
+                        <span class="section-id">INTERNET PLUS TV</span>
+                        <!-- Title -->
+                        <h2 class="s-46 w-700">Paket Lengkap untuk Keluarga Masa Kini</h2>
+                        <!-- Text -->
+                        <p>
+                            Gabungkan koneksi internet super cepat dan berbagai saluran TV seru dalam satu paket hemat. Nikmati waktu berkualitas bersama keluarga dengan layanan yang memuaskan semua kebutuhan hiburan dan konektivitas Anda.
+                        </p>
+                        <a href="{{ route('packet.internettv') }}"><button
+                                class="btn btn-primary btn--theme">Selengkapnya</button></a>
+                    </div> <!-- END SECTION CONTENT (ROW) -->
+                </div> <!-- End container -->
+    </section> <!-- END TEXT CONTENT -->
 
     <!-- BOX CONTENT============================================= -->
-    <section class="pt-100 ws-wrapper content-section">
+    {{-- <section class="pt-100 ws-wrapper content-section">
         <div class="container">
             <div class="bc-1-wrapper ">
                 <div class="section-overlay">
@@ -482,74 +674,95 @@
                 </div> <!-- End section overlay -->
             </div> <!-- End content wrapper -->
         </div> <!-- End container -->
-    </section> <!-- END BOX CONTENT -->
+    </section> <!-- END BOX CONTENT --> --}}
 
+    <section class="py-100 ct-03 content-section division">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <!-- TEXT BLOCK -->	
+                <div class="col-md-6 col-lg-5 order-last order-md-2">
+                    <div class="txt-block left-column wow fadeInRight">
+                        <!-- Section ID -->    
+                        <span class="section-id">DEDICATED</span>
+                
+                        <!-- Title -->    
+                        <h2 class="s-46 w-700">Internet Dedicated untuk Bisnis Anda</h2>
+                
+                        <!-- Text -->    
+                        <p>
+                            Dengan internet dedicated, Anda mendapatkan koneksi stabil dan handal yang dirancang khusus untuk bisnis, memastikan performa optimal tanpa gangguan.
+                        </p>
+                
+                        <!-- List -->    
+                        <ul class="simple-list">
+                            <li class="list-item">
+                                <p>Koneksi internet yang terjamin stabil, mendukung kelancaran operasional bisnis Anda sepanjang waktu.</p>
+                            </li>
+                            <li class="list-item">
+                                <p class="mb-0">Layanan prioritas tinggi yang memberikan kecepatan maksimal tanpa gangguan.</p>
+                            </li>
+                        </ul>
+                
+                        <a href="{{ route('packet.dedicated') }}">
+                            <button class="btn btn-primary btn--theme">
+                                Selengkapnya
+                            </button>
+                        </a>
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+                <!-- IMAGE BLOCK -->
+                <div class="col-md-6 col-lg-7 order-first order-md-2">
+                    <div class="img-block right-column wow fadeInLeft">
+                        <img class="img-fluid" src="{{ asset('front-end/images/img-14.png') }}" alt="content-image">
+                    </div>
+                </div>
+            </div>    <!-- End row -->
+        </div>	   <!-- End container -->
+    </section>
 
-
-
-
-    <!-- TESTIMONIALS-1
-                                                                                                                                                                                                                                                                                                                                                                                                ============================================= -->
+    <!-- TESTIMONIALS-1                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
     <section id="reviews-1" class="pt-100 shape--06 shape--gr-whitesmoke reviews-section">
         <div class="container">
-
-
             <!-- SECTION TITLE -->
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-9">
                     <div class="section-title mb-70">
-
                         <!-- Title -->
                         <h2 class="s-50 w-700">Apa Kata Mereka?</h2>
-
                         <!-- Text -->
                         <p class="s-21 color--grey">Pengalaman Mereka dengan Layanan Internet Kami!</p>
-
                     </div>
                 </div>
             </div>
-
-
             <!-- TESTIMONIALS CONTENT -->
             <div class="row">
                 <div class="col">
                     <div class="owl-carousel owl-theme reviews-1-wrapper">
-
-
                         @if (isset($review) && is_array($review) && count($review) > 0)
                             @foreach ($review as $item)
                                 <!-- TESTIMONIAL #1 -->
                                 <div class="review-1 bg--white-100 block-shadow r-08">
-
                                     <!-- Quote Icon -->
                                     <div class="review-ico ico-65"><span class="flaticon-quote"></span></div>
-
                                     <!-- Text -->
                                     <div class="review-txt">
-
                                         <!-- Text -->
                                         <p>{{ htmlspecialchars($item['review_text']) }}
                                         </p>
-
                                         <!-- Author -->
                                         <div class="author-data clearfix">
-
                                             <!-- Avatar -->
                                             <div class="review-avatar">
                                                 <img src="{{ htmlspecialchars($item['author_image']) }}"
                                                     alt="review-avatar" class="img-fluid">
                                             </div>
-
                                             <!-- Data -->
                                             <div class="review-author">
                                                 <h6 class="s-18 w-700">{{ htmlspecialchars($item['author_title']) }}</h6>
                                                 <p class="p-sm">{{ htmlspecialchars($item['author_title']) }}</p>
                                             </div>
-
                                         </div> <!-- End Author -->
-
                                     </div> <!-- End Text -->
-
                                 </div> <!-- END TESTIMONIAL #1 -->
                             @endforeach
                         @endif
@@ -819,9 +1032,34 @@
         </div> <!-- End container -->
     </section> <!-- END TESTIMONIALS-1 -->
 
+    <section id="banner-3" class="pt-100 banner-section">
+        <div class="container">
+            <!-- BANNER-3 WRAPPER -->
+            <div class="banner-3-wrapper bg--05 bg--scroll r-16">
+                <div class="banner-overlay">
+                    <div class="row">
+                        <!-- BANNER-3 TEXT -->
+                        <div class="col">
+                            <div class="banner-3-txt color--white">
+                                <!-- Title -->	
+                                <h2 class="s-48 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
 
+                                <!-- Text -->
+                                <p class="p-xl">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
+                                    memungkinakan anda untuk memperluas jangkauam bisnis muncul sebagai pemenang ditengah
+                                    persaingan bisnis yang ketat.</p>
 
-    <section id="banner-12" class="banner-section pt-30">
+                                <!-- Button -->
+                                <a href="https://wa.me/6282116879977?text=Halo" class="btn r-04 btn--tra-white hover--white">Hubungi Kami!</a>
+                            </div>
+                        </div>	<!-- END BANNER-3 TEXT -->
+                    </div>   <!-- End row -->	
+                </div>   <!-- End banner overlay -->	
+            </div>    <!-- END BANNER-3 WRAPPER -->
+        </div>     <!-- End container -->	
+    </section>	
+
+    {{-- <section id="banner-12" class="banner-section pt-30">
         <div class="container">
             <!-- BANNER-12 WRAPPER -->
             <div class="banner-12-wrapper bg--03 bg--scroll r-16 ">
@@ -861,58 +1099,41 @@
 
 
         </div> <!-- End container -->
-    </section> <!-- END BANNER-12 -->
-
+    </section> <!-- END BANNER-12 --> --}}
 
     <!-- FAQs-2-->
-    <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
+    <section id="faqs-2" class="mt-100 pb-100 gr--whitesmoke inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11 col-xl-10">
-
-
                     <!-- INNER PAGE TITLE -->
                     <div class="inner-page-title">
                         <h2 class="s-46 w-700">Tanya Jawab</h2>
                         <p class="p-lg">Temukan jawaban untuk pertanyaan-pertanyaan yang sering diajukan oleh pelanggan
                             lainnya</p>
                     </div>
-
-
                     <!-- QUESTIONS ACCORDION -->
                     <div class="accordion-wrapper">
                         <ul class="accordion">
-
-
                             @foreach ($faq as $item)
                                 <!-- QUESTIONS CATEGORY #1 -->
                                 <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
-
-
                                     <!-- CATEGORY HEADER -->
                                     <div class="accordion-thumb">
                                         <h4 class="s-20 w-700">{{ $item->question }}</h4>
                                     </div>
-
-
                                     <!-- CATEGORY ANSWERS -->
                                     <div class="accordion-panel">
                                         <!-- Answer -->
                                         <div class="faqs-2-answer color--grey">
                                             <!-- Text -->
                                             {!! $item->answer !!}
-
-
                                         </div> <!-- END QUESTION #1 -->
                                     </div> <!-- END CATEGORY ANSWERS -->
                                 </li> <!-- END QUESTIONS CATEGORY #1 -->
                             @endforeach
-
-
                         </ul>
                     </div> <!-- END QUESTIONS ACCORDION -->
-
-
                     <!-- MORE QUESTIONS LINK -->
                     <div class="more-questions">
                         <div class="more-questions-txt bg--white-400 r-100">
@@ -924,5 +1145,4 @@
             </div> <!-- End row -->
         </div> <!-- End container -->
     </section> <!-- END FAQs-2 -->
-
 @endsection
