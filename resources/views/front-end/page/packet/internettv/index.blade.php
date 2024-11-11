@@ -56,10 +56,6 @@
         </div> <!-- End container -->
     </section> <!-- END HERO-25 -->
 
-
-
-
-
     <!-- FEATURES-12 -->
     <section id="features-12" class="shape--bg shape--white-500 pt-100 features-section division">
         <div class="container">
@@ -224,92 +220,75 @@
         </div> <!-- End container -->
     </section> <!-- END FEATURES-12 -->
 
-
-
-
-
-    <!-- PRICING-1 -->
     <section id="pricing-1" class="gr--whitesmoke pb-40 inner-page-hero pricing-section">
         <div class="container">
-
-
             <!-- SECTION TITLE -->
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-8">
                     <div class="section-title mb-70">
-
                         <!-- Title -->
-                        <h2 class="s-40 w-700">Daftar Harga Paket Internet Plus TV</h2>
+                        <h2 class="s-40 w-700">
+                            Daftar Harga Paket Internet Plus TV
+                        </h2>
+                        <!-- Text -->
+                        <p class="p-xl">
+                            Pilih paket internet TV yang sesuai dengan kebutuhan Anda.
+                        </p>
                     </div>
                 </div>
             </div> <!-- END SECTION TITLE -->
-
-
             <!-- PRICING TABLES -->
-            <div class="pricing ">
-                <div class="owl-carousel ">
+            <div class="pricing-1-wrapper">
+                <div class="row row-cols-1 row-cols-md-3">
+                    <!-- STARTER PLAN -->
                     @foreach ($packet as $item)
-                        <div class="card ">
-                            <div class="align-self-center">
-                                <div class="bg-pricing division">
-                                    <div class="{{ $item->best_seller == true ? 'best-seller' : 'pricing-title' }}">
-                                        <h5 class="text-center s-28 w-700 color--white">{{ $item->speed }}
-                                            Mbps
-                                        </h5>
+                        <div class="col">
+                            <div id="pt-1-1"
+                                class="p-table pricing-1-table bg--white-100 block-shadow r-12 wow fadeInUp">
+                                <!-- TABLE HEADER -->
+                                <div class="pricing-table-header">
+                                    <!-- Title -->
+                                    <h5 class="s-28 w-700">{{ $item->speed }} Mbps</h5>
+                                    <!-- Price -->
+                                    <div class="price">
+                                        <h5 class="s-20 color--black w-700">@currency($item->price) / {{ $item->duration }}</h5>
+                                        <p class="color--grey">
+                                            @if ($item->best_seller == true)
+                                                <span class="best-seller">Best Seller</span>
+                                            @endif
+                                        </p>
                                     </div>
-                                </div>
-
-
-                                <div class="content">
-                                    <h5 class="text-center s-26 w-700 text-uppercase">{{ $item->name }}
-                                    </h5>
-                                    <div class="row mt-2">
-                                        <div class="col-12 px-4">
-                                            <p class="text-uppercase fitur d-flex">Fitur</p>
-                                            <ul class="list-unstyled">
-                                                @foreach ($item->packetDescription as $des)
-                                                    <li class="d-flex align-items-center justify-content-start gap-2">
-                                                        <img style="width: 30px"
-                                                            src="{{ url('storage/images/descrip/' . $des->logo) }}"
-                                                            alt="">
-                                                        {{ $des->name }}
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                        <div class="col-12 text-center mb-4">
-                                            <h4 style="color: #25316D" class="w-700">
-                                                @currency($item->price)/{{ $item->duration }}</h4>
-                                        </div>
-                                        <div class=" text-center mb-4">
-                                            <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
-                                                <button type="button" class="btn btn--theme btn-sm">Berlangganan
-                                                    Sekarang</button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                    <!-- Button -->
+                                    <a href="https://forms.gle/JWxGAcGYQt2bmLf18"
+                                        class="pt-btn btn r-04 btn--theme hover--theme">
+                                        Berlangganan Sekarang
+                                    </a>
+                                </div> <!-- END TABLE HEADER -->
+                                <!-- PRICING FEATURES -->
+                                <ul class="pricing-features color--black ico-10 ico--green mt-25">
+                                    <p class="s-18 w-500">
+                                        Fitur-fitur
+                                    </p>
+                                    @foreach ($item->packetDescription as $des)
+                                        <li>
+                                            <img style="width: 24px; margin-right: 0.5rem"
+                                                src="{{ url('storage/images/descrip/' . $des->logo) }}" alt="Description"
+                                            >
+                                            <span>{{ $des->name }}</span>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div>
+                        </div> <!-- END STARTER PLAN -->
                     @endforeach
-
                 </div>
             </div> <!-- PRICING TABLES -->
-
-
         </div> <!-- End container -->
-    </section> <!-- END PRICING-1 -->
-
-
-
-
+    </section>
 
     <!-- FEATURES-7 -->
     <section id="features-7" class="pb-30 features-section division">
         <div class="container">
-
-
             <!-- SECTION TITLE -->
             <div class="row justify-content-center">
                 <img class="" src="{{ asset('front-end/images/BANNER 600X100CM.webp') }}" alt="">
@@ -317,108 +296,73 @@
         </div> <!-- End container -->
     </section> <!-- END FEATURES-7 -->
 
-
-
-
-
-    <!-- IMAGE CONTENT
-                                                                                                       ============================================= -->
+    <!-- IMAGE CONTENT============================================= -->
     <section id="lnk-2" class="bg--05 bg--scroll ct-10 content-section division">
         <div class="section-overlay pt-100">
             <div class="container">
-
-
                 <!-- SECTION TITLE -->
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-9">
                         <div class="section-title color--white  mb-70">
-
                             <!-- Title -->
                             <h2 class="s-50 w-700 ">Layanan TV Terbaik</h2>
-
                             <!-- Text -->
                             <p class="s-21 ">Nikmati Layanan TV Full HD dirumahmu.</p>
-
                         </div>
                     </div>
                 </div>
-
-
                 <!-- IMAGE BLOCK -->
                 <div class="row">
                     <div class="col">
                         <div class="img-block video-preview wow fadeInUp">
-
                             <!-- Play Icon -->
                             <a class="video-popup1" href="https://www.youtube.com/embed/SZEflIVnhH8">
                                 <div class="video-btn video-btn-xl bg--theme">
                                     <div class="video-block-wrapper"><span class="flaticon-play-button"></span></div>
                                 </div>
                             </a>
-
                             <!-- Preview Image -->
                             <img class="img-fluid" src="{{ asset('front-end/images/IDTV.webp') }}" alt="video-preview">
-
                         </div>
                     </div>
                 </div>
-
-
             </div> <!-- End container -->
         </div> <!-- End section overlay -->
     </section> <!-- END IMAGE CONTENT -->
 
-
-    <!-- FAQs-2
-                                                                                                                                                                                                                                                                                                                      ============================================= -->
+    <!-- FAQs-2                                                                                                                                                                                                                                                                                                                  ============================================= -->
     <section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11 col-xl-10">
-
-
                     <!-- INNER PAGE TITLE -->
                     <div class="inner-page-title">
                         <h2 class="s-46 w-700">Tanya Jawab</h2>
                         <p class="p-lg">Temukan jawaban untuk pertanyaan-pertanyaan yang sering diajukan oleh pelanggan
                             lainnya</p>
                     </div>
-
-
                     <!-- QUESTIONS ACCORDION -->
                     <div class="accordion-wrapper">
                         <ul class="accordion">
-
-
                             @foreach ($faq as $item)
                                 <!-- QUESTIONS CATEGORY #1 -->
                                 <li class="{{ $loop->first ? 'accordion-item is-active' : 'accordion-item' }}">
-
-
                                     <!-- CATEGORY HEADER -->
                                     <div class="accordion-thumb">
                                         <h4 class="s-20 w-700">{{ $item->question }}</h4>
                                     </div>
-
-
                                     <!-- CATEGORY ANSWERS -->
                                     <div class="accordion-panel">
                                         <!-- Answer -->
                                         <div class="faqs-2-answer color--grey">
                                             <!-- Text -->
                                             {!! $item->answer !!}
-
-
                                         </div> <!-- END QUESTION #1 -->
                                     </div> <!-- END CATEGORY ANSWERS -->
                                 </li> <!-- END QUESTIONS CATEGORY #1 -->
                             @endforeach
-
-
                         </ul>
                     </div> <!-- END QUESTIONS ACCORDION -->
-
-
                     <!-- MORE QUESTIONS LINK -->
                     <div class="more-questions">
                         <div class="more-questions-txt bg--white-400 r-100">
@@ -426,8 +370,6 @@
                                     class="color--theme">Hubungi Kami</a></p>
                         </div>
                     </div>
-
-
                 </div>
             </div> <!-- End row -->
         </div> <!-- End container -->

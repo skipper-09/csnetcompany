@@ -425,7 +425,7 @@
                         <h2 class="s-40 w-700">Tentukan Bandwidth Sesuai Kebutuhanmu</h2>
                         <!-- Text -->
                         <p class="p-xl">Sekarang saatnya menikmati kecepatan baru internet fiber ultra cepat dan
-                            unlimited dari Idnet</p>
+                            unlimited dari CSnet</p>
                     </div>
                 </div>
             </div> <!-- END SECTION TITLE -->
