@@ -10,22 +10,15 @@
 @endpush
 
 @section('content')
-
-    <!-- SINGLE POST
-                   ============================================= -->
+    <!-- SINGLE POST ============================================= -->
     <section id="single-post" class="pb-90 inner-page-hero blog-page-section">
         <div class="container">
-            <div class="row justify-content-center">
-
-
+            <div class="row justify-content-center mb-50">
                 <!-- SINGLE POST CONTENT -->
                 <div class="col-xl-10">
-                    <div class="post-content">
-
-
+                    <div class="post-content justify-content-center text-center">
                         <!--  SINGLE POST TITLE -->
                         <div class="single-post-title text-center">
-
                             <!-- Post Tag -->
                             {{-- <span class="post-tag color--green-400">Community</span> --}}
 
@@ -46,167 +39,82 @@
                                     </li>
                                 </ul>
                             </div> --}}
-
                         </div> <!-- END SINGLE POST TITLE -->
-
-
                         <!-- SINGLE POST IMAGE -->
                         <div class="blog-post-img py-50">
                             <img class="img-fluid r-16" src="{{ url('storage/images/promo/' . $promo->logo) }}"
                                 alt="blog-post-image">
                         </div>
-
-
                         <!-- SINGLE POST TEXT -->
                         <div class="single-post-txt">
                             {!! $promo->deskripsi !!}
-
                         </div> <!-- END SINGLE POST SHARE -->
-
-
-
-
-
                     </div>
                 </div> <!-- END  SINGLE POST CONTENT -->
-
             </div> <!-- End row -->
-
-
-
-            <!-- PRICING-1
-                                   ============================================= -->
-            @if (count($promopaket)>0)
-
-
-                <section id="pricing-1" class=" inner-page-hero pricing-section pt-100">
+            <!-- PRICING-1 ============================================= -->
+            @if (count($promopaket) > 0)
+                <!-- PRICING TABLES -->
+                <section id="pricing-1" class="inner-page-hero pricing-section">
                     <div class="container">
-
-
                         <!-- SECTION TITLE -->
-                        <div class="align-self-start">
-                            <div class="section-title mb-70">
-                                <!-- Title -->
-                                <h2 class="s-40 w-700">Daftar Harga <span class="text-capitalize">{{ $promo->name }}</span>
-                                </h2>
-                            </div>
+                        <div class="section-title mb-100">
+                            <!-- Title -->
+                            <h2 class="s-40 w-700">Daftar Harga <span
+                                    class="text-capitalize">{{ $promo->name }}</span>
+                            </h2>
+                            <p class="p-xl">Pilih paket promo sesuai dengan kebutuhan Anda.</p>
                         </div> <!-- END SECTION TITLE -->
-
-
-<!-- PRICING TABLES -->
-<div class="pricing ">
-    <div class="owl-carousel ">
-        @foreach ($promopaket as $item)
-            <div class="card ">
-                <div class="align-self-center">
-                    <div
-                        class="bg-pricing division">
-                        <div class="{{ $item->paket->best_seller == true ? 'best-seller' : 'pricing-title' }}">
-                            <h5 class="text-center s-28 w-700 color--white">{{ $item->paket->speed }}
-                                Mbps
-                            </h5>
-                        </div>
-                    </div>
-
-
-                    <div class="content">
-                        <h5 class="text-center s-26 w-700 text-uppercase">{{ $item->paket->name }}
-                        </h5>
-                        <div class="row mt-2">
-                            <div class="col-12 px-4">
-                                <p class="text-uppercase fitur d-flex">Fitur</p>
-                                <ul class="list-unstyled">
-                                    @foreach ($item->paket->packetDescription as $des)
-                                        <li class="d-flex align-items-center justify-content-start gap-2">
-                                            <img style="width: 30px"
-                                                src="{{ url('storage/images/descrip/' . $des->logo) }}"
-                                                alt="">
-                                            {{ $des->name }}
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <div class="col-12 text-center mb-4">
-                                <h4 style="color: #25316D" class="w-700">
-                                    @currency($item->paket->price)/{{ $item->paket->duration }}</h4>
-                            </div>
-                            <div class=" text-center mb-4">
-                                <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
-                                    <button type="button" class="btn btn--theme btn-sm">Berlangganan
-                                        Sekarang</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        @endforeach
-
-    </div>
-</div> <!-- PRICING TABLES -->
-
-
-                        {{-- <!-- PRICING TABLES -->
-                        <div class="pricing">
-                            <div class="owl-carousel owl-theme">
+                        <!-- PRICING TABLES -->
+                        <div class="pricing-1-wrapper">
+                            <div class="row row-cols-1 row-cols-md-3">
+                                <!-- STARTER PLAN -->
                                 @foreach ($promopaket as $item)
-                                    <div class="card r-16 ">
-                                        <div class="align-self-center">
-                                            <div
-                                                class="{{ $item->paket->best_seller == true ? 'bg--heading division' : 'bg-pricing division' }}">
-                                                <div class="pricing-title ">
-                                                    <h5 class="text-center s-28 w-700 text-uppercase">
-                                                        {{ $item->paket->name }}
-                                                    </h5>
+                                    <div class="col">
+                                        <div id="pt-1-1"
+                                            class="p-table pricing-1-table bg--white-100 block-shadow r-12 wow fadeInUp">
+                                            <!-- TABLE HEADER -->
+                                            <div class="pricing-table-header">
+                                                <!-- Title -->
+                                                <h5 class="s-28 w-700">{{ $item->paket->speed }} Mbps</h5>
+                                                <!-- Price -->
+                                                <div class="price">
+                                                    <h5 class="s-20 color--black w-700">@currency($item->paket->price) /
+                                                        {{ $item->paket->duration }}</h5>
+                                                    <p class="color--grey">
+                                                        @if ($item->best_seller == true)
+                                                            <span class="best-seller">Best Seller</span>
+                                                        @endif
+                                                    </p>
                                                 </div>
-                                                <hr class="divider-gray">
-                                            </div>
-
-                                            <div class="tab-content px-4" id="myTabContent">
-
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <p class="color--grey text-uppercase d-flex">Fitur</p>
-                                                        <ul class="list-unstyled mb-4">
-                                                            @foreach ($item->paket->packetDescription as $des)
-                                                                <li
-                                                                    class="d-flex align-items-center justify-content-start gap-2">
-                                                                    <img style="width: 30px"
-                                                                        src="{{ url('storage/images/descrip/' . $des->logo) }}"
-                                                                        alt="">
-                                                                    {{ $des->name }}
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-12 text-center mb-4">
-                                                        <h4 style="color: #25316D" class="w-700">
-                                                            @currency($item->paket->price)/{{ $item->paket->duration }}</h4>
-                                                    </div>
-                                                    <div class=" text-center mb-4">
-                                                        <a href="https://forms.gle/JWxGAcGYQt2bmLf18">
-                                                            <button type="button"
-                                                                class="btn btn--theme btn-sm">Berlangganan
-                                                                Sekarang</button>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <!-- Button -->
+                                                <a href="https://forms.gle/JWxGAcGYQt2bmLf18"
+                                                    class="pt-btn btn r-04 btn--theme hover--theme">
+                                                    Berlangganan Sekarang
+                                                </a>
+                                            </div> <!-- END TABLE HEADER -->
+                                            <!-- PRICING FEATURES -->
+                                            <ul class="pricing-features color--black ico-10 ico--green mt-25">
+                                                <p class="s-18 w-500">
+                                                    Fitur-fitur
+                                                </p>
+                                                @foreach ($item->paket->packetDescription as $des)
+                                                    <li>
+                                                        <img style="width: 24px; margin-right: 0.5rem"
+                                                            src="{{ url('storage/images/descrip/' . $des->logo) }}"
+                                                            alt="Description">
+                                                        <span>{{ $des->name }}</span>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
-                                    </div>
+                                    </div> <!-- END STARTER PLAN -->
                                 @endforeach
-
                             </div>
-                        </div> <!-- PRICING TABLES --> --}}
-
-
-
+                        </div> <!-- PRICING TABLES -->
                     </div> <!-- End container -->
                 </section>
             @endif
-
-
             <!-- END PRICING-1 -->
         </div> <!-- End container -->
     </section> <!-- END SINGLE POST -->

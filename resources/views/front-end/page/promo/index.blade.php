@@ -34,7 +34,7 @@
 
 @section('content')
     <!-- HERO-2
-                                       ============================================= -->
+                                           ============================================= -->
     <section id="" class="hero-promo">
         <div class="owl-carousel">
             @foreach ($slider as $item)
@@ -54,7 +54,8 @@
         <div class="row">
             <div class="col">
                 <div class="posts-category ico-20 wow fadeInUp">
-                    <h4 class="s-34 w-700">Promo Terbaru <span class="flaticon-next"></span></h4>
+                    <h4 class="s-40 w-700">Promo Terbaru <span class="flaticon-next"></span></h4>
+                    <p class="p-xl">Pilih paket promo sesuai dengan kebutuhan Anda.</p>
                 </div>
             </div>
         </div>
@@ -92,8 +93,8 @@
                                 </h6>
 
                                 <!-- Text -->
-									<p>{{$item->shortdeskripsi}}
-									</p>
+                                <p>{{ $item->shortdeskripsi }}
+                                </p>
                                 {{-- <!-- Post Meta -->
                                 <div class="blog-post-meta mt-20">
                                     <ul class="post-meta-list ico-10">
@@ -116,44 +117,31 @@
         </div> <!-- END POSTS WRAPPER -->
     </div>
 
-    <section id="banner-12" class="banner-section pt-30">
+    <section id="banner-3" class="pt-100 banner-section pb-40">
         <div class="container">
-            <!-- BANNER-12 WRAPPER -->
-            <div class="banner-12-wrapper bg--03 bg--scroll r-16 ">
+            <!-- BANNER-3 WRAPPER -->
+            <div class="banner-3-wrapper bg--05 bg--scroll r-16">
                 <div class="banner-overlay">
-                    <div class="row d-flex align-items-center">
-                        <!-- BANNER-12 TEXT -->
-                        <div class="col-md-7">
-                            <div class="banner-12-txt color--white py-4">
-
+                    <div class="row">
+                        <!-- BANNER-3 TEXT -->
+                        <div class="col">
+                            <div class="banner-3-txt color--white">
                                 <!-- Title -->
-                                <h2 class="s-50 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
+                                <h2 class="s-48 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
 
                                 <!-- Text -->
-                                <p class="p-lg">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
+                                <p class="p-xl">Kami akan menawarkan solusi teknologi yang tepat untuk kebutuhan anda,
                                     memungkinakan anda untuk memperluas jangkauam bisnis muncul sebagai pemenang ditengah
-                                    persaingan bisnis yang ketat.
-                                </p>
+                                    persaingan bisnis yang ketat.</p>
 
                                 <!-- Button -->
                                 <a href="https://wa.me/6282116879977?text=Halo"
-                                    class="btn r-04 btn--theme hover--tra-white">Hubungi Kami!</a>
-
+                                    class="btn r-04 btn--tra-white hover--white">Hubungi Kami!</a>
                             </div>
-                        </div> <!-- END BANNER-12 TEXT -->
-
-
-                        <!-- BANNER-12 IMAGE -->
-                        <div class="col-md-5">
-                            <div class="banner-12-img text-center">
-                                <img class="img-fluid" src="{{ asset('front-end/images/img-16.png') }}" alt="banner-image">
-                            </div>
-                        </div>
+                        </div> <!-- END BANNER-3 TEXT -->
                     </div> <!-- End row -->
                 </div> <!-- End banner overlay -->
-            </div> <!-- END BANNER-12 WRAPPER -->
-
-
+            </div> <!-- END BANNER-3 WRAPPER -->
         </div> <!-- End container -->
     </section> <!-- END BANNER-12 -->
 
