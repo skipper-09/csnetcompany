@@ -38,7 +38,7 @@
                         </p>
 
                         <!-- Button -->
-                        <a href="#banner-3" class="btn r-04 btn--theme hover--theme">Berlangganan Sekarang</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1sPLmiSKLm76-xntqfTtDP4U-Doi_3pM3EagyOKA-4mtxHA/viewform" class="btn r-04 btn--theme hover--theme">Berlangganan Sekarang</a>
 
                     </div>
                 </div> <!-- END HERO TEXT -->
@@ -259,7 +259,7 @@
                                         </p>
                                     </div>
                                     <!-- Button -->
-                                    <a href="https://forms.gle/JWxGAcGYQt2bmLf18"
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1sPLmiSKLm76-xntqfTtDP4U-Doi_3pM3EagyOKA-4mtxHA/viewform"
                                         class="pt-btn btn r-04 btn--theme hover--theme">
                                         Berlangganan Sekarang
                                     </a>
