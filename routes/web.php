@@ -39,6 +39,7 @@ use App\Http\Controllers\Front_End\Privacy\PrivacyController;
 use App\Http\Controllers\Front_End\Promo\PromoContoller;
 use App\Http\Controllers\Front_End\TremOfService\TremOfServiceController;
 use App\Http\Controllers\Backend\Career\CategoryJobController;
+use App\Http\Controllers\Backend\PDF\PDFController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -102,6 +103,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::put('/update/{id}', [PartnerController::class, 'update'])->name('backend.partner.update');
         Route::delete('/delete/{id}', [PartnerController::class, 'destroy'])->name('backend.partner.delete')->can('delete-partner');
     });
+
     //route media
     Route::prefix('media')->group(function () {
         Route::get('', [MediaController::class, 'index'])->name('backend.media')->can('read-media');
@@ -112,6 +114,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::put('/update/{id}', [MediaController::class, 'update'])->name('backend.media.update');
         Route::delete('/delete/{id}', [MediaController::class, 'destroy'])->name('backend.media.delete')->can('delete-media');
         Route::get('detail/{slug}', [MediaController::class, 'detail'])->name('backend.media.detail')->can('read-media');
+    });
+
+    //route instalation letter
+    Route::prefix('spk')->group(function () {
+        Route::get('', [PDFController::class, 'index'])->name('backend.spk')->can('read-spk');
+        Route::get('create', [PDFController::class, 'create'])->name('backend.spk.add')->can('create-spk');
+        Route::post('store', [PDFController::class, 'store'])->name('backend.spk.store');
     });
 
     //route faq
@@ -142,7 +151,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::put('/update/{id}', [PrivacyControllerBackend::class, 'update'])->name('backend.privacypolicy.update');
         Route::delete('/delete/{id}', [PrivacyControllerBackend::class, 'destroy'])->name('backend.privacypolicy.delete')->can('delete-privacyppolicy');
     });
-
 
     //route profile
     Route::prefix('profile')->group(function () {
@@ -182,45 +190,40 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::delete('delete/{id}', [Description_packet::class, 'destroy'])->name('backend.deskription.delete')->can('delete-deskripsi');
         });
     });
-
-
-
-// page career
-Route::prefix('career')->group(function () {
-    Route::prefix('kategori')->group(function () {
-        Route::get('', [CategoryJobController::class, 'index'])->name('backend.categoryjob')->can('read-categoryjob');
-        Route::get('/getData', [CategoryJobController::class, 'getData'])->name('backend.categoryjob.getData');
-        Route::get('tambah', [CategoryJobController::class, 'create'])->name('backend.add.categoryjob')->can('create-categoryjob');
-        Route::post('store', [CategoryJobController::class, 'store'])->name('backend.categoryjob.store');
-        Route::get('/edit/{id}', [CategoryJobController::class, 'show'])->name('backend.categoryjob.edit')->can('update-categoryjob');
-        Route::put('/update/{id}', [CategoryJobController::class, 'update'])->name('backend.categoryjob.update');
-        Route::delete('/delete/{id}', [CategoryJobController::class, 'destroy'])->name('backend.categoryjob.delete')->can('delete-categoryjob');
+    // page career
+    Route::prefix('career')->group(function () {
+        Route::prefix('kategori')->group(function () {
+            Route::get('', [CategoryJobController::class, 'index'])->name('backend.categoryjob')->can('read-categoryjob');
+            Route::get('/getData', [CategoryJobController::class, 'getData'])->name('backend.categoryjob.getData');
+            Route::get('tambah', [CategoryJobController::class, 'create'])->name('backend.add.categoryjob')->can('create-categoryjob');
+            Route::post('store', [CategoryJobController::class, 'store'])->name('backend.categoryjob.store');
+            Route::get('/edit/{id}', [CategoryJobController::class, 'show'])->name('backend.categoryjob.edit')->can('update-categoryjob');
+            Route::put('/update/{id}', [CategoryJobController::class, 'update'])->name('backend.categoryjob.update');
+            Route::delete('/delete/{id}', [CategoryJobController::class, 'destroy'])->name('backend.categoryjob.delete')->can('delete-categoryjob');
+        });
+        //career location
+        Route::prefix('lokasi')->group(function () {
+            Route::get('', [LocationJobController::class, 'index'])->name('backend.locationjob')->can('read-locationjob');
+            Route::get('/getData', [LocationJobController::class, 'getData'])->name('backend.locationjob.getData');
+            Route::get('tambah', [LocationJobController::class, 'create'])->name('backend.add.locationjob')->can('create-locationjob');
+            Route::post('store', [LocationJobController::class, 'store'])->name('backend.locationjob.store');
+            Route::get('/edit/{id}', [LocationJobController::class, 'show'])->name('backend.locationjob.edit')->can('delete-locationjob');
+            Route::put('/update/{id}', [LocationJobController::class, 'update'])->name('backend.locationjob.update');
+            Route::delete('/delete/{id}', [LocationJobController::class, 'destroy'])->name('backend.locationjob.delete')->can('delete-locationjob');
+        });
+        //career
+        Route::prefix('')->group(function () {
+            Route::get('', [HiringJobController::class, 'index'])->name('backend.hiring')->can('read-hiring');
+            Route::get('getData', [HiringJobController::class, 'getData'])->name('backend.hiring.getData');
+            Route::get('tambah', [HiringJobController::class, 'create'])->name('backend.add.hiring')->can('create-hiring');
+            Route::post('store', [HiringJobController::class, 'store'])->name('backend.hiring.store');
+            Route::get('edit/{id}', [HiringJobController::class, 'edit'])->name('backend.hiring.edit')->can('update-hiring');
+            Route::put('update/{id}', [HiringJobController::class, 'update'])->name('backend.hiring.update');
+            Route::delete('delete/{id}', [HiringJobController::class, 'destroy'])->name('backend.hiring.delete')->can('delete-hiring');
+        });
     });
-//career location
-    Route::prefix('lokasi')->group(function () {
-        Route::get('', [LocationJobController::class, 'index'])->name('backend.locationjob')->can('read-locationjob');
-        Route::get('/getData', [LocationJobController::class, 'getData'])->name('backend.locationjob.getData');
-        Route::get('tambah', [LocationJobController::class, 'create'])->name('backend.add.locationjob')->can('create-locationjob');
-        Route::post('store', [LocationJobController::class, 'store'])->name('backend.locationjob.store');
-        Route::get('/edit/{id}', [LocationJobController::class, 'show'])->name('backend.locationjob.edit')->can('delete-locationjob');
-        Route::put('/update/{id}', [LocationJobController::class, 'update'])->name('backend.locationjob.update');
-        Route::delete('/delete/{id}', [LocationJobController::class, 'destroy'])->name('backend.locationjob.delete')->can('delete-locationjob');
-    });
-    //career
-    Route::prefix('')->group(function () {
-        Route::get('', [HiringJobController::class, 'index'])->name('backend.hiring')->can('read-hiring');
-        Route::get('getData', [HiringJobController::class, 'getData'])->name('backend.hiring.getData');
-        Route::get('tambah', [HiringJobController::class, 'create'])->name('backend.add.hiring')->can('create-hiring');
-        Route::post('store', [HiringJobController::class, 'store'])->name('backend.hiring.store');
-        Route::get('edit/{id}', [HiringJobController::class, 'edit'])->name('backend.hiring.edit')->can('update-hiring');
-        Route::put('update/{id}', [HiringJobController::class, 'update'])->name('backend.hiring.update');
-        Route::delete('delete/{id}', [HiringJobController::class, 'destroy'])->name('backend.hiring.delete')->can('delete-hiring');
-    });
-});
-
 
     //page promo
-
     Route::prefix('promo')->group(function () {
         Route::get('', [PromoControllerBackend::class, 'index'])->name('backend.promo')->can('read-promo');
         Route::get('/getData', [PromoControllerBackend::class, 'getData'])->name('backend.promo.getData');
@@ -281,7 +284,6 @@ Route::prefix('career')->group(function () {
         });
     });
 
-
     Route::prefix('coverage')->group(function () {
         Route::prefix('area')->group(function () {
             Route::get('', [AreaController::class, 'index'])->name('backend.area')->can('read-area');
@@ -306,7 +308,6 @@ Route::prefix('career')->group(function () {
             Route::get('', [MapsController::class, 'index'])->name('backend.maps')->can('read-maps');
         });
     });
-
 
     // page setting
     Route::prefix('setting')->group(function () {

@@ -248,13 +248,20 @@
     </li>
     @endcan
 
-    @canany(['read-faq','read-tremofservice','read-privacyppolicy'])
+    @canany(['read-faq','read-tremofservice','read-privacyppolicy', 'read-spk'])
     <li class="{{ $sidebar == 'Informasi' ? 'menu-item active open' : 'menu-item' }}">
         <a href=" javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-briefcase-alt-2"></i>
             <div data-i18n="kota">Management Informasi</div>
         </a>
         <ul class="menu-sub">
+            @can('read-spk')
+            <li class="{{ $page_name == 'Surat Tugas Pemasangan Retail' ? 'menu-item active' : 'menu-item' }}">
+                <a href=" {{ route('backend.spk') }}" class="menu-link">
+                    <div data-i18n="area">SPK</div>
+                </a>
+            </li>
+            @endcan
             @can('read-faq')
             <li class="{{ $page_name == 'Faq' ? 'menu-item active' : 'menu-item' }}">
                 <a href=" {{ route('backend.faq') }}" class="menu-link">

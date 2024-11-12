@@ -98,6 +98,8 @@ class PermissionSeeder extends Seeder
             'create-role',
             'update-role',
             'delete-role',
+            'read-spk',
+            'create-spk',
         ];
         $permissions = collect($arrayOfPermissionNames)->map(function ($permission) {
             return ['name' => $permission, 'guard_name' => 'web'];

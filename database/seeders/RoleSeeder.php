@@ -111,6 +111,8 @@ class RoleSeeder extends Seeder
             'create-role',
             'update-role',
             'delete-role',
+            'read-spk',
+            'create-spk',
         ]);
 
         $administrator->givePermissionTo([
@@ -198,6 +200,8 @@ class RoleSeeder extends Seeder
             'create-role',
             'update-role',
             'delete-role',
+            'read-spk',
+            'create-spk',
         ]);
 
         $noc->givePermissionTo([
