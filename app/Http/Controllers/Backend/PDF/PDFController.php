@@ -24,26 +24,32 @@ class PDFController extends Controller
         return view('backend.spk.index', $data);
     }
 
-    // public function getData(Request $request)
-    // {
-    //     $query = SPK::all()->map(function ($item) {
-    //         $item->date = Carbon::createFromFormat('Y-m-d', $item->date)->format('d/m/Y');
-    //         $item->date_install = Carbon::createFromFormat('Y-m-d', $item->date_install)->format('d/m/Y');
-    //         return $item;
-    //     });
+    public function getData(Request $request)
+    {
+        $query = SPK::all();
 
-    //     return DataTables::of($query)
-    //         ->addIndexColumn()
-    //         ->addColumn('action', function ($row) {
-    //             $button = '<button class="btn btn-sm btn-danger action" data-id="' . $row->id . '" data-type="delete" data-route="' . route('backend.spk.delete', ['id' => $row->id]) . '"><i class="fas fa-trash"></i></button>';
-    //             return '<div class="d-flex gap-1">' . $button . '</div>';
-    //         })
-    //         ->addColumn('pdf_path', function ($row) {
-    //             return $row->pdf_path ? '<a href="' . asset($row->pdf_path) . '" target="_blank">View PDF</a>' : 'No PDF';
-    //         })
-    //         ->rawColumns(['action', 'pdf_path'])
-    //         ->make(true);
-    // }
+        return DataTables::of($query)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $button = '';
+                $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $row->id . ' data-type="delete" data-route="' . route('backend.spk.delete', ['id' => $row->id]) . '"><i
+                class="fas fa-trash"></i></button>';
+                return '<div class="d-flex gap-1">' . $button . '</div>';
+            })
+            ->addColumn('pdf_path', function ($row) {
+                return $row->pdf_path 
+                    ? '<a href="' . asset('storage/' . $row->pdf_path) . '" target="_blank">View PDF</a>' 
+                    : 'No PDF';
+            })
+            ->addColumn('date', function ($row) {
+                return $row->date = Carbon::parse($row->date)->toDateString();
+            })
+            ->addColumn('date_install', function ($row) {
+                return $row->dateInstall = Carbon::parse($row->dateInstall)->toDateString();
+            })
+            ->rawColumns(['action', 'pdf_path', 'date', 'date_install'])
+            ->make(true);
+    }
 
     public function create()
     {
@@ -57,61 +63,56 @@ class PDFController extends Controller
 
     public function store(Request $request)
     {
-        try {
-            $validated = $request->validate([
-                'date' => 'required|date',
-                'date_install' => 'required|date',
-                'technician_name' => 'required|string',
-                'technician_position' => 'required|string',
-                'client_name' => 'required|string',
-                'client_nik' => 'required|string',
-                'client_address' => 'required|string',
-                'client_whatsapp' => 'required|string',
-                'package' => 'required|string',
-                'modem_serial' => 'required|string',
-                'cable_details' => 'required|string',
-                'stb_status' => 'required|in:Ada,Tidak',
-                'stb_mac_address' => 'nullable|required_if:stb_status,Ada',
-            ]);
+        // Validate input fields
+        $validated = $request->validate([
+            'date' => 'required|date',
+            'date_install' => 'required|date',
+            'technician_name' => 'required|string',
+            'technician_position' => 'required|string',
+            'client_name' => 'required|string',
+            'client_nik' => 'required|string',
+            'client_address' => 'required|string',
+            'client_whatsapp' => 'required|string',
+            'package' => 'required|string',
+            'modem_serial' => 'required|string',
+            'cable_details' => 'required|string',
+            'stb_status' => 'required|in:Ada,Tidak',
+            'stb_mac_address' => 'nullable|required_if:stb_status,Ada',
+        ]);
+    
+        // Set up PDF generation options (ensure you have this dependency installed)
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
+    
+        // Generate letter number based on random and current year
+        $randomNumber = str_pad(rand(1, 100), 3, '0', STR_PAD_LEFT);
+        $letter_number = $randomNumber . "/BWI/" . date('Y');
+    
+        // Load the view to create PDF with the validated data and generated letter number
+        $pdf = Pdf::loadView('backend.spk.pdf', [
+            'data' => $validated,
+            'letter_number' => $letter_number,
+        ]);
 
-            $options = new Options();
-            $options->set('isRemoteEnabled', true);
-
-            $randomNumber = str_pad(rand(1, 100), 3, '0', STR_PAD_LEFT);
-            $letter_number = $randomNumber . "/BWI/" . date('Y');
-
-            $pdf = Pdf::loadView('backend.spk.pdf', [
-                'data' => $validated,
-                'letter_number' => $letter_number,
-            ]);
-
-            $name = Carbon::now()->format('Y-m-d') . '-Surat-Tugas-Pemasangan-Retail-' . Str::random(10) . '.pdf';
-
-            // Store the PDF file using the public disk
-            Storage::disk('public')->put('pdf/' . $name, $pdf->output());
-
-            $spk = SPK::create([
-                ...$validated,
-                'pdf_path' => 'storage/pdf/' . $name,
-            ]);
-
-            // Return response with download
-            return response()->json([
-                'success' => true,
-                'message' => 'Data berhasil disimpan',
-                'pdf_url' => asset('storage/pdf/' . $name)
-            ]);
-        } catch (Exception $e) {
-            // If something goes wrong, delete the PDF if it was created
-            if (isset($name) && Storage::disk('public')->exists('pdf/' . $name)) {
-                Storage::disk('public')->delete('pdf/' . $name);
-            }
-
-            return response()->json([
-                'success' => false,
-                'message' => 'Terjadi kesalahan: ' . $e->getMessage()
-            ], 500);
+        $filename = '';
+        if ($request->hasFile('pdf_path')) {
+            $file  = $request->file('pdf_path');
+            // Create a name for the PDF file using the current date and random string
+            $filename = Carbon::now()->format('Y-m-d') . '-Surat-Tugas-Pemasangan-Retail-' . Str::random(10) . '.pdf';
+            $file->move(public_path('storage/spk/files/'), $filename);
         }
+    
+        // Store the generated PDF on the 'public' disk in the 'spk' folder
+        Storage::disk('public')->put('spk/' . $filename, $pdf->output());
+    
+        // Store the relative path in the database
+        $spk = SPK::create([
+            ...$validated,
+            'pdf_path' => 'spk/' . $filename,  // Store relative path
+        ]);
+    
+        // Redirect back with success message
+        return redirect()->route('backend.spk')->with(['success' => 'Data SPK Berhasil Dibuat!']);
     }
 
     public function destroy($id)

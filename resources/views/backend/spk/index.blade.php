@@ -22,7 +22,7 @@
                     <a href="{{ route('backend.spk.add') }}" class="btn btn-sm btn-primary">Tambah {{ $page_name }}</a>
                 </div>
             @endcan
-            {{-- <div class="table-responsive text-nowrap">
+            <div class="table-responsive text-nowrap">
                 <table class="table table-striped" id="dataTable">
                     <thead>
                         <tr>
@@ -32,20 +32,20 @@
                             <th>Alamat</th>
                             <th>Telepon</th>
                             <th>SPK</th>
-                            @can(['delete-spk'])
-                                <th>Actions</th>
-                            @endcan
+                            @canany(['delete-spk'])
+                            <th>Actions</th>
+                            @endcanany
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
-            </div> --}}
+            </div>
         </div>
     </div>
 @endsection
 
 @push('js')
-    {{-- <script>
+    <script>
         $(document).ready(function() {
             const table = $('#dataTable').DataTable({
                 processing: true,
@@ -77,53 +77,14 @@
                         orderable: false,
                         searchable: false
                     },
-                    @can('delete-spk')
+                    @canany(['delete-spk'])
                         {
                             data: 'action',
-                            name: 'action',
-                            orderable: false,
-                            searchable: false
+                            name: 'action'
                         }
-                    @endcan
+                    @endcanany
                 ],
             });
-
-            // Handle delete action with SweetAlert2
-            $(document).on('click', '.action', function() {
-                const button = $(this);
-                const id = button.data('id');
-                const route = button.data('route');
-
-                Swal.fire({
-                    title: 'Apakah anda yakin?',
-                    text: "Data yang dihapus tidak dapat dikembalikan!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ya, hapus!',
-                    cancelButtonText: 'Batal'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $.ajax({
-                            url: route,
-                            type: 'DELETE',
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            success: function(response) {
-                                Swal.fire('Berhasil!', response.message, 'success');
-                                table.ajax.reload();
-                            },
-                            error: function() {
-                                Swal.fire('Error!',
-                                    'Terjadi kesalahan saat menghapus data.',
-                                    'error');
-                            }
-                        });
-                    }
-                });
-            });
         });
-    </script> --}}
+    </script>
 @endpush
