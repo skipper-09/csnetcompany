@@ -4,18 +4,18 @@
 
 @push('css')
 @endpush
+
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <div class="card mb-4 ">
-            <div class="d-flex align-items-center align-content-center justify-content-between px-4 pt-3 pb-1">
+        <div class="card mb-4">
+            <div class="d-flex align-items-center justify-content-between px-4 pt-3 pb-1">
                 <h4 class="fw-bold">{{ $page_name }}</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item">{{ $page_name }}</li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">{{ $page_name }}</li>
                 </ol>
             </div>
         </div>
-        <!-- Striped Rows -->
         <div class="card px-4 py-4">
             @can('create-spk')
                 <div class="mb-4">
@@ -23,55 +23,107 @@
                 </div>
             @endcan
             {{-- <div class="table-responsive text-nowrap">
-                <table class=" table table-striped " id="dataTable" style="width:100%">
+                <table class="table table-striped" id="dataTable">
                     <thead>
                         <tr>
-                            <th>Tipe</th>
-                            <th>Pertanyaan</th>
-                            <th>Jawaban</th>
-                            @canany(['update-faq', 'delete-faq'])
+                            <th>Tanggal</th>
+                            <th>Tanggal Install</th>
+                            <th>Nama Klien</th>
+                            <th>Alamat</th>
+                            <th>Telepon</th>
+                            <th>SPK</th>
+                            @can(['delete-spk'])
                                 <th>Actions</th>
-                            @endcanany
+                            @endcan
                         </tr>
                     </thead>
+                    <tbody></tbody>
                 </table>
             </div> --}}
         </div>
-        <!--/ Striped Rows -->
     </div>
 @endsection
-
 
 @push('js')
     {{-- <script>
         $(document).ready(function() {
-
-            $('#dataTable').DataTable({
+            const table = $('#dataTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{ route('backend.faq.getData') }}',
+                ajax: '{{ route('backend.spk.getData') }}',
                 columns: [{
-                        data: 'type',
-                        name: 'type'
+                        data: 'date',
+                        name: 'date'
                     },
                     {
-                        data: 'question',
-                        name: 'question'
+                        data: 'date_install',
+                        name: 'date_install'
                     },
                     {
-                        data: 'answer',
-                        name: 'answer'
+                        data: 'client_name',
+                        name: 'client_name'
                     },
-                    @canany(['update-faq', 'delete-faq'])
+                    {
+                        data: 'client_address',
+                        name: 'client_address'
+                    },
+                    {
+                        data: 'client_whatsapp',
+                        name: 'client_whatsapp'
+                    },
+                    {
+                        data: 'pdf_path',
+                        name: 'pdf_path',
+                        orderable: false,
+                        searchable: false
+                    },
+                    @can('delete-spk')
                         {
                             data: 'action',
-                            name: 'action'
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
                         }
-                    @endcanany
-
-                ]
+                    @endcan
+                ],
             });
 
+            // Handle delete action with SweetAlert2
+            $(document).on('click', '.action', function() {
+                const button = $(this);
+                const id = button.data('id');
+                const route = button.data('route');
+
+                Swal.fire({
+                    title: 'Apakah anda yakin?',
+                    text: "Data yang dihapus tidak dapat dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: route,
+                            type: 'DELETE',
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            success: function(response) {
+                                Swal.fire('Berhasil!', response.message, 'success');
+                                table.ajax.reload();
+                            },
+                            error: function() {
+                                Swal.fire('Error!',
+                                    'Terjadi kesalahan saat menghapus data.',
+                                    'error');
+                            }
+                        });
+                    }
+                });
+            });
         });
     </script> --}}
 @endpush

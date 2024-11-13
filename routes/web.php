@@ -119,8 +119,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     //route instalation letter
     Route::prefix('spk')->group(function () {
         Route::get('', [PDFController::class, 'index'])->name('backend.spk')->can('read-spk');
+        Route::get('/getData', [PDFController::class, 'getData'])->name('backend.spk.getData');
         Route::get('create', [PDFController::class, 'create'])->name('backend.spk.add')->can('create-spk');
         Route::post('store', [PDFController::class, 'store'])->name('backend.spk.store');
+        Route::delete('/delete/{id}', [PDFController::class, 'destroy'])->name('backend.spk.delete')->can('delete-spk');
     });
 
     //route faq

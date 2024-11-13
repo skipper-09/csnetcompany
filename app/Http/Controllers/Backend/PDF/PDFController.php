@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Backend\PDF;
 
 use App\Http\Controllers\Controller;
+use App\Models\SPK;
 use Dompdf\Options;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Carbon;
+use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Storage;
 
 class PDFController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data = [
@@ -23,9 +24,27 @@ class PDFController extends Controller
         return view('backend.spk.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // public function getData(Request $request)
+    // {
+    //     $query = SPK::all()->map(function ($item) {
+    //         $item->date = Carbon::createFromFormat('Y-m-d', $item->date)->format('d/m/Y');
+    //         $item->date_install = Carbon::createFromFormat('Y-m-d', $item->date_install)->format('d/m/Y');
+    //         return $item;
+    //     });
+
+    //     return DataTables::of($query)
+    //         ->addIndexColumn()
+    //         ->addColumn('action', function ($row) {
+    //             $button = '<button class="btn btn-sm btn-danger action" data-id="' . $row->id . '" data-type="delete" data-route="' . route('backend.spk.delete', ['id' => $row->id]) . '"><i class="fas fa-trash"></i></button>';
+    //             return '<div class="d-flex gap-1">' . $button . '</div>';
+    //         })
+    //         ->addColumn('pdf_path', function ($row) {
+    //             return $row->pdf_path ? '<a href="' . asset($row->pdf_path) . '" target="_blank">View PDF</a>' : 'No PDF';
+    //         })
+    //         ->rawColumns(['action', 'pdf_path'])
+    //         ->make(true);
+    // }
+
     public function create()
     {
         $data = [
@@ -36,80 +55,91 @@ class PDFController extends Controller
         return view('backend.spk.add', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'date'=> 'required|date',
-            'date_install' => 'required|date',
-            'technician_name' => 'required|string',
-            'technician_position' => 'required|string',
-            'client_name' => 'required|string',
-            'client_nik' => 'required|string',
-            'client_address' => 'required|string',
-            'client_whatsapp' => 'required|string',
-            'package' => 'required|string',
-            'modem_serial' => 'required|string',
-            'cable_details' => 'required|string',
-            'stb_status' => 'required|in:Ada,Tidak',
-            'stb_mac_address' => 'nullable|required_if:stb_status,Ada',
-        ]);
+        try {
+            $validated = $request->validate([
+                'date' => 'required|date',
+                'date_install' => 'required|date',
+                'technician_name' => 'required|string',
+                'technician_position' => 'required|string',
+                'client_name' => 'required|string',
+                'client_nik' => 'required|string',
+                'client_address' => 'required|string',
+                'client_whatsapp' => 'required|string',
+                'package' => 'required|string',
+                'modem_serial' => 'required|string',
+                'cable_details' => 'required|string',
+                'stb_status' => 'required|in:Ada,Tidak',
+                'stb_mac_address' => 'nullable|required_if:stb_status,Ada',
+            ]);
 
-        $options = new Options();
+            $options = new Options();
+            $options->set('isRemoteEnabled', true);
 
-        $options->set('isRemoteEnabled', true);
+            $randomNumber = str_pad(rand(1, 100), 3, '0', STR_PAD_LEFT);
+            $letter_number = $randomNumber . "/BWI/" . date('Y');
 
-        // Menentukan jumlah angka yang ingin dihasilkan
-        $jumlahAngka = 100;
+            $pdf = Pdf::loadView('backend.spk.pdf', [
+                'data' => $validated,
+                'letter_number' => $letter_number,
+            ]);
 
-        // Menghasilkan angka acak dalam rentang tertentu, misalnya 001 hingga 999
-        $randomNumber = str_pad(rand(1, $jumlahAngka), 3, '0', STR_PAD_LEFT);
+            $name = Carbon::now()->format('Y-m-d') . '-Surat-Tugas-Pemasangan-Retail-' . Str::random(10) . '.pdf';
 
-        // Menggabungkan angka acak dengan format yang diinginkan
-        $letter_number = $randomNumber . "/BWI/" . date('Y');
+            // Store the PDF file using the public disk
+            Storage::disk('public')->put('pdf/' . $name, $pdf->output());
 
-        $pdf = Pdf::loadView('backend.spk.pdf', [
-            'data' => $validated,
-            'letter_number' => $letter_number,
-        ]);
+            $spk = SPK::create([
+                ...$validated,
+                'pdf_path' => 'storage/pdf/' . $name,
+            ]);
 
-        $name = Carbon::now()->format('Y-m-d') . '-Surat Tugas Pemasangan Retail-' . Str::random(10) . '.pdf';
+            // Return response with download
+            return response()->json([
+                'success' => true,
+                'message' => 'Data berhasil disimpan',
+                'pdf_url' => asset('storage/pdf/' . $name)
+            ]);
+        } catch (Exception $e) {
+            // If something goes wrong, delete the PDF if it was created
+            if (isset($name) && Storage::disk('public')->exists('pdf/' . $name)) {
+                Storage::disk('public')->delete('pdf/' . $name);
+            }
 
-
-        return $pdf->download($name);
+            return response()->json([
+                'success' => false,
+                'message' => 'Terjadi kesalahan: ' . $e->getMessage()
+            ], 500);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function destroy($id)
     {
-        //
-    }
+        try {
+            $spk = SPK::findOrFail($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+            // Remove 'storage/' from the start of the path if it exists
+            $pdfPath = str_replace('storage/', '', $spk->pdf_path);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+            if ($pdfPath && Storage::disk('public')->exists($pdfPath)) {
+                Storage::disk('public')->delete($pdfPath);
+            }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+            $spk->delete();
+
+            return response()->json([
+                'status' => 'success',
+                'success' => true,
+                'message' => 'Data SPK Berhasil Dihapus!',
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'success' => false,
+                'message' => 'Data SPK Tidak Bisa Dihapus Karena Masih Digunakan atau Terjadi Kesalahan!',
+                'trace' => $e->getTrace()
+            ]);
+        }
     }
 }
