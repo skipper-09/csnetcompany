@@ -28,11 +28,24 @@
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
-                                        <label class="form-label" for="basic-default-fullname">Date</label>
+                                        <label class="form-label" for="basic-default-fullname">Tanggal Surat</label>
                                         <input type="date" name="date"
                                             class="form-control @error('date') is-invalid @enderror"
                                             id="basic-default-fullname" placeholder="Tanggal" />
                                         @error('date')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Tanggal Instalasi</label>
+                                        <input type="date" name="date_install"
+                                            class="form-control @error('date_install') is-invalid @enderror"
+                                            id="basic-default-fullname" placeholder="Tanggal" />
+                                        @error('date_install')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>

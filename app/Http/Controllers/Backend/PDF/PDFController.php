@@ -42,7 +42,8 @@ class PDFController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'date' => 'required|date',
+            'date'=> 'required|date',
+            'date_install' => 'required|date',
             'technician_name' => 'required|string',
             'technician_position' => 'required|string',
             'client_name' => 'required|string',
