@@ -25,7 +25,9 @@ class SPK extends Model
         'cable_details',
         'stb_status',
         'stb_mac_address',
-        'pdf_path'
+        'pdf_path',
+        'client_signature_path',
+        'technician_signature_path',
     ];
 
     protected $casts = [

@@ -131,10 +131,12 @@ return [
         /*
          * Package Service Providers...
          */
+        Intervention\Image\Laravel\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
     ])->toArray(),
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Image' => Intervention\Image\Laravel\Facades\Image::class,
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
     ])->toArray(),
 

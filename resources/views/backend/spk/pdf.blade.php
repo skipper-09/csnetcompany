@@ -93,6 +93,12 @@
             font-size: 12px;
         }
 
+        .signature-column .signature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .signature-column:first-child {
             margin-right: 10%;
         }
@@ -156,22 +162,30 @@
                 <li>Modem adalah milik <strong>CSNET</strong> yang disewakan kepada PELANGGAN dan akan dikembalikan jika
                     PELANGGAN berhenti berlangganan dengan CSNET.</li>
                 <li>Kerusakan alat (modem) yang disebabkan oleh kendala teknis akan menjadi tanggung jawab CSNET.</li>
-                <li>Kerusakan/Kehilangan alat (modem & STB) yang disebabkan oleh <strong>PELANGGAN</strong> akan dibebankan
+                <li>Kerusakan/Kehilangan alat (modem & STB) yang disebabkan oleh <strong>PELANGGAN</strong> akan
+                    dibebankan
                     kepada <strong>PELANGGAN.</strong> Dengan biaya kerusakan sebesar 50.000/biaya kehilangan sebesar
                     300.000.</li>
-                <li>Apabila lewat 1 hari setelah Jatuh Tempo belum ada pembayaran maka sambungan internet akan dimatikan dan
+                <li>Apabila lewat 1 hari setelah Jatuh Tempo belum ada pembayaran maka sambungan internet akan dimatikan
+                    dan
                     dihidupkan kembali ketika Pelanggan sudah melakukan Pembayaran.</li>
                 <li>Sistem Pembayaran CSNET menggunakan system Prabayar (Bayar di awal).</li>
                 <li>Upgrade dan Dowgrade Layanan dilakukan sesuai dengan tanggal Jatuh Tempo.</li>
-                <li>PELANGGAN yang ingin putus berlangganan dengan <strong>CSNET</strong> wajib melakukan pemberitahuan 1
+                <li>PELANGGAN yang ingin putus berlangganan dengan <strong>CSNET</strong> wajib melakukan pemberitahuan
+                    1
                     bulan sebelumnya. Jika <strong>PELANGGAN</strong> tidak melakukan pemberitahuan, maka
-                    <strong>PELANGGAN</strong> wajib membayar tagihan di bulan berjalan.</li>
-                <li>Jangka waktu berlangganan minimal adalah 3 bulan, jika <strong>PELANGGAN</strong> memutuskan langganan
-                    sebelum 3 bulan maka <strong>PELANGGAN</strong> wajib melunasi biaya berlangganan selama 3 bulan.</li>
+                    <strong>PELANGGAN</strong> wajib membayar tagihan di bulan berjalan.
+                </li>
+                <li>Jangka waktu berlangganan minimal adalah 3 bulan, jika <strong>PELANGGAN</strong> memutuskan
+                    langganan
+                    sebelum 3 bulan maka <strong>PELANGGAN</strong> wajib melunasi biaya berlangganan selama 3 bulan.
+                </li>
                 <li>Layanan home dan bussiness <strong>TIDAK BOLEH</strong> diperjual belikan, jika
-                    <strong>PELANGGAN</strong> melanggar maka akan dikenakan denda Rp. 25.000.000,00-</li>
+                    <strong>PELANGGAN</strong> melanggar maka akan dikenakan denda Rp. 25.000.000,00-
+                </li>
                 <li>Pelanggan Wajib untuk Mendampingi team teknisi setiap kegiatan Instalasi Pelayanan Internet dan IPTV
-                    berlangsung bertujuan untuk menghindari hal hal yang tidak di inginkan, Segala bentuk kehilangan bukan
+                    berlangsung bertujuan untuk menghindari hal hal yang tidak di inginkan, Segala bentuk kehilangan
+                    bukan
                     tanggung Jawab IDNET.</li>
             </ol>
         </div>
@@ -179,14 +193,12 @@
         <div class="signatures-row">
             <div class="signature-column">
                 <p><strong>Tanda Tangan Teknisi</strong></p>
-                <br/>
-                <br/>
+                <img class="signature" src="{{ public_path('storage/' . $data['technician_signature_path']) }}" width="300">
                 <p><i>{{ $data['technician_name'] }}</i></p>
             </div>
             <div class="signature-column">
                 <p><strong>Tanda Tangan Client</strong></p>
-                <br/>
-                <br/>
+                <img class="signature" src="{{ public_path('storage/' . $data['client_signature_path']) }}" width="300">
                 <p><i>{{ $data['client_name'] }}</i></p>
             </div>
             <div class="clear"></div>

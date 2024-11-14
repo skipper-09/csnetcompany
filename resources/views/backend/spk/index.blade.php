@@ -32,9 +32,9 @@
                             <th>Alamat</th>
                             <th>Telepon</th>
                             <th>SPK</th>
-                            @canany(['delete-spk'])
+                            @can('delete-spk')
                             <th>Actions</th>
-                            @endcanany
+                            @endcan
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -45,46 +45,50 @@
 @endsection
 
 @push('js')
-    <script>
-        $(document).ready(function() {
-            const table = $('#dataTable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: '{{ route('backend.spk.getData') }}',
-                columns: [{
-                        data: 'date',
-                        name: 'date'
-                    },
+<script src="{{ asset('backend/js/ui-toasts.js') }}"></script>
+
+<script>
+    $(document).ready(function() {
+        const table = $('#dataTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{{ route('backend.spk.getData') }}',
+            columns: [{
+                    data: 'date',
+                    name: 'date'
+                },
+                {
+                    data: 'date_install',
+                    name: 'date_install'
+                },
+                {
+                    data: 'client_name',
+                    name: 'client_name'
+                },
+                {
+                    data: 'client_address',
+                    name: 'client_address'
+                },
+                {
+                    data: 'client_whatsapp',
+                    name: 'client_whatsapp'
+                },
+                {
+                    data: 'pdf_path',
+                    name: 'pdf_path',
+                    orderable: false,
+                    searchable: false
+                },
+                @can('delete-spk')
                     {
-                        data: 'date_install',
-                        name: 'date_install'
-                    },
-                    {
-                        data: 'client_name',
-                        name: 'client_name'
-                    },
-                    {
-                        data: 'client_address',
-                        name: 'client_address'
-                    },
-                    {
-                        data: 'client_whatsapp',
-                        name: 'client_whatsapp'
-                    },
-                    {
-                        data: 'pdf_path',
-                        name: 'pdf_path',
+                        data: 'action',
+                        name: 'action',
                         orderable: false,
                         searchable: false
-                    },
-                    @canany(['delete-spk'])
-                        {
-                            data: 'action',
-                            name: 'action'
-                        }
-                    @endcanany
-                ],
-            });
+                    }
+                @endcan
+            ],
         });
-    </script>
+    });
+</script>
 @endpush
