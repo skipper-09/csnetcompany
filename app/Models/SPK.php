@@ -29,7 +29,6 @@ class SPK extends Model
         'client_signature_path',
         'technician_signature_path',
     ];
-
     protected $casts = [
         'date' => 'date',
         'date_install' => 'date',

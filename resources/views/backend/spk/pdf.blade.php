@@ -188,14 +188,12 @@
         <div class="signatures-row">
             <div class="signature-column">
                 <p><strong>Tanda Tangan Teknisi</strong></p>
-                <img src="{{ public_path('storage/' . $data['technician_signature_path']) }}" width="300"
-                    height="100">
+                <img src="{{ public_path('storage/' . $data['technician_signature_path']) }}" width="200">
                 <p><i>{{ $data['technician_name'] }}</i></p>
             </div>
             <div class="signature-column">
                 <p><strong>Tanda Tangan Client</strong></p>
-                <img src="{{ public_path('storage/' . $data['client_signature_path']) }}" width="300"
-                    height="100">
+                <img src="{{ public_path('storage/' . $data['client_signature_path']) }}" width="200">
                 <p><i>{{ $data['client_name'] }}</i></p>
             </div>
             <div class="clear"></div>

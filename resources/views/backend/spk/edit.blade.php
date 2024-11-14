@@ -29,9 +29,9 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Tanggal Surat</label>
-                                        <input type="date" name="date"
-                                            class="form-control @error('date') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Tanggal" required />
+                                        <input type="date" name="date" class="form-control @error('date') is-invalid @enderror"
+                                               id="basic-default-fullname" placeholder="Tanggal surat" 
+                                               value="{{ old('date', \Carbon\Carbon::parse($spk->date)->format('Y-m-d')) }}" />
                                         @error('date')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -44,7 +44,8 @@
                                         <label class="form-label" for="basic-default-fullname">Tanggal Instalasi</label>
                                         <input type="date" name="date_install"
                                             class="form-control @error('date_install') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Tanggal" required />
+                                            id="basic-default-fullname" placeholder="Tanggal instalasi"
+                                            value="{{ old('date_install', \Carbon\Carbon::parse($spk->date_install)->format('Y-m-d')) }}" />
                                         @error('date_install')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -187,11 +188,8 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">STB Status</label>
-                                        <select name="stb_status" id=""
-                                            class="form-control @error('stb_status') is-invalid @enderror">
-                                            <option selected>
-                                                {{ $spk->stb_status }}
-                                            </option>
+                                        <select name="stb_status" class="form-control @error('stb_status') is-invalid @enderror">
+                                            <option selected>Pilih Status</option>
                                             <option value="Ada">Ada</option>
                                             <option value="Tidak">Tidak</option>
                                         </select>

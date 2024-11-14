@@ -64,7 +64,7 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
-                                <div class="col-md-6 col-sm-12">
+                                {{-- <div class="col-md-6 col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Tanggal Surat</label>
                                         <input type="date" name="date"
@@ -76,8 +76,8 @@
                                             </div>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
+                                </div> --}}
+                                <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">Tanggal Instalasi</label>
                                         <input type="date" name="date_install"

@@ -75,7 +75,6 @@ class PDFController extends Controller
 
         // First validate non-signature fields
         $validated = $request->validate([
-            'date' => 'required|date',
             'date_install' => 'required|date',
             'technician_name' => 'required|string',
             'technician_position' => 'required|string',
@@ -123,6 +122,7 @@ class PDFController extends Controller
             // Load the view with signatures
             $pdf = Pdf::loadView('backend.spk.pdf', [
                 'data' => array_merge($validated, [
+                    'date' => Carbon::now(),
                     'client_signature_path' => $clientSignaturePath,
                     'technician_signature_path' => $technicianSignaturePath,
                 ]),
@@ -138,6 +138,7 @@ class PDFController extends Controller
             // Create SPK record
             $spk = SPK::create([
                 ...$validated,
+                'date' => Carbon::now(),
                 'pdf_path' => 'spk/' . $filename,
                 'client_signature_path' => $clientSignaturePath,
                 'technician_signature_path' => $technicianSignaturePath,
