@@ -100,6 +100,7 @@ class PermissionSeeder extends Seeder
             'delete-role',
             'read-spk',
             'create-spk',
+            'update-spk',
             'delete-spk',
         ];
         $permissions = collect($arrayOfPermissionNames)->map(function ($permission) {

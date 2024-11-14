@@ -13,6 +13,7 @@ use Illuminate\Support\Carbon;
 use Intervention\Image\ImageManager;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Colors\Rgb\Channels\Red;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Laravel\Facades\Image;
 
@@ -35,8 +36,8 @@ class PDFController extends Controller
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
                 $button = '';
-                // $button .= ' <a href="' . route('backend.promo.edit', ['id' => $row->id]) . '" class="btn btn-sm btn-success action " data-id=' . $row->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
-                //                                             class="fas fa-pen"></i></a>';
+                $button .= ' <a href="' . route('backend.spk.edit', ['id' => $row->id]) . '" class="btn btn-sm btn-success action " data-id=' . $row->id . ' data-type="edit" data-toggle="tooltip" data-placement="bottom" title="Edit Data"><i
+                                                            class="fas fa-pen"></i></a>';
                 $button .= ' <button class="btn btn-sm btn-danger action" data-id=' . $row->id . ' data-type="delete" data-route="' . route('backend.spk.delete', ['id' => $row->id]) . '"><i
                                                                 class="fas fa-trash"></i></button>';
                 return '<div class="d-flex gap-1">' . $button . '</div>';
@@ -157,6 +158,101 @@ class PDFController extends Controller
                 ->withErrors(['error' => 'Terjadi kesalahan saat menyimpan SPK: ' . $e->getMessage()]);
         }
     }
+
+    public function show($id)
+    {
+        $data = [
+            'sidebar' => 'Informasi',
+            'page_name' => 'Surat Tugas Pemasangan Retail',
+            'spk' => SPK::find($id)
+        ];
+        return view('backend.spk.edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Merge default values for stb_status
+        $request->merge([
+            'stb_status' => $request->get('stb_status', 'Tidak'),
+        ]);
+
+        // Validate the non-signature fields
+        $validated = $request->validate([
+            'date' => 'required|date',
+            'date_install' => 'required|date',
+            'technician_name' => 'required|string',
+            'technician_position' => 'required|string',
+            'client_name' => 'required|string',
+            'client_nik' => 'required|string',
+            'client_address' => 'required|string',
+            'client_whatsapp' => 'required|string',
+            'package' => 'required|string',
+            'modem_serial' => 'required|string',
+            'cable_details' => 'required|string',
+            'stb_status' => 'required|in:Ada,Tidak',
+            'stb_mac_address' => 'nullable|required_if:stb_status,Ada',
+        ]);
+
+        try {
+            // Find the SPK record by ID
+            $spk = SPK::findOrFail($id);
+
+            // Get current signature paths
+            $clientSignaturePath = $spk->client_signature_path;
+            $technicianSignaturePath = $spk->technician_signature_path;
+
+            // Update only the non-signature fields
+            $spk->update([
+                'date' => $validated['date'],
+                'date_install' => $validated['date_install'],
+                'technician_name' => $validated['technician_name'],
+                'technician_position' => $validated['technician_position'],
+                'client_name' => $validated['client_name'],
+                'client_nik' => $validated['client_nik'],
+                'client_address' => $validated['client_address'],
+                'client_whatsapp' => $validated['client_whatsapp'],
+                'package' => $validated['package'],
+                'modem_serial' => $validated['modem_serial'],
+                'cable_details' => $validated['cable_details'],
+                'stb_status' => $validated['stb_status'],
+                'stb_mac_address' => $validated['stb_mac_address'] ?? null,
+            ]);
+
+            // Generate letter number (same as store)
+            $randomNumber = str_pad(rand(1, 100), 3, '0', STR_PAD_LEFT);
+            $letter_number = $randomNumber . "/BWI/" . date('Y');
+
+            // Set up PDF options (for DOMPDF)
+            $options = new Options();
+            $options->set('isRemoteEnabled', true);
+
+            // Load the updated data and existing signature paths
+            $pdf = Pdf::loadView('backend.spk.pdf', [
+                'data' => array_merge($validated, [
+                    'client_signature_path' => $clientSignaturePath, // Keep existing signature
+                    'technician_signature_path' => $technicianSignaturePath, // Keep existing signature
+                ]),
+                'letter_number' => $letter_number,
+            ]);
+
+            // Generate PDF filename (overwrite existing one)
+            $filename = Carbon::now()->format('Y-m-d') . '-Surat-Tugas-Pemasangan-Retail-' . Str::random(10) . '.pdf';
+
+            // Store the new PDF file (this will overwrite the old one)
+            Storage::disk('public')->put('spk/' . $filename, $pdf->output());
+
+            // Update the SPK record with the new PDF path
+            $spk->update([
+                'pdf_path' => 'spk/' . $filename,
+            ]);
+
+            // Return success message
+            return redirect()->route('backend.spk')->with(['success' => 'Data SPK Berhasil Diperbarui dan PDF Diperbarui!']);
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat memperbarui SPK: ' . $e->getMessage()]);
+        }
+    }
+
 
     private function saveSignature($base64Signature, $type)
     {

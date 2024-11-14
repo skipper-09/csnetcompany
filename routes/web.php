@@ -122,6 +122,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/getData', [PDFController::class, 'getData'])->name('backend.spk.getData');
         Route::get('create', [PDFController::class, 'create'])->name('backend.spk.add')->can('create-spk');
         Route::post('store', [PDFController::class, 'store'])->name('backend.spk.store');
+        Route::get('/edit/{id}', [PDFController::class, 'show'])->name('backend.spk.edit')->can('update-spk');
+        Route::put('/update/{id}', [PDFController::class, 'update'])->name('backend.spk.update');
         Route::delete('/delete/{id}', [PDFController::class, 'destroy'])->name('backend.spk.delete')->can('delete-spk');
     });
 

@@ -60,7 +60,8 @@
             <div class="col-xl">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form id="spkForm" action="{{ route('backend.spk.store') }}" method="POST" enctype="multipart/form-data">
+                        <form id="spkForm" action="{{ route('backend.spk.store') }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
@@ -68,7 +69,7 @@
                                         <label class="form-label" for="basic-default-fullname">Tanggal Surat</label>
                                         <input type="date" name="date"
                                             class="form-control @error('date') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Tanggal" required/>
+                                            id="basic-default-fullname" placeholder="Tanggal" required />
                                         @error('date')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -81,7 +82,7 @@
                                         <label class="form-label" for="basic-default-fullname">Tanggal Instalasi</label>
                                         <input type="date" name="date_install"
                                             class="form-control @error('date_install') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Tanggal" required/>
+                                            id="basic-default-fullname" placeholder="Tanggal" required />
                                         @error('date_install')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -94,7 +95,7 @@
                                         <label class="form-label" for="basic-default-fullname">Nama</label>
                                         <input type="text" name="technician_name"
                                             class="form-control @error('technician_name') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan Nama" required/>
+                                            id="basic-default-fullname" placeholder="Masukan Nama" required />
                                         @error('technician_name')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -107,7 +108,7 @@
                                         <label class="form-label" for="basic-default-fullname">Jabatan</label>
                                         <input type="text" name="technician_position"
                                             class="form-control @error('technician_position') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan Jabatan" required/>
+                                            id="basic-default-fullname" placeholder="Masukan Jabatan" required />
                                         @error('technician_position')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -123,7 +124,7 @@
                                         <label class="form-label" for="basic-default-fullname">Nama Klien</label>
                                         <input type="text" name="client_name"
                                             class="form-control @error('client_name') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan Nama Client" required/>
+                                            id="basic-default-fullname" placeholder="Masukan Nama Client" required />
                                         @error('client_name')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -136,7 +137,7 @@
                                         <label class="form-label" for="basic-default-fullname">NIK</label>
                                         <input type="text" name="client_nik"
                                             class="form-control @error('client_nik') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan NIK" required/>
+                                            id="basic-default-fullname" placeholder="Masukan NIK" required />
                                         @error('client_nik')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -149,7 +150,7 @@
                                         <label class="form-label" for="basic-default-fullname">Alamat</label>
                                         <input type="text" name="client_address"
                                             class="form-control @error('client_address') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan Alamat" required/>
+                                            id="basic-default-fullname" placeholder="Masukan Alamat" required />
                                         @error('client_address')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -162,7 +163,7 @@
                                         <label class="form-label" for="basic-default-fullname">No Whatsapp</label>
                                         <input type="text" name="client_whatsapp"
                                             class="form-control @error('client_whatsapp') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan No Telepon" required/>
+                                            id="basic-default-fullname" placeholder="Masukan No Telepon" required />
                                         @error('client_whatsapp')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -175,7 +176,7 @@
                                         <label class="form-label" for="basic-default-fullname">Paket</label>
                                         <input type="text" name="package"
                                             class="form-control @error('package') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan Nama Paket" required/>
+                                            id="basic-default-fullname" placeholder="Masukan Nama Paket" required />
                                         @error('package')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -191,7 +192,7 @@
                                         <label class="form-label" for="basic-default-fullname">No Serial Modem</label>
                                         <input type="text" name="modem_serial"
                                             class="form-control @error('modem_serial') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan No Serial Modem" required/>
+                                            id="basic-default-fullname" placeholder="Masukan No Serial Modem" required />
                                         @error('modem_serial')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -204,7 +205,7 @@
                                         <label class="form-label" for="basic-default-fullname">Kabel Detail</label>
                                         <input type="text" name="cable_details"
                                             class="form-control @error('cable_details') is-invalid @enderror"
-                                            id="basic-default-fullname" placeholder="Masukan Kabel Detail" required/>
+                                            id="basic-default-fullname" placeholder="Masukan Kabel Detail" required />
                                         @error('cable_details')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -228,7 +229,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-6 col-sm-12" id="mac-address-field">
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-fullname">STB MAC Address</label>
                                         <input type="text" name="stb_mac_address"
@@ -419,9 +420,21 @@
             this.submit();
         });
 
-        document.querySelector('[name="stb_status"]').addEventListener('change', function(e) {
+        document.addEventListener('DOMContentLoaded', function() {
+            const stbStatusElement = document.querySelector('[name="stb_status"]');
             const macAddressField = document.getElementById('mac-address-field');
-            macAddressField.style.display = e.target.value === 'Ada' ? 'block' : 'none';
+
+            if (stbStatusElement && macAddressField) {
+                stbStatusElement.addEventListener('change', function(e) {
+                    // Show the mac address field if the selected value is 'Ada', otherwise hide it
+                    macAddressField.style.display = e.target.value === 'Ada' ? 'block' : 'none';
+                });
+
+                // Optionally set the initial display based on the current value
+                macAddressField.style.display = stbStatusElement.value === 'Ada' ? 'block' : 'none';
+            } else {
+                console.warn('Required elements not found in the DOM.');
+            }
         });
     </script>
 @endpush

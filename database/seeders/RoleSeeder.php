@@ -113,6 +113,7 @@ class RoleSeeder extends Seeder
             'delete-role',
             'read-spk',
             'create-spk',
+            'update-spk',
             'delete-spk',
         ]);
 
