@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('{{ public_path('backend/img/spk.jpg') }}');
+            background-image: url('{{ public_path('backend/img/spkBg.png') }}');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -61,7 +61,6 @@
         .content .terms-conditions {
             font-size: 12px;
             clear: both;
-            padding-top: 1rem;
         }
 
         .terms-conditions h4 {
@@ -93,20 +92,16 @@
             font-size: 12px;
         }
 
-        .signature-column .signature {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .signature-column p {
+            margin-bottom: 0;
+        }
+
+        .signature-column img {
+            margin-bottom: 0.5rem;
         }
 
         .signature-column:first-child {
             margin-right: 10%;
-        }
-
-        .signature-line {
-            width: 100%;
-            margin: 4rem auto 0.5rem auto;
-            border-bottom: 1px solid black;
         }
 
         /* Clear float */
@@ -193,12 +188,14 @@
         <div class="signatures-row">
             <div class="signature-column">
                 <p><strong>Tanda Tangan Teknisi</strong></p>
-                <img class="signature" src="{{ public_path('storage/' . $data['technician_signature_path']) }}" width="300">
+                <img src="{{ public_path('storage/' . $data['technician_signature_path']) }}" width="300"
+                    height="100">
                 <p><i>{{ $data['technician_name'] }}</i></p>
             </div>
             <div class="signature-column">
                 <p><strong>Tanda Tangan Client</strong></p>
-                <img class="signature" src="{{ public_path('storage/' . $data['client_signature_path']) }}" width="300">
+                <img src="{{ public_path('storage/' . $data['client_signature_path']) }}" width="300"
+                    height="100">
                 <p><i>{{ $data['client_name'] }}</i></p>
             </div>
             <div class="clear"></div>
