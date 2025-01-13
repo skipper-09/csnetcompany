@@ -14,7 +14,7 @@ class PrivacyPolicySeeder extends Seeder
     public function run(): void
     {
         PrivacyPolicy::insert([
-            'privacy'=>'<p>Terima kasih Anda telah berlangganan Layanan Telekomunikasi Idnet. Jika Anda berlangganan Layanan Telekomunikasi Idnet, Anda harus menyetujui Kebijakan Privasi ini.</p>'
+            'privacy'=>'<p>Terima kasih Anda telah berlangganan Layanan Telekomunikasi CSNET. Jika Anda berlangganan Layanan Telekomunikasi CSNET, Anda harus menyetujui Kebijakan Privasi ini.</p>'
         ]);
     }
 }

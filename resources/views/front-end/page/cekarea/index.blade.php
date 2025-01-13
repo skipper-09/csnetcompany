@@ -25,9 +25,9 @@
                 <div class="col-md-6 order-first order-md-2">
                     <div class="hero-2-txt wow fadeInLeft">
                         <!-- Title -->
-                        <h2 class="s-45 w-700 color--white">Cek Area Layanan Internet WiFi Csnet di Daerah Kamu!</h2>
+                        <h2 class="s-45 w-700 color--white">Cek Area Layanan Internet WiFi CSNET di Daerah Kamu!</h2>
                         <!-- Text -->
-                        <p class="p-lg color--white">Nikmati jaringan internet tercepat dan tanpa batas. Cek sekarang apakah kotamu sudah tercover oleh jaringan Csnet.</p>
+                        <p class="p-lg color--white">Nikmati jaringan internet tercepat dan tanpa batas. Cek sekarang apakah kotamu sudah tercover oleh jaringan CSNET.</p>
                     </div>
                 </div> <!-- END HERO TEXT -->
             </div> <!-- End row -->
@@ -46,7 +46,7 @@
                         </h2>	
                         <!-- Text -->	
                         <p class="p-lg">
-                            Cek sekarang apakah kotamu sudah tercover oleh jaringan Csnet dan nikmati jaringan internet tercepat dan tanpa batas
+                            Cek sekarang apakah kotamu sudah tercover oleh jaringan CSNET dan nikmati jaringan internet tercepat dan tanpa batas
                         </p> 
                     </div>	
                 </div>
@@ -57,7 +57,7 @@
                  <div class="col-md-11 col-lg-10 col-xl-8">
                     <!-- Cek Area Result -->
                     <div class="d-none col-lg-12 contact-form-msg text-center" id="result">
-                        <p class="p-lg">Area Ini Sudah Tercover Csnet</p>
+                        <p class="p-lg">Area Ini Sudah Tercover CSNET</p>
                         <a href="https://forms.gle/JWxGAcGYQt2bmLf18" target="_blank">
                             <button class="btn btn-sm btn--theme hover--theme">Daftar</button>
                         </a>

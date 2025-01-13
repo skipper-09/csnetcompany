@@ -104,7 +104,7 @@
                     <!-- Title -->
                     <h6 class="s-17 w-700 text-white">Hubungi Kami</h6>
                     <p class="s-15">
-                        Untuk informasi lebih lanjut mengenai Cs Net silakan hubungi kami di:
+                        Untuk informasi lebih lanjut mengenai CSNET silakan hubungi kami di:
                     </p>
 
                     <!-- Mail Link -->

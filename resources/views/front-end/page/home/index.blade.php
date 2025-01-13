@@ -18,9 +18,9 @@
                         <!-- Title -->
                         <h2 class="s-56 w-700 color--white">Internet Cepat Tanpa Batas!</h2>
                         <!-- Text -->
-                        <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari CSnet, dengan
+                        <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari CSNET, dengan
                             pilihan paket terjangkau yang dirancang untuk mendukung kemajuan bisnis Anda. Pastikan bisnis
-                            Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari CSnet.
+                            Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari CSNET.
                         </p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="col-md-10 col-lg-9">
                     <div class="section-title mb-70">
                         <!-- Title -->
-                        <h2 class="s-40 w-700">Kenapa Harus Berlangganan Csnet?</h2>
+                        <h2 class="s-40 w-700">Kenapa Harus Berlangganan CSNET?</h2>
                     </div>
                 </div>
             </div>
@@ -306,9 +306,9 @@
                 <div class="col-md-5">
                     <div class="txt-block left-column wow fadeInRight">
                         <!-- Title -->	
-                        <h2 class="s-40 w-700">Kenapa Harus Berlangganan CSnet?</h2>
+                        <h2 class="s-40 w-700">Kenapa Harus Berlangganan CSNET?</h2>
                         <!-- Text -->	
-                        <p>Kami menghadirkan solusi internet pintar dengan hasil yang nyata dan instan. Nikmati pengalaman internet yang maksimal dengan teknologi terkini dan layanan terbaik dari CSnet.</p>
+                        <p>Kami menghadirkan solusi internet pintar dengan hasil yang nyata dan instan. Nikmati pengalaman internet yang maksimal dengan teknologi terkini dan layanan terbaik dari CSNET.</p>
                         <!-- CONTENT BOX #1 -->
                         <div class="cbox-1 ico-15">
 
@@ -413,7 +413,7 @@
                                     <!-- Text -->
                                     <div class="fbox-txt">
                                         <h5 class="s-19 w-700">Jaringan yang Ramah Lingkungan</h5>
-                                        <p>Jaringan fiber optic CSnet lebih cepat, efisien, dan ramah lingkungan, menggunakan bahan hemat energi untuk mendukung keberlanjutan.</p>
+                                        <p>Jaringan fiber optic CSNET lebih cepat, efisien, dan ramah lingkungan, menggunakan bahan hemat energi untuk mendukung keberlanjutan.</p>
                                     </div>
 
                                  </div>

@@ -35,7 +35,7 @@
                         <h2 class="s-56 w-700">Tentang Kami</h2>
 
                         <!-- Text -->
-                        <p class="p-xl">CSnet hadir untuk mengoptimalkan aktivitas digital kita semua dengan layanan
+                        <p class="p-xl">CSNET hadir untuk mengoptimalkan aktivitas digital kita semua dengan layanan
                             internet yang super kencang dan dapat diandalkan. Jelajahi internet dengan bebas dan tanpa
                             khawatir akan jaringan yang tidak stabil dengan kualitas koneksi yang terpercaya dan layanan
                             customer service yang siap siaga.
