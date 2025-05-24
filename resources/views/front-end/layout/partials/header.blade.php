@@ -65,19 +65,20 @@
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
                             </li>
-                            
-                        <!-- MEGAMENU -->
-                        
+
+                            <!-- MEGAMENU -->
+
 
 
                             <!-- SIMPLE NAVIGATION LINK -->
-                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}" class="h-link">Cek Area</a>
+                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}"
+                                    class="h-link">Cek Area</a>
                             </li>
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- SIGN IN LINK -->
                             <li class="nl-simple reg-fst-link mobile-last-link" aria-haspopup="true">
-                                <a href="https://client.idnet.id/"
+                                <a href="https://client.csnet.id/"
                                     class="btn r-04 btn--theme hover--theme last-link">Billing</a>
                             </li>
                             <!-- SIGN UP BUTTON -->
@@ -210,7 +211,7 @@
                                 </div> <!-- End container -->
                             </div> <!-- End wsmegamenu -->
                         </li> <!-- END MEGAMENU --> --}}
-                        
+
 
                             <!-- SIMPLE NAVIGATION LINK -->
                             <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}"

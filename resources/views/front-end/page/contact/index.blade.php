@@ -4,8 +4,8 @@
 
 @push('css')
     <style>
-        iframe{
-         width: 100%   
+        iframe {
+            width: 100%
         }
     </style>
 @endpush
@@ -20,9 +20,7 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-6 order-last order-md-2">
                     <div class="hero-18-img wow fadeInRight">
-                        <img class="img-fluid"
-                            src="{{ asset('front-end/images/about1.png') }}"
-                            alt="Tentang Kami">
+                        <img class="img-fluid" src="{{ asset('front-end/images/about1.png') }}" alt="Tentang Kami">
                     </div>
                 </div>
 
@@ -77,12 +75,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-11 col-lg-10 col-xl-8">
                     <div class="form-holder">
-                        <form  id="whatsappForm" action="#" method="POST" class="row contact-form">
+                        <form id="whatsappForm" action="#" method="POST" class="row contact-form">
 
                             <!-- Form Select -->
                             <div class="col-md-6 input-subject">
                                 <p class="p-lg">Subject / Topik</p>
-                                <select id="subject" class="form-select subject" aria-label="Default select example" aria-required="true">
+                                <select id="subject" class="form-select subject" aria-label="Default select example"
+                                    aria-required="true">
                                     <option value=" ">Subject...</option>
                                     <option value="Tagihan">Tagihan</option>
                                     <option value="Gangguan Layanan">Gangguan Layanan</option>
@@ -93,24 +92,24 @@
                             <!-- Contact Form Input -->
                             <div class="col-md-6">
                                 <p class="p-lg">Nama</p>
-                                <input type="text"  class="form-control name" id="nama"
-                                    placeholder="Nama" required>
+                                <input type="text" class="form-control name" id="nama" placeholder="Nama" required>
                             </div>
 
                             <div class="col-md-6">
                                 <p class="p-lg">Email Address</p>
-                                <input type="text"  class="form-control email" id="email"
-                                    placeholder="Email Address" required>
+                                <input type="text" class="form-control email" id="email" placeholder="Email Address"
+                                    required>
                             </div>
 
                             <div class="col-md-6">
                                 <p class="p-lg">Id Pelanggan</p>
-                                <input type="text" id="idpel"  class="form-control email" placeholder="Id Pelanggan" required>
+                                <input type="text" id="idpel" class="form-control email" placeholder="Id Pelanggan"
+                                    required>
                             </div>
 
                             <div class="col-md-12">
                                 <p class="p-lg">Pesan</p>
-                                <textarea class="form-control message" id="pesan"  rows="6" placeholder="Saya mempunyai kendala..." required></textarea>
+                                <textarea class="form-control message" id="pesan" rows="6" placeholder="Saya mempunyai kendala..." required></textarea>
                             </div>
 
                             <!-- Contact Form Button -->
@@ -134,7 +133,7 @@
             <div class="d-flex justify-content-center align-content-center w-full">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.6227000588287!2d114.35253777463451!3d-8.240640791792543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd15bc57dc302cf%3A0xa94b68857d6e73f5!2sCSNET%20OFFICE!5e0!3m2!1sen!2sid!4v1730358788245!5m2!1sen!2sid"
-                     height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                    height="600" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
     </section>
@@ -142,28 +141,27 @@
 
 @endsection
 
-@push("js")
+@push('js')
     <script>
-       
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the form from submitting the traditional way
+            e.preventDefault(); // Prevent the form from submitting the traditional way
 
-    // Get the phone number and message
-    const subject = document.getElementById('subject').value;
+            // Get the phone number and message
+            const subject = document.getElementById('subject').value;
             const idpel = document.getElementById('idpel').value;
             const email = document.getElementById('email').value;
             const nama = document.getElementById('nama').value;
             const pesan = document.getElementById('pesan').value;
 
-    // Encode the message to be URL-safe
-    const encodedMessage = encodeURIComponent(pesan);
+            // Encode the message to be URL-safe
+            const encodedMessage = encodeURIComponent(pesan);
 
-    // Build the WhatsApp URL
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=6282116879977&text=*Halo%20Admin*%0A%0ASubject%20*${subject}*%0A%0ASaya%20*${nama}*%0AId%20Pelanggan%20*${idpel}*%0AEmail%20*${email}*%0A%0A${pesan}%0A`;
+            // Build the WhatsApp URL
+            const whatsappUrl =
+                `https://api.whatsapp.com/send?phone=6282111777179&text=*Halo%20Admin*%0A%0ASubject%20*${subject}*%0A%0ASaya%20*${nama}*%0AId%20Pelanggan%20*${idpel}*%0AEmail%20*${email}*%0A%0A${pesan}%0A`;
 
-    // Redirect the user to WhatsApp
-    window.location.href = whatsappUrl;
-});
-
+            // Redirect the user to WhatsApp
+            window.location.href = whatsappUrl;
+        });
     </script>
 @endpush

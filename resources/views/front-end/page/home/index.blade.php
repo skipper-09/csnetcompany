@@ -302,19 +302,20 @@
     <section id="features-12" class="shape--bg shape--white-500 pt-50 features-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
-                <!-- TEXT BLOCK -->	
+                <!-- TEXT BLOCK -->
                 <div class="col-md-5">
                     <div class="txt-block left-column wow fadeInRight">
-                        <!-- Title -->	
+                        <!-- Title -->
                         <h2 class="s-40 w-700">Kenapa Harus Berlangganan CSNET?</h2>
-                        <!-- Text -->	
-                        <p>Kami menghadirkan solusi internet pintar dengan hasil yang nyata dan instan. Nikmati pengalaman internet yang maksimal dengan teknologi terkini dan layanan terbaik dari CSNET.</p>
+                        <!-- Text -->
+                        <p>Kami menghadirkan solusi internet pintar dengan hasil yang nyata dan instan. Nikmati pengalaman
+                            internet yang maksimal dengan teknologi terkini dan layanan terbaik dari CSNET.</p>
                         <!-- CONTENT BOX #1 -->
                         <div class="cbox-1 ico-15">
 
-                             <div class="ico-wrap color--theme">
-                                 <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                             </div>
+                            <div class="ico-wrap color--theme">
+                                <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
+                            </div>
 
                             <div class="cbox-1-txt">
                                 <p>
@@ -325,9 +326,9 @@
                         <!-- CONTENT BOX #2 -->
                         <div class="cbox-1 ico-15">
 
-                             <div class="ico-wrap color--theme">
-                                 <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                             </div>
+                            <div class="ico-wrap color--theme">
+                                <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
+                            </div>
 
                             <div class="cbox-1-txt">
                                 <p>
@@ -340,30 +341,30 @@
                         <!-- CONTENT BOX #3 -->
                         <div class="cbox-1 ico-15">
 
-                             <div class="ico-wrap color--theme">
-                                 <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                             </div>
+                            <div class="ico-wrap color--theme">
+                                <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
+                            </div>
 
                             <div class="cbox-1-txt">
                                 <p class="mb-0">Harga Terjangkau, Kualitas Terbaik</p>
                             </div>
 
                         </div>
-                        
+
                     </div>
-                </div>	<!-- END TEXT BLOCK -->	
+                </div> <!-- END TEXT BLOCK -->
 
 
                 <!-- FEATURES-12 WRAPPER -->
                 <div class="col-md-7">
-                    <div class="fbox-12-wrapper wow fadeInLeft">	
+                    <div class="fbox-12-wrapper wow fadeInLeft">
                         <div class="row">
 
 
-                             <div class="col-md-6">
+                            <div class="col-md-6">
 
-                                 <!-- FEATURE BOX #1 -->
-                                 <div id="fb-12-1" class="fbox-12 bg--white-100 block-shadow r-12 mb-30">
+                                <!-- FEATURE BOX #1 -->
+                                <div id="fb-12-1" class="fbox-12 bg--white-100 block-shadow r-12 mb-30">
 
                                     <!-- Icon -->
                                     <div class="fbox-ico ico-50">
@@ -374,11 +375,13 @@
 
                                             <!-- Shape -->
                                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                                <path
+                                                    d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                    transform="translate(100 100)" />
                                             </svg>
 
                                         </div>
-                                    </div>	<!-- End Icon -->
+                                    </div> <!-- End Icon -->
 
                                     <!-- Text -->
                                     <div class="fbox-txt">
@@ -386,14 +389,15 @@
                                             Koneksi Internet yang Stabil dan Handal
                                         </h5>
                                         <p>
-                                            Dengan teknologi fiber optic 100%, kami menjamin koneksi internet yang stabil dan tanpa gangguan, bahkan saat penggunaan intensif.
+                                            Dengan teknologi fiber optic 100%, kami menjamin koneksi internet yang stabil
+                                            dan tanpa gangguan, bahkan saat penggunaan intensif.
                                         </p>
                                     </div>
 
-                                 </div>
+                                </div>
 
-                                 <!-- FEATURE BOX #2 -->
-                                 <div id="fb-12-2" class="fbox-12 bg--white-100 block-shadow r-12">
+                                <!-- FEATURE BOX #2 -->
+                                <div id="fb-12-2" class="fbox-12 bg--white-100 block-shadow r-12">
 
                                     <!-- Icon -->
                                     <div class="fbox-ico ico-50">
@@ -404,31 +408,34 @@
 
                                             <!-- Shape -->
                                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                              <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                                <path
+                                                    d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                    transform="translate(100 100)" />
                                             </svg>
 
                                         </div>
-                                    </div>	<!-- End Icon -->
+                                    </div> <!-- End Icon -->
 
                                     <!-- Text -->
                                     <div class="fbox-txt">
                                         <h5 class="s-19 w-700">Jaringan yang Ramah Lingkungan</h5>
-                                        <p>Jaringan fiber optic CSNET lebih cepat, efisien, dan ramah lingkungan, menggunakan bahan hemat energi untuk mendukung keberlanjutan.</p>
+                                        <p>Jaringan fiber optic CSNET lebih cepat, efisien, dan ramah lingkungan,
+                                            menggunakan bahan hemat energi untuk mendukung keberlanjutan.</p>
                                     </div>
 
-                                 </div>
+                                </div>
 
 
-                             </div>
+                            </div>
 
 
-                             <div class="col-md-6">
+                            <div class="col-md-6">
 
 
-                                 <!-- FEATURE BOX #3 -->
-                                 <div id="fb-12-3" class="fbox-12 bg--white-100 block-shadow r-12 mb-30">
+                                <!-- FEATURE BOX #3 -->
+                                <div id="fb-12-3" class="fbox-12 bg--white-100 block-shadow r-12 mb-30">
 
-                                     <!-- Icon -->
+                                    <!-- Icon -->
                                     <div class="fbox-ico ico-50">
                                         <div class="shape-ico color--theme">
 
@@ -437,24 +444,27 @@
 
                                             <!-- Shape -->
                                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                              <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                                <path
+                                                    d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                    transform="translate(100 100)" />
                                             </svg>
 
                                         </div>
-                                    </div>	<!-- End Icon -->
+                                    </div> <!-- End Icon -->
 
                                     <!-- Text -->
                                     <div class="fbox-txt">
                                         <h5 class="s-19 w-700">Komitmen Terhadap Kepuasan Pelanggan</h5>
                                         <p>
-                                            Dengan jaringan 100% fiber optic yang stabil, kami memastikan layanan yang memenuhi dan melebihi harapan Anda.
+                                            Dengan jaringan 100% fiber optic yang stabil, kami memastikan layanan yang
+                                            memenuhi dan melebihi harapan Anda.
                                         </p>
                                     </div>
 
-                                 </div>
+                                </div>
 
-                                 <!-- FEATURE BOX #4 -->
-                                 <div id="fb-12-4" class="fbox-12 bg--white-100 block-shadow r-12">
+                                <!-- FEATURE BOX #4 -->
+                                <div id="fb-12-4" class="fbox-12 bg--white-100 block-shadow r-12">
 
                                     <!-- Icon -->
                                     <div class="fbox-ico ico-50">
@@ -465,32 +475,35 @@
 
                                             <!-- Shape -->
                                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                              <path d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z" transform="translate(100 100)" />
+                                                <path
+                                                    d="M69.8,-23C76.3,-2.7,57.6,25.4,32.9,42.8C8.1,60.3,-22.7,67,-39.1,54.8C-55.5,42.7,-57.5,11.7,-48.6,-11.9C-39.7,-35.5,-19.8,-51.7,5.9,-53.6C31.7,-55.6,63.3,-43.2,69.8,-23Z"
+                                                    transform="translate(100 100)" />
                                             </svg>
 
                                         </div>
-                                    </div>	<!-- End Icon -->
+                                    </div> <!-- End Icon -->
 
                                     <!-- Text -->
                                     <div class="fbox-txt">
                                         <h5 class="s-19 w-700">Tim Teknisi Handal</h5>
-                                        <p>Tim teknisi kami yang terlatih dan berpengalaman siap memberikan solusi terbaik untuk setiap masalah teknis Anda.</p>
+                                        <p>Tim teknisi kami yang terlatih dan berpengalaman siap memberikan solusi terbaik
+                                            untuk setiap masalah teknis Anda.</p>
                                     </div>
 
-                                 </div>
+                                </div>
 
 
-                             </div>
+                            </div>
 
 
-                         </div>
-                    </div>	<!-- End row -->
-                </div>	<!-- END FEATURES-12 WRAPPER -->
+                        </div>
+                    </div> <!-- End row -->
+                </div> <!-- END FEATURES-12 WRAPPER -->
 
 
-            </div>    <!-- End row -->
-        </div>     <!-- End container -->
-    </section>	<!-- END FEATURES-12 -->
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+    </section> <!-- END FEATURES-12 -->
 
     {{-- <!-- CEK AREA
                                                                                                                                                                                                                                                                                                                     ============================================= -->
@@ -627,7 +640,9 @@
                         <h2 class="s-46 w-700">Paket Lengkap untuk Keluarga Masa Kini</h2>
                         <!-- Text -->
                         <p>
-                            Gabungkan koneksi internet super cepat dan berbagai saluran TV seru dalam satu paket hemat. Nikmati waktu berkualitas bersama keluarga dengan layanan yang memuaskan semua kebutuhan hiburan dan konektivitas Anda.
+                            Gabungkan koneksi internet super cepat dan berbagai saluran TV seru dalam satu paket hemat.
+                            Nikmati waktu berkualitas bersama keluarga dengan layanan yang memuaskan semua kebutuhan hiburan
+                            dan konektivitas Anda.
                         </p>
                         <a href="{{ route('packet.internettv') }}"><button
                                 class="btn btn-primary btn--theme">Selengkapnya</button></a>
@@ -679,30 +694,33 @@
     <section class="py-100 ct-03 content-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
-                <!-- TEXT BLOCK -->	
+                <!-- TEXT BLOCK -->
                 <div class="col-md-6 col-lg-5 order-last order-md-2">
                     <div class="txt-block left-column wow fadeInRight">
-                        <!-- Section ID -->    
+                        <!-- Section ID -->
                         <span class="section-id">DEDICATED</span>
-                
-                        <!-- Title -->    
+
+                        <!-- Title -->
                         <h2 class="s-46 w-700">Internet Dedicated untuk Bisnis Anda</h2>
-                
-                        <!-- Text -->    
+
+                        <!-- Text -->
                         <p>
-                            Dengan internet dedicated, Anda mendapatkan koneksi stabil dan handal yang dirancang khusus untuk bisnis, memastikan performa optimal tanpa gangguan.
+                            Dengan internet dedicated, Anda mendapatkan koneksi stabil dan handal yang dirancang khusus
+                            untuk bisnis, memastikan performa optimal tanpa gangguan.
                         </p>
-                
-                        <!-- List -->    
+
+                        <!-- List -->
                         <ul class="simple-list">
                             <li class="list-item">
-                                <p>Koneksi internet yang terjamin stabil, mendukung kelancaran operasional bisnis Anda sepanjang waktu.</p>
+                                <p>Koneksi internet yang terjamin stabil, mendukung kelancaran operasional bisnis Anda
+                                    sepanjang waktu.</p>
                             </li>
                             <li class="list-item">
-                                <p class="mb-0">Layanan prioritas tinggi yang memberikan kecepatan maksimal tanpa gangguan.</p>
+                                <p class="mb-0">Layanan prioritas tinggi yang memberikan kecepatan maksimal tanpa
+                                    gangguan.</p>
                             </li>
                         </ul>
-                
+
                         <a href="{{ route('packet.dedicated') }}">
                             <button class="btn btn-primary btn--theme">
                                 Selengkapnya
@@ -716,8 +734,8 @@
                         <img class="img-fluid" src="{{ asset('front-end/images/img-14.png') }}" alt="content-image">
                     </div>
                 </div>
-            </div>    <!-- End row -->
-        </div>	   <!-- End container -->
+            </div> <!-- End row -->
+        </div> <!-- End container -->
     </section>
 
     <!-- TESTIMONIALS-1                                                                                                                                                                                                                                                                                                                                                                                              ============================================= -->
@@ -1041,7 +1059,7 @@
                         <!-- BANNER-3 TEXT -->
                         <div class="col">
                             <div class="banner-3-txt color--white">
-                                <!-- Title -->	
+                                <!-- Title -->
                                 <h2 class="s-48 w-700">Ceritakan Kebutuhan & Permasalahan Anda</h2>
 
                                 <!-- Text -->
@@ -1050,14 +1068,15 @@
                                     persaingan bisnis yang ketat.</p>
 
                                 <!-- Button -->
-                                <a href="https://wa.me/6282116879977?text=Halo" class="btn r-04 btn--tra-white hover--white">Hubungi Kami!</a>
+                                <a href="https://wa.me/6282111777179?text=Halo"
+                                    class="btn r-04 btn--tra-white hover--white">Hubungi Kami!</a>
                             </div>
-                        </div>	<!-- END BANNER-3 TEXT -->
-                    </div>   <!-- End row -->	
-                </div>   <!-- End banner overlay -->	
-            </div>    <!-- END BANNER-3 WRAPPER -->
-        </div>     <!-- End container -->	
-    </section>	
+                        </div> <!-- END BANNER-3 TEXT -->
+                    </div> <!-- End row -->
+                </div> <!-- End banner overlay -->
+            </div> <!-- END BANNER-3 WRAPPER -->
+        </div> <!-- End container -->
+    </section>
 
     {{-- <section id="banner-12" class="banner-section pt-30">
         <div class="container">
