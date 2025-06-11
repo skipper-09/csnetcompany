@@ -16,7 +16,8 @@ sudo curl -sSL https://packages.sury.org/php/README.txt | sudo bash -x
 
 echo "Installing PHP 8.3 and Laravel-required extensions..."
 sudo apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-common php8.3-mysql \
-    php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip php8.3-bcmath php8.3-tokenizer php8.3-fileinfo
+    php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip php8.3-bcmath php8.3-tokenizer php8.3-fileinfo \
+    php8.3-gd
 
 echo "Installing Nginx..."
 sudo apt install -y nginx
