@@ -145,7 +145,7 @@
             <div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
                 <!-- FOOTER COPYRIGHT -->
                 <div class="col">
-                    <div class="footer-copyright"><p class="p-sm">&copy; 2024 CSNET. <span>All Rights Reserved</span></p></div>
+                    <div class="footer-copyright"><p class="p-sm">&copy; 2024 PT CAHAYA SOLUSINDO INTERNUSA. <span>All Rights Reserved</span></p></div>
                 </div>
             </div>  <!-- End row -->
         </div>	<!-- END BOTTOM FOOTER -->
