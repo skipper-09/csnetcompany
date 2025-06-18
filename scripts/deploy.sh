@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 php artisan down
 git pull origin main --rebase
+npm i
+npm run build
 composer install --no-dev --optimize-autoloader
 php artisan config:clear
 php artisan route:clear
