@@ -218,9 +218,9 @@
                                     class="h-link">Cek Area</a>
                             </li>
 
-                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('preregister') }}"
+                            {{-- <li class="nl-simple" aria-haspopup="true"><a href="{{ route('preregister') }}"
                                     class="h-link">Pre Register</a>
-                            </li>
+                            </li> --}}
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- SIGN IN LINK -->

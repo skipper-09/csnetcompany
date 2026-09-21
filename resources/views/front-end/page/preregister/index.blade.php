@@ -126,6 +126,58 @@
                                                     class="font-label-md text-label-md bg-surface-variant text-on-surface-variant px-space-sm py-1 rounded-full uppercase">Wajib
                                                     Lengkap</span>
                                             </div>
+                                            <!-- GPS Pinpoint Coordinate & Interactive Map Preview -->
+                                            <div class="mb-3">
+                                                <div class="flex items-center justify-between mb-space-2xs">
+                                                    <label class="font-title-sm text-title-sm text-on-surface">
+                                                        Titik Koordinat GPS / Pinpoint Pemasangan
+                                                        <span class="text-error">*</span>
+                                                    </label>
+                                                    <button
+                                                        class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold cursor-pointer"
+                                                        onclick="getCurrentLocation()" type="button">
+                                                        <span
+                                                            class="material-symbols-outlined text-[16px]">my_location</span>
+                                                        Gunakan Lokasi Saat Ini
+                                                    </button>
+                                                </div>
+
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-sm">
+                                                    <div class="relative">
+                                                        <span
+                                                            class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
+                                                        <input
+                                                            class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
+                                                            id="latitude" name="latitude" type="text"
+                                                            value="-7.734812" />
+                                                        <span
+                                                            class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Lat</span>
+                                                    </div>
+                                                    <div class="relative">
+                                                        <span
+                                                            class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
+                                                        <input
+                                                            class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
+                                                            id="longitude" name="longitude" type="text"
+                                                            value="113.689435" />
+                                                        <span
+                                                            class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Long</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Tombol Cek Kesiapan Instalasi -->
+                                                <button id="btnCheckInstallation" type="button"
+                                                    onclick="checkInstallation()"
+                                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition disabled:opacity-50 disabled:cursor-not-allowed">
+                                                    <span class="material-symbols-outlined text-[18px]">network_check</span>
+                                                    <span id="btnCheckInstallationText">Cek Kesiapan Instalasi</span>
+                                                </button>
+
+                                                <!-- Area Hasil Pengecekan -->
+                                                <div id="installationCheckResult" class="mt-space-sm hidden">
+                                                    <!-- diisi dinamis via JS -->
+                                                </div>
+                                            </div>
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
                                                 <!-- Nama Lengkap -->
                                                 <div class="md:col-span-2">
@@ -190,7 +242,8 @@
                                                             <input class="hidden" name="gender"
                                                                 onchange="toggleGender(this)" type="radio"
                                                                 value="Perempuan" />
-                                                            <span class="material-symbols-outlined text-[18px]">woman</span>
+                                                            <span
+                                                                class="material-symbols-outlined text-[18px]">woman</span>
                                                             <span>Perempuan</span>
                                                         </label>
                                                     </div>
@@ -365,11 +418,11 @@
                                                     <div class="col-span-2">
                                                         <label
                                                             class="block font-title-sm text-title-sm text-on-surface mb-space-2xs"
-                                                            for="kodePos">Kode Pos</label>
+                                                            for="kodePos">Isi Kode Pos</label>
                                                         <input
                                                             class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
-                                                            id="kodePos" name="kodePos" placeholder="68356"
-                                                            type="text" value="68356" />
+                                                            id="kodePos" name="kodePos" placeholder="Kode Pos"
+                                                            type="text" />
                                                     </div>
                                                 </div>
                                                 <!-- Bertingkat Dropdown Region -->
@@ -423,45 +476,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <!-- GPS Pinpoint Coordinate & Interactive Map Preview -->
-                                                <div>
-                                                    <div class="flex items-center justify-between mb-space-2xs">
-                                                        <label class="font-title-sm text-title-sm text-on-surface">
-                                                            Titik Koordinat GPS / Pinpoint Pemasangan
-                                                            <span class="text-error">*</span>
-                                                        </label>
-                                                        <button
-                                                            class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold cursor-pointer"
-                                                            onclick="getCurrentLocation()" type="button">
-                                                            <span
-                                                                class="material-symbols-outlined text-[16px]">my_location</span>
-                                                            Gunakan Lokasi Saat Ini
-                                                        </button>
-                                                    </div>
-                                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-sm">
-                                                        <div class="relative">
-                                                            <span
-                                                                class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
-                                                            <input
-                                                                class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
-                                                                id="latitude" name="latitude" readonly=""
-                                                                type="text" value="-7.734812" />
-                                                            <span
-                                                                class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Lat</span>
-                                                        </div>
-                                                        <div class="relative">
-                                                            <span
-                                                                class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
-                                                            <input
-                                                                class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
-                                                                id="longitude" name="longitude" readonly=""
-                                                                type="text" value="113.689435" />
-                                                            <span
-                                                                class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Long</span>
-                                                        </div>
-                                                    </div>
 
-                                                </div>
                                                 <!-- Catatan Khusus Lokasi -->
                                                 <div>
                                                     <label
@@ -759,7 +774,7 @@
                                                 <span class="material-symbols-outlined text-primary">receipt_long</span>
                                             </h3>
                                             <!-- Status Cakupan Badge -->
-                                            <div
+                                            {{-- <div
                                                 class="mb-space-md p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-xs">
                                                 <span
                                                     class="w-3 h-3 rounded-full bg-tertiary-fixed-dim shrink-0 animate-pulse"></span>
@@ -770,6 +785,18 @@
                                                     <span
                                                         class="font-body-md text-body-md text-on-surface font-semibold">Area
                                                         Siap Terkoneksi Fiber Optic</span>
+                                                </div>
+                                            </div> --}}
+                                            <!-- Status Cakupan Badge -->
+                                            <div id="coverageBadge"
+                                                class="mb-space-md p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-xs hidden">
+                                                <span id="coverageBadgeDot"
+                                                    class="w-3 h-3 rounded-full shrink-0 animate-pulse"></span>
+                                                <div class="flex flex-col">
+                                                    <span id="coverageBadgeLabel"
+                                                        class="font-label-md text-label-md font-bold uppercase"></span>
+                                                    <span id="coverageBadgeText"
+                                                        class="font-body-md text-body-md text-on-surface font-semibold"></span>
                                                 </div>
                                             </div>
                                             <!-- Itemized Summary List -->
@@ -862,10 +889,18 @@
                                                     autocomplete="off">
                                             </div>
                                             <!-- Action CTA Buttons -->
-                                            <div class="flex flex-col gap-space-xs">
+                                            {{-- <div class="flex flex-col gap-space-xs">
                                                 <button
                                                     class="w-full py-3.5 px-space-lg rounded-xl bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs cursor-pointer"
                                                     type="submit">
+                                                    <span>Kirim Pengajuan Pre-Register</span>
+                                                    <span class="material-symbols-outlined text-[20px]">send</span>
+                                                </button>
+                                            </div> --}}
+                                            <div class="flex flex-col gap-space-xs">
+                                                <button id="btnSubmitPreRegister"
+                                                    class="w-full py-3.5 px-space-lg rounded-xl bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:shadow-md"
+                                                    type="submit" disabled>
                                                     <span>Kirim Pengajuan Pre-Register</span>
                                                     <span class="material-symbols-outlined text-[20px]">send</span>
                                                 </button>
@@ -1178,8 +1213,6 @@
                     fillSelect(kelurahanEl, data, "Pilih Kelurahan/Desa");
                 });
 
-
-
                 const planGridEl = document.getElementById("planGrid");
 
                 function renderPlanCard(item) {
@@ -1189,10 +1222,10 @@
                     const fiturHtml = (item.fitur || [])
                         .map(
                             (f) => `
-        <li class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-            ${f}
-        </li>`
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        ${f}
+                    </li>`
                         )
                         .join("");
 
@@ -1204,33 +1237,33 @@
                             "bg-surface-container-lowest shadow-sm hover:shadow-md");
 
                     label.innerHTML = `
-        ${isPopuler
-            ? `<div class="absolute -top-3 right-4 bg-primary text-on-primary px-space-sm py-0.5 rounded-full font-label-md text-label-md font-bold uppercase tracking-wider shadow-sm">Paling Populer</div>`
-            : ""
-        }
-        <input ${isPopuler ? "checked" : ""} class="hidden" name="selectedPlan" type="radio"
-        value="${item.id}" data-nama="${item.nama}" data-price="${item.harga}" />
-        <div>
-            <div class="flex justify-between items-start mb-space-xs">
-                <span class="font-label-md text-label-md text-primary font-${isPopuler ? "bold" : "semibold"} uppercase">${item.kategori ?? item.nama}</span>
-                <span class="w-5 h-5 rounded-full ${isPopuler ? "bg-primary" : "bg-surface-container"} flex items-center justify-center check-indicator text-on-primary">
-                    ${isPopuler ? '<span class="material-symbols-outlined text-[14px]">check</span>' : ""}
-                </span>
-            </div>
-            <div class="flex items-baseline gap-1 mb-space-xs">
-                <span class="font-metric-stat text-metric-stat text-primary font-extrabold">${item.mbps}</span>
-                <span class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
-            </div>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">${item.deskripsi ?? ""}</p>
-            <ul class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
-                ${fiturHtml}
-            </ul>
-        </div>
-        <div class="pt-space-xs border-t ${isPopuler ? "border-surface-variant" : "border-surface-container"} flex items-baseline justify-between">
-            <span class="font-${isPopuler ? "headline-md text-headline-md" : "title-sm text-title-sm"} text-primary font-bold">${hargaFormatted}</span>
-            <span class="font-label-md text-label-md text-outline">/ bulan (Netto)</span>
-        </div>
-    `;
+                    ${isPopuler
+                        ? `<div class="absolute -top-3 right-4 bg-primary text-on-primary px-space-sm py-0.5 rounded-full font-label-md text-label-md font-bold uppercase tracking-wider shadow-sm">Paling Populer</div>`
+                        : ""
+                    }
+                    <input ${isPopuler ? "checked" : ""} class="hidden" name="selectedPlan" type="radio"
+                    value="${item.id}" data-nama="${item.nama}" data-price="${item.harga}" />
+                    <div>
+                        <div class="flex justify-between items-start mb-space-xs">
+                            <span class="font-label-md text-label-md text-primary font-${isPopuler ? "bold" : "semibold"} uppercase">${item.kategori ?? item.nama}</span>
+                            <span class="w-5 h-5 rounded-full ${isPopuler ? "bg-primary" : "bg-surface-container"} flex items-center justify-center check-indicator text-on-primary">
+                                ${isPopuler ? '<span class="material-symbols-outlined text-[14px]">check</span>' : ""}
+                            </span>
+                        </div>
+                        <div class="flex items-baseline gap-1 mb-space-xs">
+                            <span class="font-metric-stat text-metric-stat text-primary font-extrabold">${item.mbps}</span>
+                            <span class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">${item.deskripsi ?? ""}</p>
+                        <ul class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
+                            ${fiturHtml}
+                        </ul>
+                    </div>
+                    <div class="pt-space-xs border-t ${isPopuler ? "border-surface-variant" : "border-surface-container"} flex items-baseline justify-between">
+                        <span class="font-${isPopuler ? "headline-md text-headline-md" : "title-sm text-title-sm"} text-primary font-bold">${hargaFormatted}</span>
+                        <span class="font-label-md text-label-md text-outline">/ bulan (Netto)</span>
+                    </div>
+                `;
                     label.addEventListener("click", function() {
                         selectPlan(item.nama, item.harga, label, item.ppn, item.bhp_uso, item.pph_23);
                         document.getElementById("summarySpeed").textContent = item.mbps + " Mbps Simetris";
@@ -1286,6 +1319,129 @@
                 loadLayananFrontend();
 
             });
+
+            async function checkInstallation() {
+                const lat = document.getElementById('latitude').value;
+                const long = document.getElementById('longitude').value;
+                const btn = document.getElementById('btnCheckInstallation');
+                const btnText = document.getElementById('btnCheckInstallationText');
+                const resultBox = document.getElementById('installationCheckResult');
+
+                if (!lat || !long) {
+                    showCheckResult('error', 'Koordinat belum tersedia. Isi lokasi terlebih dahulu.');
+                    return;
+                }
+
+                btn.disabled = true;
+                btnText.textContent = 'Mengecek...';
+                resultBox.classList.add('hidden');
+
+                try {
+                    const res = await fetch(
+                        `http://192.168.1.42:9000/api/preregister/check?latitude=${lat}&longitude=${long}`, {
+                            headers: {
+                                Accept: "application/json"
+                            }
+                        });
+                    const json = await res.json();
+
+                    if (json.ready) {
+                        showCheckResult(
+                            'success',
+                            `Lokasi berada dalam jangkauan ODP "${json.odp_name ?? '-'}" (${json.distance ?? '-'} m). Instalasi dapat dilanjutkan.`
+                        );
+                        showCoverageBadge(true, {
+                            odpName: json.odp_name ?? '-',
+                            distance: json.distance ?? '-',
+                        });
+                    } else {
+                        showCheckResult(
+                            'warning',
+                            json.message ??
+                            'Lokasi belum terjangkau infrastruktur terdekat. Instalasi belum bisa dilakukan.'
+                        );
+                        showCoverageBadge(false, {
+                            message: json.message ??
+                                'Lokasi belum terjangkau infrastruktur terdekat. Instalasi belum bisa dilakukan.',
+                        });
+                    }
+                } catch (err) {
+                    showCheckResult('error', 'Gagal mengecek kesiapan instalasi. Silakan coba lagi.');
+                    console.error(err);
+                } finally {
+                    btn.disabled = false;
+                    btnText.textContent = 'Cek Kesiapan Instalasi';
+                }
+            }
+
+            function showCheckResult(type, message) {
+                const resultBox = document.getElementById('installationCheckResult');
+                const styles = {
+                    success: 'bg-green-50 text-green-700 border border-green-200',
+                    warning: 'bg-yellow-50 text-yellow-700 border border-yellow-200',
+                    error: 'bg-red-50 text-red-700 border border-red-200',
+                };
+                const icons = {
+                    success: 'check_circle',
+                    warning: 'warning',
+                    error: 'error',
+                };
+
+                resultBox.className =
+                    `mt-space-sm p-3 rounded-lg flex items-start gap-2 font-body-sm text-body-sm ${styles[type]}`;
+                resultBox.innerHTML = `
+                    <span class="material-symbols-outlined text-[18px]">${icons[type]}</span>
+                    <span>${message}</span>
+                `;
+                resultBox.classList.remove('hidden');
+            }
+
+            function showCheckResult(type, message) {
+                const resultBox = document.getElementById('installationCheckResult');
+                const styles = {
+                    success: 'bg-green-50 text-green-700 border border-green-200',
+                    warning: 'bg-yellow-50 text-yellow-700 border border-yellow-200',
+                    error: 'bg-red-50 text-red-700 border border-red-200',
+                };
+                const icons = {
+                    success: 'check_circle',
+                    warning: 'warning',
+                    error: 'error',
+                };
+
+                resultBox.className =
+                    `mt-space-sm p-3 rounded-lg flex items-start gap-2 font-body-sm text-body-sm ${styles[type]}`;
+                resultBox.innerHTML = `
+                    <span class="material-symbols-outlined text-[18px]">${icons[type]}</span>
+                    <span>${message}</span>
+                `;
+                resultBox.classList.remove('hidden');
+            }
+
+            function showCoverageBadge(isReady, payload) {
+                const badge = document.getElementById('coverageBadge');
+                const dot = document.getElementById('coverageBadgeDot');
+                const label = document.getElementById('coverageBadgeLabel');
+                const text = document.getElementById('coverageBadgeText');
+                const submitBtn = document.getElementById('btnSubmitPreRegister');
+
+                badge.classList.remove('hidden');
+
+                if (isReady) {
+                    dot.className = 'w-3 h-3 rounded-full shrink-0 animate-pulse bg-tertiary-fixed-dim';
+                    label.className = 'font-label-md text-label-md font-bold uppercase text-tertiary';
+                    label.textContent = 'Cakupan Jaringan';
+                    text.textContent = `Area Siap Terkoneksi Fiber Optic — ODP "${payload.odpName}" (${payload.distance} m)`;
+                    submitBtn.disabled = false;
+                } else {
+                    dot.className = 'w-3 h-3 rounded-full shrink-0 bg-error';
+                    label.className = 'font-label-md text-label-md font-bold uppercase text-error';
+                    label.textContent = 'Cakupan Jaringan';
+                    text.textContent = payload.message;
+                    submitBtn.disabled = true;
+                }
+            }
+
             // Interactive Gender Selection
             function toggleGender(radio) {
                 const maleLabel = document.getElementById("genderMaleLabel");
@@ -1498,6 +1654,11 @@
                         document.getElementById("summaryPpn").textContent = "Rp 0";
                         document.getElementById("summaryBhpUso").textContent = "Rp 0";
                         document.getElementById("summaryPph23").textContent = "Rp 0";
+
+                        // Reset status pengecekan instalasi
+                        document.getElementById("installationCheckResult").classList.add("hidden");
+                        document.getElementById("coverageBadge").classList.add("hidden");
+                        document.getElementById("btnSubmitPreRegister").disabled = true;
 
                         // Optional redirect
                         // window.location.href = "/preregister/success";

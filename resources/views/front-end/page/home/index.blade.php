@@ -15,9 +15,11 @@
                 <!-- HERO TEXT -->
                 <div class="col-md-6 order-first order-md-2">
                     <div class="hero-2-txt wow fadeInLeft">
-                        <!-- Title -->
+                        <p class="p-lg color--white">PT CAHAYA SENTRA INTERNET
+                            <!-- Title -->
                         <h2 class="s-56 w-700 color--white">Internet Cepat Tanpa Batas!</h2>
                         <!-- Text -->
+                        </p>
                         <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari CSNET, dengan
                             pilihan paket terjangkau yang dirancang untuk mendukung kemajuan bisnis Anda. Pastikan bisnis
                             Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari CSNET.
