@@ -40,6 +40,7 @@ use App\Http\Controllers\Front_End\Promo\PromoContoller;
 use App\Http\Controllers\Front_End\TremOfService\TremOfServiceController;
 use App\Http\Controllers\Backend\Career\CategoryJobController;
 use App\Http\Controllers\Backend\PDF\PDFController;
+use App\Http\Controllers\Front_End\PreRegister\PreRegisterBisnisController;
 use App\Http\Controllers\Front_End\PreRegister\PreRegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,6 +74,7 @@ Route::get('/get-jalan/{kelurahan_id}', [CekareaController::class, 'getJalan']);
 Route::get('/view/file/{filename}', [MediaController::class, 'showFile'])->middleware('auth');
 
 Route::get('/preregister', [PreRegisterController::class, 'index'])->name('preregister');
+Route::get('/preregister_bisnis', [PreRegisterBisnisController::class, 'index'])->name('preregister_bisnis');
 
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
 Route::get('/syarat-dan-ketentuan', [TremOfServiceController::class, 'index'])->name('tremofservice');

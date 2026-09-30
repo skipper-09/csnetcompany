@@ -140,4 +140,5 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
     ])->toArray(),
 
+    'base_url_api' => env('BASE_URL_API', 'http://localhost:9000/api/preregister'),
 ];

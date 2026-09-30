@@ -76,6 +76,7 @@
         <!-- END HEADER -->
         @yield('content')
 
+        <x-app-alert />
 
         {{--
         <!-- MODAL WINDOW (NEWSLETTER FORM)

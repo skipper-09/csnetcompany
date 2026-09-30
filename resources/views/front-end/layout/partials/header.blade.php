@@ -221,6 +221,14 @@
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="{{ route('preregister') }}"
                                     class="h-link">Pre Register</a>
                             </li> --}}
+                            <li aria-haspopup="true"><a href="#" class="h-link">Pre Register<span
+                                        class="wsarrow"></span></a>
+                                <ul class="sub-menu">
+                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail</a></li>
+                                    <li aria-haspopup="true"><a href="{{ route('preregister_bisnis') }}">Bisnis</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- SIGN IN LINK -->

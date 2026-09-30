@@ -39,6 +39,60 @@
         ::-webkit-scrollbar {
             display: none;
         }
+
+        .segment-btn {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            transition: background-color .2s, box-shadow .2s, color .2s;
+        }
+
+        .segment-btn:focus {
+            outline: none;
+        }
+
+        .segment-btn:focus-visible {
+            outline: 2px solid rgb(var(--color-primary, 37 99 235) / .5);
+            outline-offset: 2px;
+        }
+
+        .segment-btn:hover {
+            border-color: #93c5fd;
+        }
+
+        .segment-btn[aria-checked="true"] {
+            border-color: var(--seg-blue);
+            background: #eff6ff;
+            color: var(--seg-blue);
+        }
+
+        .seg-radio {
+            position: relative;
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #cbd5e1;
+            background: #fff;
+            transition: border-color .2s;
+        }
+
+        .seg-radio::after {
+            content: "";
+            position: absolute;
+            inset: 3px;
+            border-radius: 50%;
+            background: var(--seg-blue);
+            transform: scale(0);
+            transition: transform .25s cubic-bezier(.34, 1.56, .64, 1);
+        }
+
+        .segment-btn[aria-checked="true"] .seg-radio {
+            border-color: var(--seg-blue);
+        }
+
+        .segment-btn[aria-checked="true"] .seg-radio::after {
+            transform: scale(1);
+        }
     </style>
 @endpush
 
@@ -67,33 +121,37 @@
 
                                 <!-- Page Title & Header Meta -->
                                 <div
-                                    class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
-                                    <div class="max-w-2xl">
+                                    class="relative w-full overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary-fixed/70 via-primary-fixed/20 to-surface p-6 md:p-8 mb-space-xl">
+                                    <span
+                                        class="material-symbols-outlined pointer-events-none absolute -right-6 -bottom-10 select-none text-primary/10"
+                                        style="font-size: 220px; line-height: 1;">home</span>
+
+                                    <div class="relative max-w-2xl">
                                         <div
                                             class="inline-flex items-center gap-space-2xs px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-label-md font-label-md mb-space-xs">
                                             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                                             PENDAFTARAN RESMI CSNET {{ date('Y') }}
                                         </div>
-                                        <h1 class="font-headline-lg text-headline-lg text-on-surface">
-                                            Formulir Pre-Register Pasang Baru Internet Fiber
-                                        </h1>
-                                        <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-2xs">
+
+                                        <div class="flex items-center gap-4">
+                                            <div
+                                                class="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-2xl shadow-sm bg-primary text-on-primary">
+                                                <span class="material-symbols-outlined text-[28px]">home</span>
+                                            </div>
+                                            <div>
+                                                <h1 class="font-headline-lg text-headline-lg text-on-surface">
+                                                    Formulir Pasang Baru (PSB) - Retail
+                                                </h1>
+                                                <p class="text-label-md font-label-md text-on-surface-variant">
+                                                    Untuk kebutuhan internet rumah & keluarga
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
                                             Silakan lengkapi formulir di bawah ini untuk pendaftaran
                                             instalasi jaringan CSNet Ultra Fiber ke lokasi Anda.
                                         </p>
-                                    </div>
-                                    <div
-                                        class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm">
-                                        <span
-                                            class="material-symbols-outlined text-primary text-[28px]">verified_user</span>
-                                        <div class="flex flex-col">
-                                            <span
-                                                class="font-label-md text-label-md text-outline uppercase tracking-wider">Keamanan
-                                                Data</span>
-                                            <span
-                                                class="font-title-sm text-title-sm text-on-surface font-semibold">Tersertifikasi
-                                                SSL 256-bit</span>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- Stepper Progress Bar Indicator -->
@@ -126,58 +184,7 @@
                                                     class="font-label-md text-label-md bg-surface-variant text-on-surface-variant px-space-sm py-1 rounded-full uppercase">Wajib
                                                     Lengkap</span>
                                             </div>
-                                            <!-- GPS Pinpoint Coordinate & Interactive Map Preview -->
-                                            <div class="mb-3">
-                                                <div class="flex items-center justify-between mb-space-2xs">
-                                                    <label class="font-title-sm text-title-sm text-on-surface">
-                                                        Titik Koordinat GPS / Pinpoint Pemasangan
-                                                        <span class="text-error">*</span>
-                                                    </label>
-                                                    <button
-                                                        class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold cursor-pointer"
-                                                        onclick="getCurrentLocation()" type="button">
-                                                        <span
-                                                            class="material-symbols-outlined text-[16px]">my_location</span>
-                                                        Gunakan Lokasi Saat Ini
-                                                    </button>
-                                                </div>
 
-                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-sm">
-                                                    <div class="relative">
-                                                        <span
-                                                            class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
-                                                        <input
-                                                            class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
-                                                            id="latitude" name="latitude" type="text"
-                                                            value="-7.734812" />
-                                                        <span
-                                                            class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Lat</span>
-                                                    </div>
-                                                    <div class="relative">
-                                                        <span
-                                                            class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
-                                                        <input
-                                                            class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
-                                                            id="longitude" name="longitude" type="text"
-                                                            value="113.689435" />
-                                                        <span
-                                                            class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Long</span>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Tombol Cek Kesiapan Instalasi -->
-                                                <button id="btnCheckInstallation" type="button"
-                                                    onclick="checkInstallation()"
-                                                    class="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition disabled:opacity-50 disabled:cursor-not-allowed">
-                                                    <span class="material-symbols-outlined text-[18px]">network_check</span>
-                                                    <span id="btnCheckInstallationText">Cek Kesiapan Instalasi</span>
-                                                </button>
-
-                                                <!-- Area Hasil Pengecekan -->
-                                                <div id="installationCheckResult" class="mt-space-sm hidden">
-                                                    <!-- diisi dinamis via JS -->
-                                                </div>
-                                            </div>
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
                                                 <!-- Nama Lengkap -->
                                                 <div class="md:col-span-2">
@@ -192,7 +199,7 @@
                                                             class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[20px]">person</span>
                                                         <input
                                                             class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
-                                                            id="namaLengkap" name="namaLengkap"
+                                                            id="namaLengkap" name="nama_lengkap"
                                                             placeholder="Contoh: GURUH HINDARTO" required=""
                                                             type="text" />
                                                     </div>
@@ -230,7 +237,7 @@
                                                         <label
                                                             class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-md cursor-pointer transition-all bg-surface-container-lowest text-primary font-title-sm text-title-sm shadow-sm"
                                                             id="genderMaleLabel">
-                                                            <input checked="" class="hidden" name="gender"
+                                                            <input checked="" class="hidden" name="jenis_kelamin"
                                                                 onchange="toggleGender(this)" type="radio"
                                                                 value="Laki-laki" />
                                                             <span class="material-symbols-outlined text-[18px]">man</span>
@@ -239,11 +246,10 @@
                                                         <label
                                                             class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-md cursor-pointer transition-all text-on-surface-variant font-title-sm text-title-sm"
                                                             id="genderFemaleLabel">
-                                                            <input class="hidden" name="gender"
+                                                            <input class="hidden" name="jenis_kelamin"
                                                                 onchange="toggleGender(this)" type="radio"
                                                                 value="Perempuan" />
-                                                            <span
-                                                                class="material-symbols-outlined text-[18px]">woman</span>
+                                                            <span class="material-symbols-outlined text-[18px]">woman</span>
                                                             <span>Perempuan</span>
                                                         </label>
                                                     </div>
@@ -260,7 +266,7 @@
                                                             class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[20px]">calendar_month</span>
                                                         <input
                                                             class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
-                                                            id="tanggalLahir" name="tanggalLahir" required=""
+                                                            id="tanggalLahir" name="tanggal_lahir" required=""
                                                             type="date" />
                                                     </div>
                                                 </div>
@@ -421,7 +427,7 @@
                                                             for="kodePos">Isi Kode Pos</label>
                                                         <input
                                                             class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
-                                                            id="kodePos" name="kodePos" placeholder="Kode Pos"
+                                                            id="kodePos" name="kode_pos" placeholder="Kode Pos"
                                                             type="text" />
                                                     </div>
                                                 </div>
@@ -477,6 +483,53 @@
                                                     </div>
                                                 </div>
 
+                                                <!-- GPS Pinpoint Coordinate & Interactive Map Preview -->
+                                                <div class="mb-3">
+                                                    <div class="flex items-center justify-between mb-space-2xs">
+                                                        <label class="font-title-sm text-title-sm text-on-surface">
+                                                            Titik Koordinat GPS / Pinpoint Pemasangan
+                                                            <span class="text-error">*</span>
+                                                        </label>
+                                                        <button
+                                                            class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold cursor-pointer"
+                                                            onclick="getCurrentLocation()" type="button">
+                                                            <span
+                                                                class="material-symbols-outlined text-[16px]">my_location</span>
+                                                            Gunakan Lokasi Saat Ini
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-sm">
+                                                        <div class="relative">
+                                                            <span
+                                                                class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
+                                                            <input
+                                                                class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
+                                                                id="latitude" name="latitude" type="text"
+                                                                value="-7.734812" />
+                                                            <span
+                                                                class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Lat</span>
+                                                        </div>
+                                                        <div class="relative">
+                                                            <span
+                                                                class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">explore</span>
+                                                            <input
+                                                                class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
+                                                                id="longitude" name="longitude" type="text"
+                                                                value="113.689435" />
+                                                            <span
+                                                                class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Long</span>
+                                                        </div>
+                                                        <input type="hidden" id="odp_name" name="odp_name">
+                                                        <input type="hidden" id="odp_distance" name="odp_distance">
+                                                    </div>
+
+                                                    <!-- Area Hasil Pengecekan -->
+                                                    <div id="installationCheckResult" class="mt-space-sm hidden">
+                                                        <!-- diisi dinamis via JS -->
+                                                    </div>
+                                                </div>
+
                                                 <!-- Catatan Khusus Lokasi -->
                                                 <div>
                                                     <label
@@ -486,7 +539,7 @@
                                                     </label>
                                                     <input
                                                         class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
-                                                        id="catatanLokasi" name="catatanLokasi"
+                                                        id="catatanLokasi" name="catatan_lokasi"
                                                         placeholder="Contoh: Kabel ditarik lewat plafon teras, pagar cat putih dekat pohon mangga"
                                                         type="text" />
                                                 </div>
@@ -516,224 +569,33 @@
                                                     Fiber</span>
                                             </div>
                                             <!-- Cards Selection Grid -->
-                                            {{-- <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                                                <!-- Tier 1: 30 Mbps -->
-                                                <label
-                                                    class="relative rounded-xl p-space-md cursor-pointer transition-all bg-surface-container-lowest shadow-sm hover:shadow-md flex flex-col justify-between plan-card group"
-                                                    onclick="selectPlan('30 Mbps', 175000, this)">
-                                                    <input class="hidden" name="selectedPlan" type="radio"
-                                                        value="30 Mbps" />
-                                                    <div>
-                                                        <div class="flex justify-between items-start mb-space-xs">
-                                                            <span
-                                                                class="font-label-md text-label-md text-outline font-semibold uppercase">Starter
-                                                                Family</span>
-                                                            <span
-                                                                class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center check-indicator text-on-primary"></span>
-                                                        </div>
-                                                        <div class="flex items-baseline gap-1 mb-space-xs">
-                                                            <span
-                                                                class="font-metric-stat text-metric-stat text-on-surface font-extrabold">30</span>
-                                                            <span
-                                                                class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
-                                                        </div>
-                                                        <p
-                                                            class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            Cocok untuk browsing, medsos &amp; 3-5 gadget aktif.
-                                                        </p>
-                                                        <ul
-                                                            class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Simetris Unggah : Unduh (1:1)
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Bebas Batas Kuota (Tanpa FUP)
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Router ONT Dual-Band WiFi 5
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div
-                                                        class="pt-space-xs border-t border-surface-container flex items-baseline justify-between">
-                                                        <span class="font-title-sm text-title-sm text-primary font-bold">Rp
-                                                            175.000</span>
-                                                        <span class="font-label-md text-label-md text-outline">/ bulan
-                                                            (Netto)</span>
-                                                    </div>
-                                                </label>
-                                                <!-- Tier 2: 50 Mbps (POPULAR) -->
-                                                <label
-                                                    class="relative rounded-xl p-space-md cursor-pointer transition-all bg-surface-container-low shadow-md flex flex-col justify-between plan-card group ring-2 ring-primary"
-                                                    onclick="selectPlan('50 Mbps', 250000, this)">
-                                                    <input checked="" class="hidden" name="selectedPlan"
-                                                        type="radio" value="50 Mbps" />
-                                                    <div
-                                                        class="absolute -top-3 right-4 bg-primary text-on-primary px-space-sm py-0.5 rounded-full font-label-md text-label-md font-bold uppercase tracking-wider shadow-sm">
-                                                        Paling Populer
-                                                    </div>
-                                                    <div>
-                                                        <div class="flex justify-between items-start mb-space-xs">
-                                                            <span
-                                                                class="font-label-md text-label-md text-primary font-bold uppercase">Gamer
-                                                                &amp; Streamer</span>
-                                                            <span
-                                                                class="w-5 h-5 rounded-full bg-primary flex items-center justify-center check-indicator text-on-primary">
-                                                                <span
-                                                                    class="material-symbols-outlined text-[14px]">check</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-baseline gap-1 mb-space-xs">
-                                                            <span
-                                                                class="font-metric-stat text-metric-stat text-primary font-extrabold">50</span>
-                                                            <span
-                                                                class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
-                                                        </div>
-                                                        <p
-                                                            class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            Streaming 4K lancar, Zoom meeting, gaming ping rendah.
-                                                        </p>
-                                                        <ul
-                                                            class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Simetris Unggah : Unduh (1:1)
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Tanpa FUP Unlimited
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Router ONT Dual-Band WiFi 6 Gigabit
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div
-                                                        class="pt-space-xs border-t border-surface-variant flex items-baseline justify-between">
-                                                        <span
-                                                            class="font-headline-md text-headline-md text-primary font-bold">Rp
-                                                            250.000</span>
-                                                        <span class="font-label-md text-label-md text-outline">/ bulan
-                                                            (Netto)</span>
-                                                    </div>
-                                                </label>
-                                                <!-- Tier 3: 100 Mbps -->
-                                                <label
-                                                    class="relative rounded-xl p-space-md cursor-pointer transition-all bg-surface-container-lowest shadow-sm hover:shadow-md flex flex-col justify-between plan-card group"
-                                                    onclick="selectPlan('100 Mbps', 375000, this)">
-                                                    <input class="hidden" name="selectedPlan" type="radio"
-                                                        value="100 Mbps" />
-                                                    <div>
-                                                        <div class="flex justify-between items-start mb-space-xs">
-                                                            <span
-                                                                class="font-label-md text-label-md text-outline font-semibold uppercase">Ultra
-                                                                Pro</span>
-                                                            <span
-                                                                class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center check-indicator text-on-primary"></span>
-                                                        </div>
-                                                        <div class="flex items-baseline gap-1 mb-space-xs">
-                                                            <span
-                                                                class="font-metric-stat text-metric-stat text-on-surface font-extrabold">100</span>
-                                                            <span
-                                                                class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
-                                                        </div>
-                                                        <p
-                                                            class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            Solusi content creator, transfer file berat, &amp;
-                                                            Smart Home.
-                                                        </p>
-                                                        <ul
-                                                            class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Simetris 100 Mbps Murni
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Tanpa FUP Kuota
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Prioritas Routing Gaming Server
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div
-                                                        class="pt-space-xs border-t border-surface-container flex items-baseline justify-between">
-                                                        <span class="font-title-sm text-title-sm text-primary font-bold">Rp
-                                                            375.000</span>
-                                                        <span class="font-label-md text-label-md text-outline">/ bulan
-                                                            (Netto)</span>
-                                                    </div>
-                                                </label>
-                                                <!-- Tier 4: 200 Mbps -->
-                                                <label
-                                                    class="relative rounded-xl p-space-md cursor-pointer transition-all bg-surface-container-lowest shadow-sm hover:shadow-md flex flex-col justify-between plan-card group"
-                                                    onclick="selectPlan('200 Mbps', 599000, this)">
-                                                    <input class="hidden" name="selectedPlan" type="radio"
-                                                        value="200 Mbps" />
-                                                    <div>
-                                                        <div class="flex justify-between items-start mb-space-xs">
-                                                            <span
-                                                                class="font-label-md text-label-md text-outline font-semibold uppercase">Enterprise
-                                                                Home</span>
-                                                            <span
-                                                                class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center check-indicator text-on-primary"></span>
-                                                        </div>
-                                                        <div class="flex items-baseline gap-1 mb-space-xs">
-                                                            <span
-                                                                class="font-metric-stat text-metric-stat text-on-surface font-extrabold">200</span>
-                                                            <span
-                                                                class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
-                                                        </div>
-                                                        <p
-                                                            class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            Kecepatan tertinggi untuk multi-user hingga 20+
-                                                            perangkat simultan.
-                                                        </p>
-                                                        <ul
-                                                            class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Kecepatan Gahar 200 Mbps
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Router WiFi 6 High Performance
-                                                            </li>
-                                                            <li class="flex items-center gap-2">
-                                                                <span
-                                                                    class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                                                                Dukungan Teknisi Khusus VIP
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div
-                                                        class="pt-space-xs border-t border-surface-container flex items-baseline justify-between">
-                                                        <span class="font-title-sm text-title-sm text-primary font-bold">Rp
-                                                            599.000</span>
-                                                        <span class="font-label-md text-label-md text-outline">/ bulan
-                                                            (Netto)</span>
-                                                    </div>
-                                                </label>
+                                            {{-- <div class="grid grid-cols-2 gap-space-sm mb-space-md" id="segmentTabs"
+                                                role="radiogroup" aria-label="Jenis layanan">
+                                                <button type="button" data-segment="retail" role="radio"
+                                                    aria-checked="false"
+                                                    class="segment-btn flex items-center gap-3 rounded-xl p-space-sm text-left">
+                                                    <span class="material-symbols-outlined text-[28px]">home</span>
+                                                    <span class="flex flex-col">
+                                                        <span class="font-title-sm text-title-sm font-bold">Retail</span>
+                                                        <span class="font-label-md text-label-md opacity-80">Rumah &amp;
+                                                            personal · <b class="segment-count">0</b> paket</span>
+                                                    </span>
+                                                    <span class="seg-radio ml-auto"></span>
+                                                </button>
+                                                <button type="button" data-segment="business" role="radio"
+                                                    aria-checked="false"
+                                                    class="segment-btn flex items-center gap-3 rounded-xl p-space-sm text-left">
+                                                    <span class="material-symbols-outlined text-[28px]">apartment</span>
+                                                    <span class="flex flex-col">
+                                                        <span class="font-title-sm text-title-sm font-bold">Business</span>
+                                                        <span class="font-label-md text-label-md opacity-80">Kantor &amp;
+                                                            usaha · <b class="segment-count">0</b> paket</span>
+                                                    </span>
+                                                    <span class="seg-radio ml-auto"></span>
+                                                </button>
                                             </div> --}}
-
-                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="planGrid">
+                                            {{-- <hr class="mb-4"> --}}
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-5" id="planGrid">
                                                 <div class="col-span-2 text-center py-space-lg text-on-surface-variant">
                                                     Memuat paket layanan...
                                                 </div>
@@ -888,20 +750,12 @@
                                                 <input type="text" wire:model="website" tabindex="-1"
                                                     autocomplete="off">
                                             </div>
-                                            <!-- Action CTA Buttons -->
-                                            {{-- <div class="flex flex-col gap-space-xs">
-                                                <button
-                                                    class="w-full py-3.5 px-space-lg rounded-xl bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs cursor-pointer"
-                                                    type="submit">
-                                                    <span>Kirim Pengajuan Pre-Register</span>
-                                                    <span class="material-symbols-outlined text-[20px]">send</span>
-                                                </button>
-                                            </div> --}}
+
                                             <div class="flex flex-col gap-space-xs">
                                                 <button id="btnSubmitPreRegister"
                                                     class="w-full py-3.5 px-space-lg rounded-xl bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:shadow-md"
-                                                    type="submit" disabled>
-                                                    <span>Kirim Pengajuan Pre-Register</span>
+                                                    type="submit">
+                                                    <span>Kirim Pengajuan</span>
                                                     <span class="material-symbols-outlined text-[20px]">send</span>
                                                 </button>
                                             </div>
@@ -1122,17 +976,15 @@
                     },
                 },
             };
-        </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const API_BASE = "http://192.168.1.42:9000/api/preregister";
 
+            const API_BASE = "{{ config('app.base_url_api') }}";
+
+            document.addEventListener("DOMContentLoaded", function() {
                 const provinsiEl = document.getElementById("provinsi");
                 const kotaEl = document.getElementById("kota");
                 const kecamatanEl = document.getElementById("kecamatan");
                 const kelurahanEl = document.getElementById("kelurahan");
 
-                // Guard: kalau salah satu elemen tidak ditemukan, stop & kasih tahu jelas
                 if (!provinsiEl || !kotaEl || !kecamatanEl || !kelurahanEl) {
                     console.error("Dropdown wilayah tidak ditemukan di DOM:", {
                         provinsi: !!provinsiEl,
@@ -1140,7 +992,7 @@
                         kecamatan: !!kecamatanEl,
                         kelurahan: !!kelurahanEl,
                     });
-                    return; // hentikan eksekusi cascading dropdown, sisa script lain tetap jalan
+                    return;
                 }
 
                 async function fetchOptions(url) {
@@ -1214,19 +1066,44 @@
                 });
 
                 const planGridEl = document.getElementById("planGrid");
+                const segmentTabsEl = document.getElementById("segmentTabs");
+                const segmentBtns = segmentTabsEl ? segmentTabsEl.querySelectorAll(".segment-btn") : [];
 
-                function renderPlanCard(item) {
+                let allLayanan = [];
+                let activeSegment = null;
+
+                function getSegment(item) {
+                    const raw = String(item.segmen ?? item.kategori ?? "").trim().toLowerCase();
+                    if (["business", "bisnis", "corporate", "korporat", "usaha", "kantor"].includes(raw))
+                        return "business";
+                    if (["retail", "personal", "rumah", "home", "residensial"].includes(raw)) return "retail";
+                    return "retail";
+                }
+
+                function formatRp(n) {
+                    return "Rp " + Number(n || 0).toLocaleString("id-ID");
+                }
+
+                function updateSummary(item) {
+                    const total = Number(item.harga) + Number(item.ppn) + Number(item.bhp_uso) + Number(item.pph_23);
+                    document.getElementById("summaryPlanName").textContent = item.nama;
+                    document.getElementById("summarySpeed").textContent = item.mbps + " Mbps Simetris";
+                    document.getElementById("summaryTotalPrice").textContent = formatRp(total);
+                    document.getElementById("summaryHargaDasar").textContent = formatRp(item.harga);
+                    document.getElementById("summaryPpn").textContent = formatRp(item.ppn);
+                    document.getElementById("summaryBhpUso").textContent = formatRp(item.bhp_uso);
+                    document.getElementById("summaryPph23").textContent = formatRp(item.pph_23);
+                }
+
+                function renderPlanCard(item, isDefault) {
                     const isPopuler = !!item.is_populer;
-                    const hargaFormatted = "Rp " + Number(item.harga).toLocaleString("id-ID");
 
                     const fiturHtml = (item.fitur || [])
-                        .map(
-                            (f) => `
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
-                        ${f}
-                    </li>`
-                        )
+                        .map((f) => `
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                ${f}
+                            </li>`)
                         .join("");
 
                     const label = document.createElement("label");
@@ -1237,40 +1114,105 @@
                             "bg-surface-container-lowest shadow-sm hover:shadow-md");
 
                     label.innerHTML = `
-                    ${isPopuler
-                        ? `<div class="absolute -top-3 right-4 bg-primary text-on-primary px-space-sm py-0.5 rounded-full font-label-md text-label-md font-bold uppercase tracking-wider shadow-sm">Paling Populer</div>`
-                        : ""
-                    }
-                    <input ${isPopuler ? "checked" : ""} class="hidden" name="selectedPlan" type="radio"
-                    value="${item.id}" data-nama="${item.nama}" data-price="${item.harga}" />
-                    <div>
-                        <div class="flex justify-between items-start mb-space-xs">
-                            <span class="font-label-md text-label-md text-primary font-${isPopuler ? "bold" : "semibold"} uppercase">${item.kategori ?? item.nama}</span>
-                            <span class="w-5 h-5 rounded-full ${isPopuler ? "bg-primary" : "bg-surface-container"} flex items-center justify-center check-indicator text-on-primary">
-                                ${isPopuler ? '<span class="material-symbols-outlined text-[14px]">check</span>' : ""}
-                            </span>
+                        ${isPopuler
+                            ? `<div class="absolute -top-3 right-4 bg-primary text-on-primary px-space-sm py-0.5 rounded-full font-label-md text-label-md font-bold uppercase tracking-wider shadow-sm">Paling Populer</div>`
+                            : ""}
+                        <input ${isDefault ? "checked" : ""} class="hidden" name="selectedPlan" type="radio"
+                            value="${item.id}" data-nama="${item.nama}" data-price="${item.harga}" />
+                        <div>
+                            <div class="flex justify-between items-start mb-space-xs">
+                                <span class="font-label-md text-label-md text-primary font-${isPopuler ? "bold" : "semibold"} uppercase">${item.kategori ?? item.nama}</span>
+                                <span class="w-5 h-5 rounded-full ${isDefault ? "bg-primary" : "bg-surface-container"} flex items-center justify-center check-indicator text-on-primary">
+                                    ${isDefault ? '<span class="material-symbols-outlined text-[14px]">check</span>' : ""}
+                                </span>
+                            </div>
+                            <div class="flex items-baseline gap-1 mb-space-xs">
+                                <span class="font-metric-stat text-metric-stat text-primary font-extrabold">${item.mbps}</span>
+                                <span class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">${item.deskripsi ?? ""}</p>
+                            <ul class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
+                                ${fiturHtml}
+                            </ul>
                         </div>
-                        <div class="flex items-baseline gap-1 mb-space-xs">
-                            <span class="font-metric-stat text-metric-stat text-primary font-extrabold">${item.mbps}</span>
-                            <span class="font-title-sm text-title-sm text-primary font-bold">Mbps</span>
+                        <div class="pt-space-xs border-t ${isPopuler ? "border-surface-variant" : "border-surface-container"} flex items-baseline justify-between">
+                            <span class="font-${isPopuler ? "headline-md text-headline-md" : "title-sm text-title-sm"} text-primary font-bold">${formatRp(item.harga)}</span>
+                            <span class="font-label-md text-label-md text-outline">/ bulan (Netto)</span>
                         </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">${item.deskripsi ?? ""}</p>
-                        <ul class="space-y-1.5 font-body-md text-body-md text-on-surface-variant mb-space-md">
-                            ${fiturHtml}
-                        </ul>
-                    </div>
-                    <div class="pt-space-xs border-t ${isPopuler ? "border-surface-variant" : "border-surface-container"} flex items-baseline justify-between">
-                        <span class="font-${isPopuler ? "headline-md text-headline-md" : "title-sm text-title-sm"} text-primary font-bold">${hargaFormatted}</span>
-                        <span class="font-label-md text-label-md text-outline">/ bulan (Netto)</span>
-                    </div>
-                `;
+                    `;
+
                     label.addEventListener("click", function() {
-                        selectPlan(item.nama, item.harga, label, item.ppn, item.bhp_uso, item.pph_23);
-                        document.getElementById("summarySpeed").textContent = item.mbps + " Mbps Simetris";
+                        if (typeof selectPlan === "function") {
+                            selectPlan(item.nama, item.harga, label, item.ppn, item.bhp_uso, item.pph_23);
+                        }
+                        updateSummary(item);
                     });
 
                     return label;
                 }
+
+                function updateSegmentCounts() {
+                    segmentBtns.forEach((btn) => {
+                        const seg = btn.dataset.segment;
+                        const count = allLayanan.filter((i) => getSegment(i) === seg).length;
+                        const countEl = btn.querySelector(".segment-count");
+                        if (countEl) countEl.textContent = count;
+                        btn.disabled = count === 0;
+                        btn.classList.toggle("opacity-50", count === 0);
+                        btn.classList.toggle("cursor-not-allowed", count === 0);
+                    });
+                }
+
+                function setActiveSegmentBtn(segment) {
+                    const activeCls = ["bg-primary/10", "ring-2", "ring-primary", "text-primary", "shadow-md"];
+                    const inactiveCls = ["bg-surface-container-lowest", "ring-1", "ring-surface-container",
+                        "text-on-surface", "shadow-sm"
+                    ];
+
+                    segmentBtns.forEach((btn) => {
+                        const active = btn.dataset.segment === segment;
+                        btn.setAttribute("aria-checked", active ? "true" : "false");
+                        btn.classList.remove("bg-primary", "text-on-primary", ...activeCls, ...inactiveCls);
+                        btn.classList.add(...(active ? activeCls : inactiveCls));
+                    });
+                }
+
+                function renderSegment(segment) {
+                    activeSegment = segment;
+                    setActiveSegmentBtn(segment);
+
+                    const items = allLayanan.filter((i) => getSegment(i) === segment);
+                    planGridEl.innerHTML = "";
+
+                    if (items.length === 0) {
+                        planGridEl.innerHTML =
+                            '<div class="col-span-2 text-center py-space-lg text-on-surface-variant">Belum ada paket untuk segmen ini.</div>';
+                        return;
+                    }
+
+                    const defaultItem = items.find((i) => i.is_populer) || items[0];
+                    let defaultLabel = null;
+
+                    items.forEach((item) => {
+                        const isDefault = item === defaultItem;
+                        const label = renderPlanCard(item, isDefault);
+                        if (isDefault) defaultLabel = label;
+                        planGridEl.appendChild(label);
+                    });
+
+                    if (typeof selectPlan === "function" && defaultLabel) {
+                        selectPlan(defaultItem.nama, defaultItem.harga, defaultLabel, defaultItem.ppn, defaultItem
+                            .bhp_uso, defaultItem.pph_23);
+                    }
+                    updateSummary(defaultItem);
+                }
+
+                segmentBtns.forEach((btn) => {
+                    btn.addEventListener("click", function() {
+                        if (this.disabled || this.dataset.segment === activeSegment) return;
+                        renderSegment(this.dataset.segment);
+                    });
+                });
 
                 async function loadLayananFrontend() {
                     try {
@@ -1280,35 +1222,19 @@
                             }
                         });
                         const json = await res.json();
-                        const data = json.data || [];
+                        allLayanan = json.data || [];
 
-                        planGridEl.innerHTML = "";
-
-                        if (data.length === 0) {
+                        if (allLayanan.length === 0) {
                             planGridEl.innerHTML =
                                 '<div class="col-span-2 text-center py-space-lg text-on-surface-variant">Belum ada paket tersedia.</div>';
                             return;
                         }
 
-                        data.forEach((item) => {
-                            planGridEl.appendChild(renderPlanCard(item));
-                        });
+                        updateSegmentCounts();
 
-                        // Set summary sidebar sesuai paket yang otomatis ter-checked (is_populer / pertama)
-                        const defaultItem = data.find((i) => i.is_populer) || data[0];
-                        document.getElementById("summaryPlanName").textContent = defaultItem.nama;
-                        document.getElementById("summarySpeed").textContent = defaultItem.nama + " Simetris";
-                        document.getElementById("summaryTotalPrice").textContent =
-                            "Rp " + Number(defaultItem.harga + defaultItem.ppn + defaultItem.bhp_uso + defaultItem
-                                .pph_23).toLocaleString("id-ID");
-                        document.getElementById("summaryHargaDasar").textContent =
-                            "Rp " + Number(defaultItem.harga).toLocaleString("id-ID");
-                        document.getElementById("summaryPpn").textContent =
-                            "Rp " + Number(defaultItem.ppn).toLocaleString("id-ID");
-                        document.getElementById("summaryBhpUso").textContent =
-                            "Rp " + Number(defaultItem.bhp_uso).toLocaleString("id-ID");
-                        document.getElementById("summaryPph23").textContent =
-                            "Rp " + Number(defaultItem.pph_23).toLocaleString("id-ID");
+                        const firstSeg = allLayanan.some((i) => getSegment(i) === "retail") ? "retail" : getSegment(
+                            allLayanan[0]);
+                        renderSegment(firstSeg);
                     } catch (err) {
                         planGridEl.innerHTML =
                             '<div class="col-span-2 text-center py-space-lg text-error">Gagal memuat paket layanan.</div>';
@@ -1332,20 +1258,27 @@
                     return;
                 }
 
-                btn.disabled = true;
+                // btn.disabled = true;
                 btnText.textContent = 'Mengecek...';
                 resultBox.classList.add('hidden');
 
                 try {
                     const res = await fetch(
-                        `http://192.168.1.42:9000/api/preregister/check?latitude=${lat}&longitude=${long}`, {
+                        API_BASE + `/check?latitude=${lat}&longitude=${long}`, {
                             headers: {
                                 Accept: "application/json"
                             }
                         });
                     const json = await res.json();
 
+                    // console.log("json : ");
+                    // console.log(json);
+
+                    document.getElementById('odp_name').value = json.odp_name;
+                    document.getElementById('odp_distance').value = json.distance;
+
                     if (json.ready) {
+
                         showCheckResult(
                             'success',
                             `Lokasi berada dalam jangkauan ODP "${json.odp_name ?? '-'}" (${json.distance ?? '-'} m). Instalasi dapat dilanjutkan.`
@@ -1358,18 +1291,18 @@
                         showCheckResult(
                             'warning',
                             json.message ??
-                            'Lokasi belum terjangkau infrastruktur terdekat. Instalasi belum bisa dilakukan.'
+                            'Lokasi belum terjangkau infrastruktur terdekat. Tim kami akan hubungi anda.'
                         );
                         showCoverageBadge(false, {
                             message: json.message ??
-                                'Lokasi belum terjangkau infrastruktur terdekat. Instalasi belum bisa dilakukan.',
+                                'Lokasi belum terjangkau infrastruktur terdekat. Tim kami akan hubungi anda.',
                         });
                     }
                 } catch (err) {
                     showCheckResult('error', 'Gagal mengecek kesiapan instalasi. Silakan coba lagi.');
                     console.error(err);
                 } finally {
-                    btn.disabled = false;
+                    // btn.disabled = false;
                     btnText.textContent = 'Cek Kesiapan Instalasi';
                 }
             }
@@ -1427,22 +1360,21 @@
 
                 badge.classList.remove('hidden');
 
-                if (isReady) {
-                    dot.className = 'w-3 h-3 rounded-full shrink-0 animate-pulse bg-tertiary-fixed-dim';
-                    label.className = 'font-label-md text-label-md font-bold uppercase text-tertiary';
-                    label.textContent = 'Cakupan Jaringan';
-                    text.textContent = `Area Siap Terkoneksi Fiber Optic — ODP "${payload.odpName}" (${payload.distance} m)`;
-                    submitBtn.disabled = false;
-                } else {
-                    dot.className = 'w-3 h-3 rounded-full shrink-0 bg-error';
-                    label.className = 'font-label-md text-label-md font-bold uppercase text-error';
-                    label.textContent = 'Cakupan Jaringan';
-                    text.textContent = payload.message;
-                    submitBtn.disabled = true;
-                }
+                // if (isReady) {
+                //     dot.className = 'w-3 h-3 rounded-full shrink-0 animate-pulse bg-tertiary-fixed-dim';
+                //     label.className = 'font-label-md text-label-md font-bold uppercase text-tertiary';
+                //     label.textContent = 'Cakupan Jaringan';
+                //     text.textContent = `Area Siap Terkoneksi Fiber Optic — ODP "${payload.odpName}" (${payload.distance} m)`;
+                //     // submitBtn.disabled = false;
+                // } else {
+                //     dot.className = 'w-3 h-3 rounded-full shrink-0 bg-error';
+                //     label.className = 'font-label-md text-label-md font-bold uppercase text-error';
+                //     label.textContent = 'Cakupan Jaringan';
+                //     text.textContent = payload.message;
+                //     // submitBtn.disabled = true;
+                // }
             }
 
-            // Interactive Gender Selection
             function toggleGender(radio) {
                 const maleLabel = document.getElementById("genderMaleLabel");
                 const femaleLabel = document.getElementById("genderFemaleLabel");
@@ -1460,9 +1392,7 @@
                 }
             }
 
-            // Interactive Plan Selection
             function selectPlan(planName, price, cardElement, ppn, bhpUso, pph23) {
-                // Reset all plan cards
                 document.querySelectorAll(".plan-card").forEach((card) => {
                     card.classList.remove(
                         "bg-surface-container-low",
@@ -1479,7 +1409,6 @@
                     }
                 });
 
-                // Highlight selected card
                 cardElement.classList.remove(
                     "bg-surface-container-lowest",
                     "shadow-sm",
@@ -1499,11 +1428,9 @@
                         '<span class="material-symbols-outlined text-[14px]">check</span>';
                 }
 
-                // Check the hidden radio input
                 const radio = cardElement.querySelector('input[type="radio"]');
                 if (radio) radio.checked = true;
 
-                // Update Summary Sidebar
                 document.getElementById("summaryPlanName").textContent = planName;
                 document.getElementById("summarySpeed").textContent =
                     planName + " Simetris";
@@ -1520,7 +1447,6 @@
 
             }
 
-            // File Upload Feedback
             function handleKtpUpload(input) {
                 if (input.files && input.files[0]) {
                     const file = input.files[0];
@@ -1531,7 +1457,6 @@
                 }
             }
 
-            // Geolocation trigger
             function getCurrentLocation() {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
@@ -1542,7 +1467,6 @@
                                 position.coords.longitude.toFixed(6);
                         },
                         () => {
-                            // Fallback location for Besuki Situbondo
                             document.getElementById("latitude").value = "-7.734812";
                             document.getElementById("longitude").value = "113.689435";
                         },
@@ -1550,7 +1474,6 @@
                 }
             }
 
-            // Form submission handler
             document
                 .getElementById("preRegisterForm")
                 .addEventListener("submit", async function(e) {
@@ -1560,55 +1483,37 @@
                     const terms = document.getElementById("termsCheck");
                     const submitButton = form.querySelector('button[type="submit"]');
 
-                    // Check terms
                     if (!terms.checked) {
                         alert("Harap setujui Syarat & Ketentuan berlangganan.");
                         return;
                     }
 
-                    // Create FormData automatically from form inputs
                     const formData = new FormData(form);
 
-                    // Optional: Change field names to match Laravel database/API
-                    formData.append(
-                        "nama_lengkap",
-                        document.getElementById("namaLengkap").value
-                    );
-
-                    formData.append(
-                        "tanggal_lahir",
-                        document.getElementById("tanggalLahir").value
-                    );
-
-                    formData.append(
-                        "jenis_kelamin",
-                        form.querySelector('input[name="gender"]:checked')?.value || ""
-                    );
 
                     formData.append(
                         "paket",
                         form.querySelector('input[name="selectedPlan"]:checked')?.value || ""
                     );
 
-                    // Add file explicitly
+                    // formData.append(
+                    //     "radius",
+                    //     document.getElementById("namaLengkap").value
+                    // );
+
                     const ktpFile = document.getElementById("ktpFile").files[0];
 
                     if (ktpFile) {
                         formData.set("ktp", ktpFile);
                     }
 
-                    // Prevent multiple submissions
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = `
-                                    <span class="material-symbols-outlined animate-spin">
-                                        progress_activity
-                                    </span>
-                                    <span>Mengirim...</span>
-                                `;
+                    // submitButton.disabled = true;
+                    submitButton.innerHTML =
+                        `
+                        <span class="material-symbols-outlined animate-spin"> progress_activity</span><span>Mengirim...</span>`;
 
                     try {
-                        const response = await fetch("http://192.168.1.42:9000/api/preregister", {
-                            // const response = await fetch("/api/preregister", {
+                        const response = await fetch(API_BASE, {
                             method: "POST",
                             body: formData,
                             headers: {
@@ -1619,7 +1524,6 @@
                         const result = await response.json();
 
                         if (!response.ok) {
-                            // Laravel validation error
                             if (response.status === 422 && result.errors) {
                                 const messages = Object.values(result.errors)
                                     .flat()
@@ -1632,19 +1536,16 @@
                                     "Terjadi kesalahan saat mengirim pengajuan."
                                 );
                             }
-
                             return;
                         }
 
-                        // Success
-                        alert(
-                            result.message ||
-                            "Pendaftaran Pre-Register berhasil dikirim! Tim kami akan menghubungi Anda."
-                        );
+                        showAlert({
+                            type: "success",
+                            title: "Pendaftaran Berhasil",
+                            message: "Pendaftaran Pre-Register berhasil dikirim! Tim kami akan menghubungi Anda.",
+                            cancelText: "Tutup",
+                        });
 
-                        console.log("Pre-register success:", result);
-
-                        // Optional: Reset form
                         form.reset();
 
                         document.getElementById("summaryPlanName").textContent = "-";
@@ -1654,31 +1555,49 @@
                         document.getElementById("summaryPpn").textContent = "Rp 0";
                         document.getElementById("summaryBhpUso").textContent = "Rp 0";
                         document.getElementById("summaryPph23").textContent = "Rp 0";
-
-                        // Reset status pengecekan instalasi
-                        document.getElementById("installationCheckResult").classList.add("hidden");
-                        document.getElementById("coverageBadge").classList.add("hidden");
-                        document.getElementById("btnSubmitPreRegister").disabled = true;
-
-                        // Optional redirect
-                        // window.location.href = "/preregister/success";
-
+                        // document.getElementById("installationCheckResult").classList.add("hidden");
+                        // document.getElementById("coverageBadge").classList.add("hidden");
                     } catch (error) {
-                        console.error("Request error:", error);
-
-                        alert(
-                            "Tidak dapat terhubung ke server. Silakan coba kembali."
-                        );
+                        showAlert({
+                            type: "error",
+                            title: "Koneksi Terputus",
+                            message: "Tidak dapat terhubung ke server. Silakan coba kembali.",
+                            confirmText: "Coba Lagi",
+                            cancelText: "Tutup",
+                            onConfirm: () => location.reload(),
+                        });
                     } finally {
-                        submitButton.disabled = false;
+                        // submitButton.disabled = false;
                         submitButton.innerHTML = `
-                                        <span>Kirim Pengajuan Pre-Register</span>
+                                        <span>Kirim Pengajuan</span>
                                         <span class="material-symbols-outlined text-[20px]">
                                             send
                                         </span>
                                     `;
                     }
                 });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const tabs = document.getElementById("segmentTabs");
+                if (!tabs) return;
+
+                function pilihSegment(seg) {
+                    tabs.querySelectorAll("[data-segment]").forEach((btn) => {
+                        btn.setAttribute("aria-checked", btn.dataset.segment === seg ? "true" : "false");
+                    });
+
+                    window.activeSegment = seg;
+
+                    if (typeof window.renderPlans === "function") window.renderPlans();
+                }
+
+                tabs.addEventListener("click", (e) => {
+                    const btn = e.target.closest("[data-segment]");
+                    if (btn) pilihSegment(btn.dataset.segment);
+                });
+
+                pilihSegment("retail");
+            });
         </script>
     @endpush
 @endsection
