@@ -35,6 +35,8 @@ class DatabaseSeeder extends Seeder
             JobLocationSeeder::class,
             CategoryJobSeeder::class,
             HiringSeeder::class,
+            LowonganSeeder::class,
+            LamaranSeeder::class,
         ]);
     }
 }

@@ -217,6 +217,9 @@
                             <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}"
                                     class="h-link">Cek Area</a>
                             </li>
+                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('karir') }}"
+                                    class="h-link">Karir</a>
+                            </li>
 
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="{{ route('preregister') }}"
                                     class="h-link">Pre Register</a>

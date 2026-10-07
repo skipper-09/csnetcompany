@@ -157,6 +157,21 @@
                                 <!-- Stepper Progress Bar Indicator -->
 
                                 <!-- Main Form Layout (Grid Structure) -->
+
+                                @php
+                                    $label = 'block font-title-sm text-title-sm text-on-surface mb-space-2xs';
+                                    $input =
+                                        'w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all';
+                                    $inputIcon =
+                                        'w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all';
+                                    $icon =
+                                        'material-symbols-outlined absolute left-3 top-3.5 text-outline text-[20px]';
+                                    $header =
+                                        'flex items-center justify-between pb-space-md mb-space-lg bg-surface-container-low -mx-space-xl -mt-space-xl p-space-xl rounded-t-2xl';
+                                    $card = 'bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm';
+                                    $req = '<span class="text-error">*</span>';
+                                @endphp
+
                                 <form class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start"
                                     id="preRegisterForm">
                                     <!-- Left Content Area: Form Sections (8 Cols) -->
@@ -545,6 +560,54 @@
                                                 </div>
                                             </div>
                                         </section>
+
+                                        <section class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden">
+                                            {{-- Header --}}
+                                            <div
+                                                class="flex items-center gap-space-sm bg-surface-container-low p-space-xl">
+                                                <div
+                                                    class="w-10 h-10 shrink-0 rounded-xl bg-white text-warning flex items-center justify-center border border-gray-200 shadow-sm">
+                                                    <span class="material-symbols-outlined text-[24px]">badge</span>
+                                                </div>
+                                                <div>
+                                                    <h2 class="font-headline-md text-headline-md text-on-surface">Tim
+                                                        Marketing</h2>
+                                                    <p class="font-body-md text-body-md text-on-surface-variant">
+                                                        Khusus diisi oleh tim marketing Oxynet. Abaikan jika mendaftar
+                                                        secara mandiri.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            {{-- Body --}}
+                                            <div class="p-space-xl">
+                                                <label class="{{ $label }} flex items-center gap-2"
+                                                    for="kode_marketing">
+                                                    Kode Marketing
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-500">Opsional</span>
+                                                </label>
+
+                                                <div class="relative">
+                                                    <span class="{{ $icon }} pointer-events-none">id_card</span>
+                                                    <input id="kode_marketing" name="kode_marketing" type="text"
+                                                        class="{{ $inputIcon }} tracking-wider placeholder:tracking-normal"
+                                                        placeholder="Contoh: MKT001"
+                                                        value="{{ old('kode_marketing', request('ref')) }}" maxlength="20"
+                                                        autocomplete="off" spellcheck="false">
+                                                </div>
+
+                                                @error('kode_marketing')
+                                                    <p class="mt-1.5 text-xs text-red-600">{{ $message }}</p>
+                                                @else
+                                                    <p class="mt-1.5 flex items-center gap-1 text-xs text-gray-500">
+                                                        <span class="material-symbols-outlined text-[14px]">info</span>
+                                                        Gunakan NIK marketing yang terdaftar di Oxynet.
+                                                    </p>
+                                                @enderror
+                                            </div>
+                                        </section>
+
                                         <!-- SECTION 3: Pilihan Paket CSNet Fiber -->
                                         <section class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm">
                                             <div
@@ -1448,13 +1511,31 @@
             }
 
             function handleKtpUpload(input) {
-                if (input.files && input.files[0]) {
-                    const file = input.files[0];
-                    document.getElementById("ktpPlaceholder").classList.add("hidden");
-                    const successBox = document.getElementById("ktpSuccess");
-                    successBox.classList.remove("hidden");
-                    document.getElementById("ktpFileName").textContent = file.name;
+                const file = input.files[0];
+
+                if (!file) {
+                    resetKtpUpload();
+                    return;
                 }
+
+                if (file.size > 5 * 1024 * 1024) {
+                    alert("Ukuran file maksimal 5 MB.");
+                    resetKtpUpload();
+                    return;
+                }
+
+                document.getElementById("ktpFileName").textContent = file.name;
+                document.getElementById("ktpPlaceholder").classList.add("hidden");
+                document.getElementById("ktpSuccess").classList.remove("hidden");
+            }
+
+            function resetKtpUpload() {
+                const input = document.getElementById("ktpFile");
+                input.value = "";
+
+                document.getElementById("ktpPlaceholder").classList.remove("hidden");
+                document.getElementById("ktpSuccess").classList.add("hidden");
+                document.getElementById("ktpFileName").textContent = "";
             }
 
             function getCurrentLocation() {
@@ -1495,11 +1576,6 @@
                         "paket",
                         form.querySelector('input[name="selectedPlan"]:checked')?.value || ""
                     );
-
-                    // formData.append(
-                    //     "radius",
-                    //     document.getElementById("namaLengkap").value
-                    // );
 
                     const ktpFile = document.getElementById("ktpFile").files[0];
 
@@ -1547,6 +1623,7 @@
                         });
 
                         form.reset();
+                        resetKtpUpload();
 
                         document.getElementById("summaryPlanName").textContent = "-";
                         document.getElementById("summarySpeed").textContent = "-";

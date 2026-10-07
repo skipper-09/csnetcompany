@@ -181,7 +181,7 @@
                                             <div class="{{ $header }}">
                                                 <div class="flex items-center gap-space-sm">
                                                     <div
-                                                        class="w-10 h-10 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
+                                                        class="w-10 h-10 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
                                                         <span class="material-symbols-outlined text-[24px]">apartment</span>
                                                     </div>
                                                     <div>
@@ -208,17 +208,37 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <label class="{{ $label }}" for="jenisUsaha">Jenis Usaha</label>
+                                                    <label class="{{ $label }}" for="jenis_usaha">Jenis Usaha
+                                                        {!! $req !!}</label>
+
                                                     <div class="relative">
-                                                        <span class="{{ $icon }}">category</span>
-                                                        <input class="{{ $inputIcon }}" id="jenisUsaha"
-                                                            name="jenis_usaha" type="text"
-                                                            placeholder="Contoh: Perdagangan, Hotel, Klinik">
+                                                        <span
+                                                            class="{{ $icon }} pointer-events-none">category</span>
+
+                                                        <select id="jenis_usaha" name="jenis_usaha" required
+                                                            class="w-full appearance-none rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-10 text-sm text-gray-800 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30">
+                                                            <option value="">-- Pilih jenis usaha --</option>
+                                                        </select>
+
+                                                        <span
+                                                            class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[20px] text-gray-400">
+                                                            expand_more
+                                                        </span>
+                                                    </div>
+
+                                                    {{-- Di luar wrapper relative supaya icon tidak bergeser --}}
+                                                    <div id="jenis_usaha_lainnya_wrap" class="relative mt-2 hidden">
+                                                        <span class="{{ $icon }} pointer-events-none">edit</span>
+                                                        <input type="text" id="jenis_usaha_lainnya"
+                                                            name="jenis_usaha_lainnya" placeholder="Sebutkan jenis usaha"
+                                                            maxlength="100"
+                                                            class="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-3 text-sm text-gray-800 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30">
                                                     </div>
                                                 </div>
+
                                                 <div>
                                                     <label class="{{ $label }}" for="npwp">NPWP
-                                                        Perusahaan</label>
+                                                        Perusahaan {!! $req !!}</label>
                                                     <div class="relative">
                                                         <span class="{{ $icon }}">receipt</span>
                                                         <input class="{{ $inputIcon }}" id="npwp" name="npwp"
@@ -226,14 +246,53 @@
                                                             pattern="[0-9]{15,16}" placeholder="15 / 16 digit angka">
                                                     </div>
                                                 </div>
-                                                <div class="md:col-span-2">
+                                                <div>
                                                     <label class="{{ $label }}" for="teleponFax">Telepon / Fax
-                                                        Kantor</label>
+                                                        Kantor {!! $req !!}</label>
                                                     <div class="relative">
                                                         <span class="{{ $icon }}">call</span>
                                                         <input class="{{ $inputIcon }}" id="teleponFax"
                                                             name="telepon_fax" type="tel"
                                                             placeholder="Contoh: 0333-123456">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="{{ $label }}" for="teleponFax">Email
+                                                        Kantor {!! $req !!}</label>
+                                                    <div class="relative">
+                                                        <span class="{{ $icon }}">mail</span>
+                                                        <input class="{{ $inputIcon }}" id="teleponFax"
+                                                            name="telepon_fax" type="email"
+                                                            placeholder="Contoh: info@perusahaan.com">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="{{ $label }}" for="pjNama">Nama Penanggung
+                                                        Jawab {!! $req !!}</label>
+                                                    <div class="relative">
+                                                        <span class="{{ $icon }}">person</span>
+                                                        <input class="{{ $inputIcon }}" id="pjNama" name="pj_nama"
+                                                            type="text" placeholder="Nama sesuai KTP" required>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="{{ $label }}" for="financeNama">Nama PIC Finance
+                                                        {!! $req !!}</label>
+                                                    <div class="relative">
+                                                        <span class="{{ $icon }}">person</span>
+                                                        <input class="{{ $inputIcon }}" id="financeNama"
+                                                            name="finance_nama" type="text"
+                                                            placeholder="Nama sesuai KTP" required>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="{{ $label }}" for="supportNama">Nama PIC Support
+                                                        {!! $req !!}</label>
+                                                    <div class="relative">
+                                                        <span class="{{ $icon }}">person</span>
+                                                        <input class="{{ $inputIcon }}" id="supportNama"
+                                                            name="support_nama" type="text"
+                                                            placeholder="Nama sesuai KTP"required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -249,7 +308,8 @@
                                                             class="material-symbols-outlined text-[24px]">location_on</span>
                                                     </div>
                                                     <div>
-                                                        <h2 class="font-headline-md text-headline-md text-on-surface">Alamat
+                                                        <h2 class="font-headline-md text-headline-md text-on-surface">
+                                                            Alamat
                                                             &amp; Lokasi Pemasangan</h2>
                                                         <p class="font-body-md text-body-md text-on-surface-variant">Titik
                                                             terminasi kabel fiber optik ke lokasi usaha Anda.</p>
@@ -376,207 +436,44 @@
                                             <div class="{{ $header }}">
                                                 <div class="flex items-center gap-space-sm">
                                                     <div
-                                                        class="w-10 h-10 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
+                                                        class="w-10 h-10 rounded-xl bg-white text-warning flex items-center justify-center border border-gray-200 shadow-sm">
                                                         <span class="material-symbols-outlined text-[24px]">badge</span>
                                                     </div>
                                                     <div>
                                                         <h2 class="font-headline-md text-headline-md text-on-surface">
-                                                            Penanggung Jawab</h2>
+                                                            Tim Marketing</h2>
                                                         <p class="font-body-md text-body-md text-on-surface-variant">
-                                                            Pejabat berwenang yang menandatangani kontrak layanan.</p>
+                                                            khusus diisi oleh tim marketing Oxynet, abaikan jika daftar
+                                                            secara
+                                                            mandiri</p>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-                                                <div>
-                                                    <label class="{{ $label }}" for="pjNama">Nama Penanggung
-                                                        Jawab {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">person</span>
-                                                        <input class="{{ $inputIcon }}" id="pjNama" name="pj_nama"
-                                                            type="text" placeholder="Nama sesuai KTP" required>
-                                                    </div>
+                                            <div>
+                                                <label class="{{ $label }} flex items-center gap-2"
+                                                    for="kode_marketing">
+                                                    Kode Marketing
+                                                    <span
+                                                        class="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-500">Opsional</span>
+                                                </label>
+
+                                                <div class="relative">
+                                                    <span class="{{ $icon }} pointer-events-none">badge</span>
+                                                    <input id="kode_marketing" name="kode_marketing" type="text"
+                                                        class="{{ $inputIcon }} uppercase tracking-wider placeholder:normal-case placeholder:tracking-normal"
+                                                        placeholder="Contoh: MKT001"
+                                                        value="{{ old('kode_marketing', request('ref')) }}"
+                                                        maxlength="20" autocomplete="off" spellcheck="false">
                                                 </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="pjNik">NIK (KTP PIC)
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">credit_card</span>
-                                                        <input class="{{ $inputIcon }}" id="pjNik" name="pj_nik"
-                                                            type="text" inputmode="numeric" maxlength="16"
-                                                            pattern="[0-9]{16}" placeholder="3512xxxxxxxxxxxx" required>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="pjJabatan">Jabatan</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">work</span>
-                                                        <input class="{{ $inputIcon }}" id="pjJabatan"
-                                                            name="pj_jabatan" type="text"
-                                                            placeholder="Contoh: Direktur">
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="pjTelepon">No. Telepon / WA
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">chat</span>
-                                                        <input class="{{ $inputIcon }}" id="pjTelepon"
-                                                            name="pj_telepon" type="tel" placeholder="0812-3456-7890"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                                <div class="md:col-span-2">
-                                                    <label class="{{ $label }}" for="pjEmail">Email Resmi
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">mail</span>
-                                                        <input class="{{ $inputIcon }}" id="pjEmail"
-                                                            name="pj_email" type="email"
-                                                            placeholder="direktur@perusahaan.co.id" required>
-                                                    </div>
-                                                </div>
+
+                                                <p class="mt-1.5 flex items-center gap-1 text-xs text-gray-500">
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Isi jika Anda direferensikan oleh tim marketing kami.
+                                                </p>
                                             </div>
                                         </section>
 
-                                        <!-- SECTION 4: PIC Finance & Penagihan -->
-                                        <section class="{{ $card }}">
-                                            <div class="{{ $header }}">
-                                                <div class="flex items-center gap-space-sm">
-                                                    <div
-                                                        class="w-10 h-10 rounded-xl bg-secondary-fixed text-secondary flex items-center justify-center">
-                                                        <span
-                                                            class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
-                                                    </div>
-                                                    <div>
-                                                        <h2 class="font-headline-md text-headline-md text-on-surface">PIC
-                                                            Finance &amp; Penagihan</h2>
-                                                        <p class="font-body-md text-body-md text-on-surface-variant">
-                                                            Invoice bulanan dan faktur pajak dikirim ke kontak ini.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-                                                <div>
-                                                    <label class="{{ $label }}" for="financeNama">Nama PIC Finance
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">person</span>
-                                                        <input class="{{ $inputIcon }}" id="financeNama"
-                                                            name="finance_nama" type="text" required>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="financeJabatan">Jabatan /
-                                                        Divisi {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">work</span>
-                                                        <input class="{{ $inputIcon }}" id="financeJabatan"
-                                                            name="finance_jabatan" type="text"
-                                                            placeholder="Contoh: Staff Accounting" required>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="financeTelepon">No. Telepon /
-                                                        WA {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">chat</span>
-                                                        <input class="{{ $inputIcon }}" id="financeTelepon"
-                                                            name="finance_telepon" type="tel"
-                                                            placeholder="0812-3456-7890" required>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="financeEmail">Email Invoice
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">mail</span>
-                                                        <input class="{{ $inputIcon }}" id="financeEmail"
-                                                            name="finance_email" type="email"
-                                                            placeholder="finance@perusahaan.co.id" required>
-                                                    </div>
-                                                </div>
-                                                <div class="md:col-span-2">
-                                                    <div class="flex items-center justify-between mb-space-2xs">
-                                                        <label class="font-title-sm text-title-sm text-on-surface"
-                                                            for="alamatPenagihan">
-                                                            Alamat Penagihan {!! $req !!}
-                                                        </label>
-                                                        <label
-                                                            class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-primary font-semibold">
-                                                            <input type="checkbox" id="samaAlamat"
-                                                                class="w-4 h-4 rounded text-primary">
-                                                            Sama dengan alamat pemasangan
-                                                        </label>
-                                                    </div>
-                                                    <textarea class="{{ $input }} resize-none" id="alamatPenagihan" name="alamat_penagihan" rows="3"
-                                                        required placeholder="Alamat pengiriman invoice & dokumen tagihan"></textarea>
-                                                </div>
-                                            </div>
-                                        </section>
-
-                                        <!-- SECTION 5: PIC Support -->
-                                        <section class="{{ $card }}">
-                                            <div class="{{ $header }}">
-                                                <div class="flex items-center gap-space-sm">
-                                                    <div
-                                                        class="w-10 h-10 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
-                                                        <span
-                                                            class="material-symbols-outlined text-[24px]">support_agent</span>
-                                                    </div>
-                                                    <div>
-                                                        <h2 class="font-headline-md text-headline-md text-on-surface">PIC
-                                                            Support Teknis</h2>
-                                                        <p class="font-body-md text-body-md text-on-surface-variant">Kontak
-                                                            yang dihubungi teknisi saat instalasi &amp; gangguan.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-                                                <div>
-                                                    <label class="{{ $label }}" for="supportNama">Nama PIC Support
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">person</span>
-                                                        <input class="{{ $inputIcon }}" id="supportNama"
-                                                            name="support_nama" type="text" required>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="supportJabatan">Jabatan /
-                                                        Divisi {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">work</span>
-                                                        <input class="{{ $inputIcon }}" id="supportJabatan"
-                                                            name="support_jabatan" type="text"
-                                                            placeholder="Contoh: IT Support" required>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}"
-                                                        for="supportTelepon">WhatsApp</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">chat</span>
-                                                        <input class="{{ $inputIcon }}" id="supportTelepon"
-                                                            name="support_telepon" type="tel"
-                                                            placeholder="0812-3456-7890">
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <label class="{{ $label }}" for="supportEmail">Email Support
-                                                        {!! $req !!}</label>
-                                                    <div class="relative">
-                                                        <span class="{{ $icon }}">mail</span>
-                                                        <input class="{{ $inputIcon }}" id="supportEmail"
-                                                            name="support_email" type="email"
-                                                            placeholder="it@perusahaan.co.id" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
 
                                         <!-- SECTION 6: Pilihan Paket -->
                                         <section class="{{ $card }}">
@@ -974,6 +871,18 @@
                 const kecamatanEl = document.getElementById("kecamatan");
                 const kelurahanEl = document.getElementById("kelurahan");
 
+                const select = document.getElementById('jenis_usaha');
+                const other = document.getElementById('jenis_usaha_lainnya');
+                const otherWrap = document.getElementById('jenis_usaha_lainnya_wrap');
+
+                select.addEventListener('change', () => {
+                    const isOther = select.value === 'lainnya';
+                    otherWrap.classList.toggle('hidden', !isOther);
+                    other.required = isOther;
+                    if (isOther) other.focus();
+                    else other.value = '';
+                });
+
                 if (!provinsiEl || !kotaEl || !kecamatanEl || !kelurahanEl) {
                     console.error("Dropdown wilayah tidak ditemukan di DOM:", {
                         provinsi: !!provinsiEl,
@@ -1018,6 +927,36 @@
                         provinsiEl.innerHTML = '<option value="">Gagal memuat data</option>';
                         console.error(err);
                     }
+                })();
+
+                (async () => {
+                    const select = document.getElementById('jenis_usaha');
+                    const other = document.getElementById('jenis_usaha_lainnya');
+
+                    try {
+                        const res = await fetch(`${API_BASE}/jenis-usaha`, {
+                            headers: {
+                                Accept: "application/json"
+                            }
+                        });
+                        const json = await res.json();
+
+                        json.data.forEach(({
+                            value,
+                            label
+                        }) => {
+                            select.add(new Option(label, value));
+                        });
+                    } catch (e) {
+                        console.error('Gagal memuat jenis usaha', e);
+                    }
+
+                    select.addEventListener('change', () => {
+                        const isOther = select.value === 'lainnya';
+                        other.classList.toggle('hidden', !isOther);
+                        other.required = isOther;
+                        if (!isOther) other.value = '';
+                    });
                 })();
 
                 provinsiEl.addEventListener("change", async function() {

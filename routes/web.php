@@ -25,6 +25,10 @@ use App\Http\Controllers\Backend\Setting\PermissionController;
 use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendController;
+use App\Http\Controllers\Backend\Career\CategoryJobController;
+use App\Http\Controllers\Backend\karir\LowonganController;
+use App\Http\Controllers\Backend\PDF\PDFController;
+use App\Http\Controllers\Backend\karir\LamaranController as AdminLamaranController; // admin
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Career\CareerController;
 use App\Http\Controllers\Front_End\Cekarea\CekareaController;
@@ -38,10 +42,10 @@ use App\Http\Controllers\Front_End\Packet\RitelController;
 use App\Http\Controllers\Front_End\Privacy\PrivacyController;
 use App\Http\Controllers\Front_End\Promo\PromoContoller;
 use App\Http\Controllers\Front_End\TremOfService\TremOfServiceController;
-use App\Http\Controllers\Backend\Career\CategoryJobController;
-use App\Http\Controllers\Backend\PDF\PDFController;
+use App\Http\Controllers\Front_End\Karir\KarirController;
 use App\Http\Controllers\Front_End\PreRegister\PreRegisterBisnisController;
 use App\Http\Controllers\Front_End\PreRegister\PreRegisterController;
+use App\Http\Controllers\Karir\LamaranController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -68,6 +72,8 @@ Route::prefix('bantuan')->group(function () {
 
 Route::get('/coverage', [CoverageController::class, 'index'])->name('coverage');
 Route::get('/cek-area', [CekareaController::class, 'index'])->name('cekarea');
+Route::get('/karir', [KarirController::class, 'index'])->name('karir');
+Route::post('/karir/lamaran', [LamaranController::class, 'store'])->middleware('throttle:20,60')->name('karir.lamaran.store');
 Route::get('/get-kecamatan/{kota_id}', [CekareaController::class, 'getKecamatan']);
 Route::get('/get-kelurahan/{kecamatan_id}', [CekareaController::class, 'getKelurahan']);
 Route::get('/get-jalan/{kelurahan_id}', [CekareaController::class, 'getJalan']);
@@ -339,4 +345,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::delete('/delete/{id}', [RoleController::class, 'destroy'])->name('backend.role.delete')->can('read-role');
         });
     });
+
+    Route::prefix('karir')->name('admin.karir.')->group(function () {
+    // Lowongan
+    Route::get('lowongan/get-data', [LowonganController::class, 'getData'])->name('lowongan.getData');
+    Route::resource('lowongan', LowonganController::class);
+
+    // Lamaran (ADMIN — wajib pakai AdminLamaranController)
+    Route::get('lamaran/get-data', [AdminLamaranController::class, 'getData'])->name('lamaran.getData');
+    Route::patch('lamaran/{lamaran}/status', [AdminLamaranController::class, 'updateStatus'])->name('lamaran.status');
+    Route::get('lamaran/{lamaran}/dokumen/{jenis}', [AdminLamaranController::class, 'dokumen'])->name('lamaran.dokumen');
+    Route::resource('lamaran', AdminLamaranController::class);
+});
+    
 });
