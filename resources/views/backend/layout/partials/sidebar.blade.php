@@ -29,26 +29,31 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Master</span>
         </li>
-        <li class="{{ $sidebar == 'packet' ? 'menu-item active open' : 'menu-item' }}">
-            <a href=" javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-basket"></i>
-                <div data-i18n="Paket">Master Data</div>
+        @php
+            $mitraTab = request('type') ?? (isset($mitra) ? $mitra->type : null);
+            $sidebar = $sidebar ?? null;
+        @endphp
+        <li class="{{ $sidebar == 'mitra' ? 'menu-item active open' : 'menu-item' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-buildings"></i>
+                <div data-i18n="Program Mitra">Program Mitra</div>
             </a>
             <ul class="menu-sub">
-                @can('read-paket')
-                    <li class="{{ $page_name == 'Daftar Paket' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="{{ route('backend.packet') }}" class="menu-link">
-                            <div data-i18n="Pricing Packet">Vendor</div>
-                        </a>
-                    </li>
-                @endcan
-                @can('read-deskripsi')
-                    <li class="{{ $page_name == 'Deskripsi Paket' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="{{ route('backend.deskription') }}" class="menu-link">
-                            <div data-i18n="Pricing Deskripsi">Supplier</div>
-                        </a>
-                    </li>
-                @endcan
+                <li class="{{ $sidebar == 'mitra' && !$mitraTab ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('admin.mitra.index') }}" class="menu-link">
+                        <div data-i18n="Semua Pendaftar">Semua Pendaftar</div>
+                    </a>
+                </li>
+                <li class="{{ $sidebar == 'mitra' && $mitraTab === 'vendor' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('admin.mitra.index', ['type' => 'vendor']) }}" class="menu-link">
+                        <div data-i18n="Vendor">Vendor</div>
+                    </a>
+                </li>
+                <li class="{{ $sidebar == 'mitra' && $mitraTab === 'supplier' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="{{ route('admin.mitra.index', ['type' => 'supplier']) }}" class="menu-link">
+                        <div data-i18n="Supplier">Supplier</div>
+                    </a>
+                </li>
             </ul>
         </li>
 

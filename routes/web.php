@@ -28,7 +28,8 @@ use App\Http\Controllers\Backend\TremofServiceBackend\TremofServiceBackendContro
 use App\Http\Controllers\Backend\Career\CategoryJobController;
 use App\Http\Controllers\Backend\karir\LowonganController;
 use App\Http\Controllers\Backend\PDF\PDFController;
-use App\Http\Controllers\Backend\karir\LamaranController as AdminLamaranController; // admin
+use App\Http\Controllers\Backend\karir\LamaranController as AdminLamaranController;
+use App\Http\Controllers\Backend\MitraRegistration\MitraRegistrationController as AdminMitraController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Career\CareerController;
 use App\Http\Controllers\Front_End\Cekarea\CekareaController;
@@ -46,7 +47,9 @@ use App\Http\Controllers\Front_End\Karir\KarirController;
 use App\Http\Controllers\Front_End\PreRegister\PreRegisterBisnisController;
 use App\Http\Controllers\Front_End\PreRegister\PreRegisterController;
 use App\Http\Controllers\Karir\LamaranController;
+use App\Http\Controllers\Front_End\MitraRegistration\MitraRegistrationController;
 use Illuminate\Support\Facades\Route;
+use App\Models\MitraRegistration;
 
 Route::get('/', function () {
     return redirect()->route('home');
@@ -69,7 +72,6 @@ Route::prefix('bantuan')->group(function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('help.faq');
 });
 
-
 Route::get('/coverage', [CoverageController::class, 'index'])->name('coverage');
 Route::get('/cek-area', [CekareaController::class, 'index'])->name('cekarea');
 Route::get('/karir', [KarirController::class, 'index'])->name('karir');
@@ -90,6 +92,25 @@ Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
 Route::get('/career/{slug}', [CareerController::class, 'detail'])->name('career.detail');
 
+Route::prefix('program-mitra')
+    ->name('mitra.')
+    ->controller(MitraRegistrationController::class)
+    ->group(function () {
+        Route::get('/', 'landing')->name('landing');
+
+        Route::get('/daftar', 'chooseType')->name('type');
+        Route::post('/daftar', 'storeType')->name('type.store');
+
+        Route::get('/daftar/step/{step}', 'showStep')->whereIn('step', ['1', '2', '3'])->name('step');
+        Route::post('/daftar/step/{step}', 'storeStep')->whereIn('step', ['1', '2', '3'])->name('step.store');
+
+        Route::get('/daftar/review', 'review')->name('review');
+        Route::post('/daftar/kirim', 'submit')->name('submit');
+        Route::get('/daftar/sukses', 'success')->name('success');
+
+        Route::get('/status', 'status')->middleware('throttle:10,1')->name('status');
+    });
+
 
 //backend routes
 Route::prefix('auth')->group(function () {
@@ -101,7 +122,6 @@ Route::prefix('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->can('read-dashboard');
-
 
     //route partner
     Route::prefix('partner')->group(function () {
@@ -347,15 +367,24 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     });
 
     Route::prefix('karir')->name('admin.karir.')->group(function () {
-    // Lowongan
-    Route::get('lowongan/get-data', [LowonganController::class, 'getData'])->name('lowongan.getData');
-    Route::resource('lowongan', LowonganController::class);
+        Route::get('lowongan/get-data', [LowonganController::class, 'getData'])->name('lowongan.getData');
+        Route::resource('lowongan', LowonganController::class);
 
-    // Lamaran (ADMIN — wajib pakai AdminLamaranController)
-    Route::get('lamaran/get-data', [AdminLamaranController::class, 'getData'])->name('lamaran.getData');
-    Route::patch('lamaran/{lamaran}/status', [AdminLamaranController::class, 'updateStatus'])->name('lamaran.status');
-    Route::get('lamaran/{lamaran}/dokumen/{jenis}', [AdminLamaranController::class, 'dokumen'])->name('lamaran.dokumen');
-    Route::resource('lamaran', AdminLamaranController::class);
-});
-    
+        Route::get('lamaran/get-data', [AdminLamaranController::class, 'getData'])->name('lamaran.getData');
+        Route::patch('lamaran/{lamaran}/status', [AdminLamaranController::class, 'updateStatus'])->name('lamaran.status');
+        Route::get('lamaran/{lamaran}/dokumen/{jenis}', [AdminLamaranController::class, 'dokumen'])->name('lamaran.dokumen');
+        Route::resource('lamaran', AdminLamaranController::class);
+    });
+
+    Route::prefix('mitra')->name('admin.mitra.')->controller(AdminMitraController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/export', 'export')->name('export');
+        Route::get('/{mitra}', 'show')->name('show');
+        Route::patch('/{mitra}/status', 'updateStatus')->name('status');
+        Route::get('/{mitra}/dokumen/{field}', 'document')
+            ->whereIn('field', array_keys(MitraRegistration::DOCUMENTS))
+            ->name('document');
+        Route::delete('/{mitra}', 'destroy')->name('destroy');
+    });
+
 });

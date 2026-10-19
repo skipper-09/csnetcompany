@@ -17,7 +17,7 @@
     <meta name="description" content="Internet Service Provider Tercepat dan Unlimited">
     <meta name="keywords" content="internet, isp, csnet, internet murah, internet unlimited">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <!-- SITE TITLE -->
     <title>@yield('title') - CSNET Internet Service Provider</title>
 

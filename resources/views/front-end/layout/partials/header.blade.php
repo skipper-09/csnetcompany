@@ -60,7 +60,7 @@
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="{{ route('career') }}">Career</a></li>
+                                    {{-- <li aria-haspopup="true"><a href="{{ route('career') }}">Career</a></li> --}}
                                     <li aria-haspopup="true"><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
@@ -73,6 +73,22 @@
                             <!-- SIMPLE NAVIGATION LINK -->
                             <li class="nl-simple" aria-haspopup="true"><a href="{{ route('cekarea') }}"
                                     class="h-link">Cek Area</a>
+                            </li>
+                            <li class="nl-simple" aria-haspopup="true"><a href="{{ route('karir') }}"
+                                    class="h-link">Karir</a>
+                            </li>
+                            <li class="nl-simple" aria-haspopup="true">
+                                <a href="{{ route('mitra.landing') }}"
+                                    class="h-link {{ request()->routeIs('mitra.*') ? 'active' : '' }}">Program
+                                    Mitra</a>
+                            </li>
+                            <li aria-haspopup="true"><a href="#" class="h-link">Pre Register<span
+                                        class="wsarrow"></span></a>
+                                <ul class="sub-menu">
+                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail</a></li>
+                                    <li aria-haspopup="true"><a href="{{ route('preregister_bisnis') }}">Bisnis</a>
+                                    </li>
+                                </ul>
                             </li>
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
@@ -158,7 +174,7 @@
                             <li aria-haspopup="true"><a href="#" class="h-link">Bantuan<span
                                         class="wsarrow"></span></a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="{{ route('career') }}">Career</a></li>
+                                    {{-- <li aria-haspopup="true"><a href="{{ route('career') }}">Career</a></li> --}}
                                     <li aria-haspopup="true"><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                                     <li aria-haspopup="true"><a href="{{ route('help.faq') }}">FAQ</a></li>
                                 </ul>
@@ -220,7 +236,11 @@
                             <li class="nl-simple" aria-haspopup="true"><a href="{{ route('karir') }}"
                                     class="h-link">Karir</a>
                             </li>
-
+                            <li class="nl-simple" aria-haspopup="true">
+                                <a href="{{ route('mitra.landing') }}"
+                                    class="h-link {{ request()->routeIs('mitra.*') ? 'active' : '' }}">Program
+                                    Mitra</a>
+                            </li>
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="{{ route('preregister') }}"
                                     class="h-link">Pre Register</a>
                             </li> --}}
