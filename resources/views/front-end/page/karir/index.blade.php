@@ -134,8 +134,10 @@
 
                 <div class="krr-hero__media">
                     <span class="krr-hero__glow"></span>
-                    <span class="krr-hero__tagline">Lebih Dekat<br>Menghubungkan<br>Indonesia</span>
-                    <img src="{{ asset('front-end/images/career2.png') }}" alt="Karyawan CSNET">
+                    <div class="krr-hero__person">
+                        <img src="{{ asset('front-end/images/career2.png') }}" alt="Karyawan CSNET">
+                        <span class="krr-hero__tagline">Lebih Dekat<br>Menghubungkan<br>Indonesia</span>
+                    </div>
 
                     <div class="krr-float">
                         <span class="krr-float__icon">

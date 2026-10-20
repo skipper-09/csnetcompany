@@ -373,6 +373,14 @@
                     results.style.display = 'none';
                 });
 
+                // Prefill dari form Cek Area di halaman home (?q=...)
+                const initialQuery = new URLSearchParams(window.location.search).get('q');
+                if (initialQuery) {
+                    search.value = initialQuery;
+                    search.dispatchEvent(new Event('input'));
+                    search.focus();
+                }
+
                 const API_URL = "{{ rtrim(config('app.base_url_api'), '/') }}";
 
                 const getCoords = () => ({

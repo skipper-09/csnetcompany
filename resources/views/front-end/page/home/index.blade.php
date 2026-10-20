@@ -2,34 +2,436 @@
 
 @section('title', $page_name)
 
+@push('css')
+    <style>
+        /* NAVBAR (home): putih solid */
+        #header .wsmainfull,
+        #header .wsmainfull.scroll {
+            padding: 6px 0;
+            background-color: #fff !important;
+            box-shadow: 0 1px 0 rgba(10, 30, 70, 0.08);
+        }
+
+        #header .wsmenu>.wsmenu-list>li>a.h-link {
+            color: #1b2a44;
+        }
+
+        #header .wsmenu>.wsmenu-list>li>a.h-link.active,
+        #header .wsmenu>.wsmenu-list>li>a.h-link:hover {
+            color: #0b4fa8 !important;
+        }
+
+        #header .logo-black {
+            display: block !important;
+        }
+
+        #header .logo-white {
+            display: none !important;
+        }
+
+        /* HERO CSNET */
+        #hero-csnet {
+            position: relative;
+            overflow: hidden;
+            background: #0b4fa8;
+            color: #fff;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            padding: 150px 0 48px;
+        }
+
+        #hero-csnet .hero-net {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 260px;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+
+        #hero-csnet .container {
+            position: relative;
+        }
+
+        .hcs-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hcs-txt {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .hcs-eyebrow {
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+        }
+
+        .hcs-eyebrow .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3ddc97;
+        }
+
+        #hero-csnet h1 {
+            margin: 0;
+            color: #fff;
+            font-family: inherit;
+            font-size: 64px;
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        #hero-csnet h1 span {
+            color: #7fd8ff;
+        }
+
+        #hero-csnet .hcs-lead {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.65;
+            color: #d6e6fa;
+            max-width: 520px;
+        }
+
+        .hcs-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hcs-btn {
+            height: 56px;
+            padding: 0 26px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .hcs-btn--white {
+            background: #fff;
+            color: #0b4fa8 !important;
+        }
+
+        .hcs-btn--white:hover {
+            background: #e8f1fc;
+        }
+
+        .hcs-btn--outline {
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            color: #fff !important;
+            font-weight: 600;
+        }
+
+        .hcs-btn--outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        .hcs-usp {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 560px;
+        }
+
+        .hcs-usp div {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e6f0fc;
+        }
+
+        .hcs-img {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            min-height: 560px;
+        }
+
+        .hcs-img .circle {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            width: 500px;
+            height: 500px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.96;
+        }
+
+        .hcs-img .ring {
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            width: 560px;
+            height: 560px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            border: 2px dashed rgba(127, 216, 255, 0.6);
+        }
+
+        .hcs-img img {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            height: auto;
+        }
+
+        .hcs-area {
+            position: relative;
+            margin-top: -20px;
+            background: #fff;
+            border-radius: 18px;
+            padding: 14px 14px 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 24px 60px rgba(6, 30, 70, 0.3);
+        }
+
+        .hcs-area-title {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 210px;
+        }
+
+        .hcs-area-title strong {
+            font-size: 16px;
+            color: #1b2a44;
+        }
+
+        .hcs-area-title span {
+            font-size: 13px;
+            color: #5b6b84;
+        }
+
+        #hero-csnet .hcs-area button {
+            flex: 0 0 auto;
+            margin-left: auto;
+            height: 56px;
+            padding: 0 28px;
+            border: 0;
+            border-radius: 12px;
+            background: #0b4fa8;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .hcs-area button:hover {
+            background: #083a7d;
+        }
+
+        @media (max-width: 991.98px) {
+            #hero-csnet {
+                padding: 110px 0 40px;
+            }
+
+            .hcs-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            #hero-csnet h1 {
+                font-size: 48px;
+            }
+
+            .hcs-img {
+                min-height: 0;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            #hero-csnet {
+                padding: 90px 0 32px;
+            }
+
+            .hcs-txt {
+                gap: 20px;
+            }
+
+            #hero-csnet h1 {
+                font-size: 38px;
+                line-height: 1.1;
+            }
+
+            #hero-csnet .hcs-lead {
+                font-size: 16px;
+            }
+
+            .hcs-cta {
+                flex-direction: column;
+            }
+
+            .hcs-btn {
+                width: 100%;
+                height: 52px;
+            }
+
+            .hcs-usp {
+                gap: 8px;
+            }
+
+            .hcs-usp div {
+                flex-direction: column;
+                text-align: center;
+                font-size: 12px;
+                gap: 6px;
+            }
+
+            .hcs-img .circle {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hcs-img .ring {
+                width: 340px;
+                height: 340px;
+            }
+
+            .hcs-img img {
+                max-width: 340px;
+            }
+
+            .hcs-area {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 18px;
+            }
+
+            .hcs-area-title {
+                min-width: 0;
+            }
+
+            #hero-csnet .hcs-area button {
+                height: 52px;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+@endpush
+
 @section('content')
-    <section id="hero-2" class="bg--10 hero-section">
+    <section id="hero-csnet" class="hero-section">
+        <svg class="hero-net" aria-hidden="true" viewBox="0 0 1440 260" preserveAspectRatio="none">
+            <g fill="none" stroke="#9FE3FF" stroke-width="1">
+                <path d="M0 120 L180 50 L360 100 L540 20 L720 80 L900 0 L1080 60 L1260 -20 L1440 40"></path>
+                <path d="M0 180 L200 130 L420 170 L640 110 L860 160 L1080 100 L1300 150 L1440 120"></path>
+                <path
+                    d="M180 50 L200 130 M360 100 L420 170 M540 20 L640 110 M720 80 L860 160 M900 0 L1080 100 M1080 60 L1300 150 M1260 -20 L1440 120">
+                </path>
+            </g>
+            <g fill="#9FE3FF">
+                <circle cx="180" cy="50" r="3"></circle>
+                <circle cx="360" cy="100" r="3"></circle>
+                <circle cx="540" cy="20" r="3"></circle>
+                <circle cx="720" cy="80" r="3"></circle>
+                <circle cx="1080" cy="60" r="3"></circle>
+            </g>
+        </svg>
+
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-center">
-                <!-- HERO IMAGE -->
-                <div class="col-md-6 order-last order-md-2">
-                    <div class="hero-2-img wow fadeInRight">
-                        <img class="img-fluid" src="{{ asset('front-end/images/Asset 1.png') }}" alt="hero-image">
-                    </div>
-                </div>
+            <div class="hcs-grid">
                 <!-- HERO TEXT -->
-                <div class="col-md-6 order-first order-md-2">
-                    <div class="hero-2-txt wow fadeInLeft">
-                        <p class="p-lg color--white">PT CAHAYA SENTRA INTERNET
-                            <!-- Title -->
-                        <h2 class="s-56 w-700 color--white">Internet Cepat Tanpa Batas!</h2>
-                        <!-- Text -->
-                        </p>
-                        <p class="p-lg color--white">Nikmati konektivitas internet super cepat dan stabil dari CSNET, dengan
-                            pilihan paket terjangkau yang dirancang untuk mendukung kemajuan bisnis Anda. Pastikan bisnis
-                            Anda tetap terhubung dan kompetitif dengan layanan internet berkualitas dari CSNET.
-                        </p>
+                <div class="hcs-txt wow fadeInLeft">
+                    <div class="hcs-eyebrow"><span class="dot"></span>PT CAHAYA SENTRA INTERNET</div>
+                    <h1>Internet Cepat &amp; Stabil, <span>Tanpa Batas.</span></h1>
+                    <p class="hcs-lead">Koneksi super cepat untuk rumah dan bisnis Anda, dengan paket terjangkau dan tim
+                        teknisi lokal yang siap membantu.</p>
+                    <div class="hcs-cta">
+                        <a href="{{ route('packet.ritel') }}" class="hcs-btn hcs-btn--white">
+                            Lihat Paket
+                            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/6282116879977?text=Halo" target="_blank" rel="noopener"
+                            class="hcs-btn hcs-btn--outline">
+                            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path>
+                            </svg>
+                            Chat WhatsApp
+                        </a>
+                    </div>
+                    <div class="hcs-usp">
+                        <div>
+                            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                stroke="#7FD8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L4 14h7l-1 8 9-12h-7z"></path>
+                            </svg>
+                            Unlimited tanpa FUP
+                        </div>
+                        <div>
+                            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                stroke="#7FD8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="M12 7v5l3 2"></path>
+                            </svg>
+                            Support 24/7
+                        </div>
+                        <div>
+                            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                stroke="#7FD8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path>
+                                <circle cx="12" cy="10" r="2.5"></circle>
+                            </svg>
+                            Teknisi lokal
+                        </div>
                     </div>
                 </div>
-                <!-- END HERO TEXT -->
-            </div> <!-- End row -->
-        </div> <!-- End container -->
-    </section> <!-- END HERO-2 -->
+
+                <!-- HERO IMAGE -->
+                <div class="hcs-img wow fadeInRight">
+                    <div class="circle"></div>
+                    <div class="ring"></div>
+                    <img src="{{ asset('front-end/images/CSnet Team.png') }}" alt="Tim CSnet">
+                </div>
+            </div>
+
+            <!-- CEK AREA -->
+            <form class="hcs-area" action="{{ route('cekarea') }}" method="GET">
+                <div class="hcs-area-title">
+                    <strong>Cek ketersediaan area</strong>
+                    <span>Pastikan CSnet sudah ada di lokasi Anda</span>
+                </div>
+                <button type="submit">Cek Sekarang</button>
+            </form>
+        </div>
+    </section> <!-- END HERO CSNET -->
 
     <!-- BRANDS-1                                                                     ============================================= -->
     <div id="brands-carousel-5" class=" py-50 brands-section">
