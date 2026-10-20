@@ -85,7 +85,7 @@
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- BAYAR TAGIHAN -->
-                            <li class="nl-simple nav-cta-item" aria-haspopup="true">
+                            {{-- <li class="nl-simple nav-cta-item" aria-haspopup="true">
                                 <a href="https://client.csnet.id/" class="nav-cta nav-cta--outline">
                                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -94,12 +94,13 @@
                                         <path d="M3 10h18"></path>
                                     </svg> Bayar Tagihan
                                 </a>
-                            </li>
+                            </li> --}}
                             <!-- DAFTAR SEKARANG -->
                             <li class="nav-cta-item mobile-last-link" aria-haspopup="true">
                                 <a href="#" class="nav-cta nav-cta--red">Daftar Sekarang</a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail / Rumah</a></li>
+                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail / Rumah</a>
+                                    </li>
                                     <li aria-haspopup="true"><a href="{{ route('preregister_bisnis') }}">Bisnis</a>
                                     </li>
                                 </ul>
@@ -254,21 +255,22 @@
                             <!-- SIMPLE NAVIGATION LINK -->
                             {{-- <li class="nl-simple" aria-haspopup="true"><a href="#" class="h-link">FAQs</a></li> --}}
                             <!-- BAYAR TAGIHAN -->
-                            <li class="nl-simple nav-cta-item" aria-haspopup="true">
+                            {{-- <li class="nl-simple nav-cta-item" aria-haspopup="true">
                                 <a href="https://client.csnet.id/" class="nav-cta nav-cta--outline">
-                                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
                                         <rect x="3" y="5" width="18" height="14" rx="2"></rect>
                                         <path d="M3 10h18"></path>
                                     </svg> Bayar Tagihan
                                 </a>
-                            </li>
+                            </li> --}}
                             <!-- DAFTAR SEKARANG -->
                             <li class="nav-cta-item mobile-last-link" aria-haspopup="true">
                                 <a href="#" class="nav-cta nav-cta--red">Daftar Sekarang</a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail / Rumah</a></li>
+                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail / Rumah</a>
+                                    </li>
                                     <li aria-haspopup="true"><a href="{{ route('preregister_bisnis') }}">Bisnis</a>
                                     </li>
                                 </ul>
