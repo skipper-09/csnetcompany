@@ -274,12 +274,14 @@ class RoleSeeder extends Seeder
             'read-media'
         ]);
         $supplier->givePermissionTo([
+            'read-dashboard',
             'read-supplier',
             'create-supplier',
             'update-supplier',
             'delete-supplier',
         ]);
         $vendor->givePermissionTo([
+            'read-dashboard',
             'read-vendor',
             'create-vendor',
             'update-vendor',
