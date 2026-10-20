@@ -8,9 +8,6 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $arrayOfPermissionNames = [
@@ -102,10 +99,35 @@ class PermissionSeeder extends Seeder
             'create-spk',
             'update-spk',
             'delete-spk',
+
+            'read-vendorsupplier',
+
+            'read-vendor',
+            'create-vendor',
+            'update-vendor',
+            'delete-vendor',
+
+            'read-supplier',
+            'create-supplier',
+            'update-supplier',
+            'delete-supplier',
+
+            'read-lowongan',
+            'create-lowongan',
+            'update-lowongan',
+            'delete-lowongan',
+
+            'read-lamaran',
+            'create-lamaran',
+            'update-lamaran',
+            'delete-lamaran',
         ];
-        $permissions = collect($arrayOfPermissionNames)->map(function ($permission) {
-            return ['name' => $permission, 'guard_name' => 'web'];
-        });
-        Permission::insert($permissions->toArray());
+
+        foreach ($arrayOfPermissionNames as $permissionName) {
+            Permission::firstOrCreate([
+                'name' => $permissionName,
+                'guard_name' => 'web'
+            ]);
+        }
     }
 }

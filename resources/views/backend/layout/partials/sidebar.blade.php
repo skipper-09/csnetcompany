@@ -33,48 +33,63 @@
             $mitraTab = request('type') ?? (isset($mitra) ? $mitra->type : null);
             $sidebar = $sidebar ?? null;
         @endphp
-        <li class="{{ $sidebar == 'mitra' ? 'menu-item active open' : 'menu-item' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-buildings"></i>
-                <div data-i18n="Program Mitra">Program Mitra</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="{{ $sidebar == 'mitra' && !$mitraTab ? 'menu-item active' : 'menu-item' }}">
-                    <a href="{{ route('admin.mitra.index') }}" class="menu-link">
-                        <div data-i18n="Semua Pendaftar">Semua Pendaftar</div>
-                    </a>
-                </li>
-                <li class="{{ $sidebar == 'mitra' && $mitraTab === 'vendor' ? 'menu-item active' : 'menu-item' }}">
-                    <a href="{{ route('admin.mitra.index', ['type' => 'vendor']) }}" class="menu-link">
-                        <div data-i18n="Vendor">Vendor</div>
-                    </a>
-                </li>
-                <li class="{{ $sidebar == 'mitra' && $mitraTab === 'supplier' ? 'menu-item active' : 'menu-item' }}">
-                    <a href="{{ route('admin.mitra.index', ['type' => 'supplier']) }}" class="menu-link">
-                        <div data-i18n="Supplier">Supplier</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
 
-        <li class="menu-item {{ request()->routeIs('admin.karir.*') ? 'active open' : '' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-briefcase"></i>
-                <div data-i18n="Karir">Karir</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('admin.karir.lowongan.*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.karir.lowongan.index') }}" class="menu-link">
-                        <div data-i18n="Lowongan">Lowongan</div>
-                    </a>
-                </li>
-                <li class="menu-item {{ request()->routeIs('admin.karir.lamaran.*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.karir.lamaran.index') }}" class="menu-link">
-                        <div data-i18n="Lamaran">Lamaran Masuk</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        @canany(['read-vendorsupplier', 'read-vendor', 'read-supplier'])
+            <li class="{{ $sidebar == 'mitra' ? 'menu-item active open' : 'menu-item' }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-buildings"></i>
+                    <div data-i18n="Program Mitra">Program Mitra</div>
+                </a>
+                <ul class="menu-sub">
+                    @can('read-vendorsupplier')
+                        <li class="{{ $sidebar == 'mitra' && !$mitraTab ? 'menu-item active' : 'menu-item' }}">
+                            <a href="{{ route('admin.mitra.index') }}" class="menu-link">
+                                <div data-i18n="Semua Pendaftar">Semua Pendaftar</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('read-vendor')
+                        <li class="{{ $sidebar == 'mitra' && $mitraTab === 'vendor' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="{{ route('admin.mitra.index', ['type' => 'vendor']) }}" class="menu-link">
+                                <div data-i18n="Vendor">Vendor</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('read-supplier')
+                        <li class="{{ $sidebar == 'mitra' && $mitraTab === 'supplier' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="{{ route('admin.mitra.index', ['type' => 'supplier']) }}" class="menu-link">
+                                <div data-i18n="Supplier">Supplier</div>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
+
+        @canany(['read-lowongan', 'read-lamaran'])
+            <li class="menu-item {{ request()->routeIs('admin.karir.*') ? 'active open' : '' }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-briefcase"></i>
+                    <div data-i18n="Karir">Karir</div>
+                </a>
+                <ul class="menu-sub">
+                    @can('read-lowongan')
+                        <li class="menu-item {{ request()->routeIs('admin.karir.lowongan.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.karir.lowongan.index') }}" class="menu-link">
+                                <div data-i18n="Lowongan">Lowongan</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('read-lamaran')
+                        <li class="menu-item {{ request()->routeIs('admin.karir.lamaran.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.karir.lamaran.index') }}" class="menu-link">
+                                <div data-i18n="Lamaran">Lamaran Masuk</div>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
 
         @canany(['read-paket', 'read-categoripaket', 'read-deskripsi'])
             <!-- Packet -->

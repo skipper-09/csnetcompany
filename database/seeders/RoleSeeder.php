@@ -8,24 +8,23 @@ use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //create role 
-        $developer = Role::create(['name' => 'Developer']);
-        $administrator = Role::create(['name' => 'Administrator']);
-        $noc = Role::create(['name' => 'Noc']);
-        $supportnoc = Role::create(['name' => 'Support Noc']);
-        $odp = Role::create(['name' => 'Team Odp']);
-        $project = Role::create(['name' => 'Project']);
-        $marketingretail = Role::create(['name' => 'Marketing Retail']);
-        $marketingbisnis = Role::create(['name' => 'Marketing Bisnis RT RW']);
-        $datacenter = Role::create(['name' => 'Data Center']);
-        $admin = Role::create(['name' => 'Admin']);
+        // Menggunakan firstOrCreate agar aman jika dijalankan berulang kali
+        $developer       = Role::firstOrCreate(['name' => 'Developer']);
+        $administrator   = Role::firstOrCreate(['name' => 'Administrator']);
+        $noc             = Role::firstOrCreate(['name' => 'Noc']);
+        $supportnoc      = Role::firstOrCreate(['name' => 'Support Noc']);
+        $odp             = Role::firstOrCreate(['name' => 'Team Odp']);
+        $project         = Role::firstOrCreate(['name' => 'Project']);
+        $marketingretail = Role::firstOrCreate(['name' => 'Marketing Retail']);
+        $marketingbisnis = Role::firstOrCreate(['name' => 'Marketing Bisnis RT RW']);
+        $datacenter      = Role::firstOrCreate(['name' => 'Data Center']);
+        $admin           = Role::firstOrCreate(['name' => 'Admin']);
+        $supplier        = Role::firstOrCreate(['name' => 'Supplier']);
+        $vendor          = Role::firstOrCreate(['name' => 'Vendor']);
 
-        //give permission role
+        // give permission role
         $developer->givePermissionTo([
             'read-dashboard',
             'read-partner',
@@ -115,6 +114,28 @@ class RoleSeeder extends Seeder
             'create-spk',
             'update-spk',
             'delete-spk',
+            
+            'read-vendorsupplier',
+
+            'read-vendor',
+            'create-vendor',
+            'update-vendor',
+            'delete-vendor',
+
+            'read-supplier',
+            'create-supplier',
+            'update-supplier',
+            'delete-supplier',
+
+            'read-lowongan',
+            'create-lowongan',
+            'update-lowongan',
+            'delete-lowongan',
+
+            'read-lamaran',
+            'create-lamaran',
+            'update-lamaran',
+            'delete-lamaran',
         ]);
 
         $administrator->givePermissionTo([
@@ -204,6 +225,28 @@ class RoleSeeder extends Seeder
             'delete-role',
             'read-spk',
             'create-spk',
+
+            'read-vendorsupplier',
+
+            'read-vendor',
+            'create-vendor',
+            'update-vendor',
+            'delete-vendor',
+
+            'read-supplier',
+            'create-supplier',
+            'update-supplier',
+            'delete-supplier',
+
+            'read-lowongan',
+            'create-lowongan',
+            'update-lowongan',
+            'delete-lowongan',
+
+            'read-lamaran',
+            'create-lamaran',
+            'update-lamaran',
+            'delete-lamaran',
         ]);
 
         $noc->givePermissionTo([
@@ -229,6 +272,18 @@ class RoleSeeder extends Seeder
         ]);
         $admin->givePermissionTo([
             'read-media'
+        ]);
+        $supplier->givePermissionTo([
+            'read-supplier',
+            'create-supplier',
+            'update-supplier',
+            'delete-supplier',
+        ]);
+        $vendor->givePermissionTo([
+            'read-vendor',
+            'create-vendor',
+            'update-vendor',
+            'delete-vendor',
         ]);
     }
 }

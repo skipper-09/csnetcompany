@@ -9,24 +9,50 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        User::create([
-            'name' => 'Developer',
-            'email' => 'root@gmail.com',
-            'username' => 'root',
-            'password' => Hash::make('root'),
-        ])->assignRole('Developer');
+        // 1. Developer
+        $developer = User::updateOrCreate(
+            ['email' => 'root@gmail.com'], 
+            [
+                'name' => 'Developer',
+                'username' => 'root',
+                'password' => Hash::make('root'),
+            ]
+        );
+        $developer->assignRole('Developer');
 
-        User::create([
-            'name' => 'Administrator',
-            'email' => 'admin@gmail.com',
-            'username' => 'admin',
+        // 2. Administrator
+        $administrator = User::updateOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'name' => 'Administrator',
+                'username' => 'admin',
+                'password' => Hash::make('admin'),
+            ]
+        );
+        $administrator->assignRole('Administrator');
 
-            'password' => Hash::make('admin'),
-        ])->assignRole('Administrator');
+        // 3. Supplier
+        $supplier = User::updateOrCreate(
+            ['email' => 'supplier@gmail.com'],
+            [
+                'name' => 'Supplier',
+                'username' => 'supplier',
+                'password' => Hash::make('supplier'),
+            ]
+        );
+        $supplier->assignRole('Supplier');
+
+        // 4. Vendor
+        $vendor = User::updateOrCreate(
+            ['email' => 'vendor@gmail.com'],
+            [
+                'name' => 'Vendor',
+                'username' => 'vendor',
+                'password' => Hash::make('vendor'),
+            ]
+        );
+        $vendor->assignRole('Vendor');
     }
 }
