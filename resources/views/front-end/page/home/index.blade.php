@@ -49,12 +49,12 @@
                 <div class="col text-center">
                     <div class="owl-carousel brands-carousel-5">
                         <!-- BRAND LOGO IMAGE -->
-                        @foreach ($partner as $item)
+                        <!-- @foreach ($partner as $item)
                             <div class="brand-logo p-2">
                                 <a href="#"><img class="img-fluid"
                                         src="{{ url('storage/images/partner/' . $item->logo) }}" alt="brand-logo"></a>
                             </div>
-                        @endforeach
+                        @endforeach -->
 
                     </div>
                 </div>
