@@ -5,7 +5,7 @@
             <!-- FOOTER LOGO -->
             <div class="col-xl-3">
                 <div class="footer-info">
-                    <img class="footer-logo" src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="footer-logo">
+                    {{-- <img class="footer-logo" src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="footer-logo"> --}}
                 </div>
             </div>
             <!-- FOOTER LINKS -->
