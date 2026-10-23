@@ -7,7 +7,7 @@
             <div class="wsmobileheader clearfix">
                 <span class="smllogo">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="mobile-logo">
+                        {{-- <img src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="mobile-logo"> --}}
                     </a>
                 </span>
                 <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
@@ -21,15 +21,19 @@
 
                     <!-- HEADER BLACK LOGO -->
                     <div class="desktoplogo">
-                        <a href="{{ route('home') }}" class="logo-black"><img
-                                src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo"></a>
+                        <a href="{{ route('home') }}" class="logo-black">
+                            {{-- <img
+                                src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo"> --}}
+                        </a>
                     </div>
 
 
                     <!-- HEADER WHITE LOGO -->
                     <div class="desktoplogo">
-                        <a href="{{ route('home') }}" class="logo-white"><img
-                                src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo"></a>
+                        <a href="{{ route('home') }}" class="logo-white">
+                            {{-- <img
+                                src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo"> --}}
+                        </a>
                     </div>
 
 
@@ -129,8 +133,9 @@
             <!-- MOBILE HEADER -->
             <div class="wsmobileheader clearfix">
                 <span class="smllogo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('front-end/images/logoo-csnet.webp') }}"
-                            alt="mobile-logo"></a>
+                    <a href="{{ route('home') }}">
+
+                    </a>
                 </span>
                 <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
             </div>
@@ -143,15 +148,13 @@
 
                     <!-- HEADER BLACK LOGO -->
                     <div class="desktoplogo">
-                        <a href="{{ route('home') }}" class="logo-black"><img
-                                src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo"></a>
+                        <a href="{{ route('home') }}" class="logo-black"></a>
                     </div>
 
 
                     <!-- HEADER WHITE LOGO -->
                     <div class="desktoplogo">
-                        <a href="{{ route('home') }}" class="logo-white"><img
-                                src="{{ asset('front-end/images/logoo-csnet.webp') }}" alt="logo"></a>
+                        <a href="{{ route('home') }}" class="logo-white"></a>
                     </div>
 
 
