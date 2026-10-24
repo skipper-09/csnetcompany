@@ -50,11 +50,11 @@
                     <p>Kami membuka kesempatan bagi perusahaan supplier dan vendor untuk berkolaborasi dalam
                         mendukung perluasan jaringan dan layanan internet CSNET.</p>
                     <div class="mtr-hero__actions">
-                        <a href="{{ route('mitra.type') }}" class="mtr-btn mtr-btn--white">Daftar Sekarang</a>
-                        <a href="{{ route('mitra.status') }}" class="mtr-btn mtr-btn--ghost">
+                        <a href="{{ route('mitra.status') }}" class="mtr-btn mtr-btn--white"> Cek Status Pendaftaran</a>
+                        {{-- <a href="{{ route('mitra.status') }}" class="mtr-btn mtr-btn--ghost">
                             Cek Status Pendaftaran
                             @include('front-end.page.mitra.partials.icon', ['name' => 'arrow'])
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
@@ -159,10 +159,10 @@
                         </p>
                         <p class="mtr-cta__text">Siap menjadi bagian dari perluasan jaringan CSNET?</p>
                     </div>
-                    <a href="{{ route('mitra.type') }}" class="mtr-btn mtr-btn--white mtr-btn--lg">
+                    {{-- <a href="{{ route('mitra.type') }}" class="mtr-btn mtr-btn--white mtr-btn--lg">
                         Daftar Sekarang
                         @include('front-end.page.mitra.partials.icon', ['name' => 'arrow'])
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </section>
