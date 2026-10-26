@@ -47,21 +47,25 @@
                     <input type="text" name="q" value="{{ $filter['q'] ?? '' }}"
                         class="form-control form-control-sm" placeholder="No. pendaftaran, perusahaan, NPWP, email">
                 </div>
-                <div class="col-6 col-lg-2">
-                    <label class="form-label small mb-1">Jenis</label>
-                    <select name="type" class="form-select form-select-sm">
-                        <option value="">Semua</option>
-                        @foreach (\App\Models\MitraRegistration::TYPES as $type)
-                            <option value="{{ $type }}" @selected(($filter['type'] ?? '') === $type)>{{ ucfirst($type) }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                @if ($roleName === 'Developer' || $roleName === 'admin')
+                    <div class="col-6 col-lg-2">
+                        <label class="form-label small mb-1">Jenis</label>
+                        <select name="type" class="form-select form-select-sm">
+                            <option value="">Semua</option>
+                            @foreach (\App\Models\MitraRegistration::TYPES as $type)
+                                <option value="{{ $type }}" @selected(($filter['type'] ?? '') === $type)>{{ ucfirst($type) }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                @endIf
                 <div class="col-6 col-lg-2">
                     <label class="form-label small mb-1">Status</label>
                     <select name="status" class="form-select form-select-sm">
                         <option value="">Semua</option>
                         @foreach ($statuses as $key => $label)
-                            <option value="{{ $key }}" @selected(($filter['status'] ?? '') === $key)>{{ $label }}</option>
+                            <option value="{{ $key }}" @selected(($filter['status'] ?? '') === $key)>{{ $label }}
+                            </option>
                         @endforeach
                     </select>
                 </div>

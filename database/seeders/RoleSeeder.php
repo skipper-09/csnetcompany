@@ -25,7 +25,7 @@ class RoleSeeder extends Seeder
         $vendor          = Role::firstOrCreate(['name' => 'Vendor']);
 
         // give permission role
-        $developer->givePermissionTo([
+        $developer->syncPermissions([
             'read-dashboard',
             'read-partner',
             'create-partner',
@@ -138,7 +138,7 @@ class RoleSeeder extends Seeder
             'delete-lamaran',
         ]);
 
-        $administrator->givePermissionTo([
+        $administrator->syncPermissions([
             'read-dashboard',
             'read-partner',
             'create-partner',
@@ -249,38 +249,38 @@ class RoleSeeder extends Seeder
             'delete-lamaran',
         ]);
 
-        $noc->givePermissionTo([
+        $noc->syncPermissions([
             'read-media'
         ]);
-        $supportnoc->givePermissionTo([
+        $supportnoc->syncPermissions([
             'read-media'
         ]);
-        $datacenter->givePermissionTo([
+        $datacenter->syncPermissions([
             'read-media'
         ]);
-        $odp->givePermissionTo([
+        $odp->syncPermissions([
             'read-media'
         ]);
-        $project->givePermissionTo([
+        $project->syncPermissions([
             'read-media'
         ]);
-        $marketingretail->givePermissionTo([
+        $marketingretail->syncPermissions([
             'read-media'
         ]);
-        $marketingbisnis->givePermissionTo([
+        $marketingbisnis->syncPermissions([
             'read-media'
         ]);
-        $admin->givePermissionTo([
+        $admin->syncPermissions([
             'read-media'
         ]);
-        $supplier->givePermissionTo([
+        $supplier->syncPermissions([
             'read-dashboard',
             'read-supplier',
             'create-supplier',
             'update-supplier',
             'delete-supplier',
         ]);
-        $vendor->givePermissionTo([
+        $vendor->syncPermissions([
             'read-dashboard',
             'read-vendor',
             'create-vendor',

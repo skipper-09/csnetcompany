@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\MitraRegistration;
 use App\Http\Controllers\Controller;
 use App\Models\MitraRegistration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -18,6 +19,17 @@ class MitraRegistrationController extends Controller
     public function index(Request $request)
     {
         $filter = $request->only(self::FILTERS);
+        $roleName = Auth::user()->getRoleNames()->first();
+
+        if ($roleName != 'Developer') {
+            if ($roleName === 'Supplier') {
+                $filter['type'] = 'supplier';
+            } elseif ($roleName === 'Vendor') {
+                $filter['type'] = 'vendor';
+            } else {
+                $filter['type'] = null;
+            }
+        }
 
         $registrations = MitraRegistration::filter($filter)->latest()->paginate(15)->withQueryString();
 
@@ -36,6 +48,7 @@ class MitraRegistrationController extends Controller
             'stats' => $stats,
             'total' => $stats->sum(),
             'filter' => $filter,
+            'roleName' => $roleName,
             'statuses' => MitraRegistration::STATUSES,
         ]);
     }
