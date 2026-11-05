@@ -150,7 +150,7 @@
 
                                         <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
                                             Silakan lengkapi formulir di bawah ini untuk pendaftaran
-                                            instalasi jaringan CSNet Ultra Fiber ke lokasi Anda.
+                                            instalasi jaringan CSNet ke lokasi Anda.
                                         </p>
                                     </div>
                                 </div>
@@ -328,50 +328,106 @@
                                                         dikirimkan ke email ini.
                                                     </p>
                                                 </div>
-                                                <!-- Upload e-KTP -->
-                                                <div class="md:col-span-2">
-                                                    <label
-                                                        class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">
-                                                        Upload Foto Asli e-KTP <span class="text-error">*</span>
-                                                    </label>
-                                                    <div
-                                                        class="p-space-lg rounded-2xl bg-surface-container-low/60 text-center cursor-pointer hover:bg-surface-container transition-all group relative">
-                                                        <input accept="image/jpeg,image/png"
-                                                            class="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
-                                                            id="ktpFile" name="ktpFile"
-                                                            onchange="handleKtpUpload(this)" type="file" />
-                                                        <div class="flex flex-col items-center" id="ktpPlaceholder">
-                                                            <div
-                                                                class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-space-xs shadow-sm">
+                                                <!-- Upload Dokumen: e-KTP & Foto Rumah -->
+                                                <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-space-md">
+
+                                                    <!-- Upload e-KTP -->
+                                                    <div class="flex flex-col">
+                                                        <label
+                                                            class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">
+                                                            Upload Foto Asli e-KTP <span class="text-error">*</span>
+                                                        </label>
+                                                        <div
+                                                            class="flex-1 flex items-center justify-center p-space-lg rounded-2xl bg-surface-container-low/60 text-center cursor-pointer hover:bg-surface-container transition-all group relative">
+                                                            <input accept="image/jpeg,image/png"
+                                                                class="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+                                                                id="ktpFile" name="ktpFile"
+                                                                onchange="handleFileUpload(this, 'ktp')" type="file" />
+
+                                                            <div class="flex flex-col items-center" id="ktpPlaceholder">
+                                                                <div
+                                                                    class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-space-xs shadow-sm">
+                                                                    <span
+                                                                        class="material-symbols-outlined text-[30px]">badge</span>
+                                                                </div>
                                                                 <span
-                                                                    class="material-symbols-outlined text-[30px]">add_a_photo</span>
+                                                                    class="font-title-sm text-title-sm text-on-surface font-semibold">
+                                                                    Tarik &amp; Lepaskan foto e-KTP atau
+                                                                    <span class="text-primary underline">Pilih File</span>
+                                                                </span>
+                                                                <span
+                                                                    class="font-label-md text-label-md text-outline mt-1">
+                                                                    Format: JPG, JPEG, PNG (Maks. 5 MB). Pastikan NIK dan
+                                                                    wajah terbaca jelas tanpa pantulan cahaya.
+                                                                </span>
                                                             </div>
-                                                            <span
-                                                                class="font-title-sm text-title-sm text-on-surface font-semibold">Tarik
-                                                                &amp; Lepaskan foto e-KTP atau
-                                                                <span class="text-primary underline">Pilih
-                                                                    File</span></span>
-                                                            <span
-                                                                class="font-label-md text-label-md text-outline mt-1">Format
-                                                                didukung: JPG, JPEG, PNG (Maks. 5 MB).
-                                                                Pastikan teks NIK dan wajah terbaca jelas tanpa
-                                                                pantulan cahaya.</span>
-                                                        </div>
-                                                        <div class="hidden flex items-center justify-center gap-space-sm"
-                                                            id="ktpSuccess">
-                                                            <span
-                                                                class="material-symbols-outlined text-primary text-[32px]">check_circle</span>
-                                                            <div class="text-left">
+
+                                                            <div class="hidden items-center justify-center gap-space-sm"
+                                                                id="ktpSuccess">
                                                                 <span
-                                                                    class="font-title-sm text-title-sm text-on-surface font-semibold block"
-                                                                    id="ktpFileName">ktp-pemohon.jpg</span>
-                                                                <span
-                                                                    class="font-label-md text-label-md text-primary font-medium">Foto
-                                                                    berhasil dimuat &amp; siap
-                                                                    diverifikasi</span>
+                                                                    class="material-symbols-outlined text-primary text-[32px] shrink-0">check_circle</span>
+                                                                <div class="text-left min-w-0">
+                                                                    <span
+                                                                        class="font-title-sm text-title-sm text-on-surface font-semibold block truncate"
+                                                                        id="ktpFileName">ktp-pemohon.jpg</span>
+                                                                    <span
+                                                                        class="font-label-md text-label-md text-primary font-medium">
+                                                                        Foto berhasil dimuat &amp; siap diverifikasi
+                                                                    </span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <!-- Upload Foto Rumah -->
+                                                    <div class="flex flex-col">
+                                                        <label
+                                                            class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">
+                                                            Upload Foto Rumah <span class="text-error">*</span>
+                                                        </label>
+                                                        <div
+                                                            class="flex-1 flex items-center justify-center p-space-lg rounded-2xl bg-surface-container-low/60 text-center cursor-pointer hover:bg-surface-container transition-all group relative">
+                                                            <input accept="image/jpeg,image/png"
+                                                                class="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+                                                                id="rumahFile" name="rumahFile"
+                                                                onchange="handleFileUpload(this, 'rumah')"
+                                                                type="file" />
+
+                                                            <div class="flex flex-col items-center" id="rumahPlaceholder">
+                                                                <div
+                                                                    class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-space-xs shadow-sm">
+                                                                    <span
+                                                                        class="material-symbols-outlined text-[30px]">home</span>
+                                                                </div>
+                                                                <span
+                                                                    class="font-title-sm text-title-sm text-on-surface font-semibold">
+                                                                    Tarik &amp; Lepaskan foto rumah atau
+                                                                    <span class="text-primary underline">Pilih File</span>
+                                                                </span>
+                                                                <span
+                                                                    class="font-label-md text-label-md text-outline mt-1">
+                                                                    Format: JPG, JPEG, PNG (Maks. 5 MB). Foto tampak depan
+                                                                    rumah, nomor rumah terlihat jika ada.
+                                                                </span>
+                                                            </div>
+
+                                                            <div class="hidden items-center justify-center gap-space-sm"
+                                                                id="rumahSuccess">
+                                                                <span
+                                                                    class="material-symbols-outlined text-primary text-[32px] shrink-0">check_circle</span>
+                                                                <div class="text-left min-w-0">
+                                                                    <span
+                                                                        class="font-title-sm text-title-sm text-on-surface font-semibold block truncate"
+                                                                        id="rumahFileName">foto-rumah.jpg</span>
+                                                                    <span
+                                                                        class="font-label-md text-label-md text-primary font-medium">
+                                                                        Foto berhasil dimuat &amp; siap diverifikasi
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </section>
@@ -505,13 +561,13 @@
                                                             Titik Koordinat GPS / Pinpoint Pemasangan
                                                             <span class="text-error">*</span>
                                                         </label>
-                                                        <button
+                                                        {{-- <button
                                                             class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold cursor-pointer"
                                                             onclick="getCurrentLocation()" type="button">
                                                             <span
                                                                 class="material-symbols-outlined text-[16px]">my_location</span>
                                                             Gunakan Lokasi Saat Ini
-                                                        </button>
+                                                        </button> --}}
                                                     </div>
 
                                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-sm">
@@ -521,7 +577,7 @@
                                                             <input
                                                                 class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
                                                                 id="latitude" name="latitude" type="text"
-                                                                value="-7.734812" />
+                                                                placeholder="Exp. -8.240672645955511" />
                                                             <span
                                                                 class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Lat</span>
                                                         </div>
@@ -531,7 +587,7 @@
                                                             <input
                                                                 class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md font-mono shadow-sm"
                                                                 id="longitude" name="longitude" type="text"
-                                                                value="113.689435" />
+                                                                placeholder="Exp. 114.35517706751305" />
                                                             <span
                                                                 class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">Long</span>
                                                         </div>
@@ -545,6 +601,43 @@
                                                     </div>
                                                 </div>
 
+                                                <!-- waktu dan jam pemasangan -->
+                                                <div>
+                                                    <label
+                                                        class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">
+                                                        Estimasi Permintaan Waktu Pemasangan
+                                                    </label>
+
+                                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                        {{-- Tanggal --}}
+                                                        <div>
+                                                            <input
+                                                                class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
+                                                                id="tanggalPemasangan" name="tanggal_pemasangan"
+                                                                type="date" value="{{ old('tanggal_pemasangan') }}" />
+                                                        </div>
+
+                                                        {{-- Jam --}}
+                                                        <div>
+                                                            <input
+                                                                class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
+                                                                id="jamPemasangan" name="jam_pemasangan" type="time"
+                                                                step="60" value="{{ old('jam_pemasangan') }}" />
+                                                        </div>
+                                                    </div>
+
+                                                    <small class='text-muted'>
+                                                        Jadwal final akan dikonfirmasi oleh tim kami menyesuaikan
+                                                        ketersediaan teknisi.
+                                                    </small>
+
+                                                    @error('tanggal_pemasangan')
+                                                        <p class="mt-1 text-sm text-error">{{ $message }}</p>
+                                                    @enderror
+                                                    @error('jam_pemasangan')
+                                                        <p class="mt-1 text-sm text-error">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
                                                 <!-- Catatan Khusus Lokasi -->
                                                 <div>
                                                     <label
@@ -573,7 +666,7 @@
                                                     <h2 class="font-headline-md text-headline-md text-on-surface">Tim
                                                         Marketing</h2>
                                                     <p class="font-body-md text-body-md text-on-surface-variant">
-                                                        Khusus diisi oleh tim marketing Oxynet. Abaikan jika mendaftar
+                                                        Khusus diisi oleh tim marketing. Abaikan jika mendaftar
                                                         secara mandiri.
                                                     </p>
                                                 </div>
@@ -602,7 +695,7 @@
                                                 @else
                                                     <p class="mt-1.5 flex items-center gap-1 text-xs text-gray-500">
                                                         <span class="material-symbols-outlined text-[14px]">info</span>
-                                                        Gunakan NIK marketing yang terdaftar di Oxynet.
+                                                        Gunakan Kode marketing yang terdaftar.
                                                     </p>
                                                 @enderror
                                             </div>
@@ -619,11 +712,10 @@
                                                     </div>
                                                     <div>
                                                         <h2 class="font-headline-md text-headline-md text-on-surface">
-                                                            Pilih Paket CSNet Ultra Fiber
+                                                            Pilihan Paket CSNet
                                                         </h2>
                                                         <p class="font-body-md text-body-md text-on-surface-variant">
-                                                            Koneksi simetris 1:1 murni tanpa batasan FUP kuota
-                                                            bulanan.
+                                                            Internet Cepat Tanpa Batas
                                                         </p>
                                                     </div>
                                                 </div>
@@ -804,7 +896,7 @@
                                                         Saya menyatakan data yang diisi benar dan menyetujui
                                                         <a class="text-primary hover:underline font-semibold"
                                                             href="#">Syarat &amp; Ketentuan</a>
-                                                        serta Kebijakan Privasi CSNet Ultra Fiber.
+                                                        serta Kebijakan Privasi CSNet.
                                                     </span>
                                                 </label>
                                             </div>
@@ -1150,7 +1242,7 @@
                 function updateSummary(item) {
                     const total = Number(item.harga) + Number(item.ppn) + Number(item.bhp_uso) + Number(item.pph_23);
                     document.getElementById("summaryPlanName").textContent = item.nama;
-                    document.getElementById("summarySpeed").textContent = item.mbps + " Mbps Simetris";
+                    document.getElementById("summarySpeed").textContent = item.mbps + " Mbps";
                     document.getElementById("summaryTotalPrice").textContent = formatRp(total);
                     document.getElementById("summaryHargaDasar").textContent = formatRp(item.harga);
                     document.getElementById("summaryPpn").textContent = formatRp(item.ppn);
@@ -1510,32 +1602,52 @@
 
             }
 
-            function handleKtpUpload(input) {
+            function handleFileUpload(input, prefix) {
+                const placeholder = document.getElementById(prefix + 'Placeholder');
+                const success = document.getElementById(prefix + 'Success');
+                const fileName = document.getElementById(prefix + 'FileName');
                 const file = input.files[0];
 
-                if (!file) {
-                    resetKtpUpload();
-                    return;
+                const reset = () => {
+                    input.value = '';
+                    success.classList.add('hidden');
+                    success.classList.remove('flex');
+                    placeholder.classList.remove('hidden');
+                };
+
+                if (!file) return reset();
+
+                if (!['image/jpeg', 'image/png'].includes(file.type)) {
+                    alert('Format file harus JPG, JPEG, atau PNG.');
+                    return reset();
                 }
 
                 if (file.size > 5 * 1024 * 1024) {
-                    alert("Ukuran file maksimal 5 MB.");
-                    resetKtpUpload();
-                    return;
+                    alert('Ukuran file maksimal 5 MB.');
+                    return reset();
                 }
 
-                document.getElementById("ktpFileName").textContent = file.name;
-                document.getElementById("ktpPlaceholder").classList.add("hidden");
-                document.getElementById("ktpSuccess").classList.remove("hidden");
+                fileName.textContent = file.name;
+                placeholder.classList.add('hidden');
+                success.classList.remove('hidden');
+                success.classList.add('flex');
             }
 
-            function resetKtpUpload() {
-                const input = document.getElementById("ktpFile");
-                input.value = "";
+            function resetFileUpload(prefix) {
+                const input = document.getElementById(prefix + 'File');
+                const placeholder = document.getElementById(prefix + 'Placeholder');
+                const success = document.getElementById(prefix + 'Success');
+                const fileName = document.getElementById(prefix + 'FileName');
 
-                document.getElementById("ktpPlaceholder").classList.remove("hidden");
-                document.getElementById("ktpSuccess").classList.add("hidden");
-                document.getElementById("ktpFileName").textContent = "";
+                if (input) input.value = '';
+                if (fileName) fileName.textContent = '';
+                success?.classList.add('hidden');
+                success?.classList.remove('flex');
+                placeholder?.classList.remove('hidden');
+            }
+
+            function resetAllFileUploads() {
+                ['ktp', 'rumah'].forEach(resetFileUpload);
             }
 
             function getCurrentLocation() {
@@ -1578,9 +1690,14 @@
                     );
 
                     const ktpFile = document.getElementById("ktpFile").files[0];
+                    const rumahFile = document.getElementById("rumahFile").files[0];
 
                     if (ktpFile) {
                         formData.set("ktp", ktpFile);
+                    }
+
+                    if (rumahFile) {
+                        formData.set("foto_rumah", rumahFile);
                     }
 
                     // submitButton.disabled = true;
@@ -1623,7 +1740,7 @@
                         });
 
                         form.reset();
-                        resetKtpUpload();
+                        resetAllFileUploads();
 
                         document.getElementById("summaryPlanName").textContent = "-";
                         document.getElementById("summarySpeed").textContent = "-";
@@ -1632,8 +1749,6 @@
                         document.getElementById("summaryPpn").textContent = "Rp 0";
                         document.getElementById("summaryBhpUso").textContent = "Rp 0";
                         document.getElementById("summaryPph23").textContent = "Rp 0";
-                        // document.getElementById("installationCheckResult").classList.add("hidden");
-                        // document.getElementById("coverageBadge").classList.add("hidden");
                     } catch (error) {
                         showAlert({
                             type: "error",
@@ -1644,7 +1759,6 @@
                             onConfirm: () => location.reload(),
                         });
                     } finally {
-                        // submitButton.disabled = false;
                         submitButton.innerHTML = `
                                         <span>Kirim Pengajuan</span>
                                         <span class="material-symbols-outlined text-[20px]">

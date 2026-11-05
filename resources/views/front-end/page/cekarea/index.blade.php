@@ -442,7 +442,7 @@
                         if (data.ready) {
                             el.classList.add("text-success");
                             el.innerHTML =
-                                `AREA TERCOVER<br><small class="fs-6">ODP: ${data.odp_name} (${data.distance} m)</small>`;
+                                `AREA TERCOVER<br><small class="fs-6">Jarak ODP Terdekat Estimasi : ${data.distance} m</small>`;
                         } else {
                             el.classList.add("text-danger");
                             el.innerHTML =

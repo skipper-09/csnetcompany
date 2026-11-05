@@ -150,7 +150,7 @@
 
                                         <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
                                             Silakan lengkapi formulir di bawah ini untuk pendaftaran
-                                            instalasi jaringan CSNet Ultra Fiber ke lokasi Anda.
+                                            instalasi jaringan CSNet ke lokasi Anda.
                                         </p>
                                     </div>
                                 </div>
@@ -443,7 +443,7 @@
                                                         <h2 class="font-headline-md text-headline-md text-on-surface">
                                                             Tim Marketing</h2>
                                                         <p class="font-body-md text-body-md text-on-surface-variant">
-                                                            khusus diisi oleh tim marketing Oxynet, abaikan jika daftar
+                                                            khusus diisi oleh tim marketing, abaikan jika daftar
                                                             secara
                                                             mandiri</p>
                                                     </div>
@@ -485,7 +485,7 @@
                                                     </div>
                                                     <div>
                                                         <h2 class="font-headline-md text-headline-md text-on-surface">Pilih
-                                                            Paket CSNet Ultra Fiber</h2>
+                                                            Paket CSNet</h2>
                                                         <p class="font-body-md text-body-md text-on-surface-variant">
                                                             Koneksi simetris 1:1 murni tanpa batasan FUP kuota bulanan.</p>
                                                     </div>
@@ -618,7 +618,7 @@
                                                         Saya menyatakan data perusahaan yang diisi benar dan menyetujui
                                                         <a class="text-primary hover:underline font-semibold"
                                                             href="#">Syarat &amp; Ketentuan</a>
-                                                        serta Kebijakan Privasi CSNet Ultra Fiber.
+                                                        serta Kebijakan Privasi CSNet.
                                                     </span>
                                                 </label>
                                             </div>
@@ -1015,7 +1015,7 @@
                 function updateSummary(item) {
                     const total = Number(item.harga) + Number(item.ppn) + Number(item.bhp_uso) + Number(item.pph_23);
                     document.getElementById("summaryPlanName").textContent = item.nama;
-                    document.getElementById("summarySpeed").textContent = item.mbps + " Mbps Simetris";
+                    document.getElementById("summarySpeed").textContent = item.mbps + " Mbps";
                     document.getElementById("summaryTotalPrice").textContent = formatRp(total);
                     document.getElementById("summaryHargaDasar").textContent = formatRp(item.harga);
                     document.getElementById("summaryPpn").textContent = formatRp(item.ppn);
