@@ -1730,20 +1730,21 @@
                         `
                         <span class="material-symbols-outlined animate-spin"> progress_activity</span><span>Mengirim...</span>`;
 
+                    const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                     try {
-                        const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
                         const response = await fetch(API_BASE, {
                             method: "POST",
                             body: formData,
                             headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json',
+                                Accept: 'application/json',
                                 'X-CSRF-TOKEN': token
                             }
                         });
 
                         const result = await response.json();
+                        console.log(result);
+
 
                         if (!response.ok) {
                             if (response.status === 422 && result.errors) {
