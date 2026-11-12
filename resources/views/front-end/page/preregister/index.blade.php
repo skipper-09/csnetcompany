@@ -1743,8 +1743,6 @@
                         });
 
                         const result = await response.json();
-                        console.log(result);
-
 
                         if (!response.ok) {
                             if (response.status === 422 && result.errors) {
