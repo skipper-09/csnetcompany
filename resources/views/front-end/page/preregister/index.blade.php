@@ -618,11 +618,36 @@
                                                         </div>
 
                                                         {{-- Jam --}}
-                                                        <div>
-                                                            <input
-                                                                class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
-                                                                id="jamPemasangan" name="jam_pemasangan" type="time"
-                                                                step="60" value="{{ old('jam_pemasangan') }}" />
+                                                        @php
+                                                            $slotJam = [
+                                                                '00:00 - 02:00',
+                                                                '02:00 - 04:00',
+                                                                '04:00 - 06:00',
+                                                                '06:00 - 08:00',
+                                                                '08:00 - 10:00',
+                                                                '10:00 - 12:00',
+                                                                '12:00 - 14:00',
+                                                                '14:00 - 16:00',
+                                                                '16:00 - 18:00',
+                                                                '18:00 - 20:00',
+                                                                '20:00 - 22:00',
+                                                                '22:00 - 00:00',
+                                                            ];
+                                                        @endphp
+                                                        <div class="relative">
+                                                            <select
+                                                                class="w-full appearance-none px-4 py-3 pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
+                                                                id="jamPemasangan" name="jam_pemasangan">
+                                                                <option value="" disabled
+                                                                    @selected(!old('jam_pemasangan'))>Pilih rentang jam</option>
+                                                                @foreach ($slotJam as $slot)
+                                                                    <option value="{{ $slot }}"
+                                                                        @selected(old('jam_pemasangan') === $slot)>
+                                                                        {{ str_replace(':', '.', $slot) }} WIB</option>
+                                                                @endforeach
+                                                            </select>
+                                                            <span
+                                                                class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-outline">expand_more</span>
                                                         </div>
                                                     </div>
 
