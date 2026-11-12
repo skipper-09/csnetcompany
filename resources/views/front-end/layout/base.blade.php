@@ -6,9 +6,6 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 
-
-
-
 <head>
 
     <meta charset="utf-8">
@@ -19,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <!-- SITE TITLE -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - CSNET Internet Service Provider</title>
 
 
