@@ -47,11 +47,11 @@ class MitraRegistration extends Model
     public const SERVICE_AREAS = ['Seluruh Indonesia', 'Jawa', 'Sumatera', 'Kalimantan', 'Sulawesi', 'Bali & Nusa Tenggara', 'Papua & Maluku'];
 
     public const DOCUMENTS = [
-        'doc_akta' => ['label' => 'Akta Pendirian Perusahaan', 'required' => true, 'max_mb' => 5],
-        'doc_npwp' => ['label' => 'NPWP Perusahaan', 'required' => true, 'max_mb' => 5],
-        'doc_nib' => ['label' => 'NIB (Nomor Induk Berusaha)', 'required' => true, 'max_mb' => 5],
+        'doc_npwp' => ['label' => 'NPWP Perusahaan', 'required' => true, 'max_mb' => 10],
+        'doc_nib' => ['label' => 'NIB (Nomor Induk Berusaha)', 'required' => true, 'max_mb' => 10],
+        'doc_akta' => ['label' => 'Akta Pendirian Perusahaan', 'required' => false, 'max_mb' => 10],
         'doc_company_profile' => ['label' => 'Company Profile', 'required' => false, 'max_mb' => 10],
-        'doc_certificate' => ['label' => 'Sertifikat / Izin Usaha', 'required' => false, 'max_mb' => 5],
+        'doc_certificate' => ['label' => 'Sertifikat / Izin Usaha', 'required' => false, 'max_mb' => 10],
         'doc_reference' => ['label' => 'Referensi Proyek / Klien', 'required' => false, 'max_mb' => 10],
     ];
 
