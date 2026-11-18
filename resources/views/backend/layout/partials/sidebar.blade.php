@@ -379,7 +379,7 @@
     </li>
     @endcan --}}
 
-        @canany(['read-users', 'read-role'])
+        @canany(['read-users', 'read-role', 'read-settings'])
             <!-- Setting -->
             <li class="{{ $sidebar == 'setting' ? 'menu-item active open' : 'menu-item' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -398,6 +398,13 @@
                         <li class="{{ $page_name == 'Role' ? 'menu-item active' : 'menu-item' }}">
                             <a href="{{ route('backend.role') }}" class="menu-link">
                                 <div data-i18n="role">Role Permission</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('read-settings')
+                        <li class="menu-item {{ request()->routeIs('backend.setting*') ? 'active' : '' }}">
+                            <a href="{{ route('backend.settings') }}" class="menu-link">
+                                <div data-i18n="Settings">Settings</div>
                             </a>
                         </li>
                     @endcan

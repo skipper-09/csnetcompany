@@ -1,3 +1,7 @@
+@php
+    $memberLink = \App\Models\Setting::get('member_link');
+@endphp
+
 @if (!isset($navlight))
     <header id="header" class="white-menu light-hero-header navbar-dark white-scroll">
         <div class="header-wrapper">
@@ -267,14 +271,65 @@
                             </li> --}}
                             <!-- DAFTAR SEKARANG -->
                             <li class="nav-cta-item mobile-last-link" aria-haspopup="true">
-                                <a href="#" class="nav-cta nav-cta--red">Daftar Sekarang</a>
+                                <a href="javascript:void(0)" class="nav-cta nav-cta--red">
+                                    <span style="display:inline-flex;align-items:center;gap:6px;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M19 8v6M22 11h-6" />
+                                        </svg>
+                                        Daftar Sekarang
+                                    </span>
+                                </a>
                                 <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="{{ route('preregister') }}">Retail / Rumah</a>
+                                    <li aria-haspopup="true">
+                                        <a href="{{ route('preregister') }}">
+                                            <span style="display:inline-flex;align-items:center;gap:8px;">
+                                                <svg width="15" height="15" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <path
+                                                        d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+                                                </svg>
+                                                Retail / Rumah
+                                            </span>
+                                        </a>
                                     </li>
-                                    <li aria-haspopup="true"><a href="{{ route('preregister_bisnis') }}">Bisnis</a>
+                                    <li aria-haspopup="true">
+                                        <a href="{{ route('preregister_bisnis') }}">
+                                            <span style="display:inline-flex;align-items:center;gap:8px;">
+                                                <svg width="15" height="15" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                                                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                                                </svg>
+                                                Bisnis
+                                            </span>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
+                            @if ($memberLink)
+                                <li class="nav-cta-item mobile-last-link" aria-haspopup="true">
+                                    <a href="{{ $memberLink }}" class="nav-cta nav-cta--blue" target="_blank"
+                                        rel="noopener">
+                                        <span style="display:inline-flex;align-items:center;gap:6px;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" aria-hidden="true">
+                                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                                <path d="m10 17 5-5-5-5M15 12H3" />
+                                            </svg>
+                                            Login Member
+                                        </span>
+                                    </a>
+                                </li>
+                            @endif
                             <!-- SIGN UP BUTTON -->
                             {{-- <li class="nl-simple" aria-haspopup="true">
                             <a href="signup-2.html" class="btn r-04 btn--theme hover--tra-black last-link">Sign up</a>

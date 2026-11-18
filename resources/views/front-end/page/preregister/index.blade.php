@@ -303,8 +303,10 @@
                                                         </span>
                                                         <input
                                                             class="w-full px-4 py-3 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-low transition-all"
-                                                            id="whatsapp" name="whatsapp" placeholder="812-3456-7890"
-                                                            required="" type="tel" />
+                                                            id="whatsapp" name="whatsapp" placeholder="81234567890"
+                                                            type="tel" inputmode="numeric" autocomplete="tel"
+                                                            maxlength="13" pattern="[0-9]{9,13}"
+                                                            title="Nomor WhatsApp 9–13 digit angka" required />
                                                     </div>
                                                 </div>
                                                 <!-- Alamat Email -->
@@ -312,7 +314,7 @@
                                                     <label
                                                         class="block font-title-sm text-title-sm text-on-surface mb-space-2xs"
                                                         for="email">
-                                                        Alamat Email Aktif <span class="text-error">*</span>
+                                                        Alamat Email Aktif
                                                     </label>
                                                     <div class="relative">
                                                         <span
@@ -320,8 +322,7 @@
                                                         <input
                                                             class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-all"
                                                             id="email" name="email"
-                                                            placeholder="nama.email@gmail.com" required=""
-                                                            type="email" />
+                                                            placeholder="nama.email@gmail.com" type="email" />
                                                     </div>
                                                     <p class="font-label-md text-label-md text-outline mt-1">
                                                         E-invoice bulanan dan tanda terima digital akan

@@ -30,6 +30,7 @@ use App\Http\Controllers\Backend\karir\LowonganController;
 use App\Http\Controllers\Backend\PDF\PDFController;
 use App\Http\Controllers\Backend\karir\LamaranController as AdminLamaranController;
 use App\Http\Controllers\Backend\MitraRegistration\MitraRegistrationController as AdminMitraController;
+use App\Http\Controllers\Backend\Setting\SettingController;
 use App\Http\Controllers\Front_End\Blog\BlogController;
 use App\Http\Controllers\Front_End\Career\CareerController;
 use App\Http\Controllers\Front_End\Cekarea\CekareaController;
@@ -363,6 +364,16 @@ Route::prefix('admin')->middleware('auth')->group(function () {
             Route::get('/edit/{id}', [RoleController::class, 'show'])->name('backend.role.edit')->can('read-role');
             Route::put('/update/{id}', [RoleController::class, 'update'])->name('backend.role.update');
             Route::delete('/delete/{id}', [RoleController::class, 'destroy'])->name('backend.role.delete')->can('read-role');
+        });
+    
+        Route::prefix('setting-data')->group(function () {
+            Route::get('', [SettingController::class, 'index'])->name('backend.settings')->can('read-settings');
+            Route::get('/getData', [SettingController::class, 'getData'])->name('backend.settings.getData');
+            Route::get('tambah', [SettingController::class, 'create'])->name('backend.add.settings')->can('read-settings');
+            Route::post('store', [SettingController::class, 'store'])->name('backend.store.settings');
+            Route::get('/edit/{id}', [SettingController::class, 'show'])->name('backend.settings.edit')->can('read-settings');
+            Route::put('/update/{id}', [SettingController::class, 'update'])->name('backend.settings.update');
+            Route::delete('/delete/{id}', [SettingController::class, 'destroy'])->name('backend.settings.delete')->can('read-settings');
         });
     });
 

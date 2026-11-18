@@ -136,6 +136,11 @@ class RoleSeeder extends Seeder
             'create-lamaran',
             'update-lamaran',
             'delete-lamaran',
+
+            'read-settings',
+            'create-settings',
+            'update-settings',
+            'delete-settings',
         ]);
 
         $administrator->syncPermissions([
@@ -247,31 +252,36 @@ class RoleSeeder extends Seeder
             'create-lamaran',
             'update-lamaran',
             'delete-lamaran',
+        
+            'read-settings',
+            'create-settings',
+            'update-settings',
+            'delete-settings',
         ]);
 
         $noc->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $supportnoc->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $datacenter->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $odp->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $project->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $marketingretail->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $marketingbisnis->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $admin->syncPermissions([
-            'read-media'
+            // 'read-media'
         ]);
         $supplier->syncPermissions([
             'read-dashboard',

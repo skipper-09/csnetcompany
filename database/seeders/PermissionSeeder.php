@@ -121,6 +121,11 @@ class PermissionSeeder extends Seeder
             'create-lamaran',
             'update-lamaran',
             'delete-lamaran',
+
+            'read-settings',
+            'create-settings',
+            'update-settings',
+            'delete-settings',
         ];
 
         foreach ($arrayOfPermissionNames as $permissionName) {
