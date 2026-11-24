@@ -1787,6 +1787,8 @@
                             cancelText: "Tutup",
                             onConfirm: () => location.reload(),
                         });
+                        console.error("Submit error:", error.name, error.message);
+                        console.log(Object.fromEntries(formData.entries()));
                     } finally {
                         submitButton.innerHTML = `
                                         <span>Kirim Pengajuan</span>
