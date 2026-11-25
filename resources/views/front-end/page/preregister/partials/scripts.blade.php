@@ -1,6 +1,6 @@
 <script>
     // JS hanya untuk tampilan & mengambil data referensi (GET).
-    // Pengiriman form (POST) ditangani PreRegisterController.
+    // Form dikirim tanpa refresh ke PreRegisterController, yang meneruskannya ke API.
     document.addEventListener("DOMContentLoaded", () => {
         const API_BASE = @json(config('app.base_url_api'));
         const form = document.getElementById("preRegisterForm");
@@ -77,14 +77,6 @@
 
                 el.replaceChildren(new Option(pilih, ""), ...items.map((i) => new Option(i.nama, i.id)));
                 el.disabled = items.length === 0;
-
-                // Kembalikan pilihan sebelumnya setelah validasi gagal
-                const old = el.dataset.old;
-                delete el.dataset.old;
-                if (old && items.some((i) => String(i.id) === old)) {
-                    el.value = old;
-                    el.dispatchEvent(new Event("change"));
-                }
             } catch (err) {
                 if (el.requestId !== requestId) return;
                 resetSelect(el, "Gagal memuat data");
@@ -114,6 +106,8 @@
 
         const ACTIVE_CARD = ["bg-surface-container-low", "ring-2", "ring-primary", "shadow-md"];
         const IDLE_CARD = ["bg-surface-container-lowest", "shadow-sm"];
+
+        let selectDefaultPlan = () => {};
 
         function showPlanMessage(message, color = "text-on-surface-variant") {
             planGrid.innerHTML = `<div class="md:col-span-2 text-center py-space-lg ${color}">${message}</div>`;
@@ -184,9 +178,7 @@
 
                 if (!items.length) return showPlanMessage("Belum ada paket tersedia.");
 
-                const selected = items.find((i) => String(i.id) === planGrid.dataset.old) ||
-                    items.find((i) => i.is_populer) ||
-                    items[0];
+                const defaultIndex = Math.max(items.findIndex((i) => i.is_populer), 0);
                 const cards = items.map(renderPlanCard);
                 planGrid.replaceChildren(...cards);
 
@@ -199,9 +191,11 @@
                     card.querySelector("input").addEventListener("change", () => selectPlan(index));
                 });
 
-                const selectedIndex = items.indexOf(selected);
-                cards[selectedIndex].querySelector("input").checked = true;
-                selectPlan(selectedIndex);
+                selectDefaultPlan = () => {
+                    cards[defaultIndex].querySelector("input").checked = true;
+                    selectPlan(defaultIndex);
+                };
+                selectDefaultPlan();
             } catch (err) {
                 showPlanMessage("Gagal memuat paket layanan. Muat ulang halaman.", "text-error");
                 console.error(err);
@@ -243,35 +237,118 @@
             });
         });
 
-        /* ---------- Status tombol saat mengirim ---------- */
+        /* ---------- Kirim pengajuan tanpa refresh ---------- */
         const button = document.getElementById("btnSubmitPreRegister");
+        const errorBox = document.getElementById("formErrors");
+        let submitting = false;
 
-        function setSubmitting(submitting) {
-            button.disabled = submitting;
-            button.querySelector("[data-submit-text]").textContent = submitting ? "Mengirim..." :
-                "Kirim Pengajuan";
+        function setSubmitting(value) {
+            submitting = value;
+            button.disabled = value;
+            button.querySelector("[data-submit-text]").textContent = value ? "Mengirim..." : "Kirim Pengajuan";
             const icon = button.querySelector("[data-submit-icon]");
-            icon.textContent = submitting ? "progress_activity" : "send";
-            icon.classList.toggle("animate-spin", submitting);
+            icon.textContent = value ? "progress_activity" : "send";
+            icon.classList.toggle("animate-spin", value);
         }
 
-        form.addEventListener("submit", () => setSubmitting(true));
-        // Pulihkan tombol bila halaman dibuka lagi lewat tombol "Back"
-        window.addEventListener("pageshow", () => setSubmitting(false));
+        function setFieldError(field, message = "") {
+            const el = form.querySelector(`[data-error="${CSS.escape(field)}"]`);
+            if (!el) return;
+            el.textContent = message;
+            el.classList.toggle("hidden", !message);
+        }
 
-        /* ---------- Hasil pengiriman dari server ---------- */
-        @if (session('success'))
-            showAlert({
-                type: "success",
-                title: "Pendaftaran Berhasil",
-                message: @json(session('success')),
+        function clearErrors() {
+            form.querySelectorAll("[data-error]").forEach((el) => setFieldError(el.dataset.error));
+            errorBox.classList.add("hidden");
+        }
+
+        function showErrors(errors) {
+            const items = Object.entries(errors).map(([field, list]) => {
+                const message = [].concat(list)[0];
+                setFieldError(field, message);
+
+                const li = document.createElement("li");
+                li.textContent = message;
+                return li;
             });
-        @elseif (session('error'))
+
+            errorBox.querySelector("ul").replaceChildren(...items);
+            errorBox.classList.remove("hidden");
+            errorBox.focus({
+                preventScroll: true
+            });
+            errorBox.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        function resetForm() {
+            form.reset();
+            // Perbarui tampilan upload, dropdown wilayah, dan paket
+            form.querySelectorAll('input[type="file"]').forEach((el) => el.dispatchEvent(new Event("change")));
+            wilayah[0].el.dispatchEvent(new Event("change"));
+            selectDefaultPlan();
+        }
+
+        function showFailure(message) {
             showAlert({
                 type: "error",
                 title: "Pendaftaran Gagal",
-                message: @json(session('error')),
+                message
             });
-        @endif
+        }
+
+        // Hilangkan pesan error begitu field diperbaiki
+        form.addEventListener("change", (e) => setFieldError(e.target.name || ""));
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            if (submitting) return;
+
+            // Ambil data sebelum tampilan diubah
+            const body = new FormData(form);
+            clearErrors();
+            setSubmitting(true);
+
+            try {
+                const res = await fetch(form.action, {
+                    method: "POST",
+                    body,
+                    headers: {
+                        Accept: "application/json",
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                });
+                // Respons error dari web server bisa berupa HTML, bukan JSON
+                const result = await res.json().catch(() => ({}));
+
+                if (res.ok && result.message) {
+                    resetForm();
+                    showAlert({
+                        type: "success",
+                        title: "Pendaftaran Berhasil",
+                        message: result.message
+                    });
+                } else if (res.status === 422 && result.errors) {
+                    showErrors(result.errors);
+                } else if (res.status === 419) {
+                    showFailure("Sesi halaman sudah berakhir. Muat ulang halaman lalu kirim kembali.");
+                } else if (res.status === 429) {
+                    showFailure("Terlalu banyak percobaan. Tunggu satu menit lalu coba lagi.");
+                } else if (res.status === 413) {
+                    showFailure("Ukuran foto terlalu besar untuk dikirim.");
+                } else {
+                    showFailure(res.status === 502 && result.message ? result.message :
+                        "Terjadi kesalahan pada server. Silakan coba kembali.");
+                }
+            } catch (err) {
+                console.error(err);
+                showFailure("Koneksi terputus. Periksa jaringan Anda lalu coba kembali.");
+            } finally {
+                setSubmitting(false);
+            }
+        });
     });
 </script>

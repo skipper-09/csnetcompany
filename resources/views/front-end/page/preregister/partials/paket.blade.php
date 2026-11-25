@@ -9,7 +9,7 @@
         'badgeClass' => 'bg-secondary-fixed text-on-secondary-fixed',
     ])
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-5" id="planGrid" data-old="{{ old('paket') }}">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-5" id="planGrid">
         <div class="md:col-span-2 text-center py-space-lg text-on-surface-variant">
             Memuat paket layanan...
         </div>

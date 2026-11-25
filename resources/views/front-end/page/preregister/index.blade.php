@@ -75,23 +75,11 @@
                                 </div>
                             </div>
 
-                            @if ($errors->any())
-                                <div class="mb-space-xl p-space-md rounded-xl bg-red-50 text-red-700 border border-red-200"
-                                    role="alert">
-                                    <p class="font-title-sm text-title-sm">Pengajuan belum terkirim:</p>
-                                    <ul class="list-disc pl-5 mt-1">
-                                        @foreach ($errors->all() as $message)
-                                            <li>{{ $message }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            @if ($errors->any() || session('error'))
-                                <p class="mb-space-md text-sm text-yellow-700">
-                                    Demi keamanan, foto e-KTP dan foto rumah perlu dipilih ulang sebelum mengirim.
-                                </p>
-                            @endif
+                            <div id="formErrors" tabindex="-1" role="alert"
+                                class="hidden mb-space-xl p-space-md rounded-xl bg-red-50 text-red-700 border border-red-200">
+                                <p class="font-title-sm text-title-sm">Pengajuan belum terkirim:</p>
+                                <ul class="list-disc pl-5 mt-1"></ul>
+                            </div>
 
                             <form class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start" id="preRegisterForm"
                                 action="{{ route('preregister.store') }}" method="POST" enctype="multipart/form-data">

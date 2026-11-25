@@ -49,7 +49,7 @@
     <div class="mb-space-lg">
         <label class="flex items-start gap-space-xs cursor-pointer group">
             <input class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary-container" id="termsCheck"
-                name="terms" value="1" type="checkbox" @checked(old('terms')) required />
+                name="terms" value="1" type="checkbox" required />
             <span class="font-body-md text-body-md text-on-surface-variant leading-relaxed select-none">
                 Saya menyatakan data yang diisi benar dan menyetujui
                 <a class="text-primary hover:underline font-semibold" href="{{ route('tremofservice') }}"

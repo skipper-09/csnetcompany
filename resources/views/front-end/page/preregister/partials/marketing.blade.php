@@ -23,17 +23,14 @@
             <span class="{{ $iconInside }} pointer-events-none">id_card</span>
             <input id="kode_marketing" name="kode_marketing" type="text"
                 class="{{ $inputIcon }} tracking-wider placeholder:tracking-normal" placeholder="Contoh: MKT001"
-                value="{{ old('kode_marketing', request('ref')) }}" maxlength="20" autocomplete="off"
+                value="{{ request('ref') }}" maxlength="20" autocomplete="off"
                 spellcheck="false">
         </div>
 
-        @error('kode_marketing')
-            <p class="mt-1.5 text-xs text-red-600">{{ $message }}</p>
-        @else
-            <p class="mt-1.5 flex items-center gap-1 text-xs text-gray-500">
-                <span class="material-symbols-outlined text-[14px]">info</span>
-                Gunakan Kode marketing yang terdaftar.
-            </p>
-        @enderror
+        <p class="mt-1.5 flex items-center gap-1 text-xs text-gray-500">
+            <span class="material-symbols-outlined text-[14px]">info</span>
+            Gunakan Kode marketing yang terdaftar.
+        </p>
+        @include('front-end.page.preregister.partials.error', ['field' => 'kode_marketing'])
     </div>
 </section>

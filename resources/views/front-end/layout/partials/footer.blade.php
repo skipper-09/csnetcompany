@@ -362,6 +362,7 @@
 
 @push('js')
     <script>
-        document.getElementById("year").innerHTML = new Date().getFullYear();
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
 @endpush

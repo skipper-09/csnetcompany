@@ -7,7 +7,7 @@ use App\Http\Requests\PreRegisterRequest;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Utils;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 
 class PreRegisterController extends Controller
@@ -26,7 +26,7 @@ class PreRegisterController extends Controller
     /**
      * Teruskan pengajuan pre-register ke API billing.
      */
-    public function store(PreRegisterRequest $request, Client $client): RedirectResponse
+    public function store(PreRegisterRequest $request, Client $client): JsonResponse
     {
         // Honeypot: field tersembunyi ini hanya terisi oleh bot.
         if ($request->filled('website')) {
@@ -58,7 +58,7 @@ class PreRegisterController extends Controller
         $result = json_decode((string) $response->getBody(), true);
 
         if ($status === 422 && !empty($result['errors'])) {
-            return back()->withInput()->withErrors($result['errors']);
+            return response()->json(['message' => 'Periksa kembali isian Anda.', 'errors' => $result['errors']], 422);
         }
 
         // Data pemohon (NIK, dll.) sengaja tidak ikut dicatat di log.
@@ -95,15 +95,15 @@ class PreRegisterController extends Controller
         return $parts;
     }
 
-    private function berhasil(): RedirectResponse
+    private function berhasil(): JsonResponse
     {
-        return redirect()
-            ->route('preregister')
-            ->with('success', 'Pendaftaran Pre-Register berhasil dikirim! Tim kami akan menghubungi Anda.');
+        return response()->json([
+            'message' => 'Pendaftaran Pre-Register berhasil dikirim! Tim kami akan menghubungi Anda.',
+        ]);
     }
 
-    private function gagal(string $pesan): RedirectResponse
+    private function gagal(string $pesan): JsonResponse
     {
-        return back()->withInput()->with('error', $pesan);
+        return response()->json(['message' => $pesan], 502);
     }
 }

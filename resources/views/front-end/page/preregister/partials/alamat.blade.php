@@ -14,7 +14,7 @@
             <label class="{{ $label }}" for="alamatLengkap">Alamat Lengkap Pemasangan {!! $req !!}</label>
             <textarea class="{{ $input }} resize-none" id="alamatLengkap" name="alamat_lengkap" rows="3"
                 placeholder="Nama Jalan, Gang, Nomor Rumah, Blok/Unit, dan patokan terdekat (contoh: depan Masjid Al-Huda atau samping Toko Berkah)"
-                maxlength="1000" required>{{ old('alamat_lengkap') }}</textarea>
+                maxlength="1000" required></textarea>
             @include('front-end.page.preregister.partials.error', ['field' => 'alamat_lengkap'])
         </div>
 
@@ -22,16 +22,14 @@
             @foreach (['rt' => ['RT', '001'], 'rw' => ['RW', '004']] as $field => [$title, $placeholder])
                 <div>
                     <label class="{{ $label }}" for="{{ $field }}">{{ $title }} {!! $req !!}</label>
-                    <input class="{{ $input }}" id="{{ $field }}" name="{{ $field }}" type="text"
-                        value="{{ old($field) }}" placeholder="{{ $placeholder }}" inputmode="numeric"
+                    <input class="{{ $input }}" id="{{ $field }}" name="{{ $field }}" type="text" placeholder="{{ $placeholder }}" inputmode="numeric"
                         maxlength="5" required />
                     @include('front-end.page.preregister.partials.error', ['field' => $field])
                 </div>
             @endforeach
             <div class="col-span-2">
                 <label class="{{ $label }}" for="kodePos">Isi Kode Pos</label>
-                <input class="{{ $input }}" id="kodePos" name="kode_pos" type="text"
-                    value="{{ old('kode_pos') }}" placeholder="Kode Pos" inputmode="numeric" maxlength="10" />
+                <input class="{{ $input }}" id="kodePos" name="kode_pos" type="text" placeholder="Kode Pos" inputmode="numeric" maxlength="10" />
                 @include('front-end.page.preregister.partials.error', ['field' => 'kode_pos'])
             </div>
         </div>
@@ -46,8 +44,7 @@
             ] as $field => [$title, $placeholder])
                 <div>
                     <label class="{{ $label }}" for="{{ $field }}">{{ $title }} {!! $req !!}</label>
-                    <select class="{{ $input }}" id="{{ $field }}" name="{{ $field }}"
-                        data-old="{{ old($field) }}" required @disabled($field !== 'provinsi')>
+                    <select class="{{ $input }}" id="{{ $field }}" name="{{ $field }}" required @disabled($field !== 'provinsi')>
                         <option value="">{{ $placeholder }}</option>
                     </select>
                     @include('front-end.page.preregister.partials.error', ['field' => $field])
@@ -66,7 +63,7 @@
                         <div class="relative">
                             <span class="{{ $iconInside }}">explore</span>
                             <input class="{{ $inputIcon }} pr-14 font-mono" id="{{ $field }}"
-                                name="{{ $field }}" type="text" value="{{ old($field) }}"
+                                name="{{ $field }}" type="text"
                                 placeholder="{{ $placeholder }}" aria-label="{{ ucfirst($field) }}" />
                             <span
                                 class="absolute right-3 top-3.5 font-label-md text-label-md text-outline">{{ $suffix }}</span>
@@ -75,23 +72,22 @@
                     </div>
                 @endforeach
             </div>
-            <input type="hidden" name="odp_name" value="{{ old('odp_name') }}">
-            <input type="hidden" name="odp_distance" value="{{ old('odp_distance') }}">
+            <input type="hidden" name="odp_name">
+            <input type="hidden" name="odp_distance">
         </div>
 
         <div>
             <span class="{{ $label }}">Estimasi Permintaan Waktu Pemasangan</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <input class="{{ $input }}" id="tanggalPemasangan" name="tanggal_pemasangan" type="date"
-                    value="{{ old('tanggal_pemasangan') }}" min="{{ now()->toDateString() }}"
+                <input class="{{ $input }}" id="tanggalPemasangan" name="tanggal_pemasangan" type="date" min="{{ now()->toDateString() }}"
                     aria-label="Tanggal pemasangan" />
 
                 <div class="relative">
                     <select class="{{ $input }} appearance-none pr-10" id="jamPemasangan" name="jam_pemasangan"
                         aria-label="Jam pemasangan">
-                        <option value="" disabled @selected(!old('jam_pemasangan'))>Pilih rentang jam</option>
+                        <option value="" disabled selected>Pilih rentang jam</option>
                         @foreach ($slotJam as $slot)
-                            <option value="{{ $slot }}" @selected(old('jam_pemasangan') === $slot)>
+                            <option value="{{ $slot }}">
                                 {{ str_replace(':', '.', $slot) }} WIB</option>
                         @endforeach
                     </select>
@@ -108,8 +104,7 @@
 
         <div>
             <label class="{{ $label }}" for="catatanLokasi">Catatan Khusus Teknisi Pemasangan (Opsional)</label>
-            <input class="{{ $input }}" id="catatanLokasi" name="catatan_lokasi" type="text"
-                value="{{ old('catatan_lokasi') }}" maxlength="500"
+            <input class="{{ $input }}" id="catatanLokasi" name="catatan_lokasi" type="text" maxlength="500"
                 placeholder="Contoh: Kabel ditarik lewat plafon teras, pagar cat putih dekat pohon mangga" />
             @include('front-end.page.preregister.partials.error', ['field' => 'catatan_lokasi'])
         </div>
