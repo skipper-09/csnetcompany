@@ -30,8 +30,18 @@ class PreRegisterController extends Controller
     {
         // Honeypot: field tersembunyi ini hanya terisi oleh bot.
         if ($request->filled('website')) {
+            Log::warning('PreRegister: diabaikan karena honeypot terisi (kemungkinan bot)');
+
             return $this->berhasil();
         }
+
+        $mulai = microtime(true);
+        $durasi = fn () => (int) round((microtime(true) - $mulai) * 1000);
+
+        Log::info('PreRegister: mengirim ke API', [
+            'ktp_kb' => (int) ceil($request->file('ktp')->getSize() / 1024),
+            'foto_rumah_kb' => (int) ceil($request->file('foto_rumah')->getSize() / 1024),
+        ]);
 
         try {
             $response = $client->post(config('app.base_url_api'), [
@@ -44,7 +54,10 @@ class PreRegisterController extends Controller
                 'allow_redirects' => false,
             ]);
         } catch (GuzzleException $e) {
-            Log::error('PreRegister: gagal terhubung ke API', ['error' => $e->getMessage()]);
+            Log::error('PreRegister: gagal terhubung ke API', [
+                'error' => $e->getMessage(),
+                'durasi_ms' => $durasi(),
+            ]);
 
             return $this->gagal('Tidak dapat terhubung ke server. Silakan coba kembali.');
         }
@@ -52,12 +65,19 @@ class PreRegisterController extends Controller
         $status = $response->getStatusCode();
 
         if ($status >= 200 && $status < 300) {
+            Log::info('PreRegister: berhasil', ['status' => $status, 'durasi_ms' => $durasi()]);
+
             return $this->berhasil();
         }
 
         $result = json_decode((string) $response->getBody(), true);
 
         if ($status === 422 && !empty($result['errors'])) {
+            Log::warning('PreRegister: validasi ditolak API', [
+                'errors' => $result['errors'],
+                'durasi_ms' => $durasi(),
+            ]);
+
             return response()->json(['message' => 'Periksa kembali isian Anda.', 'errors' => $result['errors']], 422);
         }
 
@@ -65,6 +85,7 @@ class PreRegisterController extends Controller
         Log::error('PreRegister: API menolak pengajuan', [
             'status' => $status,
             'message' => $result['message'] ?? null,
+            'durasi_ms' => $durasi(),
         ]);
 
         return $this->gagal('Terjadi kesalahan saat mengirim pengajuan. Silakan coba kembali.');

@@ -205,6 +205,31 @@
         loadPlans();
 
         /* ---------- Upload foto ---------- */
+        // Isi foto disalin ke memori begitu dipilih. Tanpa ini Chrome (terutama Android)
+        // bisa gagal dengan ERR_UPLOAD_FILE_CHANGED saat file asli berubah sebelum dikirim.
+        const photos = new Map();
+
+        async function copyPhoto(input, file) {
+            try {
+                return new File([await file.arrayBuffer()], file.name, {
+                    type: file.type
+                });
+            } catch (err) {
+                console.error(err);
+                // Abaikan bila pengguna sudah memilih file lain
+                if (input.files[0] === file) {
+                    input.value = "";
+                    input.dispatchEvent(new Event("change"));
+                    showAlert({
+                        type: "warning",
+                        title: "Foto Tidak Terbaca",
+                        message: "Silakan pilih ulang fotonya. Bila tetap gagal, simpan dulu foto ke perangkat."
+                    });
+                }
+                return null;
+            }
+        }
+
         form.querySelectorAll("[data-upload]").forEach((box) => {
             const input = box.querySelector('input[type="file"]');
             const placeholder = box.querySelector("[data-upload-placeholder]");
@@ -228,6 +253,12 @@
                     });
                     input.value = "";
                     file = null;
+                }
+
+                if (file) {
+                    photos.set(input.name, copyPhoto(input, file));
+                } else {
+                    photos.delete(input.name);
                 }
 
                 box.querySelector("[data-upload-name]").textContent = file?.name ?? "";
@@ -303,6 +334,45 @@
         // Hilangkan pesan error begitu field diperbaiki
         form.addEventListener("change", (e) => setFieldError(e.target.name || ""));
 
+        function handleSuccess(result) {
+            if (!result?.message) return showFailure("Respons server tidak dikenali. Silakan coba kembali.");
+
+            resetForm();
+            showAlert({
+                type: "success",
+                title: "Pendaftaran Berhasil",
+                message: result.message
+            });
+        }
+
+        function handleError(xhr, textStatus, uploaded) {
+            const {
+                status,
+                responseJSON: result
+            } = xhr;
+            console.error("Submit error:", status, textStatus, `terkirim ${uploaded}%`);
+
+            if (status === 422 && result?.errors) return showErrors(result.errors);
+            if (status === 502 && result?.message) return showFailure(result.message);
+
+            const messages = {
+                413: "Ukuran foto terlalu besar untuk dikirim.",
+                419: "Sesi halaman sudah berakhir. Muat ulang halaman lalu kirim kembali.",
+                429: "Terlalu banyak percobaan. Tunggu satu menit lalu coba lagi."
+            };
+            if (messages[status]) return showFailure(messages[status]);
+
+            // Kode disertakan agar penyebabnya bisa dilacak dari screenshot pengguna
+            const kode = `(kode: ${status || textStatus}, terkirim ${uploaded}%)`;
+            if (textStatus === "timeout") {
+                return showFailure(`Pengiriman terlalu lama. Coba dengan jaringan yang lebih stabil. ${kode}`);
+            }
+            if (status === 0) {
+                return showFailure(`Koneksi terputus. Periksa jaringan Anda lalu coba kembali. ${kode}`);
+            }
+            showFailure(`Terjadi kesalahan pada server. Silakan coba kembali. ${kode}`);
+        }
+
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             if (submitting) return;
@@ -312,43 +382,40 @@
             clearErrors();
             setSubmitting(true);
 
-            try {
-                const res = await fetch(form.action, {
-                    method: "POST",
-                    body,
-                    headers: {
-                        Accept: "application/json",
-                        "X-Requested-With": "XMLHttpRequest"
-                    }
-                });
-                // Respons error dari web server bisa berupa HTML, bukan JSON
-                const result = await res.json().catch(() => ({}));
-
-                if (res.ok && result.message) {
-                    resetForm();
-                    showAlert({
-                        type: "success",
-                        title: "Pendaftaran Berhasil",
-                        message: result.message
-                    });
-                } else if (res.status === 422 && result.errors) {
-                    showErrors(result.errors);
-                } else if (res.status === 419) {
-                    showFailure("Sesi halaman sudah berakhir. Muat ulang halaman lalu kirim kembali.");
-                } else if (res.status === 429) {
-                    showFailure("Terlalu banyak percobaan. Tunggu satu menit lalu coba lagi.");
-                } else if (res.status === 413) {
-                    showFailure("Ukuran foto terlalu besar untuk dikirim.");
-                } else {
-                    showFailure(res.status === 502 && result.message ? result.message :
-                        "Terjadi kesalahan pada server. Silakan coba kembali.");
-                }
-            } catch (err) {
-                console.error(err);
-                showFailure("Koneksi terputus. Periksa jaringan Anda lalu coba kembali.");
-            } finally {
-                setSubmitting(false);
+            // Ganti file asli dengan salinan di memori
+            for (const [name, copy] of [...photos]) {
+                const photo = await copy;
+                if (!photo) return setSubmitting(false);
+                body.set(name, photo);
             }
+
+            let uploaded = 0;
+
+            jQuery.ajax({
+                url: form.action,
+                method: "POST",
+                data: body,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                headers: {
+                    Accept: "application/json"
+                },
+                timeout: 180000,
+                xhr() {
+                    const xhr = jQuery.ajaxSettings.xhr();
+                    xhr.upload.addEventListener("progress", (event) => {
+                        if (!event.lengthComputable) return;
+                        uploaded = Math.round((event.loaded / event.total) * 100);
+                        button.querySelector("[data-submit-text]").textContent =
+                            `Mengirim... ${uploaded}%`;
+                    });
+                    return xhr;
+                },
+                success: handleSuccess,
+                error: (xhr, textStatus) => handleError(xhr, textStatus, uploaded),
+                complete: () => setSubmitting(false)
+            });
         });
     });
 </script>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class PreRegisterRequest extends FormRequest
@@ -26,6 +29,30 @@ class PreRegisterRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
+    }
+
+    /** Catat setiap pengajuan yang masuk, sebelum divalidasi. */
+    protected function prepareForValidation(): void
+    {
+        // ID ini ikut di semua log request yang sama, supaya alurnya bisa dilacak.
+        Log::withContext(['pengajuan_id' => Str::random(8)]);
+
+        // Data pribadi (nama, NIK, nomor HP, alamat, foto) sengaja tidak dicatat.
+        Log::info('PreRegister: pengajuan diterima', [
+            'ip' => $this->ip(),
+            'perangkat' => $this->userAgent(),
+            'ukuran_kb' => (int) ceil((int) $this->server('CONTENT_LENGTH') / 1024),
+            'paket' => $this->input('paket'),
+            'kode_marketing' => $this->input('kode_marketing'),
+        ]);
+    }
+
+    protected function failedValidation(Validator $validator): void
+    {
+        // Hanya nama field & pesannya, bukan nilai yang diisi.
+        Log::warning('PreRegister: validasi gagal', ['errors' => $validator->errors()->toArray()]);
+
+        parent::failedValidation($validator);
     }
 
     public function rules(): array
