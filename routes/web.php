@@ -83,6 +83,7 @@ Route::get('/get-jalan/{kelurahan_id}', [CekareaController::class, 'getJalan']);
 Route::get('/view/file/{filename}', [MediaController::class, 'showFile'])->middleware('auth');
 
 Route::get('/preregister', [PreRegisterController::class, 'index'])->name('preregister');
+Route::post('/preregister', [PreRegisterController::class, 'store'])->middleware('throttle:10,1')->name('preregister.store');
 Route::get('/preregister_bisnis', [PreRegisterBisnisController::class, 'index'])->name('preregister_bisnis');
 
 Route::get('/hubungi-kami', [ContactController::class, 'index'])->name('contact');
