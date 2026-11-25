@@ -7,14 +7,12 @@
         .cekarea {
             background-color: #25316D
         }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <style>
+
+        #page,
+        .wsmenucontainer {
+            overflow: clip !important;
+        }
+
         @layer base {
 
             html,
@@ -93,23 +91,31 @@
         .segment-btn[aria-checked="true"] .seg-radio::after {
             transform: scale(1);
         }
+
+        .sticky-box {
+            position: sticky;
+            z-index: 20;
+            color: #ffffff;
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 @endpush
 
 @section('content')
-    <section id="hero-2" class="bg--05 hero-section">
-
-    </section>
+    <section id="hero-2" class="bg--05 hero-section"></section>
 
     <section>
         <div class="container">
-
-
             <div class="bg-background font-body-md text-on-surface antialiased">
                 <main class="w-full bg-background min-h-screen">
                     <div class="flex flex-col w-full">
                         <!-- Subtle Ambient Glow Background -->
-                        <div class="relative w-full overflow-hidden">
+                        <div class="relative w-full overflow-x-clip">
                             <div
                                 class="absolute -top-40 right-10 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none">
                             </div>
@@ -808,7 +814,7 @@
                                         </div>
                                     </div>
                                     <!-- Right Content Area: Summary Sticky Sidebar (4 Cols) -->
-                                    <div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-24">
+                                    <div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-24 sticky-box">
                                         <!-- Summary Card -->
                                         <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
                                             <h3
