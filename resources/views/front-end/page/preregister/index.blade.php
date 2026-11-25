@@ -24,6 +24,8 @@
         $req = '<span class="text-error">*</span>';
     @endphp
 
+    @include('front-end.page.preregister.partials.loading')
+
     <section id="hero-2" class="bg--05 hero-section"></section>
 
     <section>

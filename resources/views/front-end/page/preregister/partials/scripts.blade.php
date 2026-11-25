@@ -273,14 +273,37 @@
         const errorBox = document.getElementById("formErrors");
         let submitting = false;
 
+        const overlay = document.getElementById("submitOverlay");
+        // Dipindah ke <body> agar benar-benar menutupi seluruh layar
+        document.body.appendChild(overlay);
+
+        function setProgress(title, percent) {
+            overlay.querySelector("h2").textContent = title;
+            overlay.querySelector("[data-progress]").setAttribute("aria-valuenow", percent);
+            overlay.querySelector("[data-progress-bar]").style.width = `${percent}%`;
+            overlay.querySelector("[data-progress-text]").textContent = `${percent}%`;
+        }
+
         function setSubmitting(value) {
             submitting = value;
             button.disabled = value;
-            button.querySelector("[data-submit-text]").textContent = value ? "Mengirim..." : "Kirim Pengajuan";
-            const icon = button.querySelector("[data-submit-icon]");
-            icon.textContent = value ? "progress_activity" : "send";
-            icon.classList.toggle("animate-spin", value);
+            form.inert = value; // form tidak bisa diubah lewat keyboard selama mengirim
+            overlay.classList.toggle("hidden", !value);
+            overlay.classList.toggle("flex", value);
+            document.documentElement.style.overflow = value ? "hidden" : "";
+
+            if (value) {
+                setProgress("Menyiapkan foto...", 0);
+                overlay.focus();
+            }
         }
+
+        // Peringatkan bila halaman mau ditutup saat pengiriman masih berjalan
+        window.addEventListener("beforeunload", (e) => {
+            if (!submitting) return;
+            e.preventDefault();
+            e.returnValue = "";
+        });
 
         function setFieldError(field, message = "") {
             const el = form.querySelector(`[data-error="${CSS.escape(field)}"]`);
@@ -390,6 +413,7 @@
             }
 
             let uploaded = 0;
+            setProgress("Mengunggah data...", 0);
 
             jQuery.ajax({
                 url: form.action,
@@ -407,8 +431,9 @@
                     xhr.upload.addEventListener("progress", (event) => {
                         if (!event.lengthComputable) return;
                         uploaded = Math.round((event.loaded / event.total) * 100);
-                        button.querySelector("[data-submit-text]").textContent =
-                            `Mengirim... ${uploaded}%`;
+                        // Setelah 100% server masih meneruskan data ke API billing
+                        setProgress(uploaded < 100 ? "Mengunggah data..." : "Memproses pengajuan...",
+                            uploaded);
                     });
                     return xhr;
                 },
